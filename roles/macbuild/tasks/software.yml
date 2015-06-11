@@ -1,0 +1,12 @@
+---
+- name: brew taps
+  homebrew_tap: tap={{ item }} state=present
+  with_items: brew_taps
+
+- name: desktop applications
+  homebrew_cask: name={{ item }} state=present
+  with_items: brew_casks
+
+- name: terminal software
+  homebrew: name={{ item }} state=latest
+  with_items: brew_packages

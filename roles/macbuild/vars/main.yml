@@ -1,0 +1,40 @@
+brew_taps:
+  - caskroom/versions
+  - caskroom/fonts
+
+brew_casks:
+  # Freeware
+  - google-chrome
+  - dropbox
+  - firefox
+  - github
+  - mplayerx
+  - font-source-code-pro
+  - transmission
+
+  # Commercial
+  - 1password
+  - sublime-text3
+  - entropy
+  - transmit
+  - vmware-fusion
+
+brew_packages:
+  # Languages
+  - nodejs
+
+  # Unix Utilities
+  - bash
+  - bash-completion
+  - curl
+  - git
+  - readline
+  - tree
+  - vim
+  - wget
+
+python_packages:
+  - ipython
+  - pip
+  - setuptools
+  - virtualenv

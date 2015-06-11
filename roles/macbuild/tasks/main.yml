@@ -1,0 +1,3 @@
+---
+- include: software.yml
+- include: python.yml
