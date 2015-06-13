@@ -56,14 +56,36 @@ appstore_apps:
   - Textual 5
 
 os_defaults:
-  # Dock
-  - domain: com.apple.dock
+  # System Preferences
+  - domain: Apple Global Domain
     values:
-      # Make hidden applications translucent in the dock:
-      - showhidden -bool true
+      # General / Appearance / Use dark menu bar and Dock
+      - AppleInterfaceStyle -string Dark
+      # Keyboard / Key Repeat
+      - KeyRepeat -int 2
+      # Keyboard / Delay Until Repeat
+      - InitialKeyRepeat -int 25
+      # Keyboard / Use all F1, F2, etc. keys as standard function keys
+      - com.apple.keyboard.fnState -bool true
 
   # System Preferences / Accessibility
   - domain: com.apple.universalaccess
     values:
-      # Zeem / Use scroll gesture with modifier keys to zoom
+      # Zoom / Use scroll gesture with modifier keys to zoom
       - closeViewScrollWheelToggle -bool true
+      # Display / Cursor size
+      - mouseDriverCursorSize -float 1.25
+
+  # System Preferences / Keyboard
+  - domain: NSGlobalDomain
+    values:
+      # Shortcuts / Full Keyboard Access / All controls
+      - AppleKeyboardUIMode -int 3
+
+  # Dock
+  - domain: com.apple.dock
+    values:
+      # Make hidden applications translucent in the dock
+      - showhidden -bool true
+      # Turn Magnification On
+      - magnification -bool true
