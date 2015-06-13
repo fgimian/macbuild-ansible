@@ -50,5 +50,14 @@ appstore_apps:
   - Clear
   - Pixelmator
   - Slack
-  - Textual 6
+  - Textual 5
   - Twitter
+
+os_defaults:
+  # System Preferences / Accessibility
+  - domain: com.apple.universalaccess
+    values:
+      # Zeem / Use scroll gesture with modifier keys to zoom
+      - key: closeViewScrollWheelToggle
+        type: bool
+        value: true

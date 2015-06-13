@@ -1,3 +1,4 @@
 ---
+- include: defaults.yml
 - include: software.yml
 - include: python.yml

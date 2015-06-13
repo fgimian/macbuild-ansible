@@ -1,0 +1,5 @@
+- name: set operating system defaults
+  command: "defaults write {{ item.0.domain }} {{ item.1.key }} -{{ item.1.type }} {{ item.1.value }}"
+  with_subelements:
+    - os_defaults
+    - values
