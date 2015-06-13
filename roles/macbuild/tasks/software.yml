@@ -7,7 +7,10 @@
   homebrew: name={{ item }} state=latest
   with_items: brew_packages
 
-- name: brew cask
+- name: brew cask tap
+  homebrew_tap: tap=caskroom/cask state=present
+
+- name: brew cask package manager
   homebrew: name=brew-cask state=latest
 
 - name: desktop cask applications
