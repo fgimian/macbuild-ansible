@@ -24,6 +24,9 @@ brew_casks:
   - vmware-fusion
 
 brew_packages:
+  # Cask
+  - brew-cask
+
   # Languages
   - nodejs
 
