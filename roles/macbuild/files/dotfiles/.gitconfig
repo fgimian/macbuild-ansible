@@ -1,0 +1,15 @@
+[user]
+	name = Fotis Gimian
+	email = fgimiansoftware@gmail.com
+[alias]
+	plog = log --color  --pretty=format:\"%C(red)%h %C(yellow)%ad %C(green)%an%C(reset): %s\" --date=short
+	plogc = log  --pretty=format:\"%h %ad %an: %s\" --date=short
+	cdiff = diff --cached
+	unstage = reset HEAD --
+	uncommit = reset --soft HEAD^
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
