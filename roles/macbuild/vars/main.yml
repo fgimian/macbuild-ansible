@@ -7,15 +7,19 @@ brew_casks:
   - google-chrome
   - dropbox
   - firefox
+  - flux
+  - iterm2
   - github
+  - macdown
   - mplayerx
   - font-source-code-pro
   - transmission
+  - vox
 
   # Commercial
   - 1password
-  - sublime-text3
   - entropy
+  - sublime-text3
   - transmit
   - vmware-fusion
 
@@ -38,3 +42,10 @@ python_packages:
   - pip
   - setuptools
   - virtualenv
+
+appstore_apps:
+  - Clear
+  - Pixelmator
+  - Slack
+  - Textual 6
+  - Twitter
