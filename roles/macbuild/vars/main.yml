@@ -2,6 +2,28 @@ brew_taps:
   - caskroom/versions
   - caskroom/fonts
 
+brew_packages:
+  # Languages
+  - nodejs
+
+  # Unix Utilities
+  - bash
+  - bash-completion
+  - curl
+  - findutils
+  - git
+  - md5sha1sum
+  - readline
+  - tree
+  - vim
+  - wget
+
+python_packages:
+  - ipython
+  - pip
+  - setuptools
+  - virtualenv
+
 brew_casks:
   # Freeware
   - google-chrome
@@ -23,41 +45,25 @@ brew_casks:
   - transmit
   - vmware-fusion
 
-brew_packages:
-  # Cask
-  - brew-cask
-
-  # Languages
-  - nodejs
-
-  # Unix Utilities
-  - bash
-  - bash-completion
-  - curl
-  - git
-  - readline
-  - tree
-  - vim
-  - wget
-
-python_packages:
-  - ipython
-  - pip
-  - setuptools
-  - virtualenv
-
 appstore_apps:
-  - Clear
-  - Pixelmator
+  # Freeware
   - Slack
-  - Textual 5
   - Twitter
 
+  # Commercial
+  - Clear
+  - Pixelmator
+  - Textual 5
+
 os_defaults:
+  # Dock
+  - domain: com.apple.dock
+    values:
+      # Make hidden applications translucent in the dock:
+      - showhidden -bool true
+
   # System Preferences / Accessibility
   - domain: com.apple.universalaccess
     values:
       # Zeem / Use scroll gesture with modifier keys to zoom
-      - key: closeViewScrollWheelToggle
-        type: bool
-        value: true
+      - closeViewScrollWheelToggle -bool true
