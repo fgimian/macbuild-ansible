@@ -5,12 +5,6 @@
     - ~/.vim
     - ~/.vim/colors
 
-- name: install the molokai vim color scheme
-  get_url: url=https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
-  args:
-    dest: ~/.vim/colors/
-    mode: 0644
-
 - name: install vundle package manager
   git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
 

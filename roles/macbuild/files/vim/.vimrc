@@ -11,6 +11,40 @@ call vundle#begin()
 " Let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
+" Install the Molokai colour scheme
+Plugin 'tomasr/molokai'
+
+" Install the CtrlP plugin which allows you to perform a fuzzy search and
+" find the file you wish to open
+Plugin 'kien/ctrlp.vim'
+
+" Install NERD Tree which provides a nice little file browser
+Plugin 'scrooloose/nerdtree'
+
+" Map NERD Tree toggling to Ctrl+n
+map <silent> <C-n> :NERDTreeToggle<CR>
+
+" Install the Syntastic code checker
+Plugin 'scrooloose/syntastic'
+
+" Setup the status line to show Syntastic information
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" Configure how Syntastic runs
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Install vim-gitgutter which displays changes in a Git repository on the
+" vim sidebar
+Plugin 'airblade/vim-gitgutter'
+
+" Install TAGBAR which displays code layout elements in a window
+Plugin 'majutsushi/tagbar'
+
 " Complete Vundle initialisation
 " (all of your plugins must be added before this line)
 call vundle#end()

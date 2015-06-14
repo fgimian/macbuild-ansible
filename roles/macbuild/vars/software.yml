@@ -10,6 +10,7 @@ brew_packages:
   # Unix Utilities
   - bash
   - bash-completion
+  - ctags
   - curl
   - findutils
   - git
