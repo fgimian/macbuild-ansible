@@ -1,6 +1,9 @@
 " Make vim more useful
 set nocompatible
 
+" Remap the leader shortcut key to something easier to reach
+let mapleader=","
+
 " Disable filetype for Vundle installation
 filetype off
 
@@ -22,7 +25,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 
 " Map NERD Tree toggling to Ctrl+n
-map <silent> <C-n> :NERDTreeToggle<CR>
+map <silent> <Leader>n :NERDTreeToggle<CR>
 
 " Install the Syntastic code checker
 Plugin 'scrooloose/syntastic'
@@ -44,6 +47,9 @@ Plugin 'airblade/vim-gitgutter'
 
 " Install TAGBAR which displays code layout elements in a window
 Plugin 'majutsushi/tagbar'
+
+" Install the delimitMate plugin which auto-closes quotes and brackets
+Plugin 'Raimondi/delimitMate'
 
 " Complete Vundle initialisation
 " (all of your plugins must be added before this line)
