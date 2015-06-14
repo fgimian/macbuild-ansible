@@ -4,3 +4,25 @@
   with_subelements:
     - os_defaults
     - values
+
+- name: check the current timezone
+  command: systemsetup -gettimezone
+  changed_when: false
+  become: yes
+  become_method: sudo
+  register: current_timezone
+
+- name: set the timezone
+  command: systemsetup -settimezone {{ timezone }}
+  become: yes
+  become_method: sudo
+  when: "'{{ timezone }}' not in '{{ current_timezone.stdout }}'"
+
+- name: check flags for the ~/Library folder
+  changed_when: false
+  command: ls -lOd ~/Library
+  register: library_flags
+
+- name: unhide the ~/Library folder
+  command: chflags nohidden ~/Library
+  when: "'hidden' in library_flags"
