@@ -6,6 +6,10 @@
 The goal of this project is fully automate my OS X Yosemite workstation using
 Ansible.  I Have currently implemented the following:
 
+* **OS X Defaults**: Updating of defaults for various aspects of OS X such as
+  enabling zoom, configuring Finder and so on.
+* **Dot Files**: Configuration of .bash_profile, .gitconfig and other dot 
+  files.
 * **Terminal Package Installation**: This is being accomplish with the use of
   [homebrew](https://github.com/Homebrew/homebrew).
 * **Desktop Application Installation**: This is being performed with the use
@@ -16,15 +20,8 @@ Ansible.  I Have currently implemented the following:
   Store if it isn't.
 * **Python Base Setup**: Installation of essentials such as virtualenv are
   being performed using [pip](https://github.com/pypa/pip).
-
-I intend to add the following:
-
-* **Dot Profiles**: Configuration of .bash_profile, .gitconfig and other dot 
-  files.
 * **Application Settings**: Automating configuration of Sublime Text, MacDown,
   Textual and other applications which are of interest to me.
-* **OS X Defaults**: Updating of defaults for various aspects of OS X such as
-  enabling zoom, configuring Finder and so on.
   
 ## Building your System ##
 
