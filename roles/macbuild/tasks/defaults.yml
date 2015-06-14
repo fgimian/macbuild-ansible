@@ -1,8 +1,8 @@
-- name: set operating system defaults
+- name: set operating system and application defaults
   command: "defaults write '{{ item.0.domain }}' {{ item.1 }}"
   changed_when: false
   with_subelements:
-    - os_defaults
+    - osapp_defaults
     - values
 
 - name: check the current timezone
