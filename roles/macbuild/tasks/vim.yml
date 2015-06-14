@@ -1,0 +1,15 @@
+---
+- name: create the vim colors directory
+  file: path={{ item }} state=directory mode=0755
+  with_items:
+    - ~/.vim
+    - ~/.vim/colors
+
+- name: install the molokai vim color scheme
+  get_url: url=https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
+  args:
+    dest: ~/.vim/colors/
+    mode: 0644
+
+- name: install vimrc to the home directory
+  copy: src=vim/.vimrc dest=~ mode=0644
