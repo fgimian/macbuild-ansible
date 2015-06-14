@@ -1,0 +1,24 @@
+[
+    // Set tab height
+    {
+        "class": "tabset_control",
+        "tab_height": 34
+    },
+    // Set text spacing in tabs
+    {
+        "class": "tab_control",
+        "content_margin": [20, 3, 14, 3]
+    },
+    // Set the appearance of tab text
+    {
+        "class": "tab_label",
+        "fg": [140, 140, 140],
+        "shadow_color": [45, 45, 45]
+    },
+    // Set the appearance of selected tab text
+    {
+        "class": "tab_label",
+        "fg": [255, 255, 255],
+        "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+    }
+]

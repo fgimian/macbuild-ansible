@@ -1,0 +1,15 @@
+{
+    // Only register markdown extensions
+    "extensions": ["md", "mdown"],
+
+    // Set the color schema to my version of the dark theme
+    "color_scheme": "Packages/User/Fotsies Dark MarkdownEditor.tmTheme",
+
+    // Re-enable line hightlighting
+    "highlight_line": true,
+
+    // Revert the caret to our default style
+    "caret_style": "smooth",
+    "caret_extra_top": 0,
+    "caret_extra_bottom": 0
+}

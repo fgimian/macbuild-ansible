@@ -1,0 +1,50 @@
+{
+    // Specify a list of our installed packages
+    "installed_packages":
+    [
+        // Use ctrl+alt+n to easily create a new file
+        "AdvancedNewFile",
+
+        // Autocompletes symbols using all open files
+        "All Autocomplete",
+
+        // Angular.js snippets & syntax support
+        "AngularJS",
+
+        // Clearly highlights matching brackets, tags .etc
+        "BracketHighlighter",
+
+        // Emmet HTML code generation
+        "Emmet",
+
+        // Additional JavaScript snippets
+        "JavaScript & NodeJS Snippets",
+
+        // Jinja2 syntax support
+        "Jinja2",
+
+        // LESS syntax support
+        "LESS",
+
+        // Puppet syntax support
+        "Puppet",
+
+        // Markdown themes and syntax highlighting
+        "MarkdownEditing",
+
+        // A system for managing TODO lists in Sublime Text
+        "PlainTasks",
+
+        // The main sublime linter core
+        "SublimeLinter",
+
+        // Linting of Python using flake8
+        "SublimeLinter-flake8",
+
+        // Linting of JavaScript using JSHint
+        "SublimeLinter-jshint",
+
+        // The wonderful Soda theme
+        "Theme - Soda"
+    ]
+}

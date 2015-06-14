@@ -1,0 +1,9 @@
+{
+    "user": {
+        // Make errors more visible
+        "error_color": "F08060",
+
+        // Underline errors instead of outlining them
+        "mark_style": "squiggly underline"
+    }
+}

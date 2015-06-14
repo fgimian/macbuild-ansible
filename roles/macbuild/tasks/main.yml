@@ -3,3 +3,4 @@
 - include: dotfiles.yml
 - include: software.yml
 - include: python.yml
+- include: sublimetext.yml

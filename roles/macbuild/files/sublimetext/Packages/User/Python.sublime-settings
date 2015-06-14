@@ -1,0 +1,10 @@
+{
+    // Set Python's tab size to 4 spaces as per the PEP8 standard
+    "tab_size": 4,
+
+    // Due to the fact that 4 spaces is a strong standard, disable auto-detection of indentation
+    "detect_indentation": false,
+
+    // Set anaconda to auto-complete when we hit dot for member functions or variables
+    "auto_complete_triggers": [{"selector": "source.python", "characters": "."}]
+}

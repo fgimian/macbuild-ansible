@@ -1,0 +1,31 @@
+---
+- name: install sublime text package control
+  get_url: url='http://packagecontrol.io/Package Control.sublime-package'
+  args:
+    dest: ~/Library/Application Support/Sublime Text 3/Installed Packages
+    mode: 0644
+
+- name: check if the sublime text soda themes are installed
+  stat: path='~/Library/Application Support/Sublime Text 3/Packages/User/Monokai Soda.tmTheme'
+  register: monokai_soda_colour_theme
+
+- name: download sublime text soda colour schemes
+  get_url: url=http://buymeasoda.github.com/soda-theme/extras/colour-schemes.zip
+  args:
+    dest: /var/tmp
+    mode: 0644
+  when: not monokai_soda_colour_theme.stat.exists
+
+- name: extract sublime text soda colour schemes
+  command: unzip -o /var/tmp/colour-schemes.zip
+  args:
+    chdir: ~/Library/Application Support/Sublime Text 3/Packages/User
+    creates: ~/Library/Application Support/Sublime Text 3/Packages/User/Monokai Soda.tmTheme
+  when: not monokai_soda_colour_theme.stat.exists
+
+- name: clean up the downloaded sublime text soda colour schemes
+  file: path=/var/tmp/colour-schemes.zip state=absent
+  when: not monokai_soda_colour_theme.stat.exists
+
+- name: install sublime text settings
+  copy: src=sublimetext/Packages dest='~/Library/Application Support/Sublime Text 3'
