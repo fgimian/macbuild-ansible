@@ -11,5 +11,8 @@
     dest: ~/.vim/colors/
     mode: 0644
 
+- name: install vundle package manager
+  git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
+
 - name: install vimrc to the home directory
   copy: src=vim/.vimrc dest=~ mode=0644
