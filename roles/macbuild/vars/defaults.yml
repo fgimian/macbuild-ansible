@@ -1,3 +1,4 @@
+---
 # Set various simple defaults which will be updated in the relevant plist files
 osapp_defaults:
   # System Preferences

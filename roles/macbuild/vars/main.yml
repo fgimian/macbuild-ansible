@@ -1,2 +1,8 @@
+---
 # Set the appropriate timezone
 timezone: Australia/Melbourne
+
+# A list of dotfiles to install
+dotfiles:
+  - .bash_profile
+  - .gitconfig

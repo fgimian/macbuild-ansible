@@ -1,3 +1,4 @@
+---
 - name: set operating system and application defaults
   command: "defaults write '{{ item.0.domain }}' {{ item.1 }}"
   changed_when: false

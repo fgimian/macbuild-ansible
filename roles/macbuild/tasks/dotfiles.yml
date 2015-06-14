@@ -1,5 +1,4 @@
+---
 - name: install dotfiles to the home directory
   copy: src=dotfiles/{{ item }} dest=~ mode=0644
-  with_items:
-    - .bash_profile
-    - .gitconfig
+  with_items: dotfiles
