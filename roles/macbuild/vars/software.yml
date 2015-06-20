@@ -1,5 +1,6 @@
 ---
 brew_taps:
+  - homebrew/completions
   - caskroom/versions
   - caskroom/fonts
 
@@ -9,16 +10,20 @@ brew_packages:
 
   # Unix Utilities
   - bash
-  - bash-completion
   - ctags
   - curl
   - findutils
   - git
   - md5sha1sum
-  - readline
   - tree
   - vim
   - wget
+  - xz
+
+  # Completions
+  - bash-completion
+  - pip-completion
+  - vagrant-completion
 
 python_packages:
   - ipython
@@ -42,6 +47,7 @@ brew_casks:
 
   # Commercial
   - 1password
+  - dash
   - entropy
   - sublime-text3
   - transmit
@@ -54,5 +60,6 @@ appstore_apps:
 
   # Commercial
   - Clear
+  - iStat Mini
   - Pixelmator
   - Textual 5

@@ -3,6 +3,7 @@
   file: path="{{ item }}" state=directory
   with_items:
     - ~/Library/Application Support/Sublime Text 3
+    - ~/Library/Application Support/Sublime Text 3/Installed Packages
     - ~/Library/Application Support/Sublime Text 3/Packages
     - ~/Library/Application Support/Sublime Text 3/Packages/User
 
