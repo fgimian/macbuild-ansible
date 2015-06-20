@@ -14,14 +14,14 @@ shopt -s -o noclobber
 
 # ANSI colours for styling our prompt
 RESET="\[\017\]"
-NORMAL="\e[0m"
-RED="\e[31;1m"
-GREEN="\e[32;1m"
-YELLOW="\e[33;1m"
-BLUE="\e[34;1m"
-PURPLE="\e[35;1m"
-CYAN="\e[36;1m"
-WHITE="\e[37;1m"
+NORMAL="\[\033[m\]"
+RED="\[\033[1;31m\]"
+GREEN="\[\033[1;32m\]"
+YELLOW="\[\033[1;33m\]"
+BLUE="\[\033[1;34m\]"
+PURPLE="\[\033[1;35m\]"
+CYAN="\[\033[1;36m\]"
+WHITE="\[\033[1;37m\]"
 
 # Prepare the status of the last command for the prompt
 RC_GOOD="${GREEN}✓${NORMAL}"
