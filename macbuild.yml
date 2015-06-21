@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+    - include: tasks/defaults.yml
+    - include: tasks/dotfiles.yml
+    - include: tasks/software.yml
+    - include: tasks/python.yml
+    - include: tasks/vim.yml
+    - include: tasks/sublimetext.yml
+  vars_files:
+    - vars/defaults.yml
+    - vars/globals.yml
+    - vars/software.yml

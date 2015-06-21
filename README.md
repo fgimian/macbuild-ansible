@@ -39,7 +39,7 @@ git clone https://github.com/fgimian/macbuild.git
 
 # Perform the build
 cd macbuild
-ansible-playbook -K site.yml
+ansible-playbook -K macbuild.yml
 ```
 
 ## License ##

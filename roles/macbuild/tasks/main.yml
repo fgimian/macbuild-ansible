@@ -1,9 +1,0 @@
----
-- include_vars: defaults.yml
-- include_vars: software.yml
-- include: defaults.yml
-- include: dotfiles.yml
-- include: software.yml
-- include: python.yml
-- include: vim.yml
-- include: sublimetext.yml
