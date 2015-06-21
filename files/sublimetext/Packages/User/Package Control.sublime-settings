@@ -11,6 +11,9 @@
         // Angular.js snippets & syntax support
         "AngularJS",
 
+        // Support for binary plist files and syntax
+        "BinaryPlist",
+
         // Clearly highlights matching brackets, tags .etc
         "BracketHighlighter",
 
