@@ -2,7 +2,6 @@
 brew_taps:
   - homebrew/completions
   - caskroom/versions
-  - caskroom/fonts
 
 brew_packages:
   # Languages
@@ -40,7 +39,6 @@ brew_casks:
   - github
   - macdown
   - mplayerx
-  - font-source-code-pro
   - spotify
   - transmission
   - vox
