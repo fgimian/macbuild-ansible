@@ -62,8 +62,8 @@ filetype plugin on
 filetype indent on
 
 " Set color scheme to molokai
-colorscheme molokai
 let g:molokai_original = 1
+colorscheme molokai
 
 " Show the filename in the window titlebar
 set title
