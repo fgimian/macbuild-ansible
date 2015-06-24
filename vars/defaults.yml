@@ -78,11 +78,23 @@ osapp_defaults:
       # Set the default Finder display mode to list
       - FXPreferredViewStyle Nlsv
 
+  # Menu (Clock)
+  - domain: com.apple.menuextra.clock
+    values:
+      # Open Date & Time Preferences... / Clock / Show date
+      - 'DateFormat -string "EEE d MMM  h:mm a"'
+
   # Safari
   - domain: com.apple.Safari
     values:
       # View / Show Status Bar
       - ShowStatusBar -bool true
+
+  # Spotify
+  - domain: com.spotify.client
+    values:
+      # Create another fullscreen shortcut which matches default OS X behaviour
+      - NSUserKeyEquivalents -dict-add "Toggle Fullscreen" "^@F"
 
   # Terminal
   - domain: com.apple.Terminal
