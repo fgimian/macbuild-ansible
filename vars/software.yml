@@ -4,9 +4,6 @@ brew_taps:
   - caskroom/versions
 
 brew_packages:
-  # Languages
-  - nodejs
-
   # Unix Utilities
   - bash
   - ctags

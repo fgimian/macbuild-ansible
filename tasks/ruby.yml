@@ -1,0 +1,6 @@
+---
+- name: rbenv installation
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - rbenv
+    - ruby-build

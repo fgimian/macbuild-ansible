@@ -1,0 +1,12 @@
+---
+- name: node.js installation
+  homebrew: name=node state=latest
+
+- name: node.js essential packages
+  npm: name={{ item }} global=yes
+  with_items:
+    - bower
+    - coffee-script
+    - less
+    - jshint
+    - uglify-js
