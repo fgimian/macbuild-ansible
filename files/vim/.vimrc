@@ -30,17 +30,6 @@ map <silent> <Leader>n :NERDTreeToggle<CR>
 " Install the Syntastic code checker
 Plugin 'scrooloose/syntastic'
 
-" Setup the status line to show Syntastic information
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" Configure how Syntastic runs
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " Install vim-gitgutter which displays changes in a Git repository on the
 " vim sidebar
 Plugin 'airblade/vim-gitgutter'
@@ -55,15 +44,41 @@ Plugin 'Raimondi/delimitMate'
 " (all of your plugins must be added before this line)
 call vundle#end()
 
+function! ConfigurePlugins()
+  " Set color scheme to molokai
+  if filereadable(expand("$HOME/.vim/bundle/molokai/colors/molokai.vim"))
+    " Enable the molokai color scheme
+    colorscheme molokai
+
+    " Override the line number background color to appear transparent
+    hi LineNr ctermbg=234
+  endif
+
+  if exists(':SyntasticStatus')
+    " Setup the status line to show Syntastic information
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+  endif
+endfunction
+
+" Use the original molokai scheme that's similar to Sublime Text
+let g:molokai_original = 1
+
+" Configure how Syntastic runs
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Configure our plugins after vim has initialised
+autocmd VimEnter * call ConfigurePlugins()
+
 " Enable syntax and file-type highlighting
 syntax on
 filetype on
 filetype plugin on
 filetype indent on
-
-" Set color scheme to molokai
-let g:molokai_original = 1
-colorscheme molokai
 
 " Show the filename in the window titlebar
 set title
@@ -79,9 +94,6 @@ set cursorline
 
 " Always show status line
 set laststatus=2
-
-" Override the line number background color to appear transparent
-hi LineNr ctermbg=234
 
 " Show the cursor position
 set ruler
