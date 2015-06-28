@@ -1,0 +1,21 @@
+---
+- name: install ruby 1.9.3 for octopress
+  command: rbenv install 1.9.3-p194 creates=~/.rbenv/versions/1.9.3-p194
+
+- name: install bundler
+  gem:
+    name: bundler
+    state: present
+    executable: ~/.rbenv/versions/1.9.3-p194/bin/gem
+    user_install: no
+
+- name: clone the blog repository from github
+  git:
+    repo: git@github.com:fgimian/fgimian.github.com.git
+    dest: ~/Development/blog
+    version: source
+
+- name: install all dependencies
+  command: ~/.rbenv/versions/1.9.3-p194/bin/bundle install
+  args:
+    chdir: ~/Development/blog

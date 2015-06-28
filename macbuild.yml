@@ -1,14 +1,22 @@
 ---
 - hosts: localhost
   tasks:
+    # General
     - include: tasks/defaults.yml
     - include: tasks/dotfiles.yml
+
+    # Apps and Unix software
     - include: tasks/software.yml
+
+    # Development
     - include: tasks/python.yml
     - include: tasks/ruby.yml
     - include: tasks/nodejs.yml
     - include: tasks/vim.yml
     - include: tasks/sublimetext.yml
+
+    # Projects
+    - include: tasks/blog.yml
   vars_files:
     - vars/defaults.yml
     - vars/globals.yml
