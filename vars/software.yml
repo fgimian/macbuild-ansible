@@ -33,10 +33,10 @@ brew_casks:
   - dropbox
   - firefox
   - flux
-  - github
   - macdown
   - mplayerx
   - slack
+  - sourcetree
   - spotify
   - transmission
   - vox

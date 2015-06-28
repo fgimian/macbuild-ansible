@@ -19,11 +19,14 @@
   become_method: sudo
   when: "'{{ timezone }}' not in '{{ current_timezone.stdout }}'"
 
-- name: check flags for the ~/Library folder
+- name: check flags for the user library folder
   changed_when: false
   command: ls -lOd ~/Library
   register: library_flags
 
-- name: unhide the ~/Library folder
+- name: unhide the user library folder
   command: chflags nohidden ~/Library
   when: "'hidden' in library_flags"
+
+- name: create the development folder
+  file: path=~/Development state=directory
