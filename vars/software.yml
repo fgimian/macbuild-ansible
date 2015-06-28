@@ -32,6 +32,7 @@ brew_casks:
   - dropbox
   - firefox
   - flux
+  - githubpulse
   - macdown
   - mplayerx
   - slack

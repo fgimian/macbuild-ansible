@@ -78,6 +78,7 @@ This list will be long but is my ultimate wish list for this project:
     - **Entropy**: ?
     - **f.lux**: ?
     - **Firefox**: ?
+    - **GitHub Pulse**: ?
     - **Google Chrome**: ?
     - **iStat Mini**: ?
     - **MacDown**: ?

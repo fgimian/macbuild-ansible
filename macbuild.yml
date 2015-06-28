@@ -5,20 +5,24 @@
     - include: tasks/defaults.yml
     - include: tasks/dotfiles.yml
 
-    # Apps and Unix software
+    # Apps and Unix software installation
     - include: tasks/software.yml
 
-    # Development
+    # Development languages
     - include: tasks/go.yml
     - include: tasks/python.yml
     - include: tasks/ruby.yml
     - include: tasks/nodejs.yml
+
+    # Terminal software
     - include: tasks/vim.yml
+
+    # Desktop applications
     - include: tasks/sublimetext.yml
 
     # Projects
     - include: tasks/blog.yml
   vars_files:
-    - vars/defaults.yml
     - vars/globals.yml
+    - vars/defaults.yml
     - vars/software.yml
