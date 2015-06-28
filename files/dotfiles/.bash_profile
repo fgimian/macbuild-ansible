@@ -4,6 +4,9 @@ alias ll="ls -l"
 # Avoid duplicates in history
 export HISTCONTROL=ignoredups
 
+# Set a more reasonable bash history limit
+export HISTSIZE=50000
+
 # Enable bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
@@ -30,3 +33,6 @@ SELECT="[[ \$? = 0 ]] && echo '${RC_GOOD}' || echo '${RC_BAD}'"
 
 # Build the final prompt
 export PS1="\n${RESET}${YELLOW}\u${BLUE} ⚛ ${NORMAL}\h${NORMAL} ${CYAN}\w${NORMAL} \`${SELECT}\` ${PURPLE}\@${NORMAL}\n${YELLOW}➔${NORMAL} "
+
+# Initialise rbenv
+eval "$(rbenv init -)"

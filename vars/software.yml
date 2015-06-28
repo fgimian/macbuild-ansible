@@ -36,6 +36,7 @@ brew_casks:
   - github
   - macdown
   - mplayerx
+  - slack
   - spotify
   - transmission
   - vox
@@ -50,7 +51,6 @@ brew_casks:
 
 appstore_apps:
   # Freeware
-  - Slack
   - Twitter
 
   # Commercial
