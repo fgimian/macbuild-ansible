@@ -42,6 +42,68 @@ cd macbuild
 ansible-playbook -K macbuild.yml
 ```
 
+## TODO ##
+
+This list will be long but is my ultimate wish list for this project:
+
+* General Bugs
+    - Determine if there's a way to avoid the password prompt from cask
+    - Find a better time to attempt App Store app installation to avoid the 
+      script stopping half way in
+* OSX
+    - **Slow-motion Keyboard Shortucts**: Disable slow-motion keyboard 
+      shortcuts which conflict with Sublime Text
+    - **Dock**: Setup the Dock with the appropriate icons
+    - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
+    - **Terminal**
+        - Find a way to set the font, background color and screen 
+          width and height for Terminal
+        - Set page up and page down to work correctly
+    - **Spotlight**: Determine why Spotlight web search isn't working and if 
+      it can be switched to Google (perhaps need Flashlight to do this or just 
+      go back to good ol trusty Alfred)
+* Unix Utilities
+    - **Shell**: Explore the use of ZSH with Powerline (or at least Powerline 
+      with bash)
+    - **VIM**: Finish customising and adding plugins to VIM (worth checking out
+      emacs like Mat keeps telling me?)
+    - **Git**: Further aliases and touch-ups to gitconfig (possibly 
+      integrating cdiff)
+    - **Docker**: Complete setup of docker and docker machine
+* Applications
+    - **1Password**: ?
+    - **Clear**: ?
+    - **Dash**: ?
+    - **Dropbox**: ?
+    - **Entropy**: ?
+    - **f.lux**: ?
+    - **Firefox**: ?
+    - **Google Chrome**: ?
+    - **iStat Mini**: ?
+    - **MacDown**: ?
+    - **MPlayerX**: ?
+    - **Pixelmator**: ?
+    - **Slack**: ?
+    - **Sourcetree**: ?
+    - **Spotify**: ?
+    - **Sublime Text 3**: ?
+    - **Textual 5**: ?
+    - **Transmission**: ?
+    - **Transmit**: ?
+    - **Twitter**: ?
+    - **Vagrant**: Consider installing Vagrant and purchasing a license for 
+      VMware integration or simply using it with Virtualbox
+    - **VMware Fusion**: ?
+    - **VOX**: ?
+
+## Out of Scope at Present ##
+
+At the moment, I don't intend to cover the following:
+
+* Restoring window positions and sizes for apps
+* Installing licenses for software
+* Signing into accounts for applications
+
 ## License ##
 
 Mac Build is released under the **MIT** license. Please see the
