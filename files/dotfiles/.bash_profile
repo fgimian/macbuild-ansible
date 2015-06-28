@@ -36,3 +36,7 @@ export PS1="\n${RESET}${YELLOW}\u${BLUE} ⚛ ${NORMAL}\h${NORMAL} ${CYAN}\w${NOR
 
 # Initialise rbenv
 eval "$(rbenv init -)"
+
+# Setup go
+export GOPATH=/usr/local/lib/go
+export PATH=$PATH:$GOPATH/bin

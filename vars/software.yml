@@ -19,7 +19,6 @@ brew_packages:
   # Completions
   - bash-completion
   - pip-completion
-  - vagrant-completion
 
 python_packages:
   - ipython

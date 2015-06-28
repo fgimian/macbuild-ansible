@@ -9,6 +9,7 @@
     - include: tasks/software.yml
 
     # Development
+    - include: tasks/go.yml
     - include: tasks/python.yml
     - include: tasks/ruby.yml
     - include: tasks/nodejs.yml
