@@ -13,6 +13,11 @@
 - name: brew cask package manager
   homebrew: name=brew-cask state=latest
 
+- name: create the caskroom directory
+  file: path=/opt/homebrew-cask/Caskroom state=directory owner=fots group=staff mode=0775
+  become: yes
+  become_method: sudo
+
 - name: desktop cask applications
   homebrew_cask: name={{ item }} state=present
   with_items: brew_casks
