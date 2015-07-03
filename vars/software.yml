@@ -19,6 +19,7 @@ brew_packages:
   # Completions
   - bash-completion
   - pip-completion
+  - vagrant-completion
 
 python_packages:
   - ipython
@@ -47,7 +48,11 @@ brew_casks:
   - entropy
   - sublime-text3
   - transmit
+  - vagrant
   - vmware-fusion
+
+vagrant_plugins:
+  - vagrant-vmware-fusion
 
 appstore_apps:
   # Freeware

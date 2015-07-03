@@ -22,6 +22,19 @@
   homebrew_cask: name={{ item }} state=present
   with_items: brew_casks
 
+- name: check that vagrant plugins exist
+  shell: vagrant plugin list | fgrep {{ item }}
+  changed_when: false
+  ignore_errors: yes
+  failed_when: no
+  with_items: vagrant_plugins
+  register: vagrant_plugins_check
+
+- name: vagrant plugins
+  command: vagrant plugin install {{ vagrant_plugins_check.results[item.0].item }}
+  when: vagrant_plugins_check.results[item.0].rc != 0
+  with_indexed_items: vagrant_plugins
+
 - name: check that appstore applications exist
   stat: path="/Applications/{{ item }}.app/Contents/_MASReceipt/receipt"
   with_items: appstore_apps
@@ -31,5 +44,6 @@
 # for each item during the playbook run
 - name: desktop appstore applications
   fail: msg="Please install {{ appstore_app_files.results[item.0].item }} from the App Store"
+  ignore_errors: yes
   when: not appstore_app_files.results[item.0].stat.exists
-  with_indexed_items: "{{ appstore_apps }}"
+  with_indexed_items: appstore_apps

@@ -5,7 +5,7 @@
     - include: tasks/defaults.yml
     - include: tasks/dotfiles.yml
 
-    # Apps and Unix software installation
+    # App and Unix software installation
     - include: tasks/software.yml
 
     # Development languages
@@ -14,10 +14,10 @@
     - include: tasks/ruby.yml
     - include: tasks/nodejs.yml
 
-    # Terminal software
+    # Terminal software configuration
     - include: tasks/vim.yml
 
-    # Desktop applications
+    # Desktop application configuration
     - include: tasks/sublimetext.yml
 
     # Projects
