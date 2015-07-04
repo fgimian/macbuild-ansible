@@ -11,6 +11,7 @@ brew_packages:
   - findutils
   - git
   - md5sha1sum
+  - rlwrap
   - tree
   - vim
   - wget

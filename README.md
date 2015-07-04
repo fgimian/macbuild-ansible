@@ -46,10 +46,6 @@ ansible-playbook macbuild.yml
 
 This list will be long but is my ultimate wish list for this project:
 
-* General Bugs
-    - Determine if there's a way to avoid the password prompt from cask
-    - Find a better time to attempt App Store app installation to avoid the 
-      script stopping half way in
 * OSX
     - **Slow-motion Keyboard Shortucts**: Disable slow-motion keyboard 
       shortcuts which conflict with Sublime Text
@@ -92,8 +88,6 @@ This list will be long but is my ultimate wish list for this project:
     - **Transmission**: ?
     - **Transmit**: ?
     - **Twitter**: ?
-    - **Vagrant**: Consider installing Vagrant and purchasing a license for 
-      VMware integration or simply using it with Virtualbox
     - **VMware Fusion**: ?
     - **VOX**: ?
 
