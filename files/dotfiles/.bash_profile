@@ -1,5 +1,12 @@
-# Aliases
-alias ll="ls -l"
+# Shortcut Aliases
+alias ll='ls -l'
+
+# GNU Aliases
+alias find='gfind'
+alias locate='glocate'
+alias oldfind='goldfind'
+alias updatedb='gupdatedb'
+alias xargs='gxargs'
 
 # Avoid duplicates in history
 export HISTCONTROL=ignoredups
