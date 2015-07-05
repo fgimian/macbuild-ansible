@@ -13,3 +13,4 @@
 
 - name: install all vim plugins using vundle
   command: vim +PluginInstall +qall
+  changed_when: false

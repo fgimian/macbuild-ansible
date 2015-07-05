@@ -27,9 +27,6 @@ Plugin 'scrooloose/nerdtree'
 " Map NERD Tree toggling to Ctrl+n
 map <silent> <Leader>n :NERDTreeToggle<CR>
 
-" Install the Syntastic code checker
-Plugin 'scrooloose/syntastic'
-
 " Install vim-gitgutter which displays changes in a Git repository on the
 " vim sidebar
 Plugin 'airblade/vim-gitgutter'
@@ -39,6 +36,24 @@ Plugin 'majutsushi/tagbar'
 
 " Install the delimitMate plugin which auto-closes quotes and brackets
 Plugin 'Raimondi/delimitMate'
+
+" Enable neocomplete on startup
+let g:neocomplete#enable_at_startup = 1
+
+" Automatically select the first item in neocomplete completions
+let g:neocomplete#enable_auto_select = 1
+
+" Start autocompleting with neocomplete after a single character is typed
+let g:neocomplete#auto_completion_start_length = 1
+
+" Install neocomplete for completions
+Plugin 'Shougo/neocomplete'
+
+" Allow the tab key to autocomplete neocomplete suggestions
+inoremap <expr><TAB> pumvisible() ? "\<ENTER>" : "\<TAB>"
+
+" Disable split window preview of functions as you type for neocomplete
+set completeopt-=preview
 
 " Complete Vundle initialisation
 " (all of your plugins must be added before this line)
@@ -53,23 +68,10 @@ function! ConfigurePlugins()
     " Override the line number background color to appear transparent
     hi LineNr ctermbg=234
   endif
-
-  if exists(':SyntasticStatus')
-    " Setup the status line to show Syntastic information
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-  endif
 endfunction
 
 " Use the original molokai scheme that's similar to Sublime Text
 let g:molokai_original = 1
-
-" Configure how Syntastic runs
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Configure our plugins after vim has initialised
 autocmd VimEnter * call ConfigurePlugins()
