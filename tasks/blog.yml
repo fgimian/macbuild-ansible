@@ -17,6 +17,20 @@
     accept_hostkey: yes
 
 - name: install all dependencies
-  command: ~/.rbenv/versions/1.9.3-p194/bin/bundle install
+  command: bundle install
   args:
     chdir: ~/Development/blog
+  environment:
+    PATH: ~/.rbenv/versions/1.9.3-p194/bin:{{ ansible_env.PATH }}
+
+- name: check if github pages has been setup
+  stat: path=~/Development/blog/_deploy/.git
+  register: deploy_git_path
+
+- name: setup github pages
+  command: rake setup_github_pages['git@github.com:fgimian/fgimian.github.com']
+  args:
+    chdir: ~/Development/blog
+  environment:
+    PATH: ~/.rbenv/versions/1.9.3-p194/bin:{{ ansible_env.PATH }}
+  when: not deploy_git_path.stat.exists
