@@ -14,7 +14,8 @@
     - include: tasks/ruby.yml
     - include: tasks/nodejs.yml
 
-    # Terminal software configuration
+    # Terminal software installation & configuration
+    - include: tasks/docker.yml
     - include: tasks/vim.yml
 
     # Desktop application configuration
