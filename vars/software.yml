@@ -14,6 +14,7 @@ brew_packages:
   - rlwrap
   - tree
   - vim
+  - watch
   - wget
   - xz
 

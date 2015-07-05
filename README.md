@@ -61,11 +61,8 @@ This list will be long but is my ultimate wish list for this project:
 * Unix Utilities
     - **Shell**: Explore the use of ZSH with Powerline (or at least Powerline 
       with bash)
-    - **VIM**: Finish customising and adding plugins to VIM (worth checking out
-      emacs like Mat keeps telling me?)
     - **Git**: Further aliases and touch-ups to gitconfig (possibly 
       integrating cdiff)
-    - **Docker**: Complete setup of docker and docker machine
 * Applications
     - **1Password**: ?
     - **Clear**: ?
