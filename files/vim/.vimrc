@@ -27,6 +27,9 @@ Plugin 'scrooloose/nerdtree'
 " Map NERD Tree toggling to Ctrl+n
 map <silent> <Leader>n :NERDTreeToggle<CR>
 
+" Install fugitive for better git support
+Plugin 'tpope/vim-fugitive'
+
 " Install vim-gitgutter which displays changes in a Git repository on the
 " vim sidebar
 Plugin 'airblade/vim-gitgutter'
@@ -54,6 +57,27 @@ inoremap <expr><TAB> pumvisible() ? "\<ENTER>" : "\<TAB>"
 
 " Disable split window preview of functions as you type for neocomplete
 set completeopt-=preview
+
+" Install coffeescript support
+Plugin 'kchmck/vim-coffee-script'
+
+" Install better Javascript support
+Plugin 'pangloss/vim-javascript'
+
+" Install tabularize for aligning code
+Plugin 'godlygeek/tabular'
+
+" Enable visibility of all open files with airline
+let g:airline#extensions#tabline#enabled = 1
+
+" Install the airline plugin for a really nice and informative status bar
+Plugin 'bling/vim-airline'
+
+" Install emmet for awesome HTML writing magic
+Plugin 'mattn/emmet-vim'
+
+" Install vim-indent-guides for indent guides
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " Complete Vundle initialisation
 " (all of your plugins must be added before this line)
