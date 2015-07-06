@@ -37,6 +37,12 @@ Plugin 'airblade/vim-gitgutter'
 " Install TAGBAR which displays code layout elements in a window
 Plugin 'majutsushi/tagbar'
 
+" Enables new-line and indentation of matched item pairs
+let delimitMate_expand_cr = 1
+
+" Enables trailing space to be added for matched item pairs
+let delimitMate_expand_space = 1
+
 " Install the delimitMate plugin which auto-closes quotes and brackets
 Plugin 'Raimondi/delimitMate'
 
@@ -75,6 +81,12 @@ Plugin 'bling/vim-airline'
 
 " Install emmet for awesome HTML writing magic
 Plugin 'mattn/emmet-vim'
+
+" Enable indent guides on start
+let g:indent_guides_enable_on_vim_startup = 1
+
+" Only use a single character to show indent guides
+let g:indent_guides_guide_size = 1
 
 " Install vim-indent-guides for indent guides
 Plugin 'nathanaelkane/vim-indent-guides'
