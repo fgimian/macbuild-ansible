@@ -14,7 +14,7 @@ call vundle#begin()
 " Let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
-" Install the Molokai colour scheme
+" Install the Molokai color scheme
 Plugin 'tomasr/molokai'
 
 " Install the CtrlP plugin which allows you to perform a fuzzy search and
@@ -88,6 +88,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 " Only use a single character to show indent guides
 let g:indent_guides_guide_size = 1
 
+" Enable custom indent guide colors
+let g:indent_guides_auto_colors = 0
+
 " Install vim-indent-guides for indent guides
 Plugin 'nathanaelkane/vim-indent-guides'
 
@@ -103,6 +106,10 @@ function! ConfigurePlugins()
 
     " Override the line number background color to appear transparent
     hi LineNr ctermbg=234
+
+    " Set indent guide background colors
+    hi IndentGuidesOdd ctermbg=235
+    hi IndentGuidesEven ctermbg=235
   endif
 endfunction
 
@@ -180,3 +187,6 @@ set visualbell
 
 " Allow switching edited buffers without saving
 set hidden
+
+" Allow Shift+Tab to un-indent at the cursor
+inoremap <S-TAB> <C-d>
