@@ -9,3 +9,5 @@
   command: docker-machine create --driver vmwarefusion dev
   args:
     creates: ~/.docker/machine/machines/dev/dev.vmx
+  notify:
+    - stop dev docker machine

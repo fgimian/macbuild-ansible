@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+
   tasks:
     # General
     - include: tasks/defaults.yml
@@ -23,6 +24,10 @@
 
     # Projects
     - include: tasks/blog.yml
+
+  handlers:
+    - include: handlers/handlers.yml
+
   vars_files:
     - vars/globals.yml
     - vars/defaults.yml

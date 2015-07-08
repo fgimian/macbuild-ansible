@@ -1,0 +1,2 @@
+- name: stop dev docker machine
+  command: docker-machine stop dev
