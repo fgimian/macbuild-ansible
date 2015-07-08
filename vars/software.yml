@@ -1,6 +1,7 @@
 ---
 brew_taps:
   - homebrew/completions
+  - caskroom/fonts
   - caskroom/versions
 
 brew_packages:
@@ -13,7 +14,6 @@ brew_packages:
   - md5sha1sum
   - rlwrap
   - tree
-  - vim
   - watch
   - wget
   - xz
@@ -30,6 +30,10 @@ python_packages:
   - virtualenv
 
 brew_casks:
+  # Fonts
+  - font-source-code-pro
+  - font-source-code-pro-for-powerline
+
   # Freeware
   - google-chrome
   - dropbox

@@ -1,11 +1,11 @@
 ---
-- name: docker installation
+- name: install docker
   homebrew: name={{ item }} state=latest
   with_items:
     - docker
     - docker-machine
 
-- name: creating a dev virtual machine to run docker images
+- name: create a dev virtual machine to run docker images
   command: docker-machine create --driver vmwarefusion dev
   args:
     creates: ~/.docker/machine/machines/dev/dev.vmx

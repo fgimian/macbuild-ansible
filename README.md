@@ -49,15 +49,15 @@ This list will be long but is my ultimate wish list for this project:
 * OSX
     - **Slow-motion Keyboard Shortucts**: Disable slow-motion keyboard 
       shortcuts which conflict with Sublime Text
+      (see [Remove shift key augmentation for Mission Control animation](http://apple.stackexchange.com/questions/66433/remove-shift-key-augmentation-for-mission-control-animation))
     - **Dock**: Setup the Dock with the appropriate icons
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
     - **Terminal**
         - Find a way to set the font, background color and screen 
           width and height for Terminal
         - Set page up and page down to work correctly
-    - **Spotlight**: Determine why Spotlight web search isn't working and if 
-      it can be switched to Google (perhaps need Flashlight to do this or just 
-      go back to good ol trusty Alfred)
+    - **Spotlight**: Set search order in plist com.apple.Spotlight 
+      underorderedItems
 * Unix Utilities
     - **Shell**: Explore the use of ZSH with Powerline (or at least Powerline 
       with bash)

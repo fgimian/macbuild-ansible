@@ -2,7 +2,7 @@
 set nocompatible
 
 " Remap the leader shortcut key to something easier to reach
-let mapleader=","
+let mapleader = ","
 
 " Disable filetype for Vundle installation
 filetype off
@@ -76,6 +76,12 @@ Plugin 'godlygeek/tabular'
 " Enable visibility of all open files with airline
 let g:airline#extensions#tabline#enabled = 1
 
+" Enable powerline fonts for airline
+let g:airline_powerline_fonts = 1
+
+" Use the tomorrow theme for airline
+let g:airline_theme = 'dark'
+
 " Install the airline plugin for a really nice and informative status bar
 Plugin 'bling/vim-airline'
 
@@ -99,11 +105,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 call vundle#end()
 
 function! ConfigurePlugins()
-  " Set color scheme to molokai
+  " Set colors to match the molokai scheme
   if filereadable(expand("$HOME/.vim/bundle/molokai/colors/molokai.vim"))
-    " Enable the molokai color scheme
-    colorscheme molokai
-
     " Override the line number background color to appear transparent
     hi LineNr ctermbg=234
 
@@ -115,6 +118,11 @@ endfunction
 
 " Use the original molokai scheme that's similar to Sublime Text
 let g:molokai_original = 1
+
+" Set color scheme to molokai
+if filereadable(expand("$HOME/.vim/bundle/molokai/colors/molokai.vim"))
+  colorscheme molokai
+endif
 
 " Configure our plugins after vim has initialised
 autocmd VimEnter * call ConfigurePlugins()

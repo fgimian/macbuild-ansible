@@ -1,5 +1,5 @@
 ---
-- name: rbenv installation
+- name: install rbenv
   homebrew: name={{ item }} state=latest
   with_items:
     - rbenv
