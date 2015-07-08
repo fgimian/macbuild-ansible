@@ -88,8 +88,9 @@ Plugin 'bling/vim-airline'
 " Install emmet for awesome HTML writing magic
 Plugin 'mattn/emmet-vim'
 
-" Enable indent guides on start
-let g:indent_guides_enable_on_vim_startup = 1
+" Disable indent guides on start as they often may not be needed, they may be
+" enabled manually using the :IndentGuidesEnable command
+let g:indent_guides_enable_on_vim_startup = 0
 
 " Only use a single character to show indent guides
 let g:indent_guides_guide_size = 1
