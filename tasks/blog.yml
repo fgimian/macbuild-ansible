@@ -17,7 +17,7 @@
     accept_hostkey: yes
 
 - name: install all dependencies
-  command: bundle install
+  shell: bundle install
   args:
     chdir: ~/Development/blog
   environment:
@@ -28,7 +28,7 @@
   register: deploy_git_path
 
 - name: setup github pages
-  command: rake setup_github_pages['git@github.com:fgimian/fgimian.github.com']
+  shell: rake setup_github_pages['git@github.com:fgimian/fgimian.github.com']
   args:
     chdir: ~/Development/blog
   environment:
