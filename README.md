@@ -22,7 +22,10 @@ Ansible.  I Have currently implemented the following:
   being performed using [pip](https://github.com/pypa/pip).
 * **Application Settings**: Automating configuration of Sublime Text, MacDown,
   Textual and other applications which are of interest to me.
-  
+
+The plist module is a modified version of
+[Matthias Neugebauer's plist module](https://github.com/mtneug/ansible-modules-plist).
+
 ## Building your System ##
 
 Run the following in your Terminal to use my configuration:

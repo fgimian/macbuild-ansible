@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-
+  gather_facts: no
   tasks:
     # General
     - include: tasks/defaults.yml
