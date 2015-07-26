@@ -17,11 +17,10 @@
     accept_hostkey: yes
 
 - name: install all dependencies
-  shell: bundle install
-  args:
-    chdir: ~/Development/blog
-  environment:
-    PATH: ~/.rbenv/versions/1.9.3-p194/bin:{{ ansible_env.PATH }}
+  bundler:
+    state: present
+    chdir: "{{ '~/Development/blog' | expanduser }}"
+    executable: ~/.rbenv/versions/1.9.3-p194/bin/bundle
 
 - name: check if github pages has been setup
   stat: path=~/Development/blog/_deploy/.git
