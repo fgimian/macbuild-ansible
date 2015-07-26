@@ -14,7 +14,8 @@ options:
     description:
       - Domain or absolute path to the plist file; file will be created if
         required. Both regular applications and App Store application plist
-        files are searched if a domain is specified.
+        files are searched if a domain is specified.  You may specify
+        NSGlobalDomain or "Apple Global Domain" to update global preferences.
     required: true
     default: null
   key:
@@ -139,18 +140,23 @@ def main():
         module.fail_json(msg="the python biplist module is required")
 
     if not module.params['dest'].startswith('/'):
-        plist_file = os.path.expanduser(
-            "~/Library/Preferences/%s.plist" % module.params['dest']
-        )
-        if not os.path.isfile(plist_file):
-            appstore_plist_file = glob(
-                os.path.expanduser(
-                    '~/Library/Containers/*/Data/Library/Preferences/%s.plist' %
-                    module.params['dest']
-                )
+        if module.params['dest'] in ['NSGlobalDomain', 'Apple Global Domain']:
+            plist_file = os.path.expanduser(
+                '~/Library/Preferences/.GlobalPreferences.plist'
             )
-            if appstore_plist_file:
-                plist_file = appstore_plist_file[0]
+        else:
+            plist_file = os.path.expanduser(
+                '~/Library/Preferences/%s.plist' % module.params['dest']
+            )
+            if not os.path.isfile(plist_file):
+                appstore_plist_file = glob(
+                    os.path.expanduser(
+                        '~/Library/Containers/*/Data/Library/Preferences/%s.plist' %
+                        module.params['dest']
+                    )
+                )
+                if appstore_plist_file:
+                    plist_file = appstore_plist_file[0]
 
         module.params['dest'] = plist_file
 
