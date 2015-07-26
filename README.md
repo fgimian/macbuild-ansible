@@ -53,9 +53,6 @@ ansible-playbook macbuild.yml
 This list will be long but is my ultimate wish list for this project:
 
 * OSX
-    - **Slow-motion Keyboard Shortucts**: Disable slow-motion keyboard 
-      shortcuts which conflict with Sublime Text
-      (see [Remove shift key augmentation for Mission Control animation](http://apple.stackexchange.com/questions/66433/remove-shift-key-augmentation-for-mission-control-animation))
     - **Dock**: Setup the Dock with the appropriate icons
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
     - **Terminal**
@@ -84,13 +81,13 @@ This list will be long but is my ultimate wish list for this project:
     - **MPlayerX**: ?
     - **Pixelmator**: ?
     - **Slack**: ?
-    - **Sourcetree**: ?
-    - **Spotify**: ?
+    - **SourceTree**: ?
     - **Sublime Text 3**: ?
     - **Textual 5**: ?
     - **Transmission**: ?
     - **Transmit**: ?
     - **Twitter**: ?
+    - **Vagrant**: ?
     - **VMware Fusion**: ?
     - **VOX**: ?
 

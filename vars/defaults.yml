@@ -27,6 +27,8 @@ osapp_defaults:
       # Expand the save panel by default
       - { key: NSNavPanelExpandedStateForSaveMode, value: true }
       - { key: NSNavPanelExpandedStateForSaveMode2, value: true }
+      # Disable the character accent menu when holding down a key
+      - { key: ApplePressAndHoldEnabled, value: false }
 
   # System Preferences / Accessibility
   - domain: com.apple.universalaccess
@@ -77,6 +79,17 @@ osapp_defaults:
     values:
       # Open Date & Time Preferences... / Clock / Show date
       - { key: DateFormat, value: "EEE d MMM  h:mm a" }
+
+  # Symbolic Hot Keys
+  - domain: com.apple.symbolichotkeys
+    values:
+      # Disable slow motion effects
+      # (http://apple.stackexchange.com/questions/66433)
+      - key: AppleSymbolicHotKeys
+        value:
+          34: { enabled: 0 }
+          35: { enabled: 0 }
+          37: { enabled: 0 }
 
   # Safari
   - domain: com.apple.Safari
