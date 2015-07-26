@@ -1,113 +1,101 @@
 ---
-# Set various simple defaults which will be updated in the relevant plist files
+# Set various defaults which will updat the relevant plist files
 osapp_defaults:
-  # System Preferences
+  # System Preferences & Globals
   - domain: Apple Global Domain
     values:
       # General / Appearance / Use dark menu bar and Dock
-      - AppleInterfaceStyle -string Dark
-      # Keyboard / Key Repeat
-      - KeyRepeat -int 2
-      # Keyboard / Delay Until Repeat
-      - InitialKeyRepeat -int 25
-      # Keyboard / Use all F1, F2, etc. keys as standard function keys
-      - com.apple.keyboard.fnState -bool true
-      # Mouse / Tracking
-      - com.apple.mouse.scaling -float 1
-
-  - domain: NSGlobalDomain
-    values:
+      - { key: AppleInterfaceStyle, value: Dark }
+      # Keyboard / Keyboard / Key Repeat
+      - { key: KeyRepeat, value: 2 }
+      # Keyboard / Keyboard / Delay Until Repeat
+      - { key: InitialKeyRepeat, value: 25 }
+      # Keyboard / Keyboard / Use all F1, F2, etc. keys as standard function keys
+      - { key: com.apple.keyboard.fnState, value: true }
       # Keyboard / Text / Correct spelling automatically
-      - NSAutomaticSpellingCorrectionEnabled -bool false
+      - { key: NSAutomaticSpellingCorrectionEnabled, value: false }
       # Keyboard / Text / Use smart quotes and dashes
-      - NSAutomaticQuoteSubstitutionEnabled -bool false
-      - NSAutomaticDashSubstitutionEnabled -bool false
+      - { key: NSAutomaticQuoteSubstitutionEnabled, value: false }
+      - { key: NSAutomaticDashSubstitutionEnabled, value: false }
+      # Keyboard / Shortcuts / Full Keyboard Access / All controls
+      - { key: AppleKeyboardUIMode, value: 3 }
+      # Mouse / Point & Click / Tracking
+      - { key: com.apple.mouse.scaling, value: 1.0 }
+
       # Enable subpixel font rendering on non-Apple LCDs
-      - AppleFontSmoothing -int 2
+      - { key: AppleFontSmoothing, value: 2 }
       # Expand the save panel by default
-      - NSNavPanelExpandedStateForSaveMode -bool true
-      - NSNavPanelExpandedStateForSaveMode2 -bool true
+      - { key: NSNavPanelExpandedStateForSaveMode, value: true }
+      - { key: NSNavPanelExpandedStateForSaveMode2, value: true }
 
   # System Preferences / Accessibility
   - domain: com.apple.universalaccess
     values:
       # Zoom / Use scroll gesture with modifier keys to zoom
-      - closeViewScrollWheelToggle -bool true
+      - { key: closeViewScrollWheelToggle, value: true }
       # Display / Cursor size
-      - mouseDriverCursorSize -float 1.25
-
-  # System Preferences / Keyboard
-  - domain: NSGlobalDomain
-    values:
-      # Shortcuts / Full Keyboard Access / All controls
-      - AppleKeyboardUIMode -int 3
+      - { key: mouseDriverCursorSize, value: 1.25 }
 
   # System Preferences / Mouse
   - domain: com.apple.driver.AppleBluetoothMultitouch.mouse
     values:
       # Point & Click / Secondary click
-      - MouseButtonMode -string TwoButton
+      - { key: MouseButtonMode, value: TwoButton }
 
   # Lanch Services
   - domain: com.apple.LaunchServices
     values:
       # Disable the 'Are you sure you want to open this application?' dialog
-      - LSQuarantine -bool false
+      - { key: LSQuarantine, value: false }
 
   # Login Window
   - domain: com.apple.loginwindow
     values:
       # Disable 'Reopen windows when logging back in' by default
-      - TALLogoutSavesState -bool false
+      - { key: TALLogoutSavesState, value: false }
 
   # Dock
   - domain: com.apple.dock
     values:
       # Set the icon size of dock items
-      - tilesize -int 60
+      - { key: tilesize, value: 60 }
       # Enable magnificationn of icons
-      - magnification -bool true
+      - { key: magnification, value: true }
       # Make hidden applications translucent in the dock
-      - showhidden -bool true
+      - { key: showhidden, value: true }
 
   # Finder
   - domain: com.apple.finder
     values:
       # View / Show Status Bar
-      - ShowStatusBar -bool true
+      - { key: ShowStatusBar, value: true }
       # Set the default Finder display mode to list
-      - FXPreferredViewStyle Nlsv
+      - { key: FXPreferredViewStyle, value: Nlsv }
 
   # Menu (Clock)
   - domain: com.apple.menuextra.clock
     values:
       # Open Date & Time Preferences... / Clock / Show date
-      - 'DateFormat -string "EEE d MMM  h:mm a"'
+      - { key: DateFormat, value: "EEE d MMM  h:mm a" }
 
   # Safari
   - domain: com.apple.Safari
     values:
       # View / Show Status Bar
-      - ShowStatusBar -bool true
-
-  # Spotify
-  - domain: com.spotify.client
-    values:
-      # Create another fullscreen shortcut which matches default OS X behaviour
-      - NSUserKeyEquivalents -dict-add "Toggle Fullscreen" "^@F"
+      - { key: ShowStatusBar, value: true }
 
   # Terminal
   - domain: com.apple.Terminal
     values:
       # General / On startup, open new window with profile Pro
-      - '"Startup Window Settings" -string Pro'
+      - { key: "Startup Window Settings", value: Pro }
       # Profiles / Set Pro as Default
-      - '"Default Window Settings" -string Pro'
+      - { key: "Default Window Settings", value: Pro }
 
   # Transmission
   - domain: org.m0k.transmission
     values:
       # Transfers / Trash original torrent files
-      - DeleteOriginalTorrent -bool true
+      - { key: DeleteOriginalTorrent, value: true }
       # Hide the legal disclaimer
-      - WarningLegal -bool false
+      - { key: WarningLegal, value: false }

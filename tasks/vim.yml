@@ -12,7 +12,7 @@
   git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
 
 - name: install vimrc to the home directory
-  copy: src=vim/.vimrc dest=~ mode=0644
+  copy: src=files/vim/.vimrc dest=~ mode=0644
 
 - name: install all vim plugins using vundle
   command: vim +PluginInstall +qall

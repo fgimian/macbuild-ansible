@@ -36,4 +36,4 @@
   when: not monokai_soda_colour_theme.stat.exists
 
 - name: install sublime text settings
-  copy: src=sublimetext/Packages dest='~/Library/Application Support/Sublime Text 3'
+  copy: src=files/sublimetext/Packages dest='~/Library/Application Support/Sublime Text 3'

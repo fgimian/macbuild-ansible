@@ -35,7 +35,10 @@ Run the following in your Terminal to use my configuration:
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install Ansible
-brew install ansible
+# TODO: Add install instructions for Ansible 2.0 (from GitHub) as this is 
+#       needed for the plist module to work correctly, also add steps for 
+#       biplist
+# brew install ansible
 
 # Clone my macbuild repository
 git clone https://github.com/fgimian/macbuild.git

@@ -1,7 +1,9 @@
 ---
 - name: set operating system and application defaults
-  command: "defaults write '{{ item.0.domain }}' {{ item.1 }}"
-  changed_when: false
+  plist:
+    dest: "{{ item.0.domain }}"
+    key: "{{ item.1.key }}"
+    value: "{{ item.1.value }}"
   with_subelements:
     - osapp_defaults
     - values
