@@ -58,15 +58,15 @@ This list will be long but is my ultimate wish list for this project:
     - One of the cask apps requires root and password prompt comes up
     - Docker machine needs vmware fusion to be registered to start the VM
     - Docker machine needs VMware Fusion in /Applications to work
-* OSX
+* OS X
     - **Dock**: Setup the Dock with the appropriate icons
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
     - **Notification Centre**: Set the order of items and allow permission
-    - **Terminal**
-        - Find a way to set the font, background color and screen 
-          width and height for Terminal
     - **Spotlight**: Set search order in plist com.apple.Spotlight 
       underorderedItems
+* Apple Software
+    - **Terminal**: Find a way to set the font, background color and screen 
+      width and height for Terminal
 * Unix Utilities
     - **Shell**: Explore the use of ZSH with Powerline (or at least Powerline 
       with bash)
@@ -75,22 +75,12 @@ This list will be long but is my ultimate wish list for this project:
 * Applications
     - **1Password**: ?
     - **Clear**: ?
-    - **Dash**: ?
+    - **Dash**: Determine a way to save your docsets
     - **Dropbox**: ?
-    - **Entropy**: ?
-    - **f.lux**: ?
     - **Firefox**: ?
-    - **GitHub Pulse**: ?
-    - **Google Chrome**: ?
-    - **iStat Mini**: ?
     - **MacDown**: ?
-    - **MPlayerX**: ?
     - **Pixelmator**: ?
-    - **Slack**: ?
-    - **SourceTree**: ?
-    - **Sublime Text 3**: ?
     - **Textual 5**: ?
-    - **Transmission**: ?
     - **Transmit**: ?
     - **Twitter**: ?
     - **Vagrant**: ?

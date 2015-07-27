@@ -5,9 +5,9 @@
     - docker
     - docker-machine
 
-- name: create a dev virtual machine to run docker images
-  command: docker-machine create --driver vmwarefusion dev
-  args:
-    creates: ~/.docker/machine/machines/dev/dev.vmx
-  notify:
-    - stop dev docker machine
+# - name: create a dev virtual machine to run docker images
+#   command: docker-machine create --driver vmwarefusion dev
+#   args:
+#     creates: ~/.docker/machine/machines/dev/dev.vmx
+#   notify:
+#     - stop dev docker machine
