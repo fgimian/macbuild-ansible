@@ -55,10 +55,10 @@ This list will be long but is my ultimate wish list for this project:
 * OSX
     - **Dock**: Setup the Dock with the appropriate icons
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
+    * **Notification Centre**: Set the order of items and allow permission
     - **Terminal**
         - Find a way to set the font, background color and screen 
           width and height for Terminal
-        - Set page up and page down to work correctly
     - **Spotlight**: Set search order in plist com.apple.Spotlight 
       underorderedItems
 * Unix Utilities
