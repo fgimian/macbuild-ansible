@@ -98,6 +98,9 @@ def do_plist(module, filename, key, value, backup=False):
 
         try:
             update(plist, working_value)
+            plist_dir = os.path.dirname(filename)
+            if not os.path.exists(plist_dir):
+                os.makedirs(plist_dir)
             f = open(filename, 'w')
             biplist.writePlist(plist, f)
         except Exception as e:
@@ -130,6 +133,7 @@ def main():
             dest = dict(required=True),
             key = dict(required=False),
             value = dict(required=True),
+            container = dict(required=False),
             backup = dict(default='no', type='bool')
         ),
         add_file_common_args = True,
@@ -141,24 +145,18 @@ def main():
 
     if not module.params['dest'].startswith('/'):
         if module.params['dest'] in ['NSGlobalDomain', 'Apple Global Domain']:
-            plist_file = os.path.expanduser(
+            module.params['dest'] = os.path.expanduser(
                 '~/Library/Preferences/.GlobalPreferences.plist'
             )
+        elif module.params['container']:
+            module.params['dest'] = os.path.expanduser(
+                '~/Library/Containers/%s/Data/Library/Preferences/%s.plist' %
+                (module.params['container'], module.params['dest'])
+            )
         else:
-            plist_file = os.path.expanduser(
+            module.params['dest'] = os.path.expanduser(
                 '~/Library/Preferences/%s.plist' % module.params['dest']
             )
-            if not os.path.isfile(plist_file):
-                appstore_plist_file = glob(
-                    os.path.expanduser(
-                        '~/Library/Containers/*/Data/Library/Preferences/%s.plist' %
-                        module.params['dest']
-                    )
-                )
-                if appstore_plist_file:
-                    plist_file = appstore_plist_file[0]
-
-        module.params['dest'] = plist_file
 
     dest = module.params['dest']
     key = module.params['key']

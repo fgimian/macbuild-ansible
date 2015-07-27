@@ -54,7 +54,6 @@ ansible-playbook macbuild.yml
 This list will be long but is my ultimate wish list for this project:
 
 * Bugs & Issues
-    - Ensure that Energy Saver is set correctly before running Ansible
     - One of the cask apps requires root and password prompt comes up
     - Docker machine needs vmware fusion to be registered to start the VM
     - Docker machine needs VMware Fusion in /Applications to work
@@ -62,8 +61,6 @@ This list will be long but is my ultimate wish list for this project:
     - **Dock**: Setup the Dock with the appropriate icons
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
     - **Notification Centre**: Set the order of items and allow permission
-    - **Spotlight**: Set search order in plist com.apple.Spotlight 
-      underorderedItems
 * Apple Software
     - **Terminal**: Find a way to set the font, background color and screen 
       width and height for Terminal
@@ -77,15 +74,12 @@ This list will be long but is my ultimate wish list for this project:
     - **Clear**: ?
     - **Dash**: Determine a way to save your docsets
     - **Dropbox**: ?
-    - **Firefox**: ?
+    - **Firefox**: Stored in a series of JavaScript files, may be a challenge
     - **MacDown**: ?
-    - **Pixelmator**: ?
     - **Textual 5**: ?
     - **Transmit**: ?
-    - **Twitter**: ?
     - **Vagrant**: ?
     - **VMware Fusion**: ?
-    - **VOX**: ?
 
 ## Out of Scope at Present ##
 

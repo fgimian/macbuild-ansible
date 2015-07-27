@@ -1,7 +1,29 @@
 ---
-- name: set operating system and application defaults
-  plist: dest="{{ item.domain }}" value="{{ item.defaults }}"
-  with_items: "{{ osapp_defaults }}"
+- name: check the current computer sleep time
+  command: systemsetup -getcomputersleep
+  changed_when: false
+  become: yes
+  become_method: sudo
+  register: current_computer_sleep
+
+- name: set the computer sleep time
+  command: systemsetup -setcomputersleep Never
+  become: yes
+  become_method: sudo
+  when: "'Never' not in '{{ current_computer_sleep.stdout }}'"
+
+- name: check the current display sleep time
+  command: systemsetup -getdisplaysleep
+  changed_when: false
+  become: yes
+  become_method: sudo
+  register: current_display_sleep
+
+- name: set the display sleep time
+  command: systemsetup -setdisplaysleep Never
+  become: yes
+  become_method: sudo
+  when: "'Never' not in '{{ current_display_sleep.stdout }}'"
 
 - name: check the current timezone
   command: systemsetup -gettimezone
@@ -27,3 +49,10 @@
 
 - name: create the development folder
   file: path=~/Development state=directory
+
+- name: set operating system and application defaults
+  plist:
+    dest: "{{ item.domain }}"
+    value: "{{ item.defaults }}"
+    container: "{{ item.container | default(None) }}"
+  with_items: "{{ osapp_defaults }}"

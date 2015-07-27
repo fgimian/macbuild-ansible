@@ -151,6 +151,12 @@ osapp_defaults:
       # General / Keep window on top / Never
       OnTopMode: 0
 
+  # Pixelmator
+  - domain: com.pixelmatorteam.pixelmator
+    container: com.pixelmatorteam.pixelmator
+    defaults:
+      DOCUMENT_WINDOW_INFOVIEW_IS_VISIBLE_KEY: true
+
   # SourceTree
   - domain: com.torusknot.SourceTreeNotMAS
     defaults:
@@ -195,3 +201,17 @@ osapp_defaults:
       DeleteOriginalTorrent: true
       # Hide the legal disclaimer
       WarningLegal: false
+
+  # Twitter
+  - domain: com.twitter.twitter-mac
+    container: com.twitter.twitter-mac
+    defaults:
+      FontSize1: 16
+
+  # VOX
+  - domain: com.coppertino.Vox
+    container: com.coppertino.Vox
+    defaults:
+      lastVersion: 254
+      welcome: false
+      VXDoNotAskAboutAnalytics: true
