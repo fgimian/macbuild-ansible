@@ -1,8 +1,6 @@
 ---
 - name: set operating system and application defaults
-  plist:
-    dest: "{{ item.domain }}"
-    value: "{{ item.defaults }}"
+  plist: dest="{{ item.domain }}" value="{{ item.defaults }}"
   with_items: "{{ osapp_defaults }}"
 
 - name: check the current timezone
