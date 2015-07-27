@@ -31,17 +31,18 @@ The plist module is a modified version of
 Run the following in your Terminal to use my configuration:
 
 ```bash
+# Setup your SSH keys and add them to GitHub
+ssh-keygen
+
 # Install Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install Ansible
-# TODO: Add install instructions for Ansible 2.0 (from GitHub) as this is 
-#       needed for the plist module to work correctly, also add steps for 
-#       biplist
-# brew install ansible
+brew install ansible --HEAD
+/usr/bin/easy_install biplist
 
 # Clone my macbuild repository
-git clone https://github.com/fgimian/macbuild.git
+git clone git@github.com:fgimian/macbuild.git
 
 # Perform the build
 cd macbuild
@@ -52,10 +53,15 @@ ansible-playbook macbuild.yml
 
 This list will be long but is my ultimate wish list for this project:
 
+* Bugs & Issues
+    - Ensure that Energy Saver is set correctly before running Ansible
+    - One of the cask apps requires root and password prompt comes up
+    - Docker machine needs vmware fusion to be registered to start the VM
+    - Docker machine needs VMware Fusion in /Applications to work
 * OSX
     - **Dock**: Setup the Dock with the appropriate icons
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
-    * **Notification Centre**: Set the order of items and allow permission
+    - **Notification Centre**: Set the order of items and allow permission
     - **Terminal**
         - Find a way to set the font, background color and screen 
           width and height for Terminal
