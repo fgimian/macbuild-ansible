@@ -3,112 +3,111 @@
 osapp_defaults:
   # System Preferences & Globals
   - domain: Apple Global Domain
-    values:
+    defaults:
       # General / Appearance / Use dark menu bar and Dock
-      - { key: AppleInterfaceStyle, value: Dark }
+      AppleInterfaceStyle: Dark
       # Keyboard / Keyboard / Key Repeat
-      - { key: KeyRepeat, value: 2 }
+      KeyRepeat: 2
       # Keyboard / Keyboard / Delay Until Repeat
-      - { key: InitialKeyRepeat, value: 25 }
+      InitialKeyRepeat: 25
       # Keyboard / Keyboard / Use all F1, F2, etc. keys as standard function keys
-      - { key: com.apple.keyboard.fnState, value: true }
+      com.apple.keyboard.fnState: true
       # Keyboard / Text / Correct spelling automatically
-      - { key: NSAutomaticSpellingCorrectionEnabled, value: false }
+      NSAutomaticSpellingCorrectionEnabled: false
       # Keyboard / Text / Use smart quotes and dashes
-      - { key: NSAutomaticQuoteSubstitutionEnabled, value: false }
-      - { key: NSAutomaticDashSubstitutionEnabled, value: false }
+      NSAutomaticQuoteSubstitutionEnabled: false
+      NSAutomaticDashSubstitutionEnabled: false
       # Keyboard / Shortcuts / Full Keyboard Access / All controls
-      - { key: AppleKeyboardUIMode, value: 3 }
+      AppleKeyboardUIMode: 3
       # Mouse / Point & Click / Tracking
-      - { key: com.apple.mouse.scaling, value: 1.0 }
+      com.apple.mouse.scaling: 1.0
 
       # Enable subpixel font rendering on non-Apple LCDs
-      - { key: AppleFontSmoothing, value: 2 }
+      AppleFontSmoothing: 2
       # Expand the save panel by default
-      - { key: NSNavPanelExpandedStateForSaveMode, value: true }
-      - { key: NSNavPanelExpandedStateForSaveMode2, value: true }
+      NSNavPanelExpandedStateForSaveMode: true
+      NSNavPanelExpandedStateForSaveMode2: true
       # Disable the character accent menu when holding down a key
-      - { key: ApplePressAndHoldEnabled, value: false }
+      ApplePressAndHoldEnabled: false
 
   # System Preferences / Accessibility
   - domain: com.apple.universalaccess
-    values:
+    defaults:
       # Zoom / Use scroll gesture with modifier keys to zoom
-      - { key: closeViewScrollWheelToggle, value: true }
+      closeViewScrollWheelToggle: true
       # Display / Cursor size
-      - { key: mouseDriverCursorSize, value: 1.25 }
+      mouseDriverCursorSize: 1.25
 
   # System Preferences / Mouse
   - domain: com.apple.driver.AppleBluetoothMultitouch.mouse
-    values:
+    defaults:
       # Point & Click / Secondary click
-      - { key: MouseButtonMode, value: TwoButton }
+      MouseButtonMode: TwoButton
 
   # Launch Services
   - domain: com.apple.LaunchServices
-    values:
+    defaults:
       # Disable the 'Are you sure you want to open this application?' dialog
-      - { key: LSQuarantine, value: false }
+      LSQuarantine: false
 
   # Login Window
   - domain: com.apple.loginwindow
-    values:
+    defaults:
       # Disable 'Reopen windows when logging back in' by default
-      - { key: TALLogoutSavesState, value: false }
+      TALLogoutSavesState: false
 
   # Dock
   - domain: com.apple.dock
-    values:
+    defaults:
       # Set the icon size of dock items
-      - { key: tilesize, value: 60 }
+      tilesize: 60
       # Enable magnificationn of icons
-      - { key: magnification, value: true }
+      magnification: true
       # Make hidden applications translucent in the dock
-      - { key: showhidden, value: true }
+      showhidden: true
 
   # Finder
   - domain: com.apple.finder
-    values:
+    defaults:
       # View / Show Status Bar
-      - { key: ShowStatusBar, value: true }
+      ShowStatusBar: true
       # Set the default Finder display mode to list
-      - { key: FXPreferredViewStyle, value: Nlsv }
+      FXPreferredViewStyle: Nlsv
 
   # Menu (Clock)
   - domain: com.apple.menuextra.clock
-    values:
+    defaults:
       # Open Date & Time Preferences... / Clock / Show date
-      - { key: DateFormat, value: "EEE d MMM  h:mm a" }
+      DateFormat: "EEE d MMM  h:mm a"
 
   # Symbolic Hot Keys
   - domain: com.apple.symbolichotkeys
-    values:
+    defaults:
       # Disable slow motion effects
       # (http://apple.stackexchange.com/questions/66433)
-      - key: AppleSymbolicHotKeys
-        value:
-          34: { enabled: 0 }
-          35: { enabled: 0 }
-          37: { enabled: 0 }
+      AppleSymbolicHotKeys:
+        34: { enabled: 0 }
+        35: { enabled: 0 }
+        37: { enabled: 0 }
 
   # Safari
   - domain: com.apple.Safari
-    values:
+    defaults:
       # View / Show Status Bar
-      - { key: ShowStatusBar, value: true }
+      ShowStatusBar: true
 
   # Terminal
   - domain: com.apple.Terminal
-    values:
+    defaults:
       # General / On startup, open new window with profile Pro
-      - { key: "Startup Window Settings", value: Pro }
+      "Startup Window Settings": Pro
       # Profiles / Set Pro as Default
-      - { key: "Default Window Settings", value: Pro }
+      "Default Window Settings": Pro
 
   # Transmission
   - domain: org.m0k.transmission
-    values:
+    defaults:
       # Transfers / Trash original torrent files
-      - { key: DeleteOriginalTorrent, value: true }
+      DeleteOriginalTorrent: true
       # Hide the legal disclaimer
-      - { key: WarningLegal, value: false }
+      WarningLegal: false

@@ -79,6 +79,7 @@ else:
     biplist_found = True
 
 def do_plist(module, filename, key, value, backup=False):
+    working_value = value if key is None else {key: value}
     changed = False
 
     try:
@@ -89,7 +90,6 @@ def do_plist(module, filename, key, value, backup=False):
     except biplist.InvalidPlistException:
         module.fail_json(msg="an invalid plist already exists")
 
-    working_value = {key: value}
     changed = not equal(plist, working_value)
 
     if changed and not module.check_mode:
@@ -128,7 +128,7 @@ def main():
     module = AnsibleModule(
         argument_spec = dict(
             dest = dict(required=True),
-            key = dict(required=True),
+            key = dict(required=False),
             value = dict(required=True),
             backup = dict(default='no', type='bool')
         ),
