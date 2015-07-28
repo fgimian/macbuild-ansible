@@ -196,26 +196,26 @@ osapp_defaults:
       createBookmarksOnOpenRepo: false
       "NSToolbar Configuration gittoolbar1.9":
         "TB Item Identifiers":
-          - F0DBBD48-F690-4261-8CBC-784E4892D9B1
-          - 473D5365-CFAE-413B-930F-CB226F7B38F0
-          - 938E1BC0-8649-46BE-8E4F-2D9D8A4B8A89
-          - 0770330E-658C-48A2-BDEB-AE1D14DDA4C9
+          - F0DBBD48-F690-4261-8CBC-784E4892D9B1  # View
+          - 473D5365-CFAE-413B-930F-CB226F7B38F0  # Fetch
+          - 938E1BC0-8649-46BE-8E4F-2D9D8A4B8A89  # Pull
+          - 0770330E-658C-48A2-BDEB-AE1D14DDA4C9  # Push
           - NSToolbarSpaceItem
-          - CC750E1D-5E5B-4C6B-A3C4-0BC073FAE9F5
-          - 0EFE501A-EFFF-4227-8BFA-B2C1397B7C72
-          - 9008B21D-1446-4178-8EF3-2B7FD1419AE4
-          - B8C92F0B-FA3F-4A45-ABB3-BAC50E50FC35
+          - CC750E1D-5E5B-4C6B-A3C4-0BC073FAE9F5  # Branch
+          - 0EFE501A-EFFF-4227-8BFA-B2C1397B7C72  # Checkout
+          - 9008B21D-1446-4178-8EF3-2B7FD1419AE4  # Stash
+          - B8C92F0B-FA3F-4A45-ABB3-BAC50E50FC35  # Reset
           - NSToolbarSpaceItem
-          - 2B31741D-562A-4785-A976-7F63CE89F440
-          - A1A55585-2A34-43EA-9D4F-E81CDD255D61
+          - 2B31741D-562A-4785-A976-7F63CE89F440  # Merge
+          - A1A55585-2A34-43EA-9D4F-E81CDD255D61  # Tag
           - NSToolbarSpaceItem
-          - B72A6DC6-B76A-4F51-95AB-935CD9EF1260
+          - B72A6DC6-B76A-4F51-95AB-935CD9EF1260  # Git Flow
           - NSToolbarSpaceItem
-          - 9650C5E5-4865-4ED1-B16D-16639E1D6FE3
-          - 9B970DA4-6B85-43BB-8229-7895CF5A5BEC
-          - 45F6774D-923D-4027-8390-CBA7DB8CD603
+          - 9650C5E5-4865-4ED1-B16D-16639E1D6FE3  # Refresh
+          - 9B970DA4-6B85-43BB-8229-7895CF5A5BEC  # Show in Finder
+          - 45F6774D-923D-4027-8390-CBA7DB8CD603  # Terminal
           - NSToolbarFlexibleSpaceItem
-          - F89D83B7-7F0D-4D26-A1CF-2E851C3E572D
+          - F89D83B7-7F0D-4D26-A1CF-2E851C3E572D  # Settings
 
   # Textual
   - domain: "{{ '~/Library/Group Containers/8482Q6EPL6.com.codeux.irc.textual/Library/Preferences/8482Q6EPL6.com.codeux.irc.textual.plist' | expanduser }}"
