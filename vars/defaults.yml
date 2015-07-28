@@ -110,6 +110,29 @@ osapp_defaults:
 
   # --- 3rd Party Software ---
 
+  # 1Password
+  - domain: com.agilebits.onepassword4
+    defaults:
+      WelcomeWindowShown: true
+      LockOnMainAppExit: false
+      LockOnIdle: true
+      ShowRichIcons: true
+      KeepHelperRunning: true
+      UserMetricsSkippedNewsletterSignupKey: true
+      CompletedEssentialSettings: true
+  - domain: 2BUA8C4S2C.com.agilebits.onepassword4-helper
+    defaults:
+      autosave: false
+
+  # Clear
+  - domain: com.realmacsoftware.clear.mac
+    container: com.realmacsoftware.clear.mac
+    defaults:
+      app.shown-welcome: true
+  - domain: "{{ '~/Library/Containers/com.realmacsoftware.clear.mac/Data/Library/Application Support/com.realmacsoftware.clear.mac/iCloudTasks/Prefs.plist' | expanduser }}"
+    defaults:
+      com.helftone.icloud.enabled: true
+
   # Dash
   - domain: com.kapeli.dashdoc
     defaults:

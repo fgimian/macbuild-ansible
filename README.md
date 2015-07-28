@@ -70,16 +70,13 @@ This list will be long but is my ultimate wish list for this project:
     - **Git**: Further aliases and touch-ups to gitconfig (possibly 
       integrating cdiff)
 * Applications
-    - **1Password**: ?
-    - **Clear**: ?
     - **Dash**: Determine a way to save your docsets
-    - **Dropbox**: ?
     - **Firefox**: Stored in a series of JavaScript files, may be a challenge
-    - **MacDown**: ?
+    - **MacDown**: A little challenging due to the fact I would like to create 
+      a custom theme
     - **Textual 5**: ?
-    - **Transmit**: ?
-    - **Vagrant**: ?
-    - **VMware Fusion**: ?
+    - **VMware Fusion**: Difficult due to the fact I want a custom keyboard
+      profile for Windows machines
 
 ## Out of Scope at Present ##
 

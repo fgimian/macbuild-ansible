@@ -25,9 +25,15 @@ options:
     default: null
   value:
     description:
-     - Value which sould be set or merged (may be a complex data type like a
-       dict or array).
+      - Value which sould be set or merged (may be a complex data type like a
+        dict or array).
     required: true
+    default: null
+  container:
+    description:
+      - The container name of a sandboxed application (required for App
+        Store apps).
+    required: false
     default: null
   backup:
     description:
@@ -39,7 +45,7 @@ options:
 notes:
    - All data types are supported by this module (boolean, int, float, string,
      date, array and dict).
-   - If any a chosen key exists with its own structure, then the plist module
+   - If a chosen key exists with its own structure, then the plist module
      will merge the value specified with it.
 requirements: [ biplist ]
 '''

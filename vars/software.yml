@@ -44,7 +44,9 @@ brew_casks:
   - mplayerx
   - slack
   - sourcetree
+  - sshfs
   - transmission
+  - vagrant
   - vox
 
   # Commercial
@@ -52,8 +54,6 @@ brew_casks:
   - dash
   - entropy
   - sublime-text3
-  - transmit
-  - vagrant
   - vmware-fusion
 
 vagrant_plugins:
