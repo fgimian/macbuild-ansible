@@ -74,7 +74,6 @@ This list will be long but is my ultimate wish list for this project:
     - **Firefox**: Stored in a series of JavaScript files, may be a challenge
     - **MacDown**: A little challenging due to the fact I would like to create 
       a custom theme
-    - **Textual 5**: ?
     - **VMware Fusion**: Difficult due to the fact I want a custom keyboard
       profile for Windows machines
 

@@ -217,6 +217,27 @@ osapp_defaults:
           - NSToolbarFlexibleSpaceItem
           - F89D83B7-7F0D-4D26-A1CF-2E851C3E572D
 
+  # Textual
+  - domain: "{{ '~/Library/Group Containers/8482Q6EPL6.com.codeux.irc.textual/Library/Preferences/8482Q6EPL6.com.codeux.irc.textual.plist' | expanduser }}"
+    defaults:
+      'Theme -> Invert Sidebar Colors Preference Enabled': 0
+      'Theme -> Name': 'resource:Sapientia'
+      'Text Input Prompt Suppression -> theme_override_info': true
+      'World Controller':
+        clients:
+          - autoConnect: True
+            connectionName: freenode
+            nickname: fgimian
+            realName: Fotis Gimian
+            serverAddress: chat.freenode.net
+            username: fgimian
+            channelList:
+              - channelName: '#ansible'
+              - channelName: '#chef'
+              - channelName: '#puppet'
+              - channelName: '#salt'
+              - channelName: '#python'
+
   # Transmission
   - domain: org.m0k.transmission
     defaults:
