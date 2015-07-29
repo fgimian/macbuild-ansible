@@ -5,8 +5,8 @@
 - name: create the vim colors directory
   file: path={{ item }} state=directory mode=0755
   with_items:
-    - ~/.vim
-    - ~/.vim/bundle
+  - ~/.vim
+  - ~/.vim/bundle
 
 - name: install vundle package manager
   git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim

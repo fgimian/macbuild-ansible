@@ -2,10 +2,10 @@
 - name: ensure the sublime text settings directories exist
   file: path="{{ item }}" state=directory
   with_items:
-    - ~/Library/Application Support/Sublime Text 3
-    - ~/Library/Application Support/Sublime Text 3/Installed Packages
-    - ~/Library/Application Support/Sublime Text 3/Packages
-    - ~/Library/Application Support/Sublime Text 3/Packages/User
+  - ~/Library/Application Support/Sublime Text 3
+  - ~/Library/Application Support/Sublime Text 3/Installed Packages
+  - ~/Library/Application Support/Sublime Text 3/Packages
+  - ~/Library/Application Support/Sublime Text 3/Packages/User
 
 - name: install sublime text package control
   get_url: url='http://packagecontrol.io/Package Control.sublime-package'

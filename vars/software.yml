@@ -1,70 +1,70 @@
 ---
 brew_taps:
-  - homebrew/completions
-  - caskroom/fonts
-  - caskroom/versions
+- homebrew/completions
+- caskroom/fonts
+- caskroom/versions
 
 brew_packages:
-  # Unix Utilities
-  - bash
-  - ctags
-  - curl
-  - findutils
-  - git
-  - md5sha1sum
-  - rlwrap
-  - tree
-  - watch
-  - wget
-  - xz
+# Unix Utilities
+- bash
+- ctags
+- curl
+- findutils
+- git
+- md5sha1sum
+- rlwrap
+- tree
+- watch
+- wget
+- xz
 
-  # Completions
-  - bash-completion
-  - pip-completion
-  - vagrant-completion
+# Completions
+- bash-completion
+- pip-completion
+- vagrant-completion
 
 python_packages:
-  - ipython
-  - pip
-  - setuptools
-  - virtualenv
+- ipython
+- pip
+- setuptools
+- virtualenv
 
 brew_casks:
-  # Fonts
-  - font-source-code-pro
-  - font-source-code-pro-for-powerline
+# Fonts
+- font-source-code-pro
+- font-source-code-pro-for-powerline
 
-  # Freeware
-  - google-chrome
-  - dropbox
-  - firefox
-  - flux
-  - githubpulse
-  - macdown
-  - mplayerx
-  - slack
-  - sourcetree
-  - sshfs
-  - transmission
-  - vagrant
-  - vox
+# Freeware
+- google-chrome
+- dropbox
+- firefox
+- flux
+- githubpulse
+- macdown
+- mplayerx
+- slack
+- sourcetree
+- sshfs
+- transmission
+- vagrant
+- vox
 
-  # Commercial
-  - 1password
-  - dash
-  - entropy
-  - sublime-text3
-  - vmware-fusion
+# Commercial
+- 1password
+- dash
+- entropy
+- sublime-text3
+- vmware-fusion
 
 vagrant_plugins:
-  - vagrant-vmware-fusion
+- vagrant-vmware-fusion
 
 appstore_apps:
-  # Freeware
-  - Twitter
+# Freeware
+- Twitter
 
-  # Commercial
-  - Clear
-  - iStat Mini
-  - Pixelmator
-  - Textual 5
+# Commercial
+- Clear
+- iStat Mini
+- Pixelmator
+- Textual 5

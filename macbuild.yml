@@ -1,33 +1,33 @@
 ---
 - hosts: localhost
   tasks:
-    # General
-    - include: tasks/defaults.yml
-    - include: tasks/dotfiles.yml
+  # General
+  - include: tasks/defaults.yml
+  - include: tasks/dotfiles.yml
 
-    # App and Unix software installation
-    - include: tasks/software.yml
+  # App and Unix software installation
+  - include: tasks/software.yml
 
-    # Development languages
-    - include: tasks/go.yml
-    - include: tasks/python.yml
-    - include: tasks/ruby.yml
-    - include: tasks/nodejs.yml
+  # Development languages
+  - include: tasks/go.yml
+  - include: tasks/python.yml
+  - include: tasks/ruby.yml
+  - include: tasks/nodejs.yml
 
-    # Terminal software installation & configuration
-    - include: tasks/docker.yml
-    - include: tasks/vim.yml
+  # Terminal software installation & configuration
+  - include: tasks/docker.yml
+  - include: tasks/vim.yml
 
-    # Desktop application configuration
-    - include: tasks/sublimetext.yml
+  # Desktop application configuration
+  - include: tasks/sublimetext.yml
 
-    # Projects
-    - include: tasks/blog.yml
+  # Projects
+  - include: tasks/blog.yml
 
   handlers:
-    - include: handlers/handlers.yml
+  - include: handlers/handlers.yml
 
   vars_files:
-    - vars/globals.yml
-    - vars/defaults.yml
-    - vars/software.yml
+  - vars/globals.yml
+  - vars/defaults.yml
+  - vars/software.yml

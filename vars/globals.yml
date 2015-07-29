@@ -4,5 +4,5 @@ timezone: Australia/Melbourne
 
 # A list of dotfiles to install
 dotfiles:
-  - .bash_profile
-  - .gitconfig
+- .bash_profile
+- .gitconfig
