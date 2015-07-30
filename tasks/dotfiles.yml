@@ -1,4 +1,8 @@
 ---
+- name: create the directory to store the dotfiles in the home directory
+  file: path=~/{{ item | dirname }} state=directory
+  with_items: "{{ dotfiles }}"
+
 - name: install dotfiles to the home directory
-  copy: src=files/dotfiles/{{ item }} dest=~ mode=0644
+  copy: src=files/dotfiles/{{ item }} dest=~/{{ item | dirname }} mode=0644
   with_items: "{{ dotfiles }}"
