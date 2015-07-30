@@ -4,9 +4,4 @@
 
 - name: install node.js essential packages
   npm: name={{ item }} global=yes
-  with_items:
-  - bower
-  - coffee-script
-  - less
-  - jshint
-  - uglify-js
+  with_items: "{{ nodejs_packages }}"

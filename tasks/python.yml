@@ -2,13 +2,15 @@
 - name: install python
   homebrew: name={{ item }} state=latest
   with_items:
-  - python
   - python3
+  - python
+
+# Note that we must install Python 2.7 and its packages last to ensure they
+# become the defaults
+- name: install python 3.x essential packages
+  pip: name={{ item }} state=latest executable=pip3 extra_args='--no-use-wheel'
+  with_items: "{{ python_packages }}"
 
 - name: install python 2.x essential packages
   pip: name={{ item }} state=latest executable=pip2 extra_args='--no-use-wheel'
-  with_items: python_packages
-
-- name: install python 3.x essential packages
-  pip: name={{ item }} state=latest executable=pip3 extra_args='--no-use-wheel'
-  with_items: python_packages
+  with_items: "{{ python_packages }}"

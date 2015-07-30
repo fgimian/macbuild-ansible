@@ -10,6 +10,7 @@ brew_packages:
 - ctags
 - curl
 - findutils
+- fish
 - git
 - md5sha1sum
 - rlwrap
@@ -21,6 +22,8 @@ brew_packages:
 # Completions
 - bash-completion
 - pip-completion
+- rake-completion
+- ruby-completion
 - vagrant-completion
 
 python_packages:
@@ -28,6 +31,13 @@ python_packages:
 - pip
 - setuptools
 - virtualenv
+
+nodejs_packages:
+- bower
+- coffee-script
+- less
+- jshint
+- uglify-js
 
 brew_casks:
 # Fonts

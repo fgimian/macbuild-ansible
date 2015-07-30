@@ -1,4 +1,4 @@
 ---
 - name: install dotfiles to the home directory
   copy: src=files/dotfiles/{{ item }} dest=~ mode=0644
-  with_items: dotfiles
+  with_items: "{{ dotfiles }}"
