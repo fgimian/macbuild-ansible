@@ -129,9 +129,6 @@ osapp_defaults:
     container: com.realmacsoftware.clear.mac
     defaults:
       app.shown-welcome: true
-  - domain: "{{ '~/Library/Containers/com.realmacsoftware.clear.mac/Data/Library/Application Support/com.realmacsoftware.clear.mac/iCloudTasks/Prefs.plist' | expanduser }}"
-    defaults:
-      com.helftone.icloud.enabled: true
 
   # Dash
   - domain: com.kapeli.dashdoc
