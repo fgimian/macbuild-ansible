@@ -70,6 +70,7 @@ This list will be long but is my ultimate wish list for this project:
     - **Git**: Further aliases and touch-ups to gitconfig (possibly 
       integrating cdiff)
 * Applications
+    - **Clear**: Crashes with my settings, needs to be looked at again
     - **Dash**: Determine a way to save your docsets
     - **Firefox**: Stored in a series of JavaScript files, may be a challenge
     - **MacDown**: A little challenging due to the fact I would like to create 
