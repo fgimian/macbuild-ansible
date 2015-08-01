@@ -11,6 +11,9 @@
         // Angular.js snippets & syntax support
         "AngularJS",
 
+        // Support for Ansible YAML files
+        "Ansible",
+
         // Support for binary plist files and syntax
         "BinaryPlist",
 
