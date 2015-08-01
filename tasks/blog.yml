@@ -12,24 +12,24 @@
 - name: clone the blog repository from github
   git:
     repo: git@github.com:fgimian/fgimian.github.com.git
-    dest: ~/Development/blog
+    dest: "{{ development_dir }}/blog"
     version: source
     accept_hostkey: yes
 
 - name: install all dependencies
   bundler:
     state: present
-    chdir: "{{ '~/Development/blog' | expanduser }}"
+    chdir: "{{ development_dir }}/blog"
     executable: ~/.rbenv/versions/1.9.3-p194/bin/bundle
 
 - name: check if github pages has been setup
-  stat: path=~/Development/blog/_deploy/.git
+  stat: path="{{ development_dir }}/blog/_deploy/.git"
   register: deploy_git_path
 
 - name: setup github pages
   shell: rake setup_github_pages['git@github.com:fgimian/fgimian.github.com']
   args:
-    chdir: ~/Development/blog
+    chdir: "{{ development_dir }}/blog"
   environment:
     PATH: ~/.rbenv/versions/1.9.3-p194/bin:{{ ansible_env.PATH }}
   when: not deploy_git_path.stat.exists

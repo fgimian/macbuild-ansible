@@ -189,7 +189,7 @@ osapp_defaults:
       globalUserEmail: fgimiansoftware@gmail.com
       diffFontName: SourceCodePro-Regular
       diffFontSize: 13.0
-      defaultFolder: /Users/fots/Development
+      defaultFolder: "{{ development_dir }}"
       createBookmarksOnOpenRepo: false
       "NSToolbar Configuration gittoolbar1.9":
         "TB Item Identifiers":

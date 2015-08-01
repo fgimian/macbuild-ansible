@@ -48,7 +48,7 @@
   when: "'hidden' in library_flags"
 
 - name: create the development folder
-  file: path=~/Development state=directory
+  file: path="{{ development_dir }}" state=directory
 
 - name: set operating system and application defaults
   plist:
