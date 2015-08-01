@@ -80,7 +80,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Use the tomorrow theme for airline
-let g:airline_theme = 'dark'
+let g:airline_theme = 'powerlineish'
 
 " Install the airline plugin for a really nice and informative status bar
 Plugin 'bling/vim-airline'

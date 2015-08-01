@@ -58,6 +58,7 @@ This list will be long but is my ultimate wish list for this project:
     - Docker machine needs vmware fusion to be registered to start the VM
     - Docker machine needs VMware Fusion in /Applications to work
 * OS X
+    + **Finder**: Sidebar containing favourites and so forth
     - **Dock**: Setup the Dock with the appropriate icons
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
     - **Notification Centre**: Set the order of items and allow permission
@@ -65,8 +66,6 @@ This list will be long but is my ultimate wish list for this project:
     - **Terminal**: Find a way to set the font, background color and screen 
       width and height for Terminal
 * Unix Utilities
-    - **Shell**: Explore the use of ZSH with Powerline (or at least Powerline 
-      with bash)
     - **Git**: Further aliases and touch-ups to gitconfig (possibly 
       integrating cdiff)
 * Applications
