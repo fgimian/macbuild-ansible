@@ -14,7 +14,7 @@ def main():
         print 'Usage: {} [filename]'.format(__file__)
         exit(1)
 
-    if not dest.startswith('/'):
+    if not dest.startswith('/') and not dest.startswith('~'):
         if dest in ['NSGlobalDomain', 'Apple Global Domain']:
             plist_file = os.path.expanduser(
                 '~/Library/Preferences/.GlobalPreferences.plist'
@@ -34,6 +34,10 @@ def main():
                     plist_file = appstore_plist_file[0]
 
         dest = plist_file
+
+    else:
+
+        dest = os.path.expanduser(dest)
 
     try:
         pprint(biplist.readPlist(dest), indent=2)
