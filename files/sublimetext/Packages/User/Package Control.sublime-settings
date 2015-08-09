@@ -50,6 +50,9 @@
         // Linting of JavaScript using JSHint
         "SublimeLinter-jshint",
 
+        // Linting of Bash scripts using shellcheck
+        "SublimeLinter-shellcheck",
+
         // The wonderful Soda theme
         "Theme - Soda"
     ]
