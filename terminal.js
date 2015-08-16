@@ -2,7 +2,7 @@
 
 function run(argv) {
   // Obtain the terminal application
-  terminal = Application('Terminal');
+  var terminal = Application('Terminal');
 
   // Set the font
   terminal.defaultSettings.fontName = 'Source Code Pro for Powerline';
