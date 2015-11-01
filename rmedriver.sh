@@ -1,7 +1,7 @@
 #!/usr/bin/env make -f
 
 # Update the following URL to the current RME driver as require
-DRIVER = http://www.rme-audio.de/download/driver_usb_mac_210.zip
+DRIVER = http://www.rme-audio.de/download/driver_usb_mac_2102.zip
 
 install:
 	@echo "Cleaning up any old downloaded RME drivers"
