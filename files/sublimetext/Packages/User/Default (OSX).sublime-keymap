@@ -6,5 +6,8 @@
     { "keys": ["ctrl+tab"], "command": "next_view" },
 
     // Map the word wrap shortcut to cmd+shift+w
-    { "keys": ["super+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} }
+    { "keys": ["super+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+
+    // Set goto_definition again as the default definition doesn't seem to work
+    { "keys": ["super+alt+down"], "command": "goto_definition" }
 ]
