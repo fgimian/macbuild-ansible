@@ -6,7 +6,7 @@ function run(argv) {
 
   // Set the font
   terminal.defaultSettings.fontName = 'Source Code Pro for Powerline';
-  terminal.defaultSettings.fontSize = 15;
+  terminal.defaultSettings.fontSize = 16;
   terminal.defaultSettings.fontAntialiasing = true;
 
   // Set the window size
@@ -14,5 +14,5 @@ function run(argv) {
   terminal.defaultSettings.numberOfColumns = 130;
 
   // Set the background color
-  terminal.defaultSettings.backgroundColor = {red: 0.05, green: 0.05, blue: 0.05};
+  terminal.defaultSettings.backgroundColor = [0.05, 0.05, 0.05];
 }
