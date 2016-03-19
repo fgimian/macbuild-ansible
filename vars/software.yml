@@ -3,6 +3,7 @@ brew_taps:
 - homebrew/completions
 - caskroom/fonts
 - caskroom/versions
+- rcmdnk/rcmdnkcask
 
 brew_packages:
 # Unix Utilities
@@ -43,40 +44,55 @@ nodejs_packages:
 
 brew_casks:
 # Fonts
-- font-source-code-pro
-- font-source-code-pro-for-powerline
+# - font-source-code-pro
+# - font-source-code-pro-for-powerline
 
 # Freeware
+- android-file-transfer
+- appcleaner
+- boxer
 - google-chrome
 - dropbox
 - firefox
 - flux
 - githubpulse
+- google-drive
 - macdown
+- miaforgmail
 - mplayerx
+- openemu-experimental
 - slack
 - sourcetree
+- spotify
 - sshfs
 - transmission
 - vagrant
+- virtualbox
 - vox
+# - wjoy
 
 # Commercial
 - 1password
+- audio-hijack
+- daisydisk
 - dash
 - entropy
+# - microsoft-office
 - sublime-text3
-- vmware-fusion
+- textual
+# - vmware-fusion
 
 vagrant_plugins:
-- vagrant-vmware-fusion
+# - vagrant-vmware-fusion
 
 appstore_apps:
 # Freeware
 - Twitter
 
 # Commercial
+- Affinity Designer
+- BetterSnapTool
 - Clear
 - iStat Mini
 - Pixelmator
-- Textual 5
+# - Yummy FTP

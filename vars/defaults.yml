@@ -124,11 +124,28 @@ osapp_defaults:
     defaults:
       autosave: false
 
+  # Android File Transfer
+  - domain: com.google.android.mtpviewer
+    defaults:
+      FirstRunShown: true
+
+  # AppCleaner
+  - domain: net.freemacsoft.AppCleaner
+    defaults:
+      SUEnableAutomaticChecks: true
+      SUHasLaunchedBefore: true
+      SUSendProfileInfo: false
+
   # Clear
   - domain: com.realmacsoftware.clear.mac
     container: com.realmacsoftware.clear.mac
     defaults:
       app.shown-welcome: true
+
+  # DaisyDisk
+  - domain: com.daisydiskapp.DaisyDiskStandAlone
+    defaults:
+      moveToApplicationsFolderAlertSuppress: true
 
   # Dash
   - domain: com.kapeli.dashdoc
@@ -144,14 +161,16 @@ osapp_defaults:
       moveToApplicationsFolderAlertSuppress: true
       SUEnableAutomaticChecks: true
       SUSendProfileInfo: false
+      # Extraction / Auto-extract on open
+      AutoExtractOnOpen': true
 
   # f.lux
   - domain: org.herf.Flux
     defaults:
+      moveToApplicationsFolderAlertSuppress: true
       lateColorTemp: 2400.0
       nightColorTemp: 2800.0
       dayColorTemp: 3200.0
-      moveToApplicationsFolderAlertSuppress: true
       locationTextField: Melbourne, Australia
       locationType: L
       location: '-37.814107,144.963280'
@@ -215,7 +234,7 @@ osapp_defaults:
         - F89D83B7-7F0D-4D26-A1CF-2E851C3E572D  # Settings
 
   # Textual
-  - domain: "{{ '~/Library/Group Containers/8482Q6EPL6.com.codeux.irc.textual/Library/Preferences/8482Q6EPL6.com.codeux.irc.textual.plist' | expanduser }}"
+  - domain: com.codeux.apps.textual
     defaults:
       'Theme -> Invert Sidebar Colors Preference Enabled': 0
       'Theme -> Name': 'resource:Sapientia'
@@ -247,7 +266,10 @@ osapp_defaults:
   - domain: com.twitter.twitter-mac
     container: com.twitter.twitter-mac
     defaults:
+      # General / Font size / 16 pt
       FontSize1: 16
+      # General / Theme / Dark Theme
+      TMSelectedThemeIdentifier: com.twitter.twitter.themeIdentifiers.darkTheme
 
   # VOX
   - domain: com.coppertino.Vox
@@ -256,3 +278,4 @@ osapp_defaults:
       lastVersion: 254
       welcome: false
       VXDoNotAskAboutAnalytics: true
+      NSWindow Frame Vox Main Window: '639 147 322 572 0 0 1600 877 '
