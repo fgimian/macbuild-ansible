@@ -4,15 +4,25 @@ function run(argv) {
   // Obtain the terminal application
   var terminal = Application('Terminal');
 
+  // Grab the Pro profile
+  proSettings = terminal.settingsSets.Pro;
+
   // Set the font
-  terminal.defaultSettings.fontName = 'Source Code Pro for Powerline';
-  terminal.defaultSettings.fontSize = 16;
-  terminal.defaultSettings.fontAntialiasing = true;
+  proSettings.fontName = 'Source Code Pro for Powerline';
+  proSettings.fontSize = 16;
+  proSettings.fontAntialiasing = true;
 
   // Set the window size
-  terminal.defaultSettings.numberOfRows = 26;
-  terminal.defaultSettings.numberOfColumns = 130;
+  proSettings.numberOfRows = 26;
+  proSettings.numberOfColumns = 130;
 
-  // Set the background color
-  terminal.defaultSettings.backgroundColor = [0.05, 0.05, 0.05];
+  // Set the default profile to Pro
+  terminal.defaultSettings = proSettings;
+
+  // Set the profile to Pro for all open windows and tabs
+  for (var window of terminal.windows()) {
+    for (var tab of window.tabs()) {
+      tab.currentSettings = proSettings;
+    }
+  }
 }

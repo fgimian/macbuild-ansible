@@ -100,14 +100,6 @@ osapp_defaults:
       # View / Show Status Bar
       ShowStatusBar: true
 
-  # Terminal
-  - domain: com.apple.Terminal
-    defaults:
-      # General / On startup, open new window with profile Pro
-      "Startup Window Settings": Pro
-      # Profiles / Set Pro as Default
-      "Default Window Settings": Pro
-
   # --- 3rd Party Software ---
 
   # 1Password

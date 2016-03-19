@@ -47,6 +47,9 @@ git clone git@github.com:fgimian/macbuild.git
 # Perform the build
 cd macbuild
 ansible-playbook macbuild.yml
+
+# Set Terminal settings
+./terminal.js
 ```
 
 ## TODO ##
