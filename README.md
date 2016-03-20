@@ -52,34 +52,59 @@ ansible-playbook macbuild.yml
 ./terminal.js
 ```
 
+## Manual Configuration ##
+
+Some settings (outside those in the "Out of Scope") section must be set 
+manually due to excessive automation complexity.
+
+**1Password**: Locate your 1Password database (this is stored in an SQLite 
+  database)
+**Dropbox**: Disable camera uploads (settings are stored a binary)
+**Spotify**: Update sources to only include iTunes (settings are stored
+  in binary format)
+
 ## TODO ##
 
 This list will be long but is my ultimate wish list for this project:
 
 * Bugs & Issues
     - One of the cask apps requires root and password prompt comes up
-    - Docker machine needs vmware fusion to be registered to start the VM
-    - Docker machine needs VMware Fusion in /Applications to work
+    - Fonts can't be installed by homebrew cask when home directory is on
+      a different volume
 * OS X
-    + **Finder**: Sidebar containing favourites and so forth
+    - **Finder**: Sidebar containing favourites and so forth
     - **Dock**: Setup the Dock with the appropriate icons
+      (see `~/Library/Preferences/com.apple.dock.plist` for settings)
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
     - **Notification Centre**: Set the order of items and allow permission
-* Apple Software
-    - **Terminal**: Find a way to set the font, background color and screen 
-      width and height for Terminal
 * Unix Utilities
     - **Git**: Further aliases and touch-ups to gitconfig (possibly 
       integrating cdiff)
-* Applications
+* Applications (settings to be stored on a cloud provider)
+    - **Audio Hijack**: Storing the current sessions
     - **Dash**: Determine a way to save your docsets
+    - **OpenEmu**: Storing ROMs and game progress
+* Applications (local settings)
+    - **BetterSnapTool**: Still configuring this and understanding how to
+      automate it
+    - **Clear**: Seems to be impossible to enable iCloud via automation
     - **Firefox**: Stored in a series of JavaScript files, may be a challenge
     - **MacDown**: A little challenging due to the fact I would like to create 
       a custom theme
+    - **Mia for GMail**: Still looking into automating this
+    - **Spotify**: Various settings are stored in an INI-like structure
+      (~/Library/Application Support/Spotify/Users/fgimian-user/prefs) which
+      I might modify with `lineinfile`:
+        ```
+        ui.show_friend_feed=false
+        audio.sync_bitrate_enumeration=4
+        audio.play_bitrate_enumeration=4
+        ```
     - **VMware Fusion**: Difficult due to the fact I want a custom keyboard
       profile for Windows machines
+    - **Yummy FTP**: I haven't yet decided if I'm going to use this long-term
 
-## Out of Scope at Present ##
+## Out of Scope ##
 
 At the moment, I don't intend to cover the following:
 
