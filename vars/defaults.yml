@@ -128,6 +128,13 @@ osapp_defaults:
       SUHasLaunchedBefore: true
       SUSendProfileInfo: false
 
+  # Audio Hijack
+  - domain: com.rogueamoeba.audiohijack3
+    defaults:
+      homeWindowShown: true
+      # Setting the launch count to 2 skips the newsletter prompt
+      launchCount: 2
+
   # Clear
   - domain: com.realmacsoftware.clear.mac
     container: com.realmacsoftware.clear.mac
