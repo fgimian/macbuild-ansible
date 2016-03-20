@@ -1,0 +1,60 @@
+---
+- name: ensure the spotify settings directories exist
+  file: path="{{ item }}" state=directory
+  with_items:
+  - ~/Library/Application Support/Spotify
+  - ~/Library/Application Support/Spotify/Users
+  - ~/Library/Application Support/Spotify/Users/fgimian-user
+
+- name: create the global spotify prefs file if required
+  file:
+    path: ~/Library/Application Support/Spotify/prefs
+    state: touch
+    mode: 0644
+
+- name: set the login username
+  lineinfile:
+    dest: ~/Library/Application Support/Spotify/prefs
+    regexp: ^autologin\.username=
+    line: autologin.username="fgimian"
+
+- name: disable starting of the app during boot
+  lineinfile:
+    dest: ~/Library/Application Support/Spotify/prefs
+    regexp: ^app\.autostart-mode=
+    line: app.autostart-mode="off"
+
+- name: create the user spotify prefs file if required
+  file:
+    path: ~/Library/Application Support/Spotify/Users/fgimian-user/prefs
+    state: touch
+    mode: 0644
+
+- name: disable the facebook friend feed
+  lineinfile:
+    dest: ~/Library/Application Support/Spotify/Users/fgimian-user/prefs
+    regexp: ^ui\.show_friend_feed=
+    line: ui.show_friend_feed=false
+
+- name: set downloaded music quality to high
+  lineinfile:
+    dest: ~/Library/Application Support/Spotify/Users/fgimian-user/prefs
+    regexp: ^audio\.sync_bitrate_enumeration=
+    line: audio.sync_bitrate_enumeration=4
+
+- name: set streaming music quality to high
+  lineinfile:
+    dest: ~/Library/Application Support/Spotify/Users/fgimian-user/prefs
+    regexp: ^audio\.play_bitrate_enumeration=
+    line: audio.play_bitrate_enumeration=4
+
+- name: check if Spotify is in login items
+  command: osascript -l JavaScript -e "Application('System Events').loginItems.byName('Spotify').name()"
+  changed_when: false
+  ignore_errors: yes
+  failed_when: no
+  register: spotify_login_check
+
+- name: remove Spotify from login items
+  command: osascript -l JavaScript -e "Application('System Events').loginItems.byName('Spotify').delete()"
+  when: spotify_login_check.rc == 0

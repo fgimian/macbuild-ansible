@@ -19,6 +19,7 @@
   - include: tasks/vim.yml
 
   # Desktop application configuration
+  - include: tasks/spotify.yml
   - include: tasks/sublimetext.yml
 
   # Projects
