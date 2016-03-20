@@ -17,7 +17,11 @@ def main():
         print('Usage: {} [filename]'.format(__file__))
         exit(1)
 
-    if not dest.startswith('/') and not dest.startswith('~'):
+    if (
+        not dest.startswith('/') and
+        not dest.startswith('~') and
+        not dest.endswith('.plist')
+    ):
         if dest in ['NSGlobalDomain', 'Apple Global Domain']:
             plist_file = os.path.expanduser(
                 '~/Library/Preferences/.GlobalPreferences.plist'

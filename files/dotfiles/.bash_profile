@@ -8,6 +8,9 @@ alias oldfind='goldfind'
 alias updatedb='gupdatedb'
 alias xargs='gxargs'
 
+# Set the default editor to Sublime Text
+export EDITOR='subl -w'
+
 # Avoid duplicates in history
 export HISTCONTROL=ignoredups
 
