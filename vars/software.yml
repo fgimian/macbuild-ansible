@@ -50,7 +50,6 @@ brew_casks:
 # Freeware
 - android-file-transfer
 - appcleaner
-- boxer
 - google-chrome
 - dropbox
 - firefox
@@ -69,7 +68,6 @@ brew_casks:
 - vagrant
 - virtualbox
 - vox
-# - wjoy
 
 # Commercial
 - 1password
@@ -90,7 +88,6 @@ appstore_apps:
 - Twitter
 
 # Commercial
-- Affinity Designer
 - BetterSnapTool
 - Clear
 - iStat Mini
