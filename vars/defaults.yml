@@ -181,6 +181,16 @@ osapp_defaults:
       username: '{"time":1437913166036,"data":"fgimian"}'
       dont_notify: '{"time":1437913175176,"data":true}'
 
+  # Mia for GMail
+  - domain: com.sovapps.gmailnotifier
+    defaults:
+      # Preferences / Notifications
+      notifications: true
+      # Preferences / Black & white icons
+      blackWhiteIcons: true
+      # Preferences / Open at login
+      openAtLogin: true
+
   # Microsoft Office
   - domain: "{{ '~/Library/Group Containers/UBF8T346G9.Office/com.microsoft.officeprefs.plist' | expanduser }}"
     defaults:
