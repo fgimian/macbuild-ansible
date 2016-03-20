@@ -181,6 +181,36 @@ osapp_defaults:
       username: '{"time":1437913166036,"data":"fgimian"}'
       dont_notify: '{"time":1437913175176,"data":true}'
 
+  # Microsoft Office
+  - domain: "{{ '~/Library/Group Containers/UBF8T346G9.Office/com.microsoft.officeprefs.plist' | expanduser }}"
+    defaults:
+      kCUIThemePreferencesThemeKeyPath: 0
+
+  - domain: com.microsoft.Excel
+    container: com.microsoft.Excel
+    defaults:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
+  - domain: com.microsoft.Word
+    container: com.microsoft.Word
+    defaults:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
+  - domain: com.microsoft.Powerpoint
+    container: com.microsoft.Powerpoint
+    defaults:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
+  - domain: com.microsoft.onenote.mac
+    container: com.microsoft.onenote.mac
+    defaults:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
+  - domain: com.microsoft.Outlook
+    container: com.microsoft.Outlook
+    defaults:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
   # MPlayerX
   - domain: org.niltsh.MPlayerX
     defaults:
