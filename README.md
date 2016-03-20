@@ -59,6 +59,7 @@ manually due to excessive automation complexity.
 
 **1Password**: Locate your 1Password database (this is stored in an SQLite 
   database)
+**Clear**: Enable iCloud (this triggers various actions which I can't automate)
 **Dropbox**: Disable camera uploads (settings are stored a binary)
 **Spotify**: Update sources to only include iTunes (settings are stored
   in binary format)
@@ -71,6 +72,8 @@ This list will be long but is my ultimate wish list for this project:
     - One of the cask apps requires root and password prompt comes up
     - Fonts can't be installed by homebrew cask when home directory is on
       a different volume
+    - Microsoft Office and VMware Fusion are large downloads; it would be
+      good if we could find a way to use a local installer for these
 * OS X
     - **Finder**: Sidebar containing favourites and so forth
     - **Dock**: Setup the Dock with the appropriate icons
@@ -78,6 +81,8 @@ This list will be long but is my ultimate wish list for this project:
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
     - **Notification Centre**: Set the order of items and allow permission
 * Unix Utilities
+    - **Docker**: Touch up creation of docker machine to use Virtualbox and
+      work well with Kitematic
     - **Git**: Further aliases and touch-ups to gitconfig (possibly 
       integrating cdiff)
 * Applications (settings to be stored on a cloud provider)
@@ -87,7 +92,6 @@ This list will be long but is my ultimate wish list for this project:
 * Applications (local settings)
     - **BetterSnapTool**: Still configuring this and understanding how to
       automate it
-    - **Clear**: Seems to be impossible to enable iCloud via automation
     - **Firefox**: Stored in a series of JavaScript files, may be a challenge
     - **MacDown**: A little challenging due to the fact I would like to create 
       a custom theme
@@ -104,7 +108,6 @@ This list will be long but is my ultimate wish list for this project:
 
     - **VMware Fusion**: Difficult due to the fact I want a custom keyboard
       profile for Windows machines
-    - **Yummy FTP**: I haven't yet decided if I'm going to use this long-term
 
 ## Out of Scope ##
 

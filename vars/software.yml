@@ -43,7 +43,6 @@ nodejs_packages:
 - uglify-js
 
 brew_casks:
-# TODO: determine what to do about fonts (since tehy don't install when ~ is moved)
 # Fonts
 # - font-source-code-pro
 # - font-source-code-pro-for-powerline
@@ -76,11 +75,9 @@ brew_casks:
 - daisydisk
 - dash
 - entropy
-# TODO: big download for Microsoft Office
 # - microsoft-office
 - sublime-text3
 - textual
-# TODO: big download for VMware Fusion
 # - vmware-fusion
 
 vagrant_plugins:
@@ -94,5 +91,3 @@ appstore_apps:
 - Clear
 - iStat Mini
 - Pixelmator
-# TODO: do I use Yummy FTP enough to install it?
-# - Yummy FTP
