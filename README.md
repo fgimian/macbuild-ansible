@@ -96,16 +96,6 @@ This list will be long but is my ultimate wish list for this project:
     - **MacDown**: A little challenging due to the fact I would like to create 
       a custom theme
     - **Mia for GMail**: Still looking into automating this
-    - **Spotify**: Various settings are stored in an INI-like structure
-      (~/Library/Application Support/Spotify/Users/fgimian-user/prefs) which
-      I might modify with `lineinfile`:
-
-        ```
-        ui.show_friend_feed=false
-        audio.sync_bitrate_enumeration=4
-        audio.play_bitrate_enumeration=4
-        ```
-
     - **VMware Fusion**: Difficult due to the fact I want a custom keyboard
       profile for Windows machines
 
