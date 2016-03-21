@@ -270,6 +270,15 @@ osapp_defaults:
       # General / Keep window on top / Never
       OnTopMode: 0
 
+  # OpenEmu
+  - domain: org.openemu.OpenEmu
+    defaults:
+      setupAssistantFinished: true
+      SUEnableAutomaticChecks: true
+      videoFilter: SABR
+      fullScreen: true
+      # databasePath: ~/Library/Application Support/OpenEmu/Game Library
+
   # Pixelmator
   - domain: com.pixelmatorteam.pixelmator
     container: com.pixelmatorteam.pixelmator
