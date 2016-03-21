@@ -74,6 +74,8 @@ This list will be long but is my ultimate wish list for this project:
       a different volume
     - Microsoft Office and VMware Fusion are large downloads; it would be
       good if we could find a way to use a local installer for these
+    - Strange history issue with Terminal when using Ctrl+R to search
+      previous commands
 * OS X
     - **Finder**: Sidebar containing favourites and so forth
     - **Dock**: Setup the Dock with the appropriate icons
