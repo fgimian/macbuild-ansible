@@ -92,12 +92,9 @@ This list will be long but is my ultimate wish list for this project:
     - **Dash**: Determine a way to save your docsets
     - **OpenEmu**: Storing ROMs and game progress
 * Applications (local settings)
-    - **BetterSnapTool**: Still configuring this and understanding how to
-      automate it
     - **Firefox**: Stored in a series of JavaScript files, may be a challenge
     - **MacDown**: A little challenging due to the fact I would like to create 
       a custom theme
-    - **Mia for GMail**: Still looking into automating this
     - **VMware Fusion**: Difficult due to the fact I want a custom keyboard
       profile for Windows machines
 

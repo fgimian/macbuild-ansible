@@ -135,6 +135,41 @@ osapp_defaults:
       # Setting the launch count to 2 skips the newsletter prompt
       launchCount: 2
 
+  # BetterSnapTool
+  - domain: com.hegenberg.BetterSnapTool
+    defaults:
+      BSTDidAlreadyLaunchOnElCapitan: true
+      BSTDidAlreadyLaunchOnce: true
+      BSTDidClickHighlightedMenuItem: true
+      # General Settings / Start BetterSnapTool everytime your Mac starts up
+      launchOnStartup: true
+      # Customizations / Use rounded corners
+      roundCorners: false
+      # Customizations / Border-width
+      previewBorderWidth: 0.0
+      # Keyboard Shortcuts
+      registeredHotkeys:
+        # maximize
+        '0':
+          keyCode: 126
+          modifiers: 8395008
+        # left half
+        '2':
+          keyCode: 123
+          modifiers: 8395008
+        # right half
+        '4':
+          keyCode: 124
+          modifiers: 8395008
+        # restore old window position
+        '10':
+          keyCode: 125
+          modifiers: 8395008
+        # center on next monitor
+        '18':
+          keyCode: 37
+          modifiers: 6400
+
   # Clear
   - domain: com.realmacsoftware.clear.mac
     container: com.realmacsoftware.clear.mac
