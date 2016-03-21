@@ -348,4 +348,4 @@ osapp_defaults:
       VXDoNotAskAboutAnalytics: true
       VXLoopPromoForHDListenersWasShown: true
       VXCurrentNotificationState: 0
-      NSWindow Frame Vox Main Window: '639 147 322 572 0 0 1600 877 '
+      VXKeepLoopRunningWhenVoxClosed: false
