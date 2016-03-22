@@ -1,15 +1,20 @@
 ---
-- name: check existence of local directories
+- name: check health of local directories
   stat: path="{{ item.local_dir | expanduser }}"
-  register: local_dir_check
+  register: local_dir_health_check
   with_items: "{{ cloud_settings }}"
 
 - name: clean up any directories if required
   file: path="{{ item.1.local_dir | expanduser }}" state=absent
   ignore_errors: yes
   failed_when: no
-  when: not local_dir_check.results[item.0].stat.islnk
+  when: local_dir_health_check.results[item.0].stat.exists and (not local_dir_health_check.results[item.0].stat.islnk or local_dir_health_check.results[item.0].stat.lnk_source != cloud_app_config_dir + '/' + item.1.cloud_subdir)
   with_indexed_items: "{{ cloud_settings }}"
+
+- name: check existence of local directories after health check
+  stat: path="{{ item.local_dir | expanduser }}"
+  register: local_dir_check
+  with_items: "{{ cloud_settings }}"
 
 - name: symlink directory to cloud storage
   file:

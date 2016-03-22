@@ -8,6 +8,9 @@
   # App and Unix software installation
   - include: tasks/software.yml
 
+  # Cloud application configuration
+  - include: tasks/cloud_settings.yml
+
   # Development languages
   - include: tasks/go.yml
   - include: tasks/python.yml
@@ -30,5 +33,6 @@
 
   vars_files:
   - vars/globals.yml
+  - vars/cloud_settings.yml
   - vars/defaults.yml
   - vars/software.yml

@@ -1,8 +1,10 @@
 ---
 # Specify folders which are to be symlinked to cloud storage
 cloud_settings:
+  # Audio Hijack
   - cloud_subdir: Audio Hijack
     local_dir: ~/Library/Application Support/Audio Hijack
+  # OpenEmu
   - cloud_subdir: OpenEmu/BIOS
     local_dir: ~/Library/Application Support/OpenEmu/BIOS
   - cloud_subdir: OpenEmu/Bindings
