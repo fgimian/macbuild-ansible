@@ -1,0 +1,12 @@
+---
+- name: ensure the DMGAudio settings directories exist
+  file: path="{{ item }}" state=directory
+  with_items:
+  - ~/Library/Application Support/DMGAudio
+  - ~/Library/Application Support/DMGAudio/EQuilibrium
+
+- name: install default bank for EQuilibrium
+  copy:
+    src: files/dmgaudio/Default Bank.eqi
+    dest: ~/Library/Application Support/DMGAudio/EQuilibrium
+    mode: 0644
