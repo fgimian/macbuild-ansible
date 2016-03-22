@@ -18,7 +18,7 @@
     // Appearance Settings
     "always_show_minimap_viewport": true,
     "fade_fold_buttons": false,
-    "font_size": 15,
+    "font_size": 16,
     "font_face": "Source Code Pro",
     "highlight_line": true,
     "highlight_modified_tabs": true,
