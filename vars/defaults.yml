@@ -203,7 +203,7 @@ osapp_defaults:
       SUEnableAutomaticChecks: true
       SUSendProfileInfo: false
       # Extraction / Auto-extract on open
-      AutoExtractOnOpen': true
+      AutoExtractOnOpen: true
 
   # f.lux
   - domain: org.herf.Flux
