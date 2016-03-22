@@ -5,9 +5,21 @@
   - docker
   - docker-machine
 
-# - name: create a dev virtual machine to run docker images
-#   command: docker-machine create --driver vmwarefusion dev
-#   args:
-#     creates: ~/.docker/machine/machines/dev/dev.vmx
-#   notify:
-#   - stop dev docker machine
+- name: create a dev virtual machine to run docker images
+  command: docker-machine create --driver virtualbox default
+  args:
+    creates: ~/.docker/machine/machines/default
+  notify:
+  - stop default docker machine
+
+- name: install kitematic
+  homebrew_cask: name=kitematic state=present
+
+- name: check metrics in kitematic
+  command: sqlite3 ~/Library/Application\ Support/Kitematic/Local\ Storage/file__0.localstorage "SELECT value FROM ItemTable WHERE key = 'metrics.enabled'"
+  changed_when: false
+  register: metrics_check
+
+- name: disable metrics in kitematic
+  command: sqlite3 ~/Library/Application\ Support/Kitematic/Local\ Storage/file__0.localstorage "UPDATE ItemTable SET value = 'false' WHERE key = 'metrics.enabled'"
+  when: metrics_check.stdout == 'true'

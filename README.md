@@ -83,8 +83,6 @@ This list will be long but is my ultimate wish list for this project:
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
     - **Notification Centre**: Set the order of items and allow permission
 * Unix Utilities
-    - **Docker**: Touch up creation of docker machine to use Virtualbox and
-      work well with Kitematic
     - **Git**: Further aliases and touch-ups to gitconfig (possibly 
       integrating cdiff)
 * Applications (local settings)
