@@ -60,6 +60,8 @@ manually due to excessive automation complexity.
 **1Password**: Locate your 1Password database (this is stored in an SQLite 
   database)
 **Clear**: Enable iCloud (this triggers various actions which I can't automate)
+**Dash**: Installation of docsets seems very difficult to automate so they
+  will have to be installed manually
 **Dropbox**: Disable camera uploads (settings are stored a binary)
 **Spotify**: Update sources to only include iTunes (settings are stored
   in binary format)
@@ -74,8 +76,6 @@ This list will be long but is my ultimate wish list for this project:
       a different volume
     - Microsoft Office and VMware Fusion are large downloads; it would be
       good if we could find a way to use a local installer for these
-    - Strange history issue with Terminal when using Ctrl+R to search
-      previous commands
 * OS X
     - **Finder**: Sidebar containing favourites and so forth
     - **Dock**: Setup the Dock with the appropriate icons
@@ -87,14 +87,8 @@ This list will be long but is my ultimate wish list for this project:
       work well with Kitematic
     - **Git**: Further aliases and touch-ups to gitconfig (possibly 
       integrating cdiff)
-* Applications (settings to be stored on a cloud provider)
-    - **Audio Hijack**: Storing the current sessions
-    - **Dash**: Determine a way to save your docsets
-    - **OpenEmu**: Storing ROMs and game progress
 * Applications (local settings)
     - **Firefox**: Stored in a series of JavaScript files, may be a challenge
-    - **MacDown**: A little challenging due to the fact I would like to create 
-      a custom theme
     - **VMware Fusion**: Difficult due to the fact I want a custom keyboard
       profile for Windows machines
 
