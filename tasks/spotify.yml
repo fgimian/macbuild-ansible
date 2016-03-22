@@ -6,11 +6,13 @@
   - ~/Library/Application Support/Spotify/Users
   - ~/Library/Application Support/Spotify/Users/fgimian-user
 
+- name: check if global spotify prefs file exists
+  stat: path='~/Library/Application Support/Spotify/prefs'
+  register: global_spotify_prefs_check
+
 - name: create the global spotify prefs file if required
-  file:
-    path: ~/Library/Application Support/Spotify/prefs
-    state: touch
-    mode: 0644
+  file: path='~/Library/Application Support/Spotify/prefs' state=touch mode=0644
+  when: not global_spotify_prefs_check.stat.exists
 
 - name: set the login username
   lineinfile:
@@ -24,11 +26,16 @@
     regexp: ^app\.autostart-mode=
     line: app.autostart-mode="off"
 
+- name: check if user spotify prefs file exists
+  stat: path='~/Library/Application Support/Spotify/Users/fgimian-user/prefs'
+  register: user_spotify_prefs_check
+
 - name: create the user spotify prefs file if required
   file:
     path: ~/Library/Application Support/Spotify/Users/fgimian-user/prefs
     state: touch
     mode: 0644
+  when: not user_spotify_prefs_check.stat.exists
 
 - name: disable the facebook friend feed
   lineinfile:
