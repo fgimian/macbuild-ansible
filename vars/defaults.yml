@@ -222,6 +222,41 @@ osapp_defaults:
       username: '{"time":1437913166036,"data":"fgimian"}'
       dont_notify: '{"time":1437913175176,"data":true}'
 
+  # MacDown
+  - domain: com.uranusjr.macdown
+    defaults:
+      firstVersionInstalled: '749'
+      SUEnableAutomaticChecks: true
+      # General
+      editorSyncScrolling: true
+      # Markdown
+      extensionTables: true
+      extensionFencedCode: true
+      extensionIntraEmphasis: true
+      extensionStrikethough: true
+      extensionAutolink: true
+      # Editor
+      editorBaseFontInfo:
+        name: SourceCodePro-Regular
+        size: 16.0
+      editorStyleName: Solarized (Dark)
+      editorLineSpacing: 2.0
+      editorHorizontalInset: 15.0
+      editorVerticalInset: 15.0
+      editorMaximumWidth: 800.0
+      editorConvertTabs: true
+      editorCompleteMatchingCharacters: true
+      editorInsertPrefixInBlock: true
+      editorEnsuresNewlineAtEndOfFile: true
+      editorAutoIncrementNumberedLists: true
+
+      # Rendering
+      htmlStyleName: GitHub2
+      htmlSyntaxHighlighting: true
+      htmlTaskList: true
+      htmlDetectFrontMatter: true
+      htmlDefaultDirectoryUrl: "{{ development_dir }}"
+
   # Mia for GMail
   - domain: com.sovapps.gmailnotifier
     defaults:
