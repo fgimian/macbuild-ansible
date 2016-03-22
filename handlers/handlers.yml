@@ -1,2 +1,2 @@
-- name: stop dev docker machine
-  command: docker-machine stop dev
+- name: stop default docker machine
+  command: docker-machine stop default
