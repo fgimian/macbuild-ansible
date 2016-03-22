@@ -44,6 +44,10 @@ brew install ansible
 # Clone my macbuild repository
 git clone git@github.com:fgimian/macbuild.git
 
+# Copy any installers you have already downloaded to the Homebrew cache
+# (e.g. larger installers like VMware Fusion and Microsoft Office)
+cp <filename> /Library/Caches/Homebrew
+
 # Perform the build
 cd macbuild
 ansible-playbook macbuild.yml
@@ -60,8 +64,6 @@ manually due to excessive automation complexity.
 **1Password**: Locate your 1Password database (this is stored in an SQLite 
   database)
 **Clear**: Enable iCloud (this triggers various actions which I can't automate)
-**Dash**: Installation of docsets seems very difficult to automate so they
-  will have to be installed manually
 **Dropbox**: Disable camera uploads (settings are stored a binary)
 **Spotify**: Update sources to only include iTunes (settings are stored
   in binary format)
@@ -74,8 +76,6 @@ This list will be long but is my ultimate wish list for this project:
     - One of the cask apps requires root and password prompt comes up
     - Fonts can't be installed by homebrew cask when home directory is on
       a different volume
-    - Microsoft Office and VMware Fusion are large downloads; it would be
-      good if we could find a way to use a local installer for these
 * OS X
     - **Finder**: Sidebar containing favourites and so forth
     - **Dock**: Setup the Dock with the appropriate icons

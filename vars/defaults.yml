@@ -185,12 +185,13 @@ osapp_defaults:
   - domain: com.kapeli.dashdoc
     defaults:
       moveToApplicationsFolderAlertSuppress: true
-      DHWebViewIsDark: true
       didSuppressDownloadDocsetsAlert: true
       DHNotificationNoDocsetsFound: true
       reorderDocsetsAlertSuppressed: true
       DHNotificationDocsetPressEnterOrClickIconTip: true
       noDocsetsFoundAlertSuppressed: true
+      syncFolderPath: "{{ cloud_app_config_dir }}/Dash"
+      snippetSQLPath: "{{ cloud_app_config_dir }}/Dash/library.dash"
       # Note that the following setting is required or Dash thinks it needs
       # to set everything up again
       migratedV2Prefs: true
