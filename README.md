@@ -38,7 +38,7 @@ ssh-keygen
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install Ansible
-brew install ansible --HEAD
+brew install ansible
 /usr/bin/easy_install biplist
 
 # Clone my macbuild repository
