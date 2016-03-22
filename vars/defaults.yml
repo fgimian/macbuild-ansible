@@ -377,7 +377,7 @@ osapp_defaults:
 
   # VMware Fusion
   - domain: com.vmware.fusion
-    defaultls:
+    defaults:
       # Virtual Machine Library / View / Show items as icons
       PLInventoryWindowStylePref: 1
       # Preferences / General / Show in menu bar / Only when Fusion is running

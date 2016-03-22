@@ -48,12 +48,20 @@ git clone git@github.com:fgimian/macbuild.git
 # (e.g. larger installers like VMware Fusion and Microsoft Office)
 cp <filename> /Library/Caches/Homebrew
 
-# Perform the build
 cd macbuild
+
+# Escalate sudo rights and keep them open
+sudo -v
+./keep_sudo_alive.sh &
+
+# Perform the build
 ansible-playbook macbuild.yml
 
 # Set Terminal settings
 ./terminal.js
+
+# Terminate the sudo keepalive script
+pkill -f keep_sudo_alive.sh
 ```
 
 ## Manual Configuration ##
@@ -73,7 +81,6 @@ manually due to excessive automation complexity.
 This list will be long but is my ultimate wish list for this project:
 
 * Bugs & Issues
-    - One of the cask apps requires root and password prompt comes up
     - Fonts can't be installed by homebrew cask when home directory is on
       a different volume
 * OS X
