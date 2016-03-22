@@ -375,6 +375,14 @@ osapp_defaults:
       # General / Theme / Dark Theme
       TMSelectedThemeIdentifier: com.twitter.twitter.themeIdentifiers.darkTheme
 
+  # VMware Fusion
+  - domain: com.vmware.fusion
+    defaultls:
+      # Virtual Machine Library / View / Show items as icons
+      PLInventoryWindowStylePref: 1
+      # Preferences / General / Show in menu bar / Only when Fusion is running
+      showStartMenu3: 2
+
   # VOX
   - domain: com.coppertino.Vox
     container: com.coppertino.Vox
