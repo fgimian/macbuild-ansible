@@ -47,3 +47,26 @@
   ignore_errors: yes
   when: not appstore_app_files.results[item.0].stat.exists
   with_indexed_items: "{{ appstore_apps }}"
+
+# Install all fonts manually since using Homebrew cask for this purpose is
+# not possible when your home directory resides on another volume
+- name: check if the font is installed
+  stat: path="~/Library/Fonts/{{ item.creates }}"
+  register: font_check
+  with_items: "{{ fonts }}"
+
+- name: download the font
+  get_url: url="{{ item.1.url }}"
+  args:
+    dest: /var/tmp
+    mode: 0644
+  when: not font_check.results[item.0].stat.exists
+  with_indexed_items: "{{ fonts }}"
+
+- name: extract the font
+  command: unzip -o -j "/var/tmp/{{ item.1.archive }}" "{{ item.1.wildcard }}"
+  args:
+    chdir: ~/Library/Fonts
+    creates: "~/Library/Fonts/{{ item.1.creates }}"
+  when: not font_check.results[item.0].stat.exists
+  with_indexed_items: "{{ fonts }}"

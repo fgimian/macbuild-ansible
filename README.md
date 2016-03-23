@@ -82,9 +82,6 @@ manually due to excessive automation complexity.
 
 This list will be long but is my ultimate wish list for this project:
 
-* Bugs & Issues
-    - Fonts can't be installed by homebrew cask when home directory is on
-      a different volume
 * OS X
     - **Finder**: Sidebar containing favourites and so forth
     - **Dock**: Setup the Dock with the appropriate icons

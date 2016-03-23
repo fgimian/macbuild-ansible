@@ -91,3 +91,13 @@ appstore_apps:
 - Clear
 - iStat Mini
 - Pixelmator
+
+fonts:
+- url: https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip
+  archive: source-code-pro-2.010R-ro-1.030R-it.zip
+  wildcard: '*.otf'
+  creates: SourceCodePro-Regular.otf
+- url: https://github.com/powerline/fonts/archive/2015-12-04.zip
+  archive: fonts-2015-12-04.zip
+  wildcard: '*Sauce Code Powerline*.otf'
+  creates: Sauce Code Powerline Regular.otf
