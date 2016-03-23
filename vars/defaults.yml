@@ -92,6 +92,11 @@ osapp_defaults:
         35: { enabled: 0 }
         37: { enabled: 0 }
 
+  # Screen Capture
+  - domain: com.apple.screencapture
+    defaults:
+      location: ~/Pictures/Screenshots
+
   # --- Apple Software ---
 
   # Safari

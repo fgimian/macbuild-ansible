@@ -56,3 +56,6 @@
     value: "{{ item.defaults }}"
     container: "{{ item.container | default(None) }}"
   with_items: "{{ osapp_defaults }}"
+
+- name: create the screenshots folder
+  file: path=~/Pictures/Screenshots state=directory
