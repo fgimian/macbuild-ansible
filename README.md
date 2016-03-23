@@ -71,8 +71,10 @@ manually due to excessive automation complexity.
 
 **1Password**: Locate your 1Password database (this is stored in an SQLite 
   database)
+**Chrome**: Sign in with your Google account to sync settings
 **Clear**: Enable iCloud (this triggers various actions which I can't automate)
 **Dropbox**: Disable camera uploads (settings are stored a binary)
+**Firefox**: Go through wizard and sign into your Firefox account
 **Spotify**: Update sources to only include iTunes (settings are stored
   in binary format)
 
@@ -93,7 +95,6 @@ This list will be long but is my ultimate wish list for this project:
     - **Git**: Further aliases and touch-ups to gitconfig (possibly 
       integrating cdiff)
 * Applications (local settings)
-    - **Firefox**: Stored in a series of JavaScript files, may be a challenge
     - **VMware Fusion**: Difficult due to the fact I want a custom keyboard
       profile for Windows machines
 
