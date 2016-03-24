@@ -10,7 +10,7 @@ dotfiles:
 - .ipython/profile_default/ipython_config.py
 
 # Set our development directory
-development_dir: "{{ '~/Documents/Development' | expanduser }}"
+development_dir: '~/Documents/Development'
 
 # Set our cloud application configuration root directory
-cloud_app_config_dir: "{{ '~/Google Drive/Software Settings' | expanduser }}"
+cloud_app_config_dir: '~/Google Drive/Software Settings'

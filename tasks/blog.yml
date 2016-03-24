@@ -19,7 +19,7 @@
 - name: install all dependencies
   bundler:
     state: present
-    chdir: "{{ development_dir }}/blog"
+    chdir: "{{ development_dir | expanduser }}/blog"
     executable: ~/.rbenv/versions/1.9.3-p194/bin/bundle
 
 - name: check if github pages has been setup

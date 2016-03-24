@@ -56,12 +56,14 @@
     line: audio.play_bitrate_enumeration=4
 
 - name: check if Spotify is in login items
-  command: osascript -l JavaScript -e "Application('System Events').loginItems.byName('Spotify').name()"
+  command: osascript -l JavaScript
+           -e "Application('System Events').loginItems.byName('Spotify').name()"
   changed_when: false
   ignore_errors: yes
   failed_when: no
   register: spotify_login_check
 
 - name: remove Spotify from login items
-  command: osascript -l JavaScript -e "Application('System Events').loginItems.byName('Spotify').delete()"
+  command: osascript -l JavaScript
+           -e "Application('System Events').loginItems.byName('Spotify').delete()"
   when: spotify_login_check.rc == 0

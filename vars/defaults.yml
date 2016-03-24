@@ -274,7 +274,7 @@ osapp_defaults:
       openAtLogin: true
 
   # Microsoft Office
-  - domain: "{{ '~/Library/Group Containers/UBF8T346G9.Office/com.microsoft.officeprefs.plist' | expanduser }}"
+  - domain: ~/Library/Group Containers/UBF8T346G9.Office/com.microsoft.officeprefs.plist
     defaults:
       kCUIThemePreferencesThemeKeyPath: 0
 

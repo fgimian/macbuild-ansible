@@ -149,7 +149,10 @@ def main():
     if not biplist_found:
         module.fail_json(msg="the python biplist module is required")
 
-    if not module.params['dest'].startswith('/'):
+    if (
+        not module.params['dest'].startswith('/') and
+        not module.params['dest'].startswith('~')
+    ):
         if module.params['dest'] in ['NSGlobalDomain', 'Apple Global Domain']:
             module.params['dest'] = os.path.expanduser(
                 '~/Library/Preferences/.GlobalPreferences.plist'
@@ -163,6 +166,8 @@ def main():
             module.params['dest'] = os.path.expanduser(
                 '~/Library/Preferences/%s.plist' % module.params['dest']
             )
+    else:
+        module.params['dest'] = os.path.expanduser(module.params['dest'])
 
     dest = module.params['dest']
     key = module.params['key']
