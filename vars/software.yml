@@ -80,7 +80,9 @@ brew_casks:
 - textual
 # - vmware-fusion
 
-vagrant_plugins:
+# Initialise this to an empty list until we add some plugins (otherwise it
+# defaults to null)
+vagrant_plugins: []
 
 appstore_apps:
 # Freeware
