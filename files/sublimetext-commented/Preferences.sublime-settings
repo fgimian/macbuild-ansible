@@ -1,0 +1,50 @@
+{
+    // Soda Theme
+    "color_scheme": "Packages/User/Monokai Soda.tmTheme",
+    "theme": "Soda Dark 3.sublime-theme",
+
+    // Auto-trigger Angular.js controller completions within the ng-controller
+    "auto_complete_triggers":
+    [
+        {
+            "characters": "ng-controller=\"*",
+            "selector": "punctuation.definition.string"
+        }
+    ],
+
+    // Set a ruler at 79 characters to ensure we catch long lines
+    "rulers": [79],
+
+    // Appearance Settings
+    "always_show_minimap_viewport": true,
+    "fade_fold_buttons": false,
+    "font_size": 16,
+    "font_face": "Source Code Pro",
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "line_padding_bottom": 1,
+    "scroll_past_end": false,
+    "scroll_speed": 0,
+    "word_wrap": false,
+
+    // File Formatting Settings
+    "default_line_ending": "unix",
+    "ensure_newline_at_eof_on_save": true,
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+
+    // Editing Settings
+    "dictionary": "Packages/Language - English/en_GB.dic",
+    "shift_tab_unindent": true,
+    "spell_check": true,
+
+    // Disable update checking
+    "update_check": false,
+
+    // Directories to ignore (added the Python 3 cache directory to the list)
+    "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "__pycache__"],
+
+    // Packages to keep disabled
+    "ignored_packages": ["Vintage", "Markdown"]
+}
