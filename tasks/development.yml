@@ -1,4 +1,5 @@
 ---
+# Python
 - name: install python
   homebrew: name={{ item }} state=latest
   with_items:
@@ -14,3 +15,22 @@
 - name: install python 2.x essential packages
   pip: name={{ item }} state=latest executable=pip2 extra_args='--no-use-wheel'
   with_items: "{{ python_packages }}"
+
+# Ruby
+- name: install rbenv
+  homebrew: name={{ item }} state=latest
+  with_items:
+  - rbenv
+  - ruby-build
+
+# Node.js
+- name: install node.js
+  homebrew: name=node state=latest
+
+- name: install node.js essential packages
+  npm: name={{ item }} global=yes
+  with_items: "{{ nodejs_packages }}"
+
+# Go
+- name: install go
+  homebrew: name=go state=latest

@@ -12,10 +12,7 @@
   - include: tasks/cloud_settings.yml
 
   # Development languages
-  - include: tasks/go.yml
-  - include: tasks/python.yml
-  - include: tasks/ruby.yml
-  - include: tasks/nodejs.yml
+  - include: tasks/development.yml
 
   # Terminal software installation & configuration
   - include: tasks/docker.yml
