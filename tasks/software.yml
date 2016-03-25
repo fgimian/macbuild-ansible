@@ -1,4 +1,7 @@
 ---
+- name: update homebrew to the latest version
+  homebrew: update_homebrew=yes
+
 - name: brew taps
   homebrew_tap: tap={{ item }} state=present
   with_items: "{{ brew_taps }}"
