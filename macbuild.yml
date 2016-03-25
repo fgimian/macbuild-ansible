@@ -1,34 +1,31 @@
 ---
 - hosts: localhost
+  gather_facts: no
   tasks:
-  # General
-  - include: tasks/defaults.yml
-  - include: tasks/dotfiles.yml
-
-  # App and Unix software installation
-  - include: tasks/software.yml
-
-  # Cloud application configuration
-  - include: tasks/cloud_settings.yml
-
-  # Development languages
-  - include: tasks/development.yml
-
-  # Terminal software installation & configuration
-  - include: tasks/docker.yml
-  - include: tasks/vim.yml
-
-  # Desktop application configuration
-  - include: tasks/dmgaudio.yml
-  - include: tasks/spotify.yml
-  - include: tasks/sublimetext.yml
-
-  # Projects
-  - include: tasks/blog.yml
-
+  - name: setup os and application defaults
+    include: tasks/defaults.yml
+  - name: install dotfiles
+    include: tasks/dotfiles.yml
+  - name: install unix and desktop applications
+    include: tasks/software.yml
+  - name: setup cloud setting folders
+    include: tasks/cloud_settings.yml
+  - name: install development languages
+    include: tasks/development.yml
+  - name: install and configure docker
+    include: tasks/docker.yml
+  - name: install and configure vim
+    include: tasks/vim.yml
+  - name: configure dmgaudio audio plugins
+    include: tasks/dmgaudio.yml
+  - name: configure spotify
+    include: tasks/spotify.yml
+  - name: configure sublime text
+    include: tasks/sublimetext.yml
+  - name: clone and install all dependencies for blog
+    include: tasks/blog.yml
   handlers:
   - include: handlers/handlers.yml
-
   vars_files:
   - vars/globals.yml
   - vars/cloud_settings.yml
