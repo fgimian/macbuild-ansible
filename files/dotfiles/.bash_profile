@@ -15,9 +15,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	source $(brew --prefix)/etc/bash_completion
 fi
 
-# Ensure that redirecting to an existing file doesn't clobber it
-shopt -s -o noclobber
-
 # Enable the powerline shell
 powerline_path=$(python -c "import os, powerline; print(os.path.dirname(powerline.__file__))")
 source "${powerline_path}/bindings/bash/powerline.sh"

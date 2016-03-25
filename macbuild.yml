@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  connection: local
   gather_facts: no
   tasks:
   - name: setup os and application defaults
