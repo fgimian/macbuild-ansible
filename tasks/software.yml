@@ -1,4 +1,5 @@
 ---
+# Homebrew Unix Software
 - name: update homebrew to the latest version
   homebrew: update_homebrew=yes
 
@@ -10,6 +11,7 @@
   homebrew: name={{ item }} state=latest
   with_items: "{{ brew_packages }}"
 
+# Homebrew Cask Desktop Applications
 - name: brew cask tap
   homebrew_tap: tap=caskroom/cask state=present
 
@@ -25,19 +27,7 @@
   homebrew_cask: name={{ item }} state=present
   with_items: "{{ brew_casks }}"
 
-- name: check that vagrant plugins exist
-  shell: vagrant plugin list | fgrep {{ item }}
-  changed_when: false
-  ignore_errors: yes
-  failed_when: no
-  with_items: "{{ vagrant_plugins }}"
-  register: vagrant_plugins_check
-
-- name: vagrant plugins
-  command: vagrant plugin install {{ vagrant_plugins_check.results[item.0].item }}
-  when: vagrant_plugins_check.results[item.0].rc != 0
-  with_indexed_items: "{{ vagrant_plugins }}"
-
+# App Store Applications
 - name: check that appstore applications exist
   stat: path="/Applications/{{ item }}.app/Contents/_MASReceipt/receipt"
   with_items: "{{ appstore_apps }}"
@@ -51,6 +41,7 @@
   when: not appstore_app_files.results[item.0].stat.exists
   with_indexed_items: "{{ appstore_apps }}"
 
+# Fonts
 # Install all fonts manually since using Homebrew cask for this purpose is
 # not possible when your home directory resides on another volume
 - name: check if the font is installed
@@ -73,3 +64,17 @@
     creates: "~/Library/Fonts/{{ item.1.creates }}"
   when: not font_check.results[item.0].stat.exists
   with_indexed_items: "{{ fonts }}"
+
+# Vagrant Plugins
+- name: check that vagrant plugins exist
+  shell: vagrant plugin list | fgrep {{ item }}
+  changed_when: false
+  ignore_errors: yes
+  failed_when: no
+  with_items: "{{ vagrant_plugins }}"
+  register: vagrant_plugins_check
+
+- name: vagrant plugins
+  command: vagrant plugin install {{ vagrant_plugins_check.results[item.0].item }}
+  when: vagrant_plugins_check.results[item.0].rc != 0
+  with_indexed_items: "{{ vagrant_plugins }}"

@@ -2,7 +2,7 @@
 - name: install vim
   homebrew: name=vim install_options=with-lua state=latest
 
-- name: create the vim colors directory
+- name: create the vim package directory
   file: path={{ item }} state=directory mode=0755
   with_items:
   - ~/.vim

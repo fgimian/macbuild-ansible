@@ -4,20 +4,16 @@
   tasks:
   - name: setup os and application defaults
     include: tasks/defaults.yml
-  - name: install dotfiles
-    include: tasks/dotfiles.yml
   - name: install unix and desktop applications
     include: tasks/software.yml
-  - name: setup cloud setting folders
-    include: tasks/cloud_settings.yml
+  - name: setup files
+    include: tasks/files.yml
   - name: install development languages
     include: tasks/development.yml
   - name: install and configure docker
     include: tasks/docker.yml
   - name: install and configure vim
     include: tasks/vim.yml
-  - name: configure dmgaudio audio plugins
-    include: tasks/dmgaudio.yml
   - name: configure spotify
     include: tasks/spotify.yml
   - name: configure sublime text
@@ -28,6 +24,6 @@
   - include: handlers/handlers.yml
   vars_files:
   - vars/globals.yml
-  - vars/cloud_settings.yml
+  - vars/files.yml
   - vars/defaults.yml
   - vars/software.yml

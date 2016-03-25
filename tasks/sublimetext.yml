@@ -2,9 +2,7 @@
 - name: ensure the sublime text settings directories exist
   file: path="{{ item }}" state=directory
   with_items:
-  - ~/Library/Application Support/Sublime Text 3
   - ~/Library/Application Support/Sublime Text 3/Installed Packages
-  - ~/Library/Application Support/Sublime Text 3/Packages
   - ~/Library/Application Support/Sublime Text 3/Packages/User
 
 - name: install sublime text package control
@@ -13,27 +11,8 @@
     dest: ~/Library/Application Support/Sublime Text 3/Installed Packages
     mode: 0644
 
-- name: check if the sublime text soda themes are installed
-  stat: path='~/Library/Application Support/Sublime Text 3/Packages/User/Monokai Soda.tmTheme'
-  register: monokai_soda_colour_theme
-
-- name: download sublime text soda colour schemes
-  get_url: url=http://buymeasoda.github.com/soda-theme/extras/colour-schemes.zip
-  args:
-    dest: /var/tmp
-    mode: 0644
-  when: not monokai_soda_colour_theme.stat.exists
-
-- name: extract sublime text soda colour schemes
-  command: unzip -o /var/tmp/colour-schemes.zip
-  args:
-    chdir: ~/Library/Application Support/Sublime Text 3/Packages/User
-    creates: ~/Library/Application Support/Sublime Text 3/Packages/User/Monokai Soda.tmTheme
-  when: not monokai_soda_colour_theme.stat.exists
-
-- name: clean up the downloaded sublime text soda colour schemes
-  file: path=/var/tmp/colour-schemes.zip state=absent
-  when: not monokai_soda_colour_theme.stat.exists
-
+# Please note that the Soda theme files (Espresso Soda.tmTheme and
+# Monokai Soda.tmTheme) were obtained via the URL
+# http://buymeasoda.github.com/soda-theme/extras/colour-schemes.zip
 - name: install sublime text settings
   copy: src=files/sublimetext/Packages dest='~/Library/Application Support/Sublime Text 3'
