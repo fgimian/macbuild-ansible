@@ -1,4 +1,7 @@
 ---
+# Set our cloud application configuration root directory
+cloud_app_config_dir: '~/Google Drive/Software Settings'
+
 # Specify folders which are to be symlinked to cloud storage
 cloud_settings:
   # Audio Hijack

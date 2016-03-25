@@ -78,7 +78,9 @@ brew_casks:
 - dmgaudio-dualism
 - dmgaudio-equilibrium
 - entropy
-# - microsoft-office
+# Use my Cask of Microsoft Office which is locked to a checksum and helps
+# avoid additional downloads
+# - fgimian/fgimian/microsoft-office
 - sublime-text3
 - textual
 - vmware-fusion

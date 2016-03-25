@@ -11,6 +11,3 @@ dotfiles:
 
 # Set our development directory
 development_dir: '~/Documents/Development'
-
-# Set our cloud application configuration root directory
-cloud_app_config_dir: '~/Google Drive/Software Settings'
