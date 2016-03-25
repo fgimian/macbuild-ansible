@@ -4,6 +4,7 @@ brew_taps:
 - caskroom/fonts
 - caskroom/versions
 - rcmdnk/rcmdnkcask
+- fgimian/fgimian
 
 brew_packages:
 # Unix Utilities
@@ -74,11 +75,13 @@ brew_casks:
 - audio-hijack
 - daisydisk
 - dash
+- dmgaudio-dualism
+- dmgaudio-equilibrium
 - entropy
 # - microsoft-office
 - sublime-text3
 - textual
-# - vmware-fusion
+- vmware-fusion
 
 # Initialise this to an empty list until we add some plugins (otherwise it
 # defaults to null)
