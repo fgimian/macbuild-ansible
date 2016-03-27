@@ -4,5 +4,8 @@
   with_items:
     - rbenv
     - ruby-build
+
+- name: install ruby completion
+  homebrew: name={{ item }} state=latest
     - ruby-completion
     - rake-completion
