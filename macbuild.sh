@@ -20,17 +20,17 @@ then
 fi
 
 # Install Ansible (using pip is the officially supported way)
-if ! pip show ansible > /dev/null 2>&1
+if ! pip2 show ansible > /dev/null 2>&1
 then
     echo "Installing Ansible"
-    pip install ansible
+    pip2 install ansible
 fi
 
 # Install biplist to allow manipulation of plist files
-if ! pip show biplist > /dev/null 2>&1
+if ! pip2 show biplist > /dev/null 2>&1
 then
     echo "Installing biplist"
-    pip install biplist
+    pip2 install biplist
 fi
 
 # Perform the build
