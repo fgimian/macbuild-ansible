@@ -2,9 +2,6 @@
 - name: install spotify
   homebrew_cask: name=spotify state=present
 
-- name: ensure the spotify settings directories exist
-  file: path='~/Library/Application Support/Spotify/Users/fgimian-user' state=directory
-
 - name: check if global spotify prefs file exists
   stat: path='~/Library/Application Support/Spotify/prefs'
   register: global_spotify_prefs_check
@@ -13,46 +10,33 @@
   file: path='~/Library/Application Support/Spotify/prefs' state=touch mode=0644
   when: not global_spotify_prefs_check.stat.exists
 
-- name: set the login username
-  lineinfile:
-    dest: ~/Library/Application Support/Spotify/prefs
-    regexp: ^autologin\.username=
-    line: autologin.username="fgimian"
-
-- name: disable starting of the app during boot
-  lineinfile:
-    dest: ~/Library/Application Support/Spotify/prefs
-    regexp: ^app\.autostart-mode=
-    line: app.autostart-mode="off"
+- name: ensure the spotify settings directories exist
+  file: path="~/Library/Application Support/Spotify/Users/{{ spotify_username }}-user" state=directory
 
 - name: check if user spotify prefs file exists
-  stat: path='~/Library/Application Support/Spotify/Users/fgimian-user/prefs'
+  stat: path="~/Library/Application Support/Spotify/Users/{{ spotify_username }}-user/prefs"
   register: user_spotify_prefs_check
 
 - name: create the user spotify prefs file if required
   file:
-    path: ~/Library/Application Support/Spotify/Users/fgimian-user/prefs
+    path: "~/Library/Application Support/Spotify/Users/{{ spotify_username }}-user/prefs"
     state: touch
     mode: 0644
   when: not user_spotify_prefs_check.stat.exists
 
-- name: disable the facebook friend feed
+- name: set global setting
   lineinfile:
-    dest: ~/Library/Application Support/Spotify/Users/fgimian-user/prefs
-    regexp: ^ui\.show_friend_feed=
-    line: ui.show_friend_feed=false
+    dest: ~/Library/Application Support/Spotify/prefs
+    regexp: "^{{ item.key | regex_escape() }}="
+    line: "{{ item.key }}={{ item.value | spotify_value }}"
+  with_dict: "{{ spotify_global_settings }}"
 
-- name: set downloaded music quality to high
+- name: set user setting
   lineinfile:
-    dest: ~/Library/Application Support/Spotify/Users/fgimian-user/prefs
-    regexp: ^audio\.sync_bitrate_enumeration=
-    line: audio.sync_bitrate_enumeration=4
-
-- name: set streaming music quality to high
-  lineinfile:
-    dest: ~/Library/Application Support/Spotify/Users/fgimian-user/prefs
-    regexp: ^audio\.play_bitrate_enumeration=
-    line: audio.play_bitrate_enumeration=4
+    dest: "~/Library/Application Support/Spotify/Users/{{ spotify_username }}-user/prefs"
+    regexp: "^{{ item.key | regex_escape() }}="
+    line: "{{ item.key }}={{ item.value | spotify_value }}"
+  with_dict: "{{ spotify_user_settings }}"
 
 - name: check if Spotify is in login items
   command: osascript -l JavaScript

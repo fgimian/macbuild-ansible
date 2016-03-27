@@ -1,0 +1,10 @@
+---
+spotify_username: fgimian
+spotify_start_on_boot: false
+spotify_global_settings:
+  autologin.username: "{{ spotify_username }}"
+  app.autostart-mode: 'off'
+spotify_user_settings:
+  ui.show_friend_feed: false
+  audio.sync_bitrate_enumeration: 4
+  audio.play_bitrate_enumeration: 4
