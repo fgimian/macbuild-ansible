@@ -24,24 +24,6 @@ brew_packages:
 
 # Completions
 - bash-completion
-- pip-completion
-- rake-completion
-- ruby-completion
-- vagrant-completion
-
-python_packages:
-- ipython
-- powerline-status
-- pip
-- setuptools
-- virtualenv
-
-nodejs_packages:
-- bower
-- coffee-script
-- less
-- jshint
-- uglify-js
 
 brew_casks:
 # Fonts
@@ -51,11 +33,11 @@ brew_casks:
 # Freeware
 - android-file-transfer
 - appcleaner
-- google-chrome
 - dropbox
 - firefox
 - flux
 - githubpulse
+- google-chrome
 - google-drive
 - macdown
 - miaforgmail
@@ -63,10 +45,8 @@ brew_casks:
 - openemu-experimental
 - slack
 - sourcetree
-- spotify
 - sshfs
 - transmission
-- vagrant
 - virtualbox
 - vox
 
@@ -81,13 +61,8 @@ brew_casks:
 # Use my Cask of Microsoft Office which is locked to a checksum and helps
 # avoid additional downloads
 # - fgimian/fgimian/microsoft-office
-- sublime-text3
 - textual
 - vmware-fusion
-
-# Initialise this to an empty list until we add some plugins (otherwise it
-# defaults to null)
-vagrant_plugins: []
 
 appstore_apps:
 # Freeware

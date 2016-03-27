@@ -44,13 +44,8 @@ done &
 sudo_bg_pid=$!
 trap 'kill $sudo_bg_pid && wait $sudo_bg_pid 2> /dev/null' INT TERM
 
-# Create a temporary inventory to avoid warnings
-inventory=$(mktemp -t macbuild-inventory)
-echo localhost > "$inventory"
-
 # Perform the build
-ansible-playbook -i "$inventory" macbuild.yml
-rm -f "$inventory"
+ansible-playbook -i localhost, local.yml
 
 # Set Terminal settings
 ./terminal.js

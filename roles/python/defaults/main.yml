@@ -1,0 +1,7 @@
+---
+python_packages:
+- ipython
+- powerline-status
+- pip
+- setuptools
+- virtualenv

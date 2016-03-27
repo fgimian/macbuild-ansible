@@ -1,0 +1,4 @@
+---
+# Initialise this to an empty list until we add some plugins (otherwise it
+# defaults to null)
+vagrant_plugins: []

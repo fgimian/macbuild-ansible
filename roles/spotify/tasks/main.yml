@@ -1,10 +1,9 @@
 ---
+- name: install spotify
+  homebrew_cask: name=spotify state=present
+
 - name: ensure the spotify settings directories exist
-  file: path="{{ item }}" state=directory
-  with_items:
-  - ~/Library/Application Support/Spotify
-  - ~/Library/Application Support/Spotify/Users
-  - ~/Library/Application Support/Spotify/Users/fgimian-user
+  file: path='~/Library/Application Support/Spotify/Users/fgimian-user' state=directory
 
 - name: check if global spotify prefs file exists
   stat: path='~/Library/Application Support/Spotify/prefs'

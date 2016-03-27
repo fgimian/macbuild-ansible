@@ -1,4 +1,7 @@
 ---
+- name: install sublime text
+  homebrew_cask: name=sublime-text3 state=present
+
 - name: ensure the sublime text settings directories exist
   file: path="{{ item }}" state=directory
   with_items:
@@ -15,4 +18,4 @@
 # Monokai Soda.tmTheme) were obtained via the URL
 # http://buymeasoda.github.com/soda-theme/extras/colour-schemes.zip
 - name: install sublime text settings
-  copy: src=files/sublimetext/Packages dest='~/Library/Application Support/Sublime Text 3'
+  copy: src=. dest='~/Library/Application Support/Sublime Text 3/Packages/User'

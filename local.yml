@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+  # System Configuration
+  - global
+  # Software Installation & Configuration
+  - software
+  - defaults
+  - files
+  # Unix Software
+  - vim
+  - python
+  - ruby
+  - go
+  - vagrant
+  - nodejs
+  # Desktop Applications
+  - spotify
+  - sublimetext
+  - docker
+  # Projects
+  - blog

@@ -38,7 +38,7 @@ Run the following in your Terminal to use my configuration:
 ```bash
 git clone https://github.com/fgimian/macbuild.git
 cd macbuild
-./run.sh
+./macbuild.sh
 ```
 
 It is strongly suggested that you reboot your Mac after the first run
