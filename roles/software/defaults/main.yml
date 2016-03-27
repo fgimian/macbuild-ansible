@@ -1,85 +1,85 @@
 ---
 brew_taps:
-- homebrew/completions
-- caskroom/fonts
-- caskroom/versions
-- rcmdnk/rcmdnkcask
-- fgimian/fgimian
+  - homebrew/completions
+  - caskroom/fonts
+  - caskroom/versions
+  - rcmdnk/rcmdnkcask
+  - fgimian/fgimian
 
 brew_packages:
-# Unix Utilities
-- bash
-- ctags
-- curl
-- findutils
-- fish
-- git
-- md5sha1sum
-- rlwrap
-- shellcheck
-- tree
-- watch
-- wget
-- xz
+  # Unix Utilities
+  - bash
+  - ctags
+  - curl
+  - findutils
+  - fish
+  - git
+  - md5sha1sum
+  - rlwrap
+  - shellcheck
+  - tree
+  - watch
+  - wget
+  - xz
 
-# Completions
-- bash-completion
+  # Completions
+  - bash-completion
 
 brew_casks:
-# Fonts
-# - font-source-code-pro
-# - font-source-code-pro-for-powerline
+  # Fonts
+  # - font-source-code-pro
+  # - font-source-code-pro-for-powerline
 
-# Freeware
-- android-file-transfer
-- appcleaner
-- dropbox
-- firefox
-- flux
-- githubpulse
-- google-chrome
-- google-drive
-- macdown
-- miaforgmail
-- mplayerx
-- openemu-experimental
-- slack
-- sourcetree
-- sshfs
-- transmission
-- virtualbox
-- vox
+  # Freeware
+  - android-file-transfer
+  - appcleaner
+  - dropbox
+  - firefox
+  - flux
+  - githubpulse
+  - google-chrome
+  - google-drive
+  - macdown
+  - miaforgmail
+  - mplayerx
+  - openemu-experimental
+  - slack
+  - sourcetree
+  - sshfs
+  - transmission
+  - virtualbox
+  - vox
 
-# Commercial
-- 1password
-- audio-hijack
-- daisydisk
-- dash
-- dmgaudio-dualism
-- dmgaudio-equilibrium
-- entropy
-# Use my Cask of Microsoft Office which is locked to a checksum and helps
-# avoid additional downloads
-# - fgimian/fgimian/microsoft-office
-- textual
-- vmware-fusion
+  # Commercial
+  - 1password
+  - audio-hijack
+  - daisydisk
+  - dash
+  - dmgaudio-dualism
+  - dmgaudio-equilibrium
+  - entropy
+  # Use my Cask of Microsoft Office which is locked to a checksum and helps
+  # avoid additional downloads
+  # - fgimian/fgimian/microsoft-office
+  - textual
+  - vmware-fusion
 
 appstore_apps:
-# Freeware
-- Twitter
+  # Freeware
+  - Twitter
 
-# Commercial
-- BetterSnapTool
-- Clear
-- iStat Mini
-- Pixelmator
+  # Commercial
+  - BetterSnapTool
+  - Clear
+  - iStat Mini
+  - Pixelmator
 
 fonts:
-- url: https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip
-  archive: source-code-pro-2.010R-ro-1.030R-it.zip
-  wildcard: '*.otf'
-  creates: SourceCodePro-Regular.otf
-- url: https://github.com/powerline/fonts/archive/2015-12-04.zip
-  archive: fonts-2015-12-04.zip
-  wildcard: '*Sauce Code Powerline*.otf'
-  creates: Sauce Code Powerline Regular.otf
+  - url: https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip
+    archive: source-code-pro-2.010R-ro-1.030R-it.zip
+    wildcard: '*.otf'
+    creates: SourceCodePro-Regular.otf
+  - url: https://github.com/powerline/fonts/archive/2015-12-04.zip
+    archive: fonts-2015-12-04.zip
+    wildcard: '*Sauce Code Powerline*.otf'
+    creates: Sauce Code Powerline Regular.otf

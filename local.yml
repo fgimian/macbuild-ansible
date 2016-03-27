@@ -2,23 +2,29 @@
 - hosts: localhost
   connection: local
   gather_facts: no
+  vars:
+    # Set our development directory
+    development_dir: '~/Documents/Development'
+
+    # Set our cloud application configuration root directory
+    cloud_app_config_dir: '~/Google Drive/Software Settings'
   roles:
-  # System Configuration
-  - global
-  # Software Installation & Configuration
-  - software
-  - defaults
-  - files
-  # Unix Software
-  - vim
-  - python
-  - ruby
-  - go
-  - vagrant
-  - nodejs
-  # Desktop Applications
-  - spotify
-  - sublimetext
-  - docker
-  # Projects
-  - blog
+    # System Configuration
+    - global
+    # Software Installation & Configuration
+    - software
+    - defaults
+    - files
+    # Unix Software
+    - vim
+    - python
+    - ruby
+    - go
+    - vagrant
+    - nodejs
+    # Desktop Applications
+    - spotify
+    - sublimetext
+    - docker
+    # Projects
+    - blog

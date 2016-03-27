@@ -1,7 +1,4 @@
 ---
-# Set our cloud application configuration root directory
-cloud_app_config_dir: '~/Google Drive/Software Settings'
-
 # Specify files or folders which are to be copied
 files:
   # Dotfiles

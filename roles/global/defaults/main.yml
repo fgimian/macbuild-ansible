@@ -1,6 +1,3 @@
 ---
 # Set the appropriate timezone
 timezone: Australia/Melbourne
-
-# Set our development directory
-development_dir: '~/Documents/Development'

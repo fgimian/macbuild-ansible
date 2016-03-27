@@ -10,7 +10,7 @@
   args:
     creates: ~/.docker/machine/machines/default
   notify:
-  - stop default docker machine
+    - stop default docker machine
 
 - name: install kitematic
   homebrew_cask: name=kitematic state=present

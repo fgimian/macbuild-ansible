@@ -65,8 +65,7 @@ following items remain:
 
 * OS X
     - **Finder**: Sidebar containing favourites and so forth
-    - **Dock**: Setup the Dock with the appropriate icons
-      (see `~/Library/Preferences/com.apple.dock.plist` for settings)
+    - **Dock**: Setup the Dock with the appropriate icons (via dockutil)
     - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
     - **Notification Centre**: Set the order of items and allow permission
 * Unix Utilities

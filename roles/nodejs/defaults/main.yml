@@ -1,7 +1,7 @@
 ---
 nodejs_packages:
-- bower
-- coffee-script
-- less
-- jshint
-- uglify-js
+  - bower
+  - coffee-script
+  - less
+  - jshint
+  - uglify-js

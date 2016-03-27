@@ -3,9 +3,9 @@
 - name: install python
   homebrew: name={{ item }} state=latest
   with_items:
-  - python3
-  - python
-  - pip-completion
+    - python3
+    - python
+    - pip-completion
 
 # Note that we must install Python 2.7 and its packages last to ensure they
 # become the defaults
