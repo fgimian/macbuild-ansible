@@ -1,10 +1,13 @@
 #!/bin/bash
 
+# Prompt the user for their sudo password
+sudo -v
+
 # Install Homebrew
 if ! which brew > /dev/null 2>&1
 then
     echo "Installing Homebrew"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
     echo "Copy any installers you have to /Library/Caches/Homebrew and press any key to continue..."
     read -r
 fi
@@ -29,20 +32,6 @@ then
     echo "Installing biplist"
     pip install biplist
 fi
-
-# Prompt the user for their sudo password
-sudo -v
-
-# Escalate sudo rights and keep them open
-while true
-do
-    sleep 60
-    sudo -v
-done &
-
-# Ensure that the background process is killed if the user cancels the run
-sudo_bg_pid=$!
-trap 'kill $sudo_bg_pid && wait $sudo_bg_pid 2> /dev/null' INT TERM
 
 # Perform the build
 ansible-playbook -i localhost, local.yml
