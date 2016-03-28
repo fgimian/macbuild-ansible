@@ -49,39 +49,29 @@ of this.
 Some settings (outside those in the "Out of Scope") section must be set 
 manually due to excessive automation complexity.
 
-**1Password**: Locate your 1Password database (this is stored in an SQLite 
-  database)
+**1Password**: Locate your 1Password database (this setting is stored in an 
+  SQLite database)
+**CanOpener**: Install this manually
 **Chrome**: Sign in with your Google account to sync settings
 **Clear**: Enable iCloud (this triggers various actions which I can't automate)
 **Dropbox**: Disable camera uploads (settings are stored a binary)
 **Firefox**: Go through wizard and sign into your Firefox account
+**Microsoft Office**: License this manually
 **Spotify**: Update sources to only include iTunes (settings are stored
   in binary format)
 
 ## TODO
 
-I'm really close to covering everything I wish to automate, however the
-following items remain:
-
-* OS X
-    - **Finder**: Sidebar containing favourites and so forth
-    - **Dock**: Setup the Dock with the appropriate icons (via dockutil)
-    - **LaunchPad**: Setup Launchpad with the appropriate icons and structure
-    - **Notification Centre**: Set the order of items and allow permission
-* Unix Utilities
-    - **Git**: Further aliases and touch-ups to gitconfig (possibly 
-      integrating cdiff)
-* Applications (local settings)
-    - **VMware Fusion**: Difficult due to the fact I want a custom keyboard
-      profile for Windows machines
-
-## Out of Scope
-
-At the moment, I don't intend to cover the following:
-
-* Restoring window positions and sizes for apps
-* Installing licenses for software
-* Signing into accounts for applications
+* **Audio Hijack**: Implement code to modify plist and add license
+* **Finder**: Sidebar containing favourites and so forth
+* **Dock**: Setup the Dock with the appropriate icons (via dockutil)
+* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
+* **Notification Centre**: Set the order of items and allow permission
+* **Git**: Further aliases and touch-ups to gitconfig (possibly 
+  integrating cdiff)
+* **Microsoft Office**: License installation
+* **ValhallaVintageVerb**: License installation
+* **VMware Fusion**: Software settings and licenses
 
 ## License
 
