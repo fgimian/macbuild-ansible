@@ -7,7 +7,7 @@
 			"selector": "punctuation.definition.string"
 		}
 	],
-	"color_scheme": "Packages/User/SublimeLinter/Monokai Soda (SL).tmTheme",
+	"color_scheme": "Packages/User/Monokai Soda.tmTheme",
 	"default_line_ending": "unix",
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"ensure_newline_at_eof_on_save": true,
