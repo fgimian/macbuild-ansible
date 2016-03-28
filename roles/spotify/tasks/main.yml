@@ -2,6 +2,9 @@
 - name: install spotify
   homebrew_cask: name=spotify state=present
 
+- name: ensure the spotify global settings directories exist
+  file: path="~/Library/Application Support/Spotify" state=directory
+
 - name: check if global spotify prefs file exists
   stat: path='~/Library/Application Support/Spotify/prefs'
   register: global_spotify_prefs_check
@@ -10,7 +13,7 @@
   file: path='~/Library/Application Support/Spotify/prefs' state=touch mode=0644
   when: not global_spotify_prefs_check.stat.exists
 
-- name: ensure the spotify settings directories exist
+- name: ensure the spotify user settings directories exist
   file: path="~/Library/Application Support/Spotify/Users/{{ spotify_username }}-user" state=directory
 
 - name: check if user spotify prefs file exists
