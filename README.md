@@ -73,6 +73,29 @@ manually due to excessive automation complexity.
 * **ValhallaVintageVerb**: License installation
 * **VMware Fusion**: Software settings and licenses
 
+## References
+
+### Projects
+
+* [mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)
+* [ansible-modules-plist](https://github.com/mtneug/ansible-modules-plist)
+* [legacy-common](https://github.com/osxc/legacy-common)
+* [custom-ansible-osx](https://github.com/mtneug/custom-ansible-osx)
+
+### Frameworks
+
+* [superlumic](https://github.com/superlumic/superlumic)
+* [battleschool](https://github.com/spencergibb/battleschool)
+* [osxc](http://osxc.github.io/)
+
+### Blog Posts
+
+* [Automating your development environment with Ansible](http://www.nickhammond.com/automating-development-environment-ansible/)
+* [How to automate your Mac OS X setup with Ansible](https://blog.vandenbrand.org/2016/01/04/how-to-automate-your-mac-os-x-setup-with-ansible/)
+* [Using Ansible to automate OSX installs via Superlumic](http://vanderveer.be/2015/09/27/using-ansible-to-automate-osx-installs-via-superlumic.html)
+* [How to Bootstrap a new OS X Environment with Ansible](http://flounderedge.com/bootstrap-new-os-x-environment-ansible/)
+* [Automation of Installation on Mac w/ Ansible](https://medium.com/@hackyGQ/automation-of-installation-on-mac-w-ansible-21354cce0d7b#.j7rujxwgc)
+
 ## License
 
 Mac Build is released under the **MIT** license. Please see the
