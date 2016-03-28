@@ -68,6 +68,18 @@ manually due to excessive automation complexity.
 
 ## TODO
 
+### Bugs
+
+* Docker role can't modify Kitematic SQL database when it hasn't been created
+* The new version of Ansible (2.1) doesn't pass variables correctly to my 
+  plist module which leads to it failing
+* The new version of DMG Audio plugins don't show up correctly in Audio Hijack
+* Sudo keeps dropping out during installs due to Homebrew invalidating it
+* Google Drive won't be available for symlinking during install
+* SSH keys must be added to ensure cloning the blog repo works
+
+### Features
+
 * **Handlers**: Implementation of handlers to avoid the reboot requirement
 * **Audio Hijack**: Implement code to modify plist and add license
 * **Finder**: Sidebar containing favourites and so forth

@@ -15,13 +15,13 @@
 - name: install kitematic
   homebrew_cask: name=kitematic state=present
 
-- name: check metrics in kitematic
-  command: sqlite3 ~/Library/Application\ Support/Kitematic/Local\ Storage/file__0.localstorage
-           "SELECT value FROM ItemTable WHERE key = 'metrics.enabled'"
-  changed_when: false
-  register: metrics_check
+#- name: check metrics in kitematic
+#  command: sqlite3 ~/Library/Application\ Support/Kitematic/Local\ Storage/file__0.localstorage
+#           "SELECT value FROM ItemTable WHERE key = 'metrics.enabled'"
+#  changed_when: false
+#  register: metrics_check
 
-- name: disable metrics in kitematic
-  command: sqlite3 ~/Library/Application\ Support/Kitematic/Local\ Storage/file__0.localstorage
-           "UPDATE ItemTable SET value = 'false' WHERE key = 'metrics.enabled'"
-  when: metrics_check.stdout == 'true'
+#- name: disable metrics in kitematic
+#  command: sqlite3 ~/Library/Application\ Support/Kitematic/Local\ Storage/file__0.localstorage
+#           "UPDATE ItemTable SET value = 'false' WHERE key = 'metrics.enabled'"
+#  when: metrics_check.stdout == 'true'
