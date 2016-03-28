@@ -4,13 +4,18 @@
 ![](images/osx-yosemite-logo.png)
 
 The goal of this project is fully automate my OS X Yosemite workstation using
-Ansible.  I Have currently implemented the following:
+Ansible.  I have currently implemented the following:
 
 * **OS X Defaults**: Updating of plist properties for various aspects of OS X 
-  such as enabling zoom, configuring Finder and so on.
+  such as enabling zoom, configuring Finder and so on.  This uses a custom
+  plist module which allows for complex updates of plist files far beyond
+  the defaults command.
 * **Configuration Files**: Any files that are to be copied to the Mac, 
-  including app settings and dotfiles.
-* **Terminal Package Installation**: This is being accomplish with the use of
+  including app settings, licenses and dotfiles.
+* **Symlinks to Cloud Storage**: This allows you to store certain app 
+  configuration in the cloud (e.g. Dropbox, Google Drive .etc) and then
+  symlink to it so that your settings are stored and updated in the cloud.
+* **Unix Package Installation**: This is being accomplish with the use of
   [homebrew](https://github.com/Homebrew/homebrew).
 * **Terminal Customisation**: Setting up the Terminal using JXA.
 * **Desktop Application Installation**: This is being performed with the use
@@ -24,8 +29,7 @@ Ansible.  I Have currently implemented the following:
   Vagrant.  This also includes installation of related packages for each
   technology.
 * **Application Settings**: Automating configuration of Sublime Text, MacDown,
-  Textual and other applications which are of interest to me.  This is performed
-  using plist properties and custom code.
+  Textual and other applications which are of interest to me.  This is performed using plist properties, files and custom code.
 * **Project Setup**: Cloning and setup of certain GitHub projects I work on.
 
 The plist module is a modified version of
@@ -49,19 +53,22 @@ of this.
 Some settings (outside those in the "Out of Scope") section must be set 
 manually due to excessive automation complexity.
 
-**1Password**: Locate your 1Password database (this setting is stored in an 
+* **1Password**: Locate your 1Password database (this setting is stored in an 
   SQLite database)
-**CanOpener**: Install this manually
-**Chrome**: Sign in with your Google account to sync settings
-**Clear**: Enable iCloud (this triggers various actions which I can't automate)
-**Dropbox**: Disable camera uploads (settings are stored a binary)
-**Firefox**: Go through wizard and sign into your Firefox account
-**Microsoft Office**: License this manually
-**Spotify**: Update sources to only include iTunes (settings are stored
+* **CanOpener**: Install this manually
+* **Chrome**: Sign in with your Google account to sync settings
+* **Clear**: Enable iCloud (this triggers various actions which I can't 
+  automate)
+* **Dropbox**: Disable camera uploads (settings are stored a binary)
+* **Firefox**: Go through wizard and sign into your Firefox account
+* **Microsoft Office**: License this manually
+* **Spotify**: Update sources to only include iTunes (settings are stored
   in binary format)
+* **ValhallaVintageVerb**: Install this manualy
 
 ## TODO
 
+* **Handlers**: Implementation of handlers to avoid the reboot requirement
 * **Audio Hijack**: Implement code to modify plist and add license
 * **Finder**: Sidebar containing favourites and so forth
 * **Dock**: Setup the Dock with the appropriate icons (via dockutil)
@@ -70,7 +77,6 @@ manually due to excessive automation complexity.
 * **Git**: Further aliases and touch-ups to gitconfig (possibly 
   integrating cdiff)
 * **Microsoft Office**: License installation
-* **ValhallaVintageVerb**: License installation
 * **VMware Fusion**: Software settings and licenses
 
 ## References
