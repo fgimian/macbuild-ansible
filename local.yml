@@ -1,7 +1,6 @@
 ---
 - hosts: localhost
   connection: local
-  gather_facts: no
   vars:
     # Set our development directory
     development_dir: '~/Documents/Development'
