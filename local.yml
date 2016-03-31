@@ -5,8 +5,9 @@
     # Set our development directory
     development_dir: '~/Documents/Development'
 
-    # Set our cloud application configuration root directory
+    # Set our cloud application configuration and license root directories
     cloud_app_config_dir: '~/Google Drive/Software Settings'
+    cloud_app_license_dir: '~/Google Drive/Software Licenses'
   roles:
     # System Configuration
     - global
