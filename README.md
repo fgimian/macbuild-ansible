@@ -30,7 +30,6 @@ Ansible.  I have currently implemented the following:
   technology.
 * **Application Settings**: Automating configuration of Sublime Text, MacDown,
   Textual and other applications which are of interest to me.  This is performed using plist properties, files and custom code.
-* **Project Setup**: Cloning and setup of certain GitHub projects I work on.
 
 The plist module is a modified version of
 [Matthias Neugebauer's plist module](https://github.com/mtneug/ansible-modules-plist).
@@ -76,7 +75,6 @@ manually due to excessive automation complexity.
 * The new version of DMG Audio plugins don't show up correctly in Audio Hijack
 * Sudo keeps dropping out during installs due to Homebrew invalidating it
 * Google Drive won't be available for symlinking during install
-* SSH keys must be added to ensure cloning the blog repo works
 
 ### Features
 
