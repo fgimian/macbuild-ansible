@@ -18,15 +18,10 @@ options:
         NSGlobalDomain or "Apple Global Domain" to update global preferences.
     required: true
     default: null
-  key:
+  values:
     description:
-      - Key in the plist to manage.
-    required: false
-    default: null
-  value:
-    description:
-      - Value which sould be set or merged (may be a complex data type like a
-        dict or array).
+      - Values which sould be set or merged represented as a data structure
+    type: dict
     required: true
     default: null
   container:
@@ -53,28 +48,27 @@ requirements: [ biplist ]
 EXAMPLES = '''
 plist:
   dest: /tmp/com.ansible.something.plist
-  key: address
-  value: 123 Fake St
+  values:
+    address: 123 Fake St
 
 plist:
   dest: com.ansible.something
-  key: count
-  value: 7
+  values:
+    count: 7
   backup: yes
 
 plist:
   dest: com.ansible.something
-  key: person
-  value:
-    name: Pumpkinhead Man
-    occupation: IT Geek
-    interests:
-      - Python
-      - Ansible
-      - Pumpkins
+  values:
+    person:
+      name: Pumpkinhead Man
+      occupation: IT Geek
+      interests:
+        - Python
+        - Ansible
+        - Pumpkins
 '''
 
-from glob import glob
 import os
 
 try:
@@ -84,8 +78,8 @@ except ImportError:
 else:
     biplist_found = True
 
-def do_plist(module, filename, key, value, backup=False):
-    working_value = value if key is None else {key: value}
+def do_plist(module, filename, values, backup=False):
+    working_values = values
     changed = False
 
     try:
@@ -96,14 +90,14 @@ def do_plist(module, filename, key, value, backup=False):
     except biplist.InvalidPlistException:
         module.fail_json(msg="an invalid plist already exists")
 
-    changed = not equal(plist, working_value)
+    changed = not equal(plist, working_values)
 
     if changed and not module.check_mode:
         if backup:
             module.backup_local(filename)
 
         try:
-            update(plist, working_value)
+            update(plist, working_values)
             plist_dir = os.path.dirname(filename)
             if not os.path.exists(plist_dir):
                 os.makedirs(plist_dir)
@@ -124,12 +118,12 @@ def equal(slave, master):
 
     return True
 
-def update(plist, working_value):
-    for key, value in working_value.iteritems():
+def update(plist, working_values):
+    for key, value in working_values.iteritems():
         if isinstance(value, dict):
             plist[key] = update(plist.get(key, {}), value)
         else:
-            plist[key] = working_value[key]
+            plist[key] = working_values[key]
 
     return plist
 
@@ -137,8 +131,7 @@ def main():
     module = AnsibleModule(
         argument_spec = dict(
             dest = dict(required=True),
-            key = dict(required=False),
-            value = dict(required=True),
+            values = dict(required=True, type='dict'),
             container = dict(required=False),
             backup = dict(default='no', type='bool')
         ),
@@ -170,11 +163,10 @@ def main():
         module.params['dest'] = os.path.expanduser(module.params['dest'])
 
     dest = module.params['dest']
-    key = module.params['key']
-    value = module.params['value']
+    values = module.params['values']
     backup = module.params['backup']
 
-    changed = do_plist(module, dest, key, value, backup)
+    changed = do_plist(module, dest, values, backup)
 
     module.exit_json(dest=dest, changed=changed, msg="OK")
 

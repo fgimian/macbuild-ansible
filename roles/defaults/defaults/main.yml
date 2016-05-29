@@ -5,7 +5,7 @@ osapp_defaults:
 
   # System Preferences & Globals
   - domain: Apple Global Domain
-    defaults:
+    values:
       # General / Appearance / Use dark menu bar and Dock
       AppleInterfaceStyle: Dark
       # Keyboard / Keyboard / Key Repeat
@@ -34,7 +34,7 @@ osapp_defaults:
 
   # System Preferences / Accessibility
   - domain: com.apple.universalaccess
-    defaults:
+    values:
       # Zoom / Use scroll gesture with modifier keys to zoom
       closeViewScrollWheelToggle: true
       # Display / Cursor size
@@ -42,25 +42,25 @@ osapp_defaults:
 
   # System Preferences / Mouse
   - domain: com.apple.driver.AppleBluetoothMultitouch.mouse
-    defaults:
+    values:
       # Point & Click / Secondary click
       MouseButtonMode: TwoButton
 
   # Launch Services
   - domain: com.apple.LaunchServices
-    defaults:
+    values:
       # Disable the 'Are you sure you want to open this application?' dialog
       LSQuarantine: false
 
   # Login Window
   - domain: com.apple.loginwindow
-    defaults:
+    values:
       # Disable 'Reopen windows when logging back in' by default
       TALLogoutSavesState: false
 
   # Dock
   - domain: com.apple.dock
-    defaults:
+    values:
       # Set the icon size of dock items
       tilesize: 60
       # Enable magnificationn of icons
@@ -70,7 +70,7 @@ osapp_defaults:
 
   # Finder
   - domain: com.apple.finder
-    defaults:
+    values:
       # View / Show Status Bar
       ShowStatusBar: true
       # Set the default Finder display mode to list
@@ -78,13 +78,13 @@ osapp_defaults:
 
   # Menu (Clock)
   - domain: com.apple.menuextra.clock
-    defaults:
+    values:
       # Open Date & Time Preferences... / Clock / Show date
       DateFormat: "EEE d MMM  h:mm a"
 
   # Symbolic Hot Keys
   - domain: com.apple.symbolichotkeys
-    defaults:
+    values:
       # Disable slow motion effects
       # (http://apple.stackexchange.com/questions/66433)
       AppleSymbolicHotKeys:
@@ -94,14 +94,14 @@ osapp_defaults:
 
   # Screen Capture
   - domain: com.apple.screencapture
-    defaults:
+    values:
       location: ~/Pictures/Screenshots
 
   # --- Apple Software ---
 
   # Safari
   - domain: com.apple.Safari
-    defaults:
+    values:
       # View / Show Status Bar
       ShowStatusBar: true
 
@@ -109,7 +109,7 @@ osapp_defaults:
 
   # 1Password
   - domain: com.agilebits.onepassword4
-    defaults:
+    values:
       WelcomeWindowShown: true
       LockOnMainAppExit: false
       LockOnIdle: true
@@ -118,31 +118,31 @@ osapp_defaults:
       UserMetricsSkippedNewsletterSignupKey: true
       CompletedEssentialSettings: true
   - domain: 2BUA8C4S2C.com.agilebits.onepassword4-helper
-    defaults:
+    values:
       autosave: false
 
   # Android File Transfer
   - domain: com.google.android.mtpviewer
-    defaults:
+    values:
       FirstRunShown: true
 
   # AppCleaner
   - domain: net.freemacsoft.AppCleaner
-    defaults:
+    values:
       SUEnableAutomaticChecks: true
       SUHasLaunchedBefore: true
       SUSendProfileInfo: false
 
   # Audio Hijack
   - domain: com.rogueamoeba.audiohijack3
-    defaults:
+    values:
       homeWindowShown: true
       # Setting the launch count to 2 skips the newsletter prompt
       launchCount: 2
 
   # BetterSnapTool
   - domain: com.hegenberg.BetterSnapTool
-    defaults:
+    values:
       BSTDidAlreadyLaunchOnElCapitan: true
       BSTDidAlreadyLaunchOnce: true
       BSTDidClickHighlightedMenuItem: true
@@ -178,17 +178,17 @@ osapp_defaults:
   # Clear
   - domain: com.realmacsoftware.clear.mac
     container: com.realmacsoftware.clear.mac
-    defaults:
+    values:
       app.shown-welcome: true
 
   # DaisyDisk
   - domain: com.daisydiskapp.DaisyDiskStandAlone
-    defaults:
+    values:
       moveToApplicationsFolderAlertSuppress: true
 
   # Dash
   - domain: com.kapeli.dashdoc
-    defaults:
+    values:
       moveToApplicationsFolderAlertSuppress: true
       didSuppressDownloadDocsetsAlert: true
       DHNotificationNoDocsetsFound: true
@@ -203,7 +203,7 @@ osapp_defaults:
 
   # Entropy
   - domain: com.eigenlogik.Entropy
-    defaults:
+    values:
       moveToApplicationsFolderAlertSuppress: true
       SUEnableAutomaticChecks: true
       SUSendProfileInfo: false
@@ -212,7 +212,7 @@ osapp_defaults:
 
   # f.lux
   - domain: org.herf.Flux
-    defaults:
+    values:
       moveToApplicationsFolderAlertSuppress: true
       lateColorTemp: 2400.0
       nightColorTemp: 2800.0
@@ -224,13 +224,13 @@ osapp_defaults:
 
   # GitHub Pulse
   - domain: com.tadeuzagallo.GithubPulse
-    defaults:
+    values:
       username: '{"time":1437913166036,"data":"fgimian"}'
       dont_notify: '{"time":1437913175176,"data":true}'
 
   # MacDown
   - domain: com.uranusjr.macdown
-    defaults:
+    values:
       firstVersionInstalled: '749'
       SUEnableAutomaticChecks: true
       # General
@@ -265,7 +265,7 @@ osapp_defaults:
 
   # Mia for GMail
   - domain: com.sovapps.gmailnotifier
-    defaults:
+    values:
       # Preferences / Notifications
       notifications: true
       # Preferences / Black & white icons
@@ -277,37 +277,37 @@ osapp_defaults:
 
   # Microsoft Office
   - domain: ~/Library/Group Containers/UBF8T346G9.Office/com.microsoft.officeprefs.plist
-    defaults:
+    values:
       kCUIThemePreferencesThemeKeyPath: 0
 
   - domain: com.microsoft.Excel
     container: com.microsoft.Excel
-    defaults:
+    values:
       kSubUIAppCompletedFirstRunSetup1507: true
 
   - domain: com.microsoft.Word
     container: com.microsoft.Word
-    defaults:
+    values:
       kSubUIAppCompletedFirstRunSetup1507: true
 
   - domain: com.microsoft.Powerpoint
     container: com.microsoft.Powerpoint
-    defaults:
+    values:
       kSubUIAppCompletedFirstRunSetup1507: true
 
   - domain: com.microsoft.onenote.mac
     container: com.microsoft.onenote.mac
-    defaults:
+    values:
       kSubUIAppCompletedFirstRunSetup1507: true
 
   - domain: com.microsoft.Outlook
     container: com.microsoft.Outlook
-    defaults:
+    values:
       kSubUIAppCompletedFirstRunSetup1507: true
 
   # MPlayerX
   - domain: org.niltsh.MPlayerX
-    defaults:
+    values:
       SUSendProfileInfo: false
       SUEnableAutomaticChecks: true
       # General / Keep window on top / Never
@@ -315,7 +315,7 @@ osapp_defaults:
 
   # OpenEmu
   - domain: org.openemu.OpenEmu
-    defaults:
+    values:
       setupAssistantFinished: true
       SUEnableAutomaticChecks: true
       videoFilter: SABR
@@ -325,12 +325,12 @@ osapp_defaults:
   # Pixelmator
   - domain: com.pixelmatorteam.pixelmator
     container: com.pixelmatorteam.pixelmator
-    defaults:
+    values:
       DOCUMENT_WINDOW_INFOVIEW_IS_VISIBLE_KEY: true
 
   # SourceTree
   - domain: com.torusknot.SourceTreeNotMAS
-    defaults:
+    values:
       moveToApplicationsFolderAlertSuppress: true
       analyticsHasAgreed: false
       agreedToEULA: true
@@ -346,7 +346,7 @@ osapp_defaults:
 
   # Textual
   - domain: com.codeux.apps.textual
-    defaults:
+    values:
       'Theme -> Invert Sidebar Colors Preference Enabled': 0
       'Theme -> Name': 'resource:Sapientia'
       'Text Input Prompt Suppression -> theme_override_info': true
@@ -367,7 +367,7 @@ osapp_defaults:
 
   # Transmission
   - domain: org.m0k.transmission
-    defaults:
+    values:
       # Transfers / Trash original torrent files
       DeleteOriginalTorrent: true
       # Hide the legal disclaimer
@@ -376,7 +376,7 @@ osapp_defaults:
   # Twitter
   - domain: com.twitter.twitter-mac
     container: com.twitter.twitter-mac
-    defaults:
+    values:
       # General / Font size / 16 pt
       FontSize1: 16
       # General / Theme / Dark Theme
@@ -384,7 +384,7 @@ osapp_defaults:
 
   # VMware Fusion
   - domain: com.vmware.fusion
-    defaults:
+    values:
       # Virtual Machine Library / View / Show items as icons
       PLInventoryWindowStylePref: 1
       # Preferences / General / Show in menu bar / Only when Fusion is running
@@ -393,7 +393,7 @@ osapp_defaults:
   # VOX
   - domain: com.coppertino.Vox
     container: com.coppertino.Vox
-    defaults:
+    values:
       lastVersion: 254
       welcome: false
       VXDoNotAskAboutAnalytics: true

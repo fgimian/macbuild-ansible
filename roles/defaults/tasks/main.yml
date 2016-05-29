@@ -2,6 +2,8 @@
 - name: set operating system and application defaults
   plist:
     dest: "{{ item.domain }}"
-    value: "{{ item.defaults }}"
+    # Note that we must access values using the square brackets or Ansible
+    # casts all values to strings
+    values: "{{ item['values'] }}"
     container: "{{ item.container | default(None) }}"
   with_items: "{{ osapp_defaults }}"
