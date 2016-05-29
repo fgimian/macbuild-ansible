@@ -3,6 +3,9 @@
 # Prompt the user for their sudo password
 sudo -v
 
+# Enable passwordless sudo for the macbuild run
+sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) NOPASSWD: ALL/" /etc/sudoers
+
 # Install Homebrew
 if ! which brew > /dev/null 2>&1
 then
@@ -38,3 +41,6 @@ ansible-playbook -i localhost, local.yml
 
 # Set Terminal settings
 ./terminal.js
+
+# Disable passwordless sudo after the macbuild is complete
+sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) ALL/" /etc/sudoers
