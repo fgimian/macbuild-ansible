@@ -35,6 +35,7 @@ brew_casks:
   # Freeware
   - android-file-transfer
   - appcleaner
+  - bootchamp
   - dropbox
   - firefox
   - flux
