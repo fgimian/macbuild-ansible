@@ -4,6 +4,8 @@
 
 ![Mac Build Logo](images/macbuild-logo.png)
 
+Artwork courtesy of [Apple](http://www.apple.com/)
+
 ## Introduction
 
 The goal of this project is fully automate my OS X Yosemite workstation using
