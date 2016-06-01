@@ -1,18 +1,21 @@
 # Mac Build (using Ansible)
-*Automating OS X setup from the ground up*
 
-![](images/osx-yosemite-logo.png)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fgimian/campies/blob/master/LICENSE)
+
+![Mac Build Logo](images/osx-yosemite-logo.png)
+
+## Introduction
 
 The goal of this project is fully automate my OS X Yosemite workstation using
 Ansible.  I have currently implemented the following:
 
-* **OS X Defaults**: Updating of plist properties for various aspects of OS X 
+* **OS X Defaults**: Updating of plist properties for various aspects of OS X
   such as enabling zoom, configuring Finder and so on.  This uses a custom
   plist module which allows for complex updates of plist files far beyond
   the defaults command.
-* **Configuration Files**: Any files that are to be copied to the Mac, 
+* **Configuration Files**: Any files that are to be copied to the Mac,
   including app settings, licenses and dotfiles.
-* **Symlinks to Cloud Storage**: This allows you to store certain app 
+* **Symlinks to Cloud Storage**: This allows you to store certain app
   configuration in the cloud (e.g. Dropbox, Google Drive .etc) and then
   symlink to it so that your settings are stored and updated in the cloud.
 * **Unix Package Installation**: This is being accomplish with the use of
@@ -22,7 +25,7 @@ Ansible.  I have currently implemented the following:
   of [homebrew-cask](https://github.com/caskroom/homebrew-cask).
 * **Appstore Application Check**: Since there is currently no way to automate
   installation of App Store applications, I perform a check to see if the app
-  is installed, and notify the user that they must install it from the App 
+  is installed, and notify the user that they must install it from the App
   Store if it isn't.
 * **Development Setup**: Installation of development languages like Python,
   Ruby, Node.js and Go, along with development environments like docker and
@@ -49,14 +52,14 @@ of this.
 
 ## Manual Configuration
 
-Some settings (outside those in the "Out of Scope") section must be set 
+Some settings (outside those in the "Out of Scope") section must be set
 manually due to excessive automation complexity.
 
-* **1Password**: Locate your 1Password database (this setting is stored in an 
+* **1Password**: Locate your 1Password database (this setting is stored in an
   SQLite database)
 * **CanOpener**: Install this manually
 * **Chrome**: Sign in with your Google account to sync settings
-* **Clear**: Enable iCloud (this triggers various actions which I can't 
+* **Clear**: Enable iCloud (this triggers various actions which I can't
   automate)
 * **Dropbox**: Disable camera uploads (settings are stored a binary)
 * **Firefox**: Go through wizard and sign into your Firefox account
@@ -64,30 +67,6 @@ manually due to excessive automation complexity.
 * **Spotify**: Update sources to only include iTunes (settings are stored
   in binary format)
 * **ValhallaVintageVerb**: Install this manualy
-
-## TODO
-
-### Bugs
-
-* Docker role can't modify Kitematic SQL database when it hasn't been created
-* The new version of Ansible (2.1) doesn't pass variables correctly to my 
-  plist module which leads to it failing
-* The new version of DMG Audio plugins don't show up correctly in Audio Hijack
-* Sudo keeps dropping out during installs due to Homebrew invalidating it
-* Google Drive won't be available for symlinking during install
-
-### Features
-
-* **Handlers**: Implementation of handlers to avoid the reboot requirement
-* **Audio Hijack**: Implement code to modify plist and add license
-* **Finder**: Sidebar containing favourites and so forth
-* **Dock**: Setup the Dock with the appropriate icons (via dockutil)
-* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
-* **Notification Centre**: Set the order of items and allow permission
-* **Git**: Further aliases and touch-ups to gitconfig (possibly 
-  integrating cdiff)
-* **Microsoft Office**: License installation
-* **VMware Fusion**: Software settings and licenses
 
 ## References
 
@@ -118,3 +97,24 @@ Mac Build is released under the **MIT** license. Please see the
 [LICENSE](https://github.com/fgimian/macbuild/blob/master/LICENSE) file for
 more details.  Feel free take what you like and use it in your own Ansible
 scripts.
+
+## TODO
+
+### Bugs
+
+* Docker role can't modify Kitematic SQL database when it hasn't been created
+* The new version of DMG Audio plugins don't show up correctly in Audio Hijack
+* Google Drive won't be available for symlinking during install
+
+### Features
+
+* **Handlers**: Implementation of handlers to avoid the reboot requirement
+* **Audio Hijack**: Implement code to modify plist and add license
+* **Finder**: Sidebar containing favourites and so forth
+* **Dock**: Setup the Dock with the appropriate icons (via dockutil)
+* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
+* **Notification Centre**: Set the order of items and allow permission
+* **Git**: Further aliases and touch-ups to gitconfig (possibly
+  integrating cdiff)
+* **Microsoft Office**: License installation
+* **VMware Fusion**: Software settings and licenses
