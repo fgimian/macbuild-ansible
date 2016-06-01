@@ -39,7 +39,7 @@ Ansible.  I have currently implemented the following:
 The plist module is a modified version of
 [Matthias Neugebauer's plist module](https://github.com/mtneug/ansible-modules-plist).
 
-## Building the System
+## Quick Start
 
 Run the following in your Terminal to use my configuration:
 
