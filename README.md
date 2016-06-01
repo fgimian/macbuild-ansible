@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fgimian/campies/blob/master/LICENSE)
 
-![Mac Build Logo](images/osx-yosemite-logo.png)
+![Mac Build Logo](images/macbuild-logo.png)
 
 ## Introduction
 
