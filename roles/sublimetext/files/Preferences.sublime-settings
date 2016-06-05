@@ -7,7 +7,8 @@
 			"selector": "punctuation.definition.string"
 		}
 	],
-	"color_scheme": "Packages/User/Monokai Soda.tmTheme",
+	"auto_find_in_selection": true,
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
 	"default_line_ending": "unix",
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"ensure_newline_at_eof_on_save": true,
@@ -21,7 +22,7 @@
 		"__pycache__"
 	],
 	"font_face": "Source Code Pro",
-	"font_size": 16,
+	"font_size": 18,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -30,6 +31,7 @@
 		"Markdown"
 	],
 	"line_padding_bottom": 1,
+	"line_padding_top": 1,
 	"rulers":
 	[
 		79

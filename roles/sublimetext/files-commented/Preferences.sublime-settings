@@ -1,7 +1,10 @@
 {
     // Soda Theme
-    "color_scheme": "Packages/User/Monokai Soda.tmTheme",
+    "color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
     "theme": "Soda Dark 3.sublime-theme",
+
+    // Automatically search in selection when multiple lines are selected
+    "auto_find_in_selection": true,
 
     // Auto-trigger Angular.js controller completions within the ng-controller
     "auto_complete_triggers":
@@ -18,10 +21,11 @@
     // Appearance Settings
     "always_show_minimap_viewport": true,
     "fade_fold_buttons": false,
-    "font_size": 16,
+    "font_size": 18,
     "font_face": "Source Code Pro",
     "highlight_line": true,
     "highlight_modified_tabs": true,
+    "line_padding_top": 1,
     "line_padding_bottom": 1,
     "scroll_past_end": false,
     "scroll_speed": 0,

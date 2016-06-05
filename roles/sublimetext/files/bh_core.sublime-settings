@@ -1,0 +1,22 @@
+{
+    // Override regexes used to apply bracket highlighting so we can exclude
+    // Markdown for a cleaner Markdown editing experience
+    "user_scope_brackets": [
+        {
+            "name": "mditalic",
+            "enabled": false
+        },
+        {
+            "name": "mdbold",
+            "enabled": false
+        },
+        {
+            "name": "mdcodeinline",
+            "enabled": false
+        },
+        {
+            "name": "mdcodeblock",
+            "enabled": false
+        }
+    ]
+}

@@ -3,16 +3,21 @@
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"Alignment",
 		"All Autocomplete",
 		"AngularJS",
 		"Ansible",
 		"BinaryPlist",
 		"BracketHighlighter",
+		"DistractionFreeWindow",
 		"Emmet",
+		"GitGutter",
 		"JavaScript & NodeJS Snippets",
 		"Jinja2",
 		"LESS",
+		"Markdown Preview",
 		"MarkdownEditing",
+		"Monokai Extended",
 		"Package Control",
 		"PlainTasks",
 		"Puppet",
@@ -20,6 +25,7 @@
 		"SublimeLinter-flake8",
 		"SublimeLinter-jshint",
 		"SublimeLinter-shellcheck",
-		"Theme - Soda"
+		"Theme - Soda",
+		"Typewriter"
 	]
 }

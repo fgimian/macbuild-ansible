@@ -1,6 +1,6 @@
 {
-    // Set the color schema to my version of the dark theme
-    "color_scheme": "Packages/User/Fotsies Dark MarkdownEditor.tmTheme",
+    // Set the color schema to Monokai Extended
+    "color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
 
     // Re-enable line hightlighting
     "highlight_line": true,
@@ -8,5 +8,12 @@
     // Revert the caret to our default style
     "caret_style": "smooth",
     "caret_extra_top": 0,
-    "caret_extra_bottom": 0
+    "caret_extra_bottom": 0,
+
+    // Don't show folding buttons to keep Markdown editing more minimal
+    "fade_fold_buttons": true,
+
+    // Enable typewriter mode and scroll past end (needed for typewriter to work)
+    "typewriter_mode_scrolling": true,
+    "scroll_past_end": true
 }

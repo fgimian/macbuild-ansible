@@ -9,5 +9,10 @@
     { "keys": ["super+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
 
     // Set goto_definition again as the default definition doesn't seem to work
-    { "keys": ["super+alt+down"], "command": "goto_definition" }
+    { "keys": ["super+alt+down"], "command": "goto_definition" },
+
+    // Correct a duplicate keyboard shortcut introduced by SublimeLinter and
+    // re-enable Alignment on its default shortcut
+    { "keys": ["super+ctrl+o"], "command": "sublimelinter_show_all_errors" },
+    { "keys": ["super+ctrl+a"], "command": "alignment" }
 ]

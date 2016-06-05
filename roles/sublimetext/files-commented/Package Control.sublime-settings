@@ -1,11 +1,13 @@
 {
     "bootstrapped": true,
-
     // Specify a list of our installed packages
     "installed_packages":
     [
         // Use ctrl+alt+n to easily create a new file
         "AdvancedNewFile",
+
+        // Ability to easily align definitions (handy with Puppet code)
+        "Alignment",
 
         // Autocompletes symbols using all open files
         "All Autocomplete",
@@ -22,8 +24,14 @@
         // Clearly highlights matching brackets, tags .etc
         "BracketHighlighter",
 
+        // Distraction free mode without entering full-screen
+        "DistractionFreeWindow",
+
         // Emmet HTML code generation
         "Emmet",
+
+        // Shows git additions and removals in the gutter
+        "GitGutter",
 
         // Additional JavaScript snippets
         "JavaScript & NodeJS Snippets",
@@ -39,6 +47,12 @@
 
         // Markdown themes and syntax highlighting
         "MarkdownEditing",
+
+        // An improved Soda-flavoured Monokai theme with Markdown support
+        "Monokai Extended",
+
+        // Ability to preview rendered Markdown code
+        "Markdown Preview",
 
         // The package manager for Sublime Text
         "Package Control",
@@ -59,6 +73,9 @@
         "SublimeLinter-shellcheck",
 
         // The wonderful Soda theme
-        "Theme - Soda"
+        "Theme - Soda",
+
+        // Typewriter mode for centered scrolling in Markdown files
+        "Typewriter"
     ]
 }
