@@ -1,5 +1,8 @@
 {
 	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -7,11 +10,14 @@
 		"All Autocomplete",
 		"AngularJS",
 		"Ansible",
+		"Better CoffeeScript",
 		"BinaryPlist",
 		"BracketHighlighter",
+		"ColorPicker",
 		"DistractionFreeWindow",
 		"Emmet",
 		"GitGutter",
+		"Jade",
 		"JavaScript & NodeJS Snippets",
 		"Jinja2",
 		"LESS",
@@ -21,9 +27,13 @@
 		"Package Control",
 		"PlainTasks",
 		"Puppet",
+		"Sass",
 		"SublimeLinter",
+		"SublimeLinter-csslint",
 		"SublimeLinter-flake8",
 		"SublimeLinter-jshint",
+		"SublimeLinter-json",
+		"SublimeLinter-pyyaml",
 		"SublimeLinter-shellcheck",
 		"Theme - Soda",
 		"Typewriter"

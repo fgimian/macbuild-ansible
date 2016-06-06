@@ -18,11 +18,17 @@
         // Support for Ansible YAML files
         "Ansible",
 
+        // CoffeeScript syntax support
+        "Better CoffeeScript",
+
         // Support for binary plist files and syntax
         "BinaryPlist",
 
         // Clearly highlights matching brackets, tags .etc
         "BracketHighlighter",
+
+        // Color picker useful for CSS
+        "ColorPicker",
 
         // Distraction free mode without entering full-screen
         "DistractionFreeWindow",
@@ -32,6 +38,9 @@
 
         // Shows git additions and removals in the gutter
         "GitGutter",
+
+        // Jade syntax support
+        "Jade",
 
         // Additional JavaScript snippets
         "JavaScript & NodeJS Snippets",
@@ -44,6 +53,9 @@
 
         // Puppet syntax support
         "Puppet",
+
+        // SASS and SCSS syntax support
+        "Sass",
 
         // Markdown themes and syntax highlighting
         "MarkdownEditing",
@@ -63,11 +75,20 @@
         // The main sublime linter core
         "SublimeLinter",
 
+        // Linting of CSS using CSS Lint
+        "SublimeLinter-csslint",
+
         // Linting of Python using flake8
         "SublimeLinter-flake8",
 
         // Linting of JavaScript using JSHint
         "SublimeLinter-jshint",
+
+        // Linting of JSON using the built-in JSON parser
+        "SublimeLinter-json",
+
+        // Linting of YAML using PyYAML
+        "SublimeLinter-pyyaml",
 
         // Linting of Bash scripts using shellcheck
         "SublimeLinter-shellcheck",
