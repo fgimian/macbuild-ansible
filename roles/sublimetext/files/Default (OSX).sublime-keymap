@@ -14,5 +14,8 @@
     // Correct a duplicate keyboard shortcut introduced by SublimeLinter and
     // re-enable Alignment on its default shortcut
     { "keys": ["super+ctrl+o"], "command": "sublimelinter_show_all_errors" },
-    { "keys": ["super+ctrl+a"], "command": "alignment" }
+    { "keys": ["super+ctrl+a"], "command": "alignment" },
+
+    // Markdown preview keyboard shortcut
+    { "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"} }
 ]

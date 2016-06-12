@@ -51,6 +51,9 @@
         // LESS syntax support
         "LESS",
 
+        // Live browser reloading for web development and Markdown
+        "LiveReload",
+
         // Puppet syntax support
         "Puppet",
 
