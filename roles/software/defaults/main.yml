@@ -18,6 +18,7 @@ brew_packages:
   - hugo
   - md5sha1sum
   - rlwrap
+  - sassc
   - shellcheck
   - tree
   - watch
