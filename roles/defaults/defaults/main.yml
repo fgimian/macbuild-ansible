@@ -222,12 +222,6 @@ osapp_defaults:
       location: '-37.814107,144.963280'
       wakeTime: 480
 
-  # GitHub Pulse
-  - domain: com.tadeuzagallo.GithubPulse
-    values:
-      username: '{"time":1437913166036,"data":"fgimian"}'
-      dont_notify: '{"time":1437913175176,"data":true}'
-
   # MacDown
   - domain: com.uranusjr.macdown
     values:

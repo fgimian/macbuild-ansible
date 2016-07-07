@@ -41,7 +41,6 @@ brew_casks:
   - dropbox
   - firefox
   - flux
-  - githubpulse
   - google-chrome
   - google-drive
   - macdown
