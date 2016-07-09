@@ -37,7 +37,9 @@ brew_casks:
   # Freeware
   - android-file-transfer
   - appcleaner
+  - bestres
   - bootchamp
+  - cog
   - dropbox
   - firefox
   - flux
@@ -47,6 +49,7 @@ brew_casks:
   - miaforgmail
   - mplayerx
   - openemu-experimental
+  - skype
   - slack
   - sourcetree
   - sshfs
@@ -59,8 +62,6 @@ brew_casks:
   - audio-hijack
   - daisydisk
   - dash
-  - dmgaudio-dualism
-  - dmgaudio-equilibrium
   - entropy
   # Use my Cask of Microsoft Office which is locked to a checksum and helps
   # avoid additional downloads
