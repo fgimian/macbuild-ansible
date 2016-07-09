@@ -1,6 +1,6 @@
 ---
 - name: install sublime text
-  homebrew_cask: name=sublime-text3 state=present
+  homebrew_cask: name=sublime-text-dev state=present
 
 - name: ensure the sublime text settings directories exist
   file: path="{{ item }}" state=directory
