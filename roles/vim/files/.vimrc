@@ -83,7 +83,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
 
 " Install the airline plugin for a really nice and informative status bar
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Install emmet for awesome HTML writing magic
 Plugin 'mattn/emmet-vim'
