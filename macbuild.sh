@@ -37,7 +37,7 @@ then
 fi
 
 # Perform the build
-ansible-playbook -i localhost, local.yml
+ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python local.yml
 
 # Set Terminal settings
 ./terminal.js
