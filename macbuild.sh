@@ -11,8 +11,6 @@ if ! which brew > /dev/null 2>&1
 then
     echo "Installing Homebrew"
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
-    echo "Copy any installers you have to /Library/Caches/Homebrew and press any key to continue..."
-    read -r
 fi
 
 # Install Python
