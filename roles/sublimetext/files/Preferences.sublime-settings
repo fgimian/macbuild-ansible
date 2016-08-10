@@ -11,6 +11,7 @@
 	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
 	"default_line_ending": "unix",
 	"dictionary": "Packages/Language - English/en_GB.dic",
+	"enable_hexadecimal_encoding": false,
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
 	"folder_exclude_patterns":
