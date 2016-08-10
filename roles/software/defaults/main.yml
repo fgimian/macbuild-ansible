@@ -44,7 +44,6 @@ brew_casks:
   - firefox
   - flux
   - google-chrome
-  - google-drive
   - macdown
   - miaforgmail
   - mplayerx

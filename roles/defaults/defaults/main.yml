@@ -31,7 +31,6 @@ osapp_defaults:
       NSNavPanelExpandedStateForSaveMode2: true
       # Disable the character accent menu when holding down a key
       ApplePressAndHoldEnabled: false
-
   # System Preferences / Accessibility
   - domain: com.apple.universalaccess
     values:
