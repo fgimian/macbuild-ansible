@@ -36,9 +36,6 @@
         // Emmet HTML code generation
         "Emmet",
 
-        // Shows git additions and removals in the gutter
-        "GitGutter",
-
         // Jade syntax support
         "Jade",
 
