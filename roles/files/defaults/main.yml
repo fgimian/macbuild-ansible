@@ -36,8 +36,9 @@ files:
     dest: ~/Library/Application Support/Textual/Textual_User_License.plist
   - src: "{{ cloud_app_license_dir }}/ValhallaVintageVerb/ValhallaVintageVerb.settings"
     dest: ~/Library/Preferences/ValhallaVintageVerb.settings
-  - src: "{{ cloud_app_license_dir }}/VMware Fusion/license-fusion-80-e3-201505"
-    dest: /Library/Preferences/VMware Fusion/license-fusion-80-e3-201505
+  # TODO: Repair problems with pushing out this file due to root permissions being required
+  # - src: "{{ cloud_app_license_dir }}/VMware Fusion/license-fusion-80-e3-201505"
+  #   dest: /Library/Preferences/VMware Fusion/license-fusion-80-e3-201505
 
 # Specify files which are to be symlinked to others
 symbolic_links:

@@ -15,9 +15,6 @@
 - name: brew cask tap
   homebrew_tap: tap=caskroom/cask state=present
 
-- name: brew cask package manager
-  homebrew: name=brew-cask state=latest
-
 - name: create the caskroom directory
   file: path=/opt/homebrew-cask/Caskroom state=directory owner=fots group=staff mode=0775
   become: yes
