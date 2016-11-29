@@ -54,7 +54,6 @@ brew_casks:
   - sshfs
   - transmission
   - virtualbox
-  - vox
 
   # Commercial
   - 1password

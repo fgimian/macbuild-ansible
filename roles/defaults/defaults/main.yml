@@ -382,15 +382,3 @@ osapp_defaults:
       PLInventoryWindowStylePref: 1
       # Preferences / General / Show in menu bar / Only when Fusion is running
       showStartMenu3: 2
-
-  # VOX
-  - domain: com.coppertino.Vox
-    container: com.coppertino.Vox
-    values:
-      lastVersion: 254
-      welcome: false
-      VXDoNotAskAboutAnalytics: true
-      VXLoopPromoForHDListenersWasShown: true
-      VXVoxMobilePromoWasShown: true
-      VXCurrentNotificationState: 0
-      VXKeepLoopRunningWhenVoxClosed: false
