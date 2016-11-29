@@ -1,6 +1,7 @@
 ---
 brew_taps:
   - homebrew/completions
+  - homebrew/fuse
   - caskroom/fonts
   - caskroom/versions
   - rcmdnk/rcmdnkcask
@@ -21,6 +22,7 @@ brew_packages:
   - rlwrap
   - sassc
   - shellcheck
+  - sshfs
   - tree
   - watch
   - wget
@@ -31,8 +33,8 @@ brew_packages:
 
 brew_casks:
   # Fonts
-  # - font-source-code-pro
-  # - font-source-code-pro-for-powerline
+  - font-source-code-pro
+  - font-source-code-pro-for-powerline
 
   # Freeware
   - android-file-transfer
@@ -51,7 +53,6 @@ brew_casks:
   - skype
   - slack
   - sourcetree
-  - sshfs
   - transmission
   - virtualbox
 
@@ -69,20 +70,14 @@ brew_casks:
 
 appstore_apps:
   # Freeware
+  - OneDrive
   - Twitter
 
   # Commercial
+  - Affinity Designer
+  - Affinity Photo
   - BetterSnapTool
   - Clear
   - iStat Mini
-  - Pixelmator
-
-fonts:
-  - url: https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip
-    archive: source-code-pro-2.010R-ro-1.030R-it.zip
-    wildcard: '*.otf'
-    creates: SourceCodePro-Regular.otf
-  - url: https://github.com/powerline/fonts/archive/2015-12-04.zip
-    archive: fonts-2015-12-04.zip
-    wildcard: '*Sauce Code Powerline*.otf'
-    creates: Sauce Code Powerline Regular.otf
+  - Screenflow
+  - World Clock

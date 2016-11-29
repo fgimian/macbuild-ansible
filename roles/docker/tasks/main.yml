@@ -5,7 +5,7 @@
   - docker
   - docker-machine
 
-- name: create a dev virtual machine to run docker images
+- name: create a default virtual machine to run docker images
   command: docker-machine create --driver virtualbox default
   args:
     creates: ~/.docker/machine/machines/default

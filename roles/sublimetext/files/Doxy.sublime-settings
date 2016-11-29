@@ -1,0 +1,31 @@
+// Settings in here override those in "${packages}/DoxyDoxygen/Doxy.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+    // Do not specify the directory (in or out) keywords for function arguments
+    "doxygen_discard_param_directions": true,
+
+    // Do not vertically align parameters
+    "preferred_tabs_sizes": [0],
+
+    // Prefix paragraphs with a colon instead of a tab
+    "doxygen_paragraph_prefix": ": ",
+
+    // Setup the comment style for C++ functions
+    "block_layout": {
+        "Doxygen": [
+            {
+                "tags": [
+                    "",
+                    "@_brief",
+                    "",
+                    "@param",
+                    "",
+                    "@tparam",
+                    "",
+                    "@return",
+                    ""
+                ],
+            }
+        ],
+    }
+}

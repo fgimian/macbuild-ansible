@@ -33,8 +33,14 @@
         // Distraction free mode without entering full-screen
         "DistractionFreeWindow",
 
+        // Auto-generated comment blocks
+        "DoxyDoxygen",
+
         // Emmet HTML code generation
         "Emmet",
+
+        // .gitconfig syntax support
+        "Git Config",
 
         // Jade syntax support
         "Jade",
@@ -51,12 +57,6 @@
         // Live browser reloading for web development and Markdown
         "LiveReload",
 
-        // Puppet syntax support
-        "Puppet",
-
-        // SASS and SCSS syntax support
-        "Sass",
-
         // Markdown themes and syntax highlighting
         "MarkdownEditing",
 
@@ -71,6 +71,15 @@
 
         // A system for managing TODO lists in Sublime Text
         "PlainTasks",
+
+        // Puppet syntax support
+        "Puppet",
+
+        // SASS and SCSS syntax support
+        "Sass",
+
+        // Better title case implementation
+        "Smart Title Case",
 
         // The main sublime linter core
         "SublimeLinter",
@@ -92,6 +101,9 @@
 
         // Linting of Bash scripts using shellcheck
         "SublimeLinter-shellcheck",
+
+        // Terraform syntax support
+        "Terraform",
 
         // The wonderful Soda theme
         "Theme - Soda",

@@ -15,7 +15,9 @@
 		"BracketHighlighter",
 		"ColorPicker",
 		"DistractionFreeWindow",
+		"DoxyDoxygen",
 		"Emmet",
+		"Git Config",
 		"Jade",
 		"JavaScript & NodeJS Snippets",
 		"Jinja2",
@@ -28,6 +30,7 @@
 		"PlainTasks",
 		"Puppet",
 		"Sass",
+		"Smart Title Case",
 		"SublimeLinter",
 		"SublimeLinter-csslint",
 		"SublimeLinter-flake8",
@@ -35,6 +38,7 @@
 		"SublimeLinter-json",
 		"SublimeLinter-pyyaml",
 		"SublimeLinter-shellcheck",
+		"Terraform",
 		"Theme - Soda",
 		"Typewriter"
 	]

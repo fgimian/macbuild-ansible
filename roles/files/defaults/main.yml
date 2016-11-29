@@ -32,6 +32,8 @@ files:
     dest: ~/Library/Application Support/DMGAudio/EQuilibrium/license
   - src: "{{ cloud_app_license_dir }}/Sublime Text/License.sublime_license"
     dest: ~/Library/Application Support/Sublime Text 3/Local/License.sublime_license
+  - src: "{{ cloud_app_license_dir }}/Sublime Text/Doxy.sublime-license"
+    dest: ~/Library/Application Support/Sublime Text 3/Packages/User/Doxy.sublime-license
   - src: "{{ cloud_app_license_dir }}/Textual/Textual_User_License.plist"
     dest: ~/Library/Application Support/Textual/Textual_User_License.plist
   - src: "{{ cloud_app_license_dir }}/ValhallaVintageVerb/ValhallaVintageVerb.settings"

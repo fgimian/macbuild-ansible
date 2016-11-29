@@ -315,12 +315,6 @@ osapp_defaults:
       fullScreen: true
       # databasePath: ~/Library/Application Support/OpenEmu/Game Library
 
-  # Pixelmator
-  - domain: com.pixelmatorteam.pixelmator
-    container: com.pixelmatorteam.pixelmator
-    values:
-      DOCUMENT_WINDOW_INFOVIEW_IS_VISIBLE_KEY: true
-
   # SourceTree
   - domain: com.torusknot.SourceTreeNotMAS
     values:
