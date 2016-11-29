@@ -1,7 +1,4 @@
 ---
-# Set the appropriate timezone
-macos_timezone: Australia/Melbourne
-
 # Set various defaults which will update the relevant plist files
 macos_os_defaults:
   # System Preferences & Globals
@@ -102,15 +99,3 @@ macos_os_defaults:
     values:
       # View / Show Status Bar
       ShowStatusBar: true
-
-# Specify dot files or folders which are to be copied
-macos_dotfiles:
-  # Dotfiles
-  - src: files/dotfiles/.bash_profile
-    dest: ~/.bash_profile
-  - src: files/dotfiles/.gitconfig
-    dest: ~/.gitconfig
-  - src: files/dotfiles/.config/fish/config.fish
-    dest: ~/.config/fish/config.fish
-  - src: files/dotfiles/.ipython/profile_default/ipython_config.py
-    dest: ~/.ipython/profile_default/ipython_config.py
