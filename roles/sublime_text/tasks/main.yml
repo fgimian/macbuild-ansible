@@ -1,6 +1,6 @@
 ---
 - name: install sublime text
-  homebrew_cask: name=sublime-text-dev state=present
+  homebrew_cask: name=sublime-text state=present
 
 - name: ensure the sublime text settings directories exist
   file: path="{{ item }}" state=directory
@@ -14,9 +14,5 @@
     dest: ~/Library/Application Support/Sublime Text 3/Installed Packages
     mode: 0644
 
-# Please note that the original Soda theme files (Espresso Soda.tmTheme and
-# Monokai Soda.tmTheme) are available at URL
-# http://buymeasoda.github.com/soda-theme/extras/colour-schemes.zip but
-# since Monokai Extended was released, we'll use that instead.
 - name: install sublime text settings
-  copy: src=. dest='~/Library/Application Support/Sublime Text 3/Packages/User'
+  copy: src=sublime_text/ dest='~/Library/Application Support/Sublime Text 3/Packages/User'

@@ -4,4 +4,4 @@
 
 - name: install node.js essential packages
   npm: name={{ item }} global=yes
-  with_items: "{{ nodejs_packages }}"
+  with_items: "{{ packages }}"

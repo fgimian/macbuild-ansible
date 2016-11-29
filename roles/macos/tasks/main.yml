@@ -60,7 +60,7 @@
     # casts all values to strings
     values: "{{ item['values'] }}"
     container: "{{ item.container | default(None) }}"
-  with_items: "{{ macos_defaults }}"
+  with_items: "{{ os_defaults }}"
 
 - name: create the directory to store the dot file
   file: path={{ item.dest | dirname }} state=directory

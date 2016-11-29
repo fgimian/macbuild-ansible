@@ -1,0 +1,32 @@
+---
+software_brew_packages:
+  # Unix Utilities
+  - android-platform-tools
+  - bash
+  - ctags
+  - curl
+  - findutils
+  - fish
+  - git
+  - gnu-sed
+  - hugo
+  - md5sha1sum
+  - rlwrap
+  - sassc
+  - shellcheck
+  - sshfs
+  - tree
+  - watch
+  - wget
+  - xz
+
+  # Programming Languages
+  - go
+  - rbenv
+  - ruby-build
+
+  # Completions
+  - bash-completion
+  - vagrant-completion
+  - ruby-completion
+  - rake-completion

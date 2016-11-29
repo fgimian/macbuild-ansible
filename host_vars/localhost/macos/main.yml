@@ -1,9 +1,9 @@
 ---
 # Set the appropriate timezone
-timezone: Australia/Melbourne
+macos_timezone: Australia/Melbourne
 
 # Set various defaults which will update the relevant plist files
-macos_defaults:
+macos_os_defaults:
   # System Preferences & Globals
   - domain: Apple Global Domain
     values:
@@ -97,8 +97,6 @@ macos_defaults:
     values:
       location: ~/Pictures/Screenshots
 
-  # --- Apple Software ---
-
   # Safari
   - domain: com.apple.Safari
     values:
@@ -106,7 +104,7 @@ macos_defaults:
       ShowStatusBar: true
 
 # Specify dot files or folders which are to be copied
-dotfiles:
+macos_dotfiles:
   # Dotfiles
   - src: files/dotfiles/.bash_profile
     dest: ~/.bash_profile

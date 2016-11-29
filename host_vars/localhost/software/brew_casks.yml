@@ -1,0 +1,38 @@
+---
+software_brew_casks:
+  # Fonts
+  - font-source-code-pro
+  - font-source-code-pro-for-powerline
+
+  # Freeware
+  - android-file-transfer
+  - appcleaner
+  - bestres
+  - bootchamp
+  - cog
+  - dropbox
+  - firefox
+  - flux
+  - google-chrome
+  - macdown
+  - miaforgmail
+  - mplayerx
+  - openemu-experimental
+  - skype
+  - slack
+  - sourcetree
+  - transmission
+  - vagrant
+  - virtualbox
+
+  # Commercial
+  - 1password
+  - audio-hijack
+  - daisydisk
+  - dash
+  - entropy
+  # Use my Cask of Microsoft Office which is locked to a checksum and helps
+  # avoid additional downloads
+  # - fgimian/fgimian/microsoft-office
+  - textual
+  - vmware-fusion

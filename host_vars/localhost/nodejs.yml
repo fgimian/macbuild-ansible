@@ -1,5 +1,5 @@
 ---
-nodejs_packages:
+node_js_packages:
   - bower
   - coffee-script
   - csslint

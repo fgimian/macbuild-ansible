@@ -53,26 +53,26 @@
   copy: src={{ item.src }} dest={{ item.dest }} mode={{ item.mode | default('0644') }}
   with_items: "{{ app_files }}"
 
-# Application Symbolic Links
+# Application Symlinks
 - name: create the directory to store the app symlink
   file: path={{ item.dest | dirname }} state=directory
   when: item.dest != '/' and item.dest != '~'
-  with_items: "{{ app_symbolic_links }}"
+  with_items: "{{ app_symlinks }}"
 
 - name: check health of requested app symlink
   stat: path="{{ item.dest }}"
   register: symlink_health_check
-  with_items: "{{ app_symbolic_links }}"
+  with_items: "{{ app_symlinks }}"
 
 - name: clean up any files which are not symlinks
   file: path="{{ item.1.dest }}" state=absent
   when: symlink_health_check.results[item.0].stat.exists and
         not symlink_health_check.results[item.0].stat.islnk
-  with_indexed_items: "{{ app_symbolic_links }}"
+  with_indexed_items: "{{ app_symlinks }}"
 
 - name: symlink file to requested destination
   file:
     dest: "{{ item.dest }}"
     src: "{{ item.src }}"
     state: link
-  with_items: "{{ app_symbolic_links }}"
+  with_items: "{{ app_symlinks }}"

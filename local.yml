@@ -10,17 +10,36 @@
     cloud_app_license_dir: '~/Dropbox/Software Licenses'
   roles:
     # macOS Configuration
-    - macos
+    - role: macos
+      timezone: "{{ macos_timezone }}"
+      os_defaults: "{{ macos_os_defaults }}"
+      dotfiles: "{{ macos_dotfiles }}"
+
     # Software Installation & Configuration
-    - software
+    - role: software
+      brew_taps: "{{ software_brew_taps }}"
+      brew_packages: "{{ software_brew_packages }}"
+      brew_casks: "{{ software_brew_casks }}"
+      appstore_apps: "{{ software_appstore_apps }}"
+      app_defaults: "{{ software_app_defaults }}"
+      app_files: "{{ software_app_files }}"
+      app_symlinks: "{{ software_app_symlinks }}"
+
     # Unix Software
     - vim
     - docker
+
     # Programming Languages
-    - go
-    - nodejs
-    - python
-    - ruby
+    - role: node_js
+      packages: "{{ node_js_packages }}"
+    - role: python
+      packages: "{{ python_packages }}"
+
     # Desktop Applications
-    - spotify
-    - sublimetext
+    - role: spotify
+      username: "{{ spotify_username }}"
+      start_on_boot: "{{ spotify_start_on_boot }}"
+      global_settings: "{{ spotify_global_settings }}"
+      user_settings: "{{ spotify_user_settings }}"
+
+    - sublime_text

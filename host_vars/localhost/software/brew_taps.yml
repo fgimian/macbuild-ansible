@@ -1,0 +1,8 @@
+---
+software_brew_taps:
+  - homebrew/completions
+  - homebrew/fuse
+  - caskroom/fonts
+  - caskroom/versions
+  - rcmdnk/rcmdnkcask
+  - fgimian/fgimian

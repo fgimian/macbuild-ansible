@@ -14,15 +14,15 @@
   when: not global_spotify_prefs_check.stat.exists
 
 - name: ensure the spotify user settings directories exist
-  file: path="~/Library/Application Support/Spotify/Users/{{ spotify_username }}-user" state=directory
+  file: path="~/Library/Application Support/Spotify/Users/{{ username }}-user" state=directory
 
 - name: check if user spotify prefs file exists
-  stat: path="~/Library/Application Support/Spotify/Users/{{ spotify_username }}-user/prefs"
+  stat: path="~/Library/Application Support/Spotify/Users/{{ username }}-user/prefs"
   register: user_spotify_prefs_check
 
 - name: create the user spotify prefs file if required
   file:
-    path: "~/Library/Application Support/Spotify/Users/{{ spotify_username }}-user/prefs"
+    path: "~/Library/Application Support/Spotify/Users/{{ username }}-user/prefs"
     state: touch
     mode: 0644
   when: not user_spotify_prefs_check.stat.exists
@@ -32,14 +32,14 @@
     dest: ~/Library/Application Support/Spotify/prefs
     regexp: "^{{ item.key | regex_escape() }}="
     line: "{{ item.key }}={{ item.value | spotify_value }}"
-  with_dict: "{{ spotify_global_settings }}"
+  with_dict: "{{ global_settings }}"
 
 - name: set user setting
   lineinfile:
-    dest: "~/Library/Application Support/Spotify/Users/{{ spotify_username }}-user/prefs"
+    dest: "~/Library/Application Support/Spotify/Users/{{ username }}-user/prefs"
     regexp: "^{{ item.key | regex_escape() }}="
     line: "{{ item.key }}={{ item.value | spotify_value }}"
-  with_dict: "{{ spotify_user_settings }}"
+  with_dict: "{{ user_settings }}"
 
 - name: check if Spotify is in login items
   command: osascript -l JavaScript
@@ -49,6 +49,7 @@
   failed_when: no
   register: spotify_login_check
 
+# TODO: make this switchable by variable start_on_boot
 - name: remove Spotify from login items
   command: osascript -l JavaScript
            -e "Application('System Events').loginItems.byName('Spotify').delete()"
