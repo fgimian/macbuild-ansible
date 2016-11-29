@@ -2,6 +2,6 @@
 - name: install node.js
   homebrew: name=node state=latest
 
-- name: install node.js essential packages
+- name: install node.js global packages
   npm: name={{ item }} global=yes
   with_items: "{{ packages }}"

@@ -15,4 +15,6 @@
     mode: 0644
 
 - name: install sublime text settings
-  copy: src=sublime_text/ dest='~/Library/Application Support/Sublime Text 3/Packages/User'
+  copy:
+    src: sublime_text/
+    dest: ~/Library/Application Support/Sublime Text 3/Packages/User
