@@ -8,5 +8,5 @@ def spotify_value(value):
 
 
 class FilterModule(object):
-     def filters(self):
-         return {'spotify_value': spotify_value}
+    def filters(self):
+        return {'spotify_value': spotify_value}

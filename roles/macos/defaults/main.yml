@@ -1,0 +1,118 @@
+---
+# Set the appropriate timezone
+timezone: Australia/Melbourne
+
+# Set various defaults which will update the relevant plist files
+macos_defaults:
+  # System Preferences & Globals
+  - domain: Apple Global Domain
+    values:
+      # General / Appearance / Use dark menu bar and Dock
+      AppleInterfaceStyle: Dark
+      # Keyboard / Keyboard / Key Repeat
+      KeyRepeat: 2
+      # Keyboard / Keyboard / Delay Until Repeat
+      InitialKeyRepeat: 25
+      # Keyboard / Keyboard / Use all F1, F2, etc. keys as standard function keys
+      com.apple.keyboard.fnState: true
+      # Keyboard / Text / Correct spelling automatically
+      NSAutomaticSpellingCorrectionEnabled: false
+      # Keyboard / Text / Use smart quotes and dashes
+      NSAutomaticQuoteSubstitutionEnabled: false
+      NSAutomaticDashSubstitutionEnabled: false
+      # Keyboard / Shortcuts / Full Keyboard Access / All controls
+      AppleKeyboardUIMode: 3
+      # Mouse / Point & Click / Tracking
+      com.apple.mouse.scaling: 1.0
+
+      # Enable subpixel font rendering on non-Apple LCDs
+      AppleFontSmoothing: 2
+      # Expand the save panel by default
+      NSNavPanelExpandedStateForSaveMode: true
+      NSNavPanelExpandedStateForSaveMode2: true
+      # Disable the character accent menu when holding down a key
+      ApplePressAndHoldEnabled: false
+  # System Preferences / Accessibility
+  - domain: com.apple.universalaccess
+    values:
+      # Zoom / Use scroll gesture with modifier keys to zoom
+      closeViewScrollWheelToggle: true
+      # Display / Cursor size
+      mouseDriverCursorSize: 1.25
+
+  # System Preferences / Mouse
+  - domain: com.apple.driver.AppleBluetoothMultitouch.mouse
+    values:
+      # Point & Click / Secondary click
+      MouseButtonMode: TwoButton
+
+  # Launch Services
+  - domain: com.apple.LaunchServices
+    values:
+      # Disable the 'Are you sure you want to open this application?' dialog
+      LSQuarantine: false
+
+  # Login Window
+  - domain: com.apple.loginwindow
+    values:
+      # Disable 'Reopen windows when logging back in' by default
+      TALLogoutSavesState: false
+
+  # Dock
+  - domain: com.apple.dock
+    values:
+      # Set the icon size of dock items
+      tilesize: 60
+      # Enable magnificationn of icons
+      magnification: true
+      # Make hidden applications translucent in the dock
+      showhidden: true
+
+  # Finder
+  - domain: com.apple.finder
+    values:
+      # View / Show Status Bar
+      ShowStatusBar: true
+      # Set the default Finder display mode to list
+      FXPreferredViewStyle: Nlsv
+
+  # Menu (Clock)
+  - domain: com.apple.menuextra.clock
+    values:
+      # Open Date & Time Preferences... / Clock / Show date
+      DateFormat: "EEE d MMM  h:mm a"
+
+  # Symbolic Hot Keys
+  - domain: com.apple.symbolichotkeys
+    values:
+      # Disable slow motion effects
+      # (http://apple.stackexchange.com/questions/66433)
+      AppleSymbolicHotKeys:
+        34: { enabled: 0 }
+        35: { enabled: 0 }
+        37: { enabled: 0 }
+
+  # Screen Capture
+  - domain: com.apple.screencapture
+    values:
+      location: ~/Pictures/Screenshots
+
+  # --- Apple Software ---
+
+  # Safari
+  - domain: com.apple.Safari
+    values:
+      # View / Show Status Bar
+      ShowStatusBar: true
+
+# Specify dot files or folders which are to be copied
+dotfiles:
+  # Dotfiles
+  - src: files/dotfiles/.bash_profile
+    dest: ~/.bash_profile
+  - src: files/dotfiles/.gitconfig
+    dest: ~/.gitconfig
+  - src: files/dotfiles/.config/fish/config.fish
+    dest: ~/.config/fish/config.fish
+  - src: files/dotfiles/.ipython/profile_default/ipython_config.py
+    dest: ~/.ipython/profile_default/ipython_config.py

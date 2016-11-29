@@ -9,20 +9,18 @@
     cloud_app_config_dir: '~/Dropbox/Software Settings'
     cloud_app_license_dir: '~/Dropbox/Software Licenses'
   roles:
-    # System Configuration
-    - global
+    # macOS Configuration
+    - macos
     # Software Installation & Configuration
     - software
-    - defaults
-    - files
     # Unix Software
     - vim
+    - docker
+    # Programming Languages
+    - go
+    - nodejs
     - python
     - ruby
-    - go
-    - vagrant
-    - nodejs
     # Desktop Applications
     - spotify
     - sublimetext
-    - docker

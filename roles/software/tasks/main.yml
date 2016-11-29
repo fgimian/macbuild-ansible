@@ -15,11 +15,6 @@
 - name: brew cask tap
   homebrew_tap: tap=caskroom/cask state=present
 
-- name: create the caskroom directory
-  file: path=/opt/homebrew-cask/Caskroom state=directory owner=fots group=staff mode=0775
-  become: yes
-  become_method: sudo
-
 - name: desktop cask applications
   homebrew_cask: name={{ item }} state=present
   with_items: "{{ brew_casks }}"
@@ -37,3 +32,47 @@
   ignore_errors: yes
   when: not appstore_app_files.results[item.0].stat.exists
   with_indexed_items: "{{ appstore_apps }}"
+
+# Configure Applications
+- name: set application defaults
+  plist:
+    dest: "{{ item.domain }}"
+    # Note that we must access values using the square brackets or Ansible
+    # casts all values to strings
+    values: "{{ item['values'] }}"
+    container: "{{ item.container | default(None) }}"
+  with_items: "{{ app_defaults }}"
+
+# Application Files
+- name: create the directory to store the app file
+  file: path={{ item.dest | dirname }} state=directory
+  when: item.dest != '/' and item.dest != '~'
+  with_items: "{{ app_files }}"
+
+- name: install the app file requested
+  copy: src={{ item.src }} dest={{ item.dest }} mode={{ item.mode | default('0644') }}
+  with_items: "{{ app_files }}"
+
+# Application Symbolic Links
+- name: create the directory to store the app symlink
+  file: path={{ item.dest | dirname }} state=directory
+  when: item.dest != '/' and item.dest != '~'
+  with_items: "{{ app_symbolic_links }}"
+
+- name: check health of requested app symlink
+  stat: path="{{ item.dest }}"
+  register: symlink_health_check
+  with_items: "{{ app_symbolic_links }}"
+
+- name: clean up any files which are not symlinks
+  file: path="{{ item.1.dest }}" state=absent
+  when: symlink_health_check.results[item.0].stat.exists and
+        not symlink_health_check.results[item.0].stat.islnk
+  with_indexed_items: "{{ app_symbolic_links }}"
+
+- name: symlink file to requested destination
+  file:
+    dest: "{{ item.dest }}"
+    src: "{{ item.src }}"
+    state: link
+  with_items: "{{ app_symbolic_links }}"

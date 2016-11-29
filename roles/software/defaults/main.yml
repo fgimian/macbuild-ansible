@@ -30,6 +30,7 @@ brew_packages:
 
   # Completions
   - bash-completion
+  - vagrant-completion
 
 brew_casks:
   # Fonts
@@ -54,6 +55,7 @@ brew_casks:
   - slack
   - sourcetree
   - transmission
+  - vagrant
   - virtualbox
 
   # Commercial
@@ -81,3 +83,327 @@ appstore_apps:
   - iStat Mini
   - Screenflow
   - World Clock
+
+# Set various defaults which will update the relevant plist files
+app_defaults:
+  # 1Password
+  - domain: com.agilebits.onepassword4
+    values:
+      WelcomeWindowShown: true
+      LockOnMainAppExit: false
+      LockOnIdle: true
+      ShowRichIcons: true
+      KeepHelperRunning: true
+      UserMetricsSkippedNewsletterSignupKey: true
+      CompletedEssentialSettings: true
+  - domain: 2BUA8C4S2C.com.agilebits.onepassword4-helper
+    values:
+      autosave: false
+
+  # Android File Transfer
+  - domain: com.google.android.mtpviewer
+    values:
+      FirstRunShown: true
+
+  # AppCleaner
+  - domain: net.freemacsoft.AppCleaner
+    values:
+      SUEnableAutomaticChecks: true
+      SUHasLaunchedBefore: true
+      SUSendProfileInfo: false
+
+  # Audio Hijack
+  - domain: com.rogueamoeba.audiohijack3
+    values:
+      homeWindowShown: true
+      # Setting the launch count to 2 skips the newsletter prompt
+      launchCount: 2
+
+  # BetterSnapTool
+  - domain: com.hegenberg.BetterSnapTool
+    values:
+      BSTDidAlreadyLaunchOnElCapitan: true
+      BSTDidAlreadyLaunchOnce: true
+      BSTDidClickHighlightedMenuItem: true
+      # General Settings / Start BetterSnapTool everytime your Mac starts up
+      launchOnStartup: true
+      # Customizations / Use rounded corners
+      roundCorners: false
+      # Customizations / Border-width
+      previewBorderWidth: 0.0
+      # Keyboard Shortcuts
+      registeredHotkeys:
+        # maximize
+        '0':
+          keyCode: 126
+          modifiers: 8395008
+        # left half
+        '2':
+          keyCode: 123
+          modifiers: 8395008
+        # right half
+        '4':
+          keyCode: 124
+          modifiers: 8395008
+        # restore old window position
+        '10':
+          keyCode: 125
+          modifiers: 8395008
+        # center on next monitor
+        '18':
+          keyCode: 37
+          modifiers: 6400
+
+  # Clear
+  - domain: com.realmacsoftware.clear.mac
+    container: com.realmacsoftware.clear.mac
+    values:
+      app.shown-welcome: true
+
+  # DaisyDisk
+  - domain: com.daisydiskapp.DaisyDiskStandAlone
+    values:
+      moveToApplicationsFolderAlertSuppress: true
+
+  # Dash
+  - domain: com.kapeli.dashdoc
+    values:
+      moveToApplicationsFolderAlertSuppress: true
+      didSuppressDownloadDocsetsAlert: true
+      DHNotificationNoDocsetsFound: true
+      reorderDocsetsAlertSuppressed: true
+      DHNotificationDocsetPressEnterOrClickIconTip: true
+      noDocsetsFoundAlertSuppressed: true
+      syncFolderPath: "{{ cloud_app_config_dir }}/Dash"
+      snippetSQLPath: "{{ cloud_app_config_dir }}/Dash/library.dash"
+      # Note that the following setting is required or Dash thinks it needs
+      # to set everything up again
+      migratedV2Prefs: true
+
+  # Entropy
+  - domain: com.eigenlogik.Entropy
+    values:
+      moveToApplicationsFolderAlertSuppress: true
+      SUEnableAutomaticChecks: true
+      SUSendProfileInfo: false
+      # Extraction / Auto-extract on open
+      AutoExtractOnOpen: true
+
+  # f.lux
+  - domain: org.herf.Flux
+    values:
+      moveToApplicationsFolderAlertSuppress: true
+      lateColorTemp: 2400.0
+      nightColorTemp: 2800.0
+      dayColorTemp: 3200.0
+      locationTextField: Melbourne, Australia
+      locationType: L
+      location: '-37.814107,144.963280'
+      wakeTime: 480
+
+  # MacDown
+  - domain: com.uranusjr.macdown
+    values:
+      firstVersionInstalled: '749'
+      SUEnableAutomaticChecks: true
+      # General
+      editorSyncScrolling: true
+      # Markdown
+      extensionTables: true
+      extensionFencedCode: true
+      extensionIntraEmphasis: true
+      extensionStrikethough: true
+      extensionAutolink: true
+      # Editor
+      editorBaseFontInfo:
+        name: SourceCodePro-Regular
+        size: 16.0
+      editorStyleName: Solarized (Dark)
+      editorLineSpacing: 2.0
+      editorHorizontalInset: 15.0
+      editorVerticalInset: 15.0
+      editorMaximumWidth: 800.0
+      editorConvertTabs: true
+      editorCompleteMatchingCharacters: true
+      editorInsertPrefixInBlock: true
+      editorEnsuresNewlineAtEndOfFile: true
+      editorAutoIncrementNumberedLists: true
+
+      # Rendering
+      htmlStyleName: GitHub2
+      htmlSyntaxHighlighting: true
+      htmlTaskList: true
+      htmlDetectFrontMatter: true
+      htmlDefaultDirectoryUrl: "{{ development_dir }}"
+
+  # Mia for GMail
+  - domain: com.sovapps.gmailnotifier
+    values:
+      # Preferences / Notifications
+      notifications: true
+      # Preferences / Black & white icons
+      blackWhiteIcons: true
+      # Preferences / Open at login
+      openAtLogin: true
+      # Preferences / Sound
+      sound: Submarine
+
+  # Microsoft Office
+  - domain: ~/Library/Group Containers/UBF8T346G9.Office/com.microsoft.officeprefs.plist
+    values:
+      kCUIThemePreferencesThemeKeyPath: 0
+
+  - domain: com.microsoft.Excel
+    container: com.microsoft.Excel
+    values:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
+  - domain: com.microsoft.Word
+    container: com.microsoft.Word
+    values:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
+  - domain: com.microsoft.Powerpoint
+    container: com.microsoft.Powerpoint
+    values:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
+  - domain: com.microsoft.onenote.mac
+    container: com.microsoft.onenote.mac
+    values:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
+  - domain: com.microsoft.Outlook
+    container: com.microsoft.Outlook
+    values:
+      kSubUIAppCompletedFirstRunSetup1507: true
+
+  # MPlayerX
+  - domain: org.niltsh.MPlayerX
+    values:
+      SUSendProfileInfo: false
+      SUEnableAutomaticChecks: true
+      # General / Keep window on top / Never
+      OnTopMode: 0
+
+  # OpenEmu
+  - domain: org.openemu.OpenEmu
+    values:
+      setupAssistantFinished: true
+      SUEnableAutomaticChecks: true
+      videoFilter: SABR
+      fullScreen: true
+      # databasePath: ~/Library/Application Support/OpenEmu/Game Library
+
+  # SourceTree
+  - domain: com.torusknot.SourceTreeNotMAS
+    values:
+      moveToApplicationsFolderAlertSuppress: true
+      analyticsHasAgreed: false
+      agreedToEULA: true
+      showStagingTip: false
+      showFileStatusViewOptionsTip: false
+      SUEnableAutomaticChecks: true
+      globalUserFullName: Fotis Gimian
+      globalUserEmail: fgimiansoftware@gmail.com
+      diffFontName: SourceCodePro-Regular
+      diffFontSize: 13.0
+      defaultFolder: "{{ development_dir }}"
+      createBookmarksOnOpenRepo: false
+
+  # Textual
+  - domain: com.codeux.apps.textual
+    values:
+      'Theme -> Invert Sidebar Colors Preference Enabled': 0
+      'Theme -> Name': 'resource:Sapientia'
+      'Text Input Prompt Suppression -> theme_override_info': true
+      'World Controller':
+        clients:
+        - autoConnect: True
+          connectionName: freenode
+          nickname: fgimian
+          realName: Fotis Gimian
+          serverAddress: chat.freenode.net
+          username: fgimian
+          channelList:
+          - channelName: '#ansible'
+          - channelName: '#chef'
+          - channelName: '#puppet'
+          - channelName: '#salt'
+          - channelName: '#python'
+          - channelName: '#terraform'
+
+  # Transmission
+  - domain: org.m0k.transmission
+    values:
+      # Transfers / Trash original torrent files
+      DeleteOriginalTorrent: true
+      # Hide the legal disclaimer
+      WarningLegal: false
+
+  # Twitter
+  - domain: com.twitter.twitter-mac
+    container: com.twitter.twitter-mac
+    values:
+      # General / Font size / 16 pt
+      FontSize1: 16
+      # General / Theme / Dark Theme
+      TMSelectedThemeIdentifier: com.twitter.twitter.themeIdentifiers.darkTheme
+
+  # VMware Fusion
+  - domain: com.vmware.fusion
+    values:
+      # Virtual Machine Library / View / Show items as icons
+      PLInventoryWindowStylePref: 1
+      # Preferences / General / Show in menu bar / Only when Fusion is running
+      showStartMenu3: 2
+
+# Specify files or folders which are to be copied
+app_files:
+  # DMG Audio EQuilibrium
+  - src: files/dmgaudio/Default Bank.eqi
+    dest: ~/Library/Application Support/DMGAudio/EQuilibrium/Default Bank.eqi
+
+  # Software Licenses
+  - src: "{{ cloud_app_license_dir }}/1Password/License.onepassword-license"
+    dest: ~/Library/Group Containers/2BUA8C4S2C.com.agilebits/License/License.onepassword-license
+  - src: "{{ cloud_app_license_dir }}/CanOpener/Interface.interface"
+    dest: ~/Music/.GDHZ/Interface.interface
+  - src: "{{ cloud_app_license_dir }}/DaisyDisk/License.DaisyDisk"
+    dest: ~/Library/Application Support/DaisyDisk/License.DaisyDisk
+  - src: "{{ cloud_app_license_dir }}/Dash/license.dash-license"
+    dest: ~/Library/Application Support/Dash/License/license.dash-license
+  - src: "{{ cloud_app_license_dir }}/Dualism/license"
+    dest: ~/Library/Application Support/DMGAudio/Dualism/license
+  - src: "{{ cloud_app_license_dir }}/Entropy/.els-A4AD28617A455C07768787313A53E2F79D9FA258"
+    dest: ~/Library/Application Support/.els-A4AD28617A455C07768787313A53E2F79D9FA258
+  - src: "{{ cloud_app_license_dir }}/EQuilibrium/license"
+    dest: ~/Library/Application Support/DMGAudio/EQuilibrium/license
+  - src: "{{ cloud_app_license_dir }}/Sublime Text/License.sublime_license"
+    dest: ~/Library/Application Support/Sublime Text 3/Local/License.sublime_license
+  - src: "{{ cloud_app_license_dir }}/Sublime Text/Doxy.sublime-license"
+    dest: ~/Library/Application Support/Sublime Text 3/Packages/User/Doxy.sublime-license
+  - src: "{{ cloud_app_license_dir }}/Textual/Textual_User_License.plist"
+    dest: ~/Library/Application Support/Textual/Textual_User_License.plist
+  - src: "{{ cloud_app_license_dir }}/ValhallaVintageVerb/ValhallaVintageVerb.settings"
+    dest: ~/Library/Preferences/ValhallaVintageVerb.settings
+  # TODO: Repair problems with pushing out this file due to root permissions being required
+  # - src: "{{ cloud_app_license_dir }}/VMware Fusion/license-fusion-80-e3-201505"
+  #   dest: /Library/Preferences/VMware Fusion/license-fusion-80-e3-201505
+
+# Specify files which are to be symlinked to others
+app_symbolic_links:
+  # Audio Hijack cloud storage
+  - src: "{{ cloud_app_config_dir }}/Audio Hijack"
+    dest: '~/Library/Application Support/Audio Hijack'
+  # OpenEmu cloud storage
+  - src: "{{ cloud_app_config_dir }}/OpenEmu/BIOS"
+    dest: '~/Library/Application Support/OpenEmu/BIOS'
+  - src: "{{ cloud_app_config_dir }}/OpenEmu/Bindings"
+    dest: '~/Library/Application Support/OpenEmu/Bindings'
+  - src: "{{ cloud_app_config_dir }}/OpenEmu/Cores"
+    dest: '~/Library/Application Support/OpenEmu/Cores'
+  - src: "{{ cloud_app_config_dir }}/OpenEmu/Game Library"
+    dest: '~/Library/Application Support/OpenEmu/Game Library'
+  - src: "{{ cloud_app_config_dir }}/OpenEmu/Save States"
+    dest: '~/Library/Application Support/OpenEmu/Save States'
