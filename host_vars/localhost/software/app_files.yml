@@ -1,51 +1,81 @@
 ---
 # Specify files or folders which are to be copied
 software_app_files:
+  # General Software
+
   # 1Password
-  - src: "{{ cloud_app_license_dir }}/1Password/License.onepassword-license"
+  - src: "{{ cloud_app_license_dir }}/General Software/1Password/License.onepassword-license"
     dest: ~/Library/Group Containers/2BUA8C4S2C.com.agilebits/License/License.onepassword-license
 
-  # Goodhertz CanOpener
-  - src: "{{ cloud_app_license_dir }}/CanOpener/Interface.interface"
-    dest: ~/Music/.GDHZ/Interface.interface
-
   # DaisyDisk
-  - src: "{{ cloud_app_license_dir }}/DaisyDisk/License.DaisyDisk"
+  - src: "{{ cloud_app_license_dir }}/General Software/DaisyDisk/License.DaisyDisk"
     dest: ~/Library/Application Support/DaisyDisk/License.DaisyDisk
 
   # Dash
-  - src: "{{ cloud_app_license_dir }}/Dash/license.dash-license"
+  - src: "{{ cloud_app_license_dir }}/General Software/Dash/license.dash-license"
     dest: ~/Library/Application Support/Dash/License/license.dash-license
 
   # Entropy
-  - src: "{{ cloud_app_license_dir }}/Entropy/.els-A4AD28617A455C07768787313A53E2F79D9FA258"
+  - src: "{{ cloud_app_license_dir }}/General Software/Entropy/.els-A4AD28617A455C07768787313A53E2F79D9FA258"
     dest: ~/Library/Application Support/.els-A4AD28617A455C07768787313A53E2F79D9FA258
 
   # Sublime Text
-  - src: "{{ cloud_app_license_dir }}/Sublime Text/License.sublime_license"
+  - src: "{{ cloud_app_license_dir }}/General Software/Sublime Text/License.sublime_license"
     dest: ~/Library/Application Support/Sublime Text 3/Local/License.sublime_license
-  - src: "{{ cloud_app_license_dir }}/Sublime Text/Doxy.sublime-license"
+  - src: "{{ cloud_app_license_dir }}/General Software/Sublime Text/Doxy.sublime-license"
     dest: ~/Library/Application Support/Sublime Text 3/Packages/User/Doxy.sublime-license
 
   # Textual
-  - src: "{{ cloud_app_license_dir }}/Textual/Textual_User_License.plist"
+  - src: "{{ cloud_app_license_dir }}/General Software/Textual/Textual_User_License.plist"
     dest: ~/Library/Application Support/Textual/Textual_User_License.plist
 
   # VMware Fusion
   # TODO: Repair problems with pushing out this file due to root permissions being required
-  # - src: "{{ cloud_app_license_dir }}/VMware Fusion/license-fusion-80-e3-201505"
+  # - src: "{{ cloud_app_license_dir }}/General Software/VMware Fusion/license-fusion-80-e3-201505"
   #   dest: /Library/Preferences/VMware Fusion/license-fusion-80-e3-201505
 
+  # Music Production Software
+
+  # Goodhertz CanOpener
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/Goodhertz CanOpener Studio/Interface.interface"
+    dest: ~/Music/.GDHZ/Interface.interface
+
+  # DMG Audio Compassion
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio Compassion/license"
+    dest: ~/Library/Application Support/DMGAudio/Compassion/license
+
   # DMG Audio Dualism
-  - src: "{{ cloud_app_license_dir }}/Dualism/license"
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio Dualism/license"
     dest: ~/Library/Application Support/DMGAudio/Dualism/license
 
+  # DMG Audio EQuality
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio EQuality/license"
+    dest: ~/Library/Application Support/DMGAudio/EQuality/license
+
+  # DMG Audio EQuick
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio EQuick/license"
+    dest: ~/Library/Application Support/DMGAudio/EQuick/license
+
   # DMG Audio EQuilibrium
-  - src: "{{ cloud_app_license_dir }}/EQuilibrium/license"
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio EQuilibrium/license"
     dest: ~/Library/Application Support/DMGAudio/EQuilibrium/license
-  - src: files/dmgaudio/Default Bank.eqi
-    dest: ~/Library/Application Support/DMGAudio/EQuilibrium/Default Bank.eqi
+
+  # DMG Audio Essence
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio Essence/license"
+    dest: ~/Library/Application Support/DMGAudio/Essence/license
+
+  # DMG Audio Expurgate
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio Expurgate/license"
+    dest: ~/Library/Application Support/DMGAudio/Expurgate/license
+
+  # DMG Audio Limitless
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio Limitless/license"
+    dest: ~/Library/Application Support/DMGAudio/Limitless/license
+
+  # DMG Audio PitchFunk
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio PitchFunk/license"
+    dest: ~/Library/Application Support/DMGAudio/PitchFunk/license
 
   # ValhallaDSP ValhallaVintageVerb
-  - src: "{{ cloud_app_license_dir }}/ValhallaVintageVerb/ValhallaVintageVerb.settings"
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/ValhallaDSP ValhallaVintageVerb/ValhallaVintageVerb.settings"
     dest: ~/Library/Preferences/ValhallaVintageVerb.settings

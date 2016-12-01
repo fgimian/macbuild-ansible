@@ -1,5 +1,7 @@
 ---
 software_brew_casks:
+  # General Software
+
   # Fonts
   - font-source-code-pro
   - font-source-code-pro-for-powerline
@@ -36,3 +38,81 @@ software_brew_casks:
   # - fgimian/fgimian/microsoft-office
   - textual
   - vmware-fusion
+
+  # Music Production Software
+  # TODO: Native Instruments Komplete
+
+  # DAWs & Drivers
+  - ableton-live-9-suite
+  - audiomove
+  - celemony-melodyne-editor
+  - focusrite-control
+  - novation-remote-sl-template-editor
+  - ocenaudio
+  # TODO: Steinberg Cubase
+
+  # Plug-ins (Effect)
+  - artsacoustic-bigrock
+  - artsacoustic-cl-series
+  - artsacoustic-reverb
+  - audio-damage-eos
+  - cableguys-filtershaper
+  - cableguys-volumeshaper
+  - cytomic-the-drop
+  - cytomic-the-glue
+  - dmgaudio-compassion
+  - dmgaudio-dualism
+  - dmgaudio-equality
+  - dmgaudio-equick
+  - dmgaudio-equilibrium
+  - dmgaudio-essence
+  - dmgaudio-expurgate
+  - dmgaudio-limitless
+  - dmgaudio-pitchfunk
+  - eventide-2016-stereo-room
+  - focusrite-red-plugin-suite
+  - goodhertz-canopener-studio
+  # TODO: Illformed Glitch
+  - relab-lx480-complete
+  - softube-amp-room-essentials
+  - softube-drawmer-s73
+  - softube-fet-compressor
+  - softube-fix-flanger-and-doubler
+  - softube-saturation-knob
+  - softube-tsar-1r
+  - softube-tube-delay
+  # TODO: Sonalksis
+  - sound-radix-muteomatic
+  - sound-radix-surfer-eq-2-boogie-focusrite-edition
+  - soundtoys-5
+  - studio-devil-amp-modeler-pro
+  - tailored-noise-sausage-fattener
+  - u-he-mfm2
+  - u-he-satin
+  - u-he-uhbik
+  - valhalladsp-valhallaspacemodulator
+  - valhalladsp-valhallavintageverb
+  - voxengo-deft-compressor-au-aax
+  - voxengo-deft-compressor-vst-vst3
+  - voxengo-elephant-au-aax
+  - voxengo-elephant-vst-vst3
+  - voxengo-glisseq-au-aax
+  - voxengo-glisseq-vst-vst3
+  - voxengo-msed-au-aax
+  - voxengo-msed-vst-vst3
+  - voxengo-span-au-aax
+  - voxengo-span-vst-vst3
+  - voxengo-voxformer-au-aax
+  - voxengo-voxformer-vst-vst3
+
+  # Plug-ins (Instrument)
+  - lennardigital-sylenth1
+  - novation-bass-station
+  - reveal-sound-spire
+  # TODO: Spectrasonics Omnisphere
+  # TODO: Steinberg Padshop
+  # TODO: Steinberg Retrologue
+  - synapse-audio-dune
+  - u-he-hive
+  - u-he-zebra
+  # TODO: Xfer Records Serum
