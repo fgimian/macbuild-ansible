@@ -5,6 +5,7 @@ software_brew_packages:
   - bash
   - ctags
   - curl
+  - dockutil
   - findutils
   - fish
   - git

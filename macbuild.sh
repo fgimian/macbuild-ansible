@@ -40,5 +40,8 @@ ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/pyth
 # Set Terminal settings
 ./terminal.js
 
+# Re-build the Dock
+./dock.sh
+
 # Disable passwordless sudo after the macbuild is complete
 sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) ALL/" /etc/sudoers
