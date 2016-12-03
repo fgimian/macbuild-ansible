@@ -8,7 +8,10 @@
   with_items: "{{ brew_taps }}"
 
 - name: brew packages
-  homebrew: name={{ item }} state=latest
+  homebrew:
+    # Workaround for issue https://github.com/ansible/ansible-modules-extras/issues/3624
+    name: ["{{ item }}"]
+    state: latest
   with_items: "{{ brew_packages }}"
 
 # Homebrew Cask Desktop Applications
