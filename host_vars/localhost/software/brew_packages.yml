@@ -11,12 +11,16 @@ software_brew_packages:
   - git
   - gnu-sed
   - hugo
+  - mas
   - md5sha1sum
+  - p7zip
   - rlwrap
   - sassc
   - shellcheck
-  - sshfs
+  # TODO: requires brew cask install osxfuse
+  #- sshfs
   - tree
+  - unrar
   - watch
   - wget
   - xz

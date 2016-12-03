@@ -26,6 +26,7 @@ software_brew_casks:
   - transmission
   - vagrant
   - virtualbox
+  - xld
 
   # Commercial
   - 1password
@@ -33,8 +34,8 @@ software_brew_casks:
   - daisydisk
   - dash
   - entropy
-  # Use my Cask of Microsoft Office which is locked to a checksum and helps
-  # avoid additional downloads
+  - focus
+  # TODO: Use my Cask of Microsoft Office which is locked to a checksum and helps avoid additional downloads
   # - fgimian/fgimian/microsoft-office
   - textual
   - vmware-fusion
@@ -71,6 +72,7 @@ software_brew_casks:
   - dmgaudio-pitchfunk
   - eventide-2016-stereo-room
   - focusrite-red-plugin-suite
+  # TODO: Find a way to make the Goodhertz installer only install CanOpener
   - goodhertz-canopener-studio
   # TODO: Illformed Glitch
   - relab-lx480-complete

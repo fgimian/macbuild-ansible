@@ -34,6 +34,15 @@ then
     pip2 install biplist
 fi
 
+# TODO: Mac this work for both backup drives
+if [ -d "/Volumes/Backup Mac 1" ]
+then
+  export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 1/Software/Music Production Software'
+elif [ -d "/Volumes/Backup Mac 2" ]
+then
+  export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 2/Software/Music Production Software'
+fi
+
 # Perform the build
 ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python local.yml && \
 

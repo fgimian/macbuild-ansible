@@ -55,6 +55,17 @@
 - name: create the screenshots folder
   file: path=~/Pictures/Screenshots state=directory
 
+- name: grant permission to audio plugin paths
+  file: path={{ item }} state=directory owner=fots
+  with_items:
+    - /Library/Application Support/Avid/Audio/Plug-Ins
+    - /Library/Application Support/Digidesign/Plug-Ins
+    - /Library/Audio/Plug-Ins/Components
+    - /Library/Audio/Plug-Ins/VST
+    - /Library/Audio/Plug-Ins/VST3
+  become: yes
+  become_method: sudo
+
 - name: set operating system defaults
   plist:
     dest: "{{ item.domain }}"
