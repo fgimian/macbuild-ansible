@@ -8,46 +8,29 @@ import sqlite3
 import string
 from time import sleep
 
-widget_layout = [
-    [
-        "Calendar",
-        "Calculator",
-        "Contacts",
-        "Dictionary",
-        "ESPN",
-        "Flight Tracker",
-        "Movies",
-        "Ski Report",
-        "Stickies",
-        "Stocks",
-        "Tile Game",
-        "Translation",
-        "Unit Converter",
-        "Weather",
-        "Web Clip",
-        "World Clock",
-    ]
-]
 app_layout = [
     [
-        "App Store",
-        "Automator",
-        "Calculator",
-        "Calendar",
-        "Chess",
-        "Clear",
-        "Contacts",
-        "Dashboard",
-        "Dictionary",
-        "DVD Player",
-        "FaceTime",
-        "Flux",
-        "Focusrite Control",
-        "Font Book",
-        "Google Chrome",
-        "iBooks",
-        "Image Capture",
-        "Install OS X El Capitan",
+        {
+            "Stuff": [
+                "App Store",
+                "Contacts",
+                "Automator",
+                "Calculator",
+                "Calendar",
+                "Chess",
+                "Clear",
+                "Dashboard",
+                "Dictionary",
+                "DVD Player",
+                "FaceTime",
+                "Flux",
+                "Font Book",
+                "Google Chrome",
+                "iBooks",
+                "Image Capture",
+                "Install OS X El Capitan",
+            ],
+        },
         "iTunes",
         "MacDown",
         "Mail",
@@ -61,6 +44,7 @@ app_layout = [
         "Preview",
     ],
     [
+        "Focusrite Control",
         "Reminders",
         "Safari",
         "Siri",
@@ -81,12 +65,35 @@ app_layout = [
         "Grab",
         "Grapher",
         "Keychain Access",
+    ],
+    [
         "Migration Assistant",
         "Script Editor",
         "System Information",
         "Terminal",
         "VoiceOver Utility",
-    ],
+    ]
+]
+
+widget_layout = [
+    [
+        "Calendar",
+        "Calculator",
+        "Contacts",
+        "Dictionary",
+        "ESPN",
+        "Flight Tracker",
+        "Movies",
+        "Ski Report",
+        "Stickies",
+        "Stocks",
+        "Tile Game",
+        "Translation",
+        "Unit Converter",
+        "Weather",
+        "Web Clip",
+        "World Clock",
+    ]
 ]
 
 
@@ -134,7 +141,9 @@ def get_mapping(conn, table):
     return mapping, max_id
 
 
-def setup_items(cursor, type_, layout, mapping, group_id, group_parent_id):
+def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
+    cursor = conn.cursor()
+
     for page in layout:
 
         # Start a new page
@@ -145,7 +154,7 @@ def setup_items(cursor, type_, layout, mapping, group_id, group_parent_id):
             (rowid, uuid, flags, type, parent_id)
             VALUES
             (?, ?, 0, ?, ?)
-        ''', (group_id, generate_uuid(), Types.GROUP, group_parent_id)
+        ''', (group_id, generate_uuid(), Types.GROUP, root_parent_id)
         )
 
         cursor.execute('''
@@ -155,20 +164,96 @@ def setup_items(cursor, type_, layout, mapping, group_id, group_parent_id):
             (?, null, null)
         ''', (group_id,)
         )
+        conn.commit()
+
+        page_parent_id = group_id
 
         # Go through items for the current page
-        for title in page:
-            print(title)
-            item_id, uuid, flags = mapping[title]
-            cursor.execute('''
-                UPDATE items
-                SET uuid = ?,
-                    flags = ?,
-                    type = ?,
-                    parent_id = ?
-                WHERE rowid = ?
-            ''', (uuid, flags, type_, group_id, item_id)
-            )
+        for item in page:
+            # A folder has been encountered
+            if isinstance(item, dict):
+                folder_title, folder_items = item.items()[0]
+
+                # Start a new folder (requires two groups)
+                group_id += 1
+
+                cursor.execute('''
+                    INSERT INTO items
+                    (rowid, uuid, flags, type, parent_id)
+                    VALUES
+                    (?, ?, 1, ?, ?)
+                ''', (group_id, generate_uuid(), Types.FOLDER, page_parent_id)
+                )
+
+                cursor.execute('''
+                    INSERT INTO groups
+                    (item_id, category_id, title)
+                    VALUES
+                    (?, null, ?)
+                ''', (group_id, folder_title)
+                )
+
+                folder_parent_id = group_id
+
+                group_id += 1
+
+                cursor.execute('''
+                    UPDATE dbinfo
+                    SET value = 1
+                    WHERE key = 'ignore_items_update_triggers'
+                ''')
+                conn.commit()
+
+                cursor.execute('''
+                    INSERT INTO items
+                    (rowid, uuid, flags, type, parent_id, ordering)
+                    VALUES
+                    (?, ?, 0, ?, ?, 0)
+                ''', (group_id, generate_uuid(), Types.GROUP, folder_parent_id)
+                )
+
+                cursor.execute('''
+                    INSERT INTO groups
+                    (item_id, category_id, title)
+                    VALUES
+                    (?, null, null)
+                ''', (group_id,)
+                )
+                conn.commit()
+
+                cursor.execute('''
+                    UPDATE dbinfo
+                    SET value = 0
+                    WHERE key = 'ignore_items_update_triggers'
+                ''')
+                conn.commit()
+
+                for title in folder_items:
+                    item_id, uuid, flags = mapping[title]
+                    cursor.execute('''
+                        UPDATE items
+                        SET uuid = ?,
+                            flags = ?,
+                            type = ?,
+                            parent_id = ?
+                        WHERE rowid = ?
+                    ''', (uuid, flags, type_, group_id, item_id)
+                    )
+
+
+            # Flat items
+            else:
+                title = item
+                item_id, uuid, flags = mapping[title]
+                cursor.execute('''
+                    UPDATE items
+                    SET uuid = ?,
+                        flags = ?,
+                        type = ?,
+                        parent_id = ?
+                    WHERE rowid = ?
+                ''', (uuid, flags, type_, page_parent_id, item_id)
+                )
 
     return group_id
 
@@ -269,15 +354,15 @@ def main():
 
     # Setup the widgets
     group_id = setup_items(
-        cursor, Types.WIDGET, widget_layout, widget_mapping, group_id,
-        group_parent_id=3
+        conn, Types.WIDGET, widget_layout, widget_mapping, group_id,
+        root_parent_id=3
     )
     conn.commit()
 
     # Setup the apps
     group_id = setup_items(
-        cursor, Types.APP, app_layout, app_mapping, group_id,
-        group_parent_id=1
+        conn, Types.APP, app_layout, app_mapping, group_id,
+        root_parent_id=1
     )
     conn.commit()
 
