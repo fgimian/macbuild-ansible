@@ -1,0 +1,80 @@
+app_layout:
+  # Page 1
+  - - iTunes
+    - Dave:
+      - App Store
+      - Contacts
+      - Automator
+      - Calculator
+      - Calendar
+      - Chess
+      - Clear
+    - Fots:
+      - Dashboard
+      - Dictionary
+      - DVD Player
+      - FaceTime
+      - Flux
+      - Font Book
+      - Google Chrome
+      - iBooks
+      - Image Capture
+      - Install OS X El Capitan
+    - MacDown
+    - Mail
+    - Maps
+    - Messages
+    - Mission Control
+    - Notes
+    - Photo Booth
+    - Photos
+    - QuickTime Player
+    - Preview
+
+  # Page 2
+  - - Focusrite Control
+    - Reminders
+    - Safari
+    - Siri
+    - Stickies
+    - Sublime Text
+    - System Preferences
+    - TextEdit
+    - Time Machine
+    - Activity Monitor
+    - AirPort Utility
+    - Audio MIDI Setup
+    - Bluetooth File Exchange
+    - Boot Camp Assistant
+    - ColorSync Utility
+    - Console
+    - Digital Color Meter
+    - Disk Utility
+    - Grab
+    - Grapher
+    - Keychain Access
+
+  # Page 3
+  - - Migration Assistant
+    - Script Editor
+    - System Information
+    - Terminal
+    - VoiceOver Utility
+
+widget_layout:
+  - - Calendar
+    - Calculator
+    - Contacts
+    - Dictionary
+    - ESPN
+    - Flight Tracker
+    - Movies
+    - Ski Report
+    - Stickies
+    - Stocks
+    - Tile Game
+    - Translation
+    - Unit Converter
+    - Weather
+    - Web Clip
+    - World Clock

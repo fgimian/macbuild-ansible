@@ -1,100 +1,12 @@
 from __future__ import print_function
 
 import os
-from pprint import pprint
 import random
 import subprocess
 import sqlite3
 import string
 from time import sleep
-
-app_layout = [
-    [
-        {
-            "Stuff": [
-                "App Store",
-                "Contacts",
-                "Automator",
-                "Calculator",
-                "Calendar",
-                "Chess",
-                "Clear",
-                "Dashboard",
-                "Dictionary",
-                "DVD Player",
-                "FaceTime",
-                "Flux",
-                "Font Book",
-                "Google Chrome",
-                "iBooks",
-                "Image Capture",
-                "Install OS X El Capitan",
-            ],
-        },
-        "iTunes",
-        "MacDown",
-        "Mail",
-        "Maps",
-        "Messages",
-        "Mission Control",
-        "Notes",
-        "Photo Booth",
-        "Photos",
-        "QuickTime Player",
-        "Preview",
-    ],
-    [
-        "Focusrite Control",
-        "Reminders",
-        "Safari",
-        "Siri",
-        "Stickies",
-        "Sublime Text",
-        "System Preferences",
-        "TextEdit",
-        "Time Machine",
-        "Activity Monitor",
-        "AirPort Utility",
-        "Audio MIDI Setup",
-        "Bluetooth File Exchange",
-        "Boot Camp Assistant",
-        "ColorSync Utility",
-        "Console",
-        "Digital Color Meter",
-        "Disk Utility",
-        "Grab",
-        "Grapher",
-        "Keychain Access",
-    ],
-    [
-        "Migration Assistant",
-        "Script Editor",
-        "System Information",
-        "Terminal",
-        "VoiceOver Utility",
-    ]
-]
-
-widget_layout = [
-    [
-        "Calendar",
-        "Calculator",
-        "Contacts",
-        "Dictionary",
-        "ESPN",
-        "Flight Tracker",
-        "Movies",
-        "Ski Report",
-        "Stickies",
-        "Stocks",
-        "Tile Game",
-        "Translation",
-        "Unit Converter",
-        "Weather",
-        "Web Clip",
-        "World Clock",
-    ]
-]
+import yaml
 
 
 class Types(object):
@@ -106,12 +18,7 @@ class Types(object):
 
 
 def generate_uuid():
-    r = ''.join(
-        random.choice(string.digits + string.ascii_uppercase[:6])
-        for _ in range(32)
-    )
-    return '-'.join([r[:8], r[8:12], r[12:16], r[16:20], r[20:]])
-
+    return subprocess.check_output('uuidgen').strip()
 
 
 def get_mapping(conn, table):
@@ -240,7 +147,6 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                     ''', (uuid, flags, type_, group_id, item_id)
                     )
 
-
             # Flat items
             else:
                 title = item
@@ -259,6 +165,13 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
 
 
 def main():
+    # Load user config
+    with open('launchpad-layout.yaml') as f:
+        config = yaml.load(f)
+
+    app_layout = config['app_layout']
+    widget_layout = config['widget_layout']
+
     # Determine the location of the SQLite Launchpad database
     darwin_user_dir = subprocess.check_output(
         ['getconf', 'DARWIN_USER_DIR']
@@ -368,6 +281,7 @@ def main():
 
     print('Restarting the Dock to see the updates we made')
     subprocess.call(['killall', 'Dock'])
+
 
 if __name__ == '__main__':
     main()
