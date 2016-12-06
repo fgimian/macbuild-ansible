@@ -5,6 +5,7 @@ echo "Removing all items from the dock"
 dockutil --remove all --no-restart
 
 # Add applications to the dock
+# TODO: Please add 'Siri' back in before Launchpad when upgrading to Sierra
 for app in \
   'ForkLift' \
   'Launchpad' \
@@ -17,7 +18,7 @@ for app in \
   'Logic Pro X' \
   'Focusrite Control' \
   'XLD' \
-  'iTunes' \
+  'Spotify' \
   'Audio Hijack' \
   'OpenEmu' \
   'Clear' \

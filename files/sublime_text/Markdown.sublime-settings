@@ -18,8 +18,5 @@
 
     // Enable typewriter mode and scroll past end (needed for typewriter to work)
     "typewriter_mode_scrolling": true,
-    "scroll_past_end": true,
-
-    // Do not force a particular width
-    "wrap_width": 0
+    "scroll_past_end": true
 }

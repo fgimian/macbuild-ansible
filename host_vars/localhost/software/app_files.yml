@@ -7,6 +7,8 @@ software_app_files:
   - src: "{{ cloud_app_license_dir }}/General Software/1Password/License.onepassword-license"
     dest: ~/Library/Group Containers/2BUA8C4S2C.com.agilebits/License/License.onepassword-license
 
+  # TODO: Audio Hijack
+
   # DaisyDisk
   - src: "{{ cloud_app_license_dir }}/General Software/DaisyDisk/License.DaisyDisk"
     dest: ~/Library/Application Support/DaisyDisk/License.DaisyDisk
@@ -30,13 +32,14 @@ software_app_files:
     dest: ~/Library/Application Support/Textual/Textual_User_License.plist
 
   # VMware Fusion
-  # TODO: Repair problems with pushing out this file due to root permissions being required
-  # - src: "{{ cloud_app_license_dir }}/General Software/VMware Fusion/license-fusion-80-e3-201505"
-  #   dest: /Library/Preferences/VMware Fusion/license-fusion-80-e3-201505
+  - src: "{{ cloud_app_license_dir }}/General Software/VMware Fusion/license-fusion-80-e1-201505"
+    dest: /Library/Preferences/VMware Fusion/license-fusion-80-e1-201505
+    become: yes
 
   # Music Production Software
 
   # Ableton Live 9 Suite
+  # TODO: this works but Ableton Live must be started once before the file can be copied in place or it fails
   - src: "{{ cloud_app_license_dir }}/Music Production Software/Ableton/Ableton Live 9 Suite/Unlock.cfg"
     dest: ~/Library/Application Support/Ableton/Live 9.7/Unlock
 
@@ -59,15 +62,13 @@ software_app_files:
   # Cableguys VolumeShaper
   - src: "{{ cloud_app_license_dir }}/Music Production Software/Cableguys/Cableguys VolumeShaper/de.cableguys.volumeshaper4.plist"
     dest: ~/Library/Preferences/de.cableguys.volumeshaper4.plist
-  # ??? won't unregister
 
   # TODO: Celemony Melodyne Editor
   # ~/Library/Preferences/com.celemony.MelodyneSingletrackLicenser.plist
   # /Library/Application Support/Celemony/Licenses/Melodyne singletrack.license
 
-  # Cytomic The Drop
-  # Cytomic The Glue
-  # NOT POSSIBLE
+  # TODO: Cytomic The Drop: not possible
+  # TODO: Cytomic The Glue: not possible
 
   # DMG Audio Compassion
   - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Compassion/license"
@@ -106,21 +107,21 @@ software_app_files:
     dest: ~/Library/Application Support/DMGAudio/PitchFunk/license
 
   # Focusrite Red Plugin Suite
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/ocusrite//Focusrite Red Plugin Suite/Red2Red3Plugin.txt"
+  - src: "{{ cloud_app_license_dir }}/Music Production Software/Focusrite/Focusrite Red Plugin Suite/Red2Red3Plugin.txt"
     dest: ~/Music/Focusrite/Activation/Red2Red3Plugin.txt
 
   # Goodhertz CanOpener
   - src: "{{ cloud_app_license_dir }}/Music Production Software/Goodhertz/Goodhertz CanOpener Studio/Interface.interface"
     dest: ~/Music/.GDHZ/Interface.interface
 
-  # LennarDigital Sylenth1
-  # NOT POSSIBLE, DEACTIVATE
+  # TODO: LennarDigital Sylenth1: not possible, deactivate before re-installing the OS too
 
   # TODO: Native Instruments Komplete
 
-  # Novation Bass Station
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Novation/Novation Bass Station/B-Station.fnlf"
-    dest: /Library/Application Support/Focusrite/Activation/B-Station.fnlf
+  # TODO: Novation Bass Station: not possible, challenge / response
+  # - src: "{{ cloud_app_license_dir }}/Music Production Software/Novation/Novation Bass Station/B-Station.fnlf"
+  #   dest: /Library/Application Support/Focusrite/Activation/B-Station.fnlf
+  #   become: yes
 
   # Reveal Sound Spire
   - src: "{{ cloud_app_license_dir }}/Music Production Software/Reveal Sound/Reveal Sound Spire/spire.lic"
@@ -137,6 +138,7 @@ software_app_files:
   # Synapse Audio DUNE
   - src: "{{ cloud_app_license_dir }}/Music Production Software/Synapse Audio/Synapse Audio DUNE/.DUNE2reg"
     dest: /Library/Application Support/Synapse Audio/.DUNE2reg
+    become: yes
 
   # u-he Hive
   - src: "{{ cloud_app_license_dir }}/Music Production Software/u-he/u-he Hive/com.u-he.Hive.plist"

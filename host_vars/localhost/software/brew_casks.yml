@@ -51,6 +51,8 @@ software_brew_casks:
   - novation-remote-sl-template-editor
   - ocenaudio
   # TODO: Steinberg Cubase
+  # - steinberg-cubase-pro
+  # - steinberg-cubase-pro-update
 
   # Plug-ins (Effect)
   - artsacoustic-bigrock

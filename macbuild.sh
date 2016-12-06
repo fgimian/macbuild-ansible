@@ -43,6 +43,8 @@ then
   export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 2/Software/Music Production Software'
 fi
 
+echo "Using cask music software basedir of ${HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR}"
+
 # Perform the build
 ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python local.yml && \
 

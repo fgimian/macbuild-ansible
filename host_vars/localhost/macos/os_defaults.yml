@@ -73,6 +73,11 @@ macos_os_defaults:
       ShowStatusBar: true
       # Set the default Finder display mode to list
       FXPreferredViewStyle: Nlsv
+      # General / New Finder windows show / fots
+      NewWindowTarget: PfHm
+      NewWindowTargetPath: file:///Users/fots/
+      # (Sierra) Advanced / Keep folders on top when sorting by name
+      # _FXSortFoldersFirst: true
 
   # Menu (Clock)
   - domain: com.apple.menuextra.clock

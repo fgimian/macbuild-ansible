@@ -4,13 +4,11 @@
   command: systemsetup -getcomputersleep
   changed_when: false
   become: yes
-  become_method: sudo
   register: current_computer_sleep_time
 
 - name: set the computer sleep time
   command: systemsetup -setcomputersleep Never
   become: yes
-  become_method: sudo
   when: "'Never' not in '{{ current_computer_sleep_time.stdout }}'"
 
 # TODO: allow user to set display sleep time in a variable
@@ -18,26 +16,22 @@
   command: systemsetup -getdisplaysleep
   changed_when: false
   become: yes
-  become_method: sudo
   register: current_display_sleep_time
 
 - name: set the display sleep time
   command: systemsetup -setdisplaysleep Never
   become: yes
-  become_method: sudo
   when: "'Never' not in '{{ current_display_sleep_time.stdout }}'"
 
 - name: check the current timezone
   command: systemsetup -gettimezone
   changed_when: false
   become: yes
-  become_method: sudo
   register: current_timezone
 
 - name: set the timezone
   command: systemsetup -settimezone {{ timezone }}
   become: yes
-  become_method: sudo
   when: "'{{ timezone }}' not in '{{ current_timezone.stdout }}'"
 
 - name: check flags for the user library folder
@@ -64,7 +58,6 @@
     - /Library/Audio/Plug-Ins/VST
     - /Library/Audio/Plug-Ins/VST3
   become: yes
-  become_method: sudo
 
 - name: set operating system defaults
   plist:
