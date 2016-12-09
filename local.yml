@@ -35,5 +35,9 @@
       start_on_boot: "{{ spotify_start_on_boot }}"
       global_settings: "{{ spotify_global_settings }}"
       user_settings: "{{ spotify_user_settings }}"
-
     - sublime_text
+
+    # Dock
+    - role: dock
+      apps: "{{ dock_apps }}"
+      folders: "{{ dock_folders }}"
