@@ -1,66 +1,71 @@
 ---
 # Specify files or folders which are to be copied
 software_app_files:
+
+  # ---------------------------------------------------------------------------
   # General Software
+  # ---------------------------------------------------------------------------
 
   # 1Password
-  - src: "{{ cloud_app_license_dir }}/General Software/1Password/License.onepassword-license"
+  - src: "{{ app_license_dir }}/General Software/1Password/License.onepassword-license"
     dest: ~/Library/Group Containers/2BUA8C4S2C.com.agilebits/License/License.onepassword-license
 
   # TODO: Audio Hijack
 
   # DaisyDisk
-  - src: "{{ cloud_app_license_dir }}/General Software/DaisyDisk/License.DaisyDisk"
+  - src: "{{ app_license_dir }}/General Software/DaisyDisk/License.DaisyDisk"
     dest: ~/Library/Application Support/DaisyDisk/License.DaisyDisk
 
   # Dash
-  - src: "{{ cloud_app_license_dir }}/General Software/Dash/license.dash-license"
+  - src: "{{ app_license_dir }}/General Software/Dash/license.dash-license"
     dest: ~/Library/Application Support/Dash/License/license.dash-license
 
   # Entropy
-  - src: "{{ cloud_app_license_dir }}/General Software/Entropy/.els-A4AD28617A455C07768787313A53E2F79D9FA258"
+  - src: "{{ app_license_dir }}/General Software/Entropy/.els-A4AD28617A455C07768787313A53E2F79D9FA258"
     dest: ~/Library/Application Support/.els-A4AD28617A455C07768787313A53E2F79D9FA258
 
   # Sublime Text
-  - src: "{{ cloud_app_license_dir }}/General Software/Sublime Text/License.sublime_license"
+  - src: "{{ app_license_dir }}/General Software/Sublime Text/License.sublime_license"
     dest: ~/Library/Application Support/Sublime Text 3/Local/License.sublime_license
-  - src: "{{ cloud_app_license_dir }}/General Software/Sublime Text/Doxy.sublime-license"
+  - src: "{{ app_license_dir }}/General Software/Sublime Text/Doxy.sublime-license"
     dest: ~/Library/Application Support/Sublime Text 3/Packages/User/Doxy.sublime-license
 
   # Textual
-  - src: "{{ cloud_app_license_dir }}/General Software/Textual/Textual_User_License.plist"
+  - src: "{{ app_license_dir }}/General Software/Textual/Textual_User_License.plist"
     dest: ~/Library/Application Support/Textual/Textual_User_License.plist
 
   # VMware Fusion
-  - src: "{{ cloud_app_license_dir }}/General Software/VMware Fusion/license-fusion-80-e1-201505"
+  - src: "{{ app_license_dir }}/General Software/VMware Fusion/license-fusion-80-e1-201505"
     dest: /Library/Preferences/VMware Fusion/license-fusion-80-e1-201505
     become: yes
 
+  # ---------------------------------------------------------------------------
   # Music Production Software
+  # ---------------------------------------------------------------------------
 
   # Ableton Live 9 Suite
   # TODO: this works but Ableton Live must be started once before the file can be copied in place or it fails
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Ableton/Ableton Live 9 Suite/Unlock.cfg"
+  - src: "{{ app_license_dir }}/Music Production Software/Ableton/Ableton Live 9 Suite/Unlock.cfg"
     dest: ~/Library/Application Support/Ableton/Live 9.7/Unlock
 
   # ArtsAcoustic BigRock
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic BigRock/aaconfig.ini"
+  - src: "{{ app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic BigRock/aaconfig.ini"
     dest: ~/Library/Application Support/ArtsAcoustic/BigRock/aaconfig.ini
 
   # ArtsAcoustic CL Series
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic CL Series/aaconfig.ini"
+  - src: "{{ app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic CL Series/aaconfig.ini"
     dest: ~/Library/Application Support/ArtsAcoustic/CL Series/aaconfig.ini
 
   # ArtsAcoustic Reverb
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic Reverb/Preference.xml"
+  - src: "{{ app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic Reverb/Preference.xml"
     dest: ~/Library/Application Support/ArtsAcoustic/Reverb/Preference.xml
 
   # Cableguys FilterShaper
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Cableguys/Cableguys FilterShaper/de.cableguys.filtershaper3.plist"
+  - src: "{{ app_license_dir }}/Music Production Software/Cableguys/Cableguys FilterShaper/de.cableguys.filtershaper3.plist"
     dest: ~/Library/Preferences/de.cableguys.filtershaper3.plist
 
   # Cableguys VolumeShaper
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Cableguys/Cableguys VolumeShaper/de.cableguys.volumeshaper4.plist"
+  - src: "{{ app_license_dir }}/Music Production Software/Cableguys/Cableguys VolumeShaper/de.cableguys.volumeshaper4.plist"
     dest: ~/Library/Preferences/de.cableguys.volumeshaper4.plist
 
   # TODO: Celemony Melodyne Editor
@@ -71,47 +76,47 @@ software_app_files:
   # TODO: Cytomic The Glue: not possible
 
   # DMG Audio Compassion
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Compassion/license"
+  - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Compassion/license"
     dest: ~/Library/Application Support/DMGAudio/Compassion/license
 
   # DMG Audio Dualism
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Dualism/license"
+  - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Dualism/license"
     dest: ~/Library/Application Support/DMGAudio/Dualism/license
 
   # DMG Audio EQuality
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio EQuality/license"
+  - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio EQuality/license"
     dest: ~/Library/Application Support/DMGAudio/EQuality/license
 
   # DMG Audio EQuick
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio EQuick/license"
+  - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio EQuick/license"
     dest: ~/Library/Application Support/DMGAudio/EQuick/license
 
   # DMG Audio EQuilibrium
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio EQuilibrium/license"
+  - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio EQuilibrium/license"
     dest: ~/Library/Application Support/DMGAudio/EQuilibrium/license
 
   # DMG Audio Essence
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Essence/license"
+  - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Essence/license"
     dest: ~/Library/Application Support/DMGAudio/Essence/license
 
   # DMG Audio Expurgate
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Expurgate/license"
+  - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Expurgate/license"
     dest: ~/Library/Application Support/DMGAudio/Expurgate/license
 
   # DMG Audio Limitless
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Limitless/license"
+  - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Limitless/license"
     dest: ~/Library/Application Support/DMGAudio/Limitless/license
 
   # DMG Audio PitchFunk
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/DMGAudio/DMGAudio PitchFunk/license"
+  - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio PitchFunk/license"
     dest: ~/Library/Application Support/DMGAudio/PitchFunk/license
 
   # Focusrite Red Plugin Suite
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Focusrite/Focusrite Red Plugin Suite/Red2Red3Plugin.txt"
+  - src: "{{ app_license_dir }}/Music Production Software/Focusrite/Focusrite Red Plugin Suite/Red2Red3Plugin.txt"
     dest: ~/Music/Focusrite/Activation/Red2Red3Plugin.txt
 
   # Goodhertz CanOpener
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Goodhertz/Goodhertz CanOpener Studio/Interface.interface"
+  - src: "{{ app_license_dir }}/Music Production Software/Goodhertz/Goodhertz CanOpener Studio/Interface.interface"
     dest: ~/Music/.GDHZ/Interface.interface
 
   # TODO: LennarDigital Sylenth1: not possible, deactivate before re-installing the OS too
@@ -119,12 +124,12 @@ software_app_files:
   # TODO: Native Instruments Komplete
 
   # TODO: Novation Bass Station: not possible, challenge / response
-  # - src: "{{ cloud_app_license_dir }}/Music Production Software/Novation/Novation Bass Station/B-Station.fnlf"
+  # - src: "{{ app_license_dir }}/Music Production Software/Novation/Novation Bass Station/B-Station.fnlf"
   #   dest: /Library/Application Support/Focusrite/Activation/B-Station.fnlf
   #   become: yes
 
   # Reveal Sound Spire
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Reveal Sound/Reveal Sound Spire/spire.lic"
+  - src: "{{ app_license_dir }}/Music Production Software/Reveal Sound/Reveal Sound Spire/spire.lic"
     dest: ~/Library/Application Support/RevealSound/spire.lic
 
   # TODO: Sound Radix Surfer EQ 2 Boogie Focusrite Edition
@@ -132,62 +137,62 @@ software_app_files:
   # TODO: Spectrasonics Omnisphere
 
   # Studio Devil Amp Modeler Pro
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Studio Devil/Studio Devil Amp Modeler Pro/com.studiodevil.amp.plist"
+  - src: "{{ app_license_dir }}/Music Production Software/Studio Devil/Studio Devil Amp Modeler Pro/com.studiodevil.amp.plist"
     dest: ~/Library/Preferences/com.studiodevil.amp.plist
 
   # Synapse Audio DUNE
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Synapse Audio/Synapse Audio DUNE/.DUNE2reg"
+  - src: "{{ app_license_dir }}/Music Production Software/Synapse Audio/Synapse Audio DUNE/.DUNE2reg"
     dest: /Library/Application Support/Synapse Audio/.DUNE2reg
     become: yes
 
   # u-he Hive
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/u-he/u-he Hive/com.u-he.Hive.plist"
+  - src: "{{ app_license_dir }}/Music Production Software/u-he/u-he Hive/com.u-he.Hive.plist"
     dest: ~/Library/Application Support/u-he/com.u-he.Hive.plist
 
   # u-he MFM2
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/u-he/u-he MFM2/com.u-he.MFM2.plist"
+  - src: "{{ app_license_dir }}/Music Production Software/u-he/u-he MFM2/com.u-he.MFM2.plist"
     dest: ~/Library/Application Support/u-he/com.u-he.MFM2.plist
 
   # u-he Satin
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/u-he/u-he Satin/com.u-he.Satin.plist"
+  - src: "{{ app_license_dir }}/Music Production Software/u-he/u-he Satin/com.u-he.Satin.plist"
     dest: ~/Library/Application Support/u-he/com.u-he.Satin.plist
 
   # u-he Uhbik
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/u-he/u-he Uhbik/com.u-he.Uhbik.plist"
+  - src: "{{ app_license_dir }}/Music Production Software/u-he/u-he Uhbik/com.u-he.Uhbik.plist"
     dest: ~/Library/Application Support/u-he/com.u-he.Uhbik.plist
 
   # u-he Zebra
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/u-he/u-he Zebra/com.u-he.Zebra2.plist"
+  - src: "{{ app_license_dir }}/Music Production Software/u-he/u-he Zebra/com.u-he.Zebra2.plist"
     dest: ~/Library/Application Support/u-he/com.u-he.Zebra2.plist
 
   # ValhallaDSP ValhallaVintageVerb
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/ValhallaDSP/ValhallaDSP ValhallaVintageVerb/ValhallaVintageVerb.settings"
+  - src: "{{ app_license_dir }}/Music Production Software/ValhallaDSP/ValhallaDSP ValhallaVintageVerb/ValhallaVintageVerb.settings"
     dest: ~/Library/Preferences/ValhallaVintageVerb.settings
 
   # Voxengo Deft Compressor
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Voxengo/Voxengo Deft Compressor/product-key-name"
+  - src: "{{ app_license_dir }}/Music Production Software/Voxengo/Voxengo Deft Compressor/product-key-name"
     dest: ~/Library/Preferences/Voxengo/Audio Plug-Ins/Deft Compressor/product-key-name
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Voxengo/Voxengo Deft Compressor/product-key-value"
+  - src: "{{ app_license_dir }}/Music Production Software/Voxengo/Voxengo Deft Compressor/product-key-value"
     dest: ~/Library/Preferences/Voxengo/Audio Plug-Ins/Deft Compressor/product-key-value
 
   # Voxengo Elephant
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Voxengo/Voxengo Elephant/product-key-name"
+  - src: "{{ app_license_dir }}/Music Production Software/Voxengo/Voxengo Elephant/product-key-name"
     dest: ~/Library/Preferences/Voxengo/Audio Plug-Ins/Elephant/product-key-name
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Voxengo/Voxengo Elephant/product-key-value"
+  - src: "{{ app_license_dir }}/Music Production Software/Voxengo/Voxengo Elephant/product-key-value"
     dest: ~/Library/Preferences/Voxengo/Audio Plug-Ins/Elephant/product-key-value
 
   # Voxengo GlissEQ
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Voxengo/Voxengo GlissEQ/product-key-name"
+  - src: "{{ app_license_dir }}/Music Production Software/Voxengo/Voxengo GlissEQ/product-key-name"
     dest: ~/Library/Preferences/Voxengo/Audio Plug-Ins/GlissEQ/product-key-name
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Voxengo/Voxengo GlissEQ/product-key-value"
+  - src: "{{ app_license_dir }}/Music Production Software/Voxengo/Voxengo GlissEQ/product-key-value"
     dest: ~/Library/Preferences/Voxengo/Audio Plug-Ins/GlissEQ/product-key-value
 
   # Voxengo Voxformer
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Voxengo/Voxengo Voxformer/product-key-name"
+  - src: "{{ app_license_dir }}/Music Production Software/Voxengo/Voxengo Voxformer/product-key-name"
     dest: ~/Library/Preferences/Voxengo/Audio Plug-Ins/Voxformer/product-key-name
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Voxengo/Voxengo Voxformer/product-key-value"
+  - src: "{{ app_license_dir }}/Music Production Software/Voxengo/Voxengo Voxformer/product-key-value"
     dest: ~/Library/Preferences/Voxengo/Audio Plug-Ins/Voxformer/product-key-value
 
   # Xfer Records Serum
-  - src: "{{ cloud_app_license_dir }}/Music Production Software/Xfer Records/Xfer Records Serum/user.dat"
+  - src: "{{ app_license_dir }}/Music Production Software/Xfer Records/Xfer Records Serum/user.dat"
     dest: ~/Library/Application Support/com.xferrecords.serum/user.dat

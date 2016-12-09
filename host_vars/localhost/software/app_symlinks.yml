@@ -2,17 +2,17 @@
 # Specify files which are to be symlinked to others
 software_app_symlinks:
   # Audio Hijack
-  - src: "{{ cloud_app_config_dir }}/Audio Hijack"
+  - src: "{{ app_config_dir }}/Audio Hijack"
     dest: '~/Library/Application Support/Audio Hijack'
 
   # OpenEmu
-  - src: "{{ cloud_app_config_dir }}/OpenEmu/BIOS"
+  - src: "{{ app_config_dir }}/OpenEmu/BIOS"
     dest: '~/Library/Application Support/OpenEmu/BIOS'
-  - src: "{{ cloud_app_config_dir }}/OpenEmu/Bindings"
+  - src: "{{ app_config_dir }}/OpenEmu/Bindings"
     dest: '~/Library/Application Support/OpenEmu/Bindings'
-  - src: "{{ cloud_app_config_dir }}/OpenEmu/Cores"
+  - src: "{{ app_config_dir }}/OpenEmu/Cores"
     dest: '~/Library/Application Support/OpenEmu/Cores'
-  - src: "{{ cloud_app_config_dir }}/OpenEmu/Game Library"
+  - src: "{{ app_config_dir }}/OpenEmu/Game Library"
     dest: '~/Library/Application Support/OpenEmu/Game Library'
-  - src: "{{ cloud_app_config_dir }}/OpenEmu/Save States"
+  - src: "{{ app_config_dir }}/OpenEmu/Save States"
     dest: '~/Library/Application Support/OpenEmu/Save States'

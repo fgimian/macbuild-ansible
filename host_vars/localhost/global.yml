@@ -3,5 +3,5 @@
 development_dir: '~/Documents/Development'
 
 # Set our cloud application configuration and license root directories
-cloud_app_config_dir: '~/Dropbox/Software Settings'
-cloud_app_license_dir: '~/Dropbox/Software Licenses'
+app_config_dir: '~/Documents/System Automation/Software Settings'
+app_license_dir: '~/Documents/System Automation/Software Licenses'

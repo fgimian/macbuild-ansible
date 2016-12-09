@@ -1,6 +1,11 @@
 ---
 # Set various defaults which will update the relevant plist files
 software_app_defaults:
+
+  # ---------------------------------------------------------------------------
+  # General Software
+  # ---------------------------------------------------------------------------
+
   # 1Password
   - domain: com.agilebits.onepassword4
     values:
@@ -89,8 +94,8 @@ software_app_defaults:
       reorderDocsetsAlertSuppressed: true
       DHNotificationDocsetPressEnterOrClickIconTip: true
       noDocsetsFoundAlertSuppressed: true
-      syncFolderPath: "{{ cloud_app_config_dir }}/Dash"
-      snippetSQLPath: "{{ cloud_app_config_dir }}/Dash/library.dash"
+      syncFolderPath: "{{ app_config_dir }}/Dash"
+      snippetSQLPath: "{{ app_config_dir }}/Dash/library.dash"
       # Note that the following setting is required or Dash thinks it needs
       # to set everything up again
       migratedV2Prefs: true
