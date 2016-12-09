@@ -33,6 +33,9 @@
         // Distraction free mode without entering full-screen
         "DistractionFreeWindow",
 
+        // Dockerfile syntax support
+        "Dockerfile Syntax Highlighting",
+
         // Auto-generated comment blocks
         "DoxyDoxygen",
 
