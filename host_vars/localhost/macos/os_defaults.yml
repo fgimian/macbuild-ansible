@@ -73,11 +73,18 @@ macos_os_defaults:
       ShowStatusBar: true
       # Set the default Finder display mode to list
       FXPreferredViewStyle: Nlsv
+      MyDocsLibrarySavedViewStyle: Nlsv
+      # Set icons view to be sorted by name
+      FXPreferredGroupBy: Name
       # General / New Finder windows show / fots
       NewWindowTarget: PfHm
       NewWindowTargetPath: file:///Users/fots/
       # (Sierra) Advanced / Keep folders on top when sorting by name
       # _FXSortFoldersFirst: true
+      # Desktop / Sort By / Name
+      DesktopViewSettings:
+        IconViewSettings:
+          arrangeBy: name
 
   # Menu (Clock)
   - domain: com.apple.menuextra.clock

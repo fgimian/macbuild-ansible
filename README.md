@@ -89,9 +89,9 @@ manually due to excessive automation complexity.
 
 * Audio Hijack
 * Microsoft Office
-* Celemony Melodyne Editor
+* Celemony Melodyne Editor (also requires de-activation before re-install)
 * Cytomic The Drop & The Glue
-* LennarDigital Sylenth1
+* LennarDigital Sylenth1 (also requires de-activation before re-install)
 * Native Instruments Komplete
 * Novation Bass Station
 * Sound Radix Surfer EQ 2 Boogie Focusrite Edition
@@ -138,12 +138,14 @@ scripts.
 * **Handlers**: Implementation of handlers to avoid the reboot requirement
 * **Finder**: Sidebar containing favourites and so forth
 * **LaunchPad**: Setup Launchpad with the appropriate icons and structure
-* **Default Applications**: Create application associations for certain file extensions using
-  [duti](http://duti.org/documentation.html)
 * **Notification Centre**: Set the order of items and allow permission
+* **Default Applications**: Create application associations for certain file 
+  extensions using [duti](http://duti.org/documentation.html)
+* **Login Items**: Add apps to Login Items using something such as
+  [loginitems](https://github.com/OJFord/loginitems)
 * **Git**: Further aliases and touch-ups to gitconfig (possibly
   integrating cdiff)
-* **Microsoft Office**: License installation
-* **VMware Fusion**: Software settings
+* **VMware Fusion**: Software settings (see
+  /Users/fots/Library/Preferences/VMware Fusion)
 
 There are also various more TODOs in the codebase itself

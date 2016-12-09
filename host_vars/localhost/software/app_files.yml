@@ -111,6 +111,10 @@ software_app_files:
   - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio PitchFunk/license"
     dest: ~/Library/Application Support/DMGAudio/PitchFunk/license
 
+  # Focusrite Control
+  - src: focusrite_control/Focusrite Control.settings
+    dest: ~/Library/Application Support/Focusrite/Focusrite Control/Settings/Focusrite Control.settings
+
   # Focusrite Red Plugin Suite
   - src: "{{ app_license_dir }}/Music Production Software/Focusrite/Focusrite Red Plugin Suite/Red2Red3Plugin.txt"
     dest: ~/Music/Focusrite/Activation/Red2Red3Plugin.txt

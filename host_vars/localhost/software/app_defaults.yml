@@ -20,6 +20,18 @@ software_app_defaults:
     values:
       autosave: false
 
+  # Affinity Photo
+  - domain: com.seriflabs.affinitydesigner
+    container: com.seriflabs.affinitydesigner
+    values:
+      com.seriflabs.ShowWelcomeScreen: false
+
+  # Affinity Photo
+  - domain: com.seriflabs.affinityphoto
+    container: com.seriflabs.affinityphoto
+    values:
+      ShowWelcomeScreen: false
+
   # Android File Transfer
   - domain: com.google.android.mtpviewer
     values:
@@ -234,6 +246,7 @@ software_app_defaults:
   # Textual
   - domain: com.codeux.apps.textual
     values:
+      SUEnableAutomaticChecks: true
       'Theme -> Invert Sidebar Colors Preference Enabled': 0
       'Theme -> Name': 'resource:Sapientia'
       'Text Input Prompt Suppression -> theme_override_info': true
@@ -277,3 +290,13 @@ software_app_defaults:
       PLInventoryWindowStylePref: 1
       # Preferences / General / Show in menu bar / Only when Fusion is running
       showStartMenu3: 2
+
+  # ---------------------------------------------------------------------------
+  # Music Production Software
+  # ---------------------------------------------------------------------------
+
+  # eLicenser Control Center
+  - domain: com.Syncrosoft.LCC
+    values:
+      Show_LCC_Welcome_on_LCC_Launch: false
+      Show_Maintenance_on_LCC_Launch: false
