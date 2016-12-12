@@ -83,4 +83,5 @@
     dest: "{{ item.dest }}"
     src: "{{ item.src }}"
     state: link
+  ignore_errors: yes
   with_items: "{{ app_symlinks }}"

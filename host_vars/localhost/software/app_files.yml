@@ -24,6 +24,12 @@ software_app_files:
   - src: "{{ app_license_dir }}/General Software/Entropy/.els-A4AD28617A455C07768787313A53E2F79D9FA258"
     dest: ~/Library/Application Support/.els-A4AD28617A455C07768787313A53E2F79D9FA258
 
+  # Focus
+  - src: "{{ app_license_dir }}/General Software/Focus/.491062.padl"
+    dest: ~
+  - src: "{{ app_license_dir }}/General Software/Focus/paddata.padl"
+    dest: ~/Library/Application Support/Focus
+
   # Sublime Text
   - src: "{{ app_license_dir }}/General Software/Sublime Text/License.sublime_license"
     dest: ~/Library/Application Support/Sublime Text 3/Local/License.sublime_license
@@ -44,17 +50,17 @@ software_app_files:
   # ---------------------------------------------------------------------------
 
   # Ableton Live 9 Suite
-  # TODO: this works but Ableton Live must be started once before the file can be copied in place or it fails
   - src: "{{ app_license_dir }}/Music Production Software/Ableton/Ableton Live 9 Suite/Unlock.cfg"
-    dest: ~/Library/Application Support/Ableton/Live 9.7/Unlock
+    dest: ~/Library/Application Support/Ableton/Live 9.7/Unlock/Unlock.cfg
 
-  # ArtsAcoustic BigRock
-  - src: "{{ app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic BigRock/aaconfig.ini"
-    dest: ~/Library/Application Support/ArtsAcoustic/BigRock/aaconfig.ini
+  # ArtsAcoustic BigRock crashes Cubase when mixed with other plugins \
+  # such as ArtsAcoustic Reverb and Eos
+  # - src: "{{ app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic BigRock/aaconfig.ini"
+  #   dest: ~/Library/Application Support/ArtsAcoustic/BigRock/aaconfig.ini
 
-  # ArtsAcoustic CL Series
-  - src: "{{ app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic CL Series/aaconfig.ini"
-    dest: ~/Library/Application Support/ArtsAcoustic/CL Series/aaconfig.ini
+  # ArtsAcoustic CL Series is unstable and crashes Cubase upon instantiating
+  # - src: "{{ app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic CL Series/aaconfig.ini"
+  #   dest: ~/Library/Application Support/ArtsAcoustic/CL Series/aaconfig.ini
 
   # ArtsAcoustic Reverb
   - src: "{{ app_license_dir }}/Music Production Software/ArtsAcoustic/ArtsAcoustic Reverb/Preference.xml"
@@ -73,7 +79,11 @@ software_app_files:
   # /Library/Application Support/Celemony/Licenses/Melodyne singletrack.license
 
   # TODO: Cytomic The Drop: not possible
+
   # TODO: Cytomic The Glue: not possible
+  # ~/Library/Application Support/Cytomic/The Glue/.authsalt
+  # ~/Library/Application Support/Cytomic/The Glue/the-glue-auth0.txt
+  # ~/Library/Application Support/Cytomic/The Glue/the-glue-auth1.txt
 
   # DMG Audio Compassion
   - src: "{{ app_license_dir }}/Music Production Software/DMGAudio/DMGAudio Compassion/license"
@@ -124,6 +134,7 @@ software_app_files:
     dest: ~/Music/.GDHZ/Interface.interface
 
   # TODO: LennarDigital Sylenth1: not possible, deactivate before re-installing the OS too
+  # ~/Library/Application Support/LennarDigital/Sylenth1/Config/License.dat
 
   # TODO: Native Instruments Komplete
 
@@ -132,11 +143,17 @@ software_app_files:
   #   dest: /Library/Application Support/Focusrite/Activation/B-Station.fnlf
   #   become: yes
 
+  # Relab LX480 Complete
+  - src: relab_lx480_complete/Preferences.xml
+    dest: /Library/Application Support/Relab Development/LX480 Complete/Preferences.xml
+
   # Reveal Sound Spire
   - src: "{{ app_license_dir }}/Music Production Software/Reveal Sound/Reveal Sound Spire/spire.lic"
     dest: ~/Library/Application Support/RevealSound/spire.lic
 
-  # TODO: Sound Radix Surfer EQ 2 Boogie Focusrite Edition
+  # Sound Radix Surfer EQ 2 Boogie Focusrite Edition
+  - src: "{{ app_license_dir }}/Music Production Software/Sound Radix/Sound Radix Surfer EQ 2 Boogie Focusrite Edition/license.bin"
+    dest: ~/Music/Audio Music Apps/Sound Radix/SurferEQ Boogie/license.bin
 
   # TODO: Spectrasonics Omnisphere
 

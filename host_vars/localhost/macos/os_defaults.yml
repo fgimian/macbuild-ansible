@@ -44,6 +44,13 @@ macos_os_defaults:
       # Point & Click / Secondary click
       MouseButtonMode: TwoButton
 
+  # System Preferences / App Store
+  - domain: /Library/Preferences/com.apple.SoftwareUpdate.plist
+    values:
+      # Disable Download newly available updates in the background
+      AutomaticDownload: false
+    become: yes
+
   # Launch Services
   - domain: com.apple.LaunchServices
     values:
@@ -85,12 +92,22 @@ macos_os_defaults:
       DesktopViewSettings:
         IconViewSettings:
           arrangeBy: name
+      # Preferences / Advanced / Untick Show warning before changing an extension
+      FXEnableExtensionChangeWarning: false
+      # View / Show Path Bar
+      ShowPathbar: true
 
   # Menu (Clock)
   - domain: com.apple.menuextra.clock
     values:
       # Open Date & Time Preferences... / Clock / Show date
       DateFormat: "EEE d MMM  h:mm a"
+
+  # Menu (Power)
+  - domain: com.apple.menuextra.battery
+    values:
+      # Show Percentage
+      ShowPercent: 'YES'
 
   # Symbolic Hot Keys
   - domain: com.apple.symbolichotkeys

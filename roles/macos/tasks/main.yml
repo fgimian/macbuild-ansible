@@ -52,10 +52,15 @@
 - name: grant permission to audio plugin paths
   file: path={{ item }} state=directory owner=fots
   with_items:
+    # AAX
     - /Library/Application Support/Avid/Audio/Plug-Ins
+    # RTAS
     - /Library/Application Support/Digidesign/Plug-Ins
+    # AU
     - /Library/Audio/Plug-Ins/Components
+    # VST
     - /Library/Audio/Plug-Ins/VST
+    # VST3
     - /Library/Audio/Plug-Ins/VST3
   become: yes
 
@@ -66,6 +71,7 @@
     # casts all values to strings
     values: "{{ item['values'] }}"
     container: "{{ item.container | default(None) }}"
+  become: "{{ item.become | default(false) }}"
   with_items: "{{ os_defaults }}"
 
 - name: create the directory to store the dot file

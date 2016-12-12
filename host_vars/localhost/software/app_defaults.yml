@@ -24,7 +24,7 @@ software_app_defaults:
   - domain: com.seriflabs.affinitydesigner
     container: com.seriflabs.affinitydesigner
     values:
-      com.seriflabs.ShowWelcomeScreen: false
+      ShowWelcomeScreen: false
 
   # Affinity Photo
   - domain: com.seriflabs.affinityphoto
@@ -86,6 +86,13 @@ software_app_defaults:
           keyCode: 37
           modifiers: 6400
 
+  # BootChamp
+  - domain: com.kainjow.BootChamp
+    values:
+      SUEnableAutomaticChecks: true
+      SUHasLaunchedBefore: true
+      SUSendProfileInfo: false
+
   # Clear
   - domain: com.realmacsoftware.clear.mac
     container: com.realmacsoftware.clear.mac
@@ -132,6 +139,18 @@ software_app_defaults:
       locationType: L
       location: '-37.814107,144.963280'
       wakeTime: 480
+
+  # Forklift
+  - domain: com.binarynights.ForkLift-3
+    values:
+      SetupDone: true
+      SUHasLaunchedBefore: true
+      # Preferences / General / Enable dark mode
+      DarkMode: true
+      # Preferences / General / Untick Enable Forklift mini in the menubar
+      ForkLiftMiniEnabled: false
+      # View / Show Titlebar
+      ShowTitlebar: true
 
   # MacDown
   - domain: com.uranusjr.macdown
@@ -227,6 +246,14 @@ software_app_defaults:
       fullScreen: true
       # databasePath: ~/Library/Application Support/OpenEmu/Game Library
 
+  # Skype
+  - domain: com.skype.skype
+    values:
+      # Preferences / Contacts / Untick Show Mac Contacts
+      ShowAddressBookContacts: false
+      # View / as List
+      ContactListViewMode: 1
+
   # SourceTree
   - domain: com.torusknot.SourceTreeNotMAS
     values:
@@ -247,6 +274,7 @@ software_app_defaults:
   - domain: com.codeux.apps.textual
     values:
       SUEnableAutomaticChecks: true
+      SUSendProfileInfo: false
       'Theme -> Invert Sidebar Colors Preference Enabled': 0
       'Theme -> Name': 'resource:Sapientia'
       'Text Input Prompt Suppression -> theme_override_info': true

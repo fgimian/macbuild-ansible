@@ -51,13 +51,15 @@ software_brew_casks:
   - focusrite-control
   - novation-remote-sl-template-editor
   - ocenaudio
-  # TODO: Steinberg Cubase
-  # - steinberg-cubase-pro
-  # - steinberg-cubase-pro-update
+  - steinberg-cubase-pro
+  - steinberg-cubase-pro-update
 
   # Plug-ins (Effect)
-  - artsacoustic-bigrock
-  - artsacoustic-cl-series
+  # ArtsAcoustic BigRock crashes Cubase when mixed with other plugins \
+  # such as ArtsAcoustic Reverb and Eos
+  # - artsacoustic-bigrock
+  # ArtsAcoustic CL Series is unstable and crashes Cubase upon instantiating
+  # - artsacoustic-cl-series
   - artsacoustic-reverb
   - audio-damage-eos
   - cableguys-filtershaper
@@ -77,7 +79,7 @@ software_brew_casks:
   - focusrite-red-plugin-suite
   # TODO: Find a way to make the Goodhertz installer only install CanOpener
   - goodhertz-canopener-studio
-  # TODO: Illformed Glitch
+  - illformed-glitch
   - relab-lx480-complete
   - softube-amp-room-essentials
   - softube-drawmer-s73
@@ -86,7 +88,7 @@ software_brew_casks:
   - softube-saturation-knob
   - softube-tsar-1r
   - softube-tube-delay
-  # TODO: Sonalksis
+  - sonalksis-studio-one-bundle
   - sound-radix-muteomatic
   - sound-radix-surfer-eq-2-boogie-focusrite-edition
   - soundtoys-5
@@ -115,9 +117,12 @@ software_brew_casks:
   - novation-bass-station
   - reveal-sound-spire
   # TODO: Spectrasonics Omnisphere
-  # TODO: Steinberg Padshop
-  # TODO: Steinberg Retrologue
+  - steinberg-padshop
+  - steinberg-padshop-update
+  - steinberg-retrologue
   - synapse-audio-dune
   - u-he-hive
   - u-he-zebra
-  # TODO: Xfer Records Serum
+  - xfer-records-serum
+  - xfer-records-serum-update
+  - xfer-records-serumfx-update
