@@ -9,7 +9,6 @@
       dotfiles: "{{ macos_dotfiles }}"
 
     # Software Installation & Configuration
-    # TODO: Setup login items
     - role: software
       brew_taps: "{{ software_brew_taps }}"
       brew_packages: "{{ software_brew_packages }}"

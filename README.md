@@ -46,7 +46,14 @@ The plist module is a modified version of
 
 ## Quick Start
 
-Run the following in your Terminal to use my configuration:
+Before you get started, you may wish to perform the following steps to save
+time and ensure everything works as expected:
+
+1. Copy a Homebrew cache backup to `~/Library/Caches/Homebrew`
+2. Copy App Store apps that you have previously downloaded to `/Applications`
+3. Copy `System Automation` containing various settings and licenses to `~/Documents`
+
+Now, run the following in your Terminal to use my configuration:
 
 ```bash
 git clone https://github.com/fgimian/macbuild.git
@@ -77,13 +84,8 @@ manually due to excessive automation complexity.
 ### Require Manual Installation
 
 * Microsoft Office
-* Illformed Glitch
 * Native Instruments Komplete
-* Sonalksis
-* Steinberg Cubase Pro
-* Steinberg Padshop & Retrologue
 * Spectrasonics Omnisphere
-* Xfer Records Serum
 
 ### Require Manual Licensing
 
@@ -94,7 +96,6 @@ manually due to excessive automation complexity.
 * LennarDigital Sylenth1 (also requires de-activation before re-install)
 * Native Instruments Komplete
 * Novation Bass Station
-* Sound Radix Surfer EQ 2 Boogie Focusrite Edition
 * Spectrasonics Omnisphere
 
 ## References
@@ -132,20 +133,41 @@ scripts.
 ### Bugs
 
 * Docker role can't modify Kitematic SQL database when it hasn't been created
+* Goodhertz installer installs more than just CanOpener
+* Synapse Audio DUNE registration box appears during install
+* OSXFuse is required for sshfs but our order prevents this
 
 ### Features
 
 * **Handlers**: Implementation of handlers to avoid the reboot requirement
-* **Finder**: Sidebar containing favourites and so forth
+
 * **LaunchPad**: Setup Launchpad with the appropriate icons and structure
 * **Notification Centre**: Set the order of items and allow permission
 * **Default Applications**: Create application associations for certain file 
   extensions using [duti](http://duti.org/documentation.html)
 * **Login Items**: Add apps to Login Items using something such as
   [loginitems](https://github.com/OJFord/loginitems)
+* **Finder**: Sidebar containing favourites and view settings
+
+## App Settings
+
+* **Entropy**: I need to re-assess various options which might need enabling
+  (e.g. auto-extract on open, sub-directory extracting .etc)
+* **Forklift**: Sidebar containing favourites and view settings
 * **Git**: Further aliases and touch-ups to gitconfig (possibly
   integrating cdiff)
+* **Mia for GMail**: Various app settings to simplify startup
 * **VMware Fusion**: Software settings (see
   /Users/fots/Library/Preferences/VMware Fusion)
+* **World Clock**: Country selection settings
 
-There are also various more TODOs in the codebase itself
+* **Ableton Live Suite**: Preferences including skin selection
+* **Apple Logic Pro X**: Preferences and key bindings
+* **Steinberg Cubase Pro**: Preferences and key bindings
+
+## Other
+
+* **Sound Libraries**: Complete work on script to automatically
+  install sound sample libraries and other sound sets
+* **Default Plug-in Presets**: Setup default presets for your most
+  used VST effects and instruments

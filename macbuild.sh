@@ -34,7 +34,7 @@ then
     pip2 install biplist
 fi
 
-# TODO: Mac this work for both backup drives
+# Setup the source of music production software from the backup drive attached
 if [ -d "/Volumes/Backup Mac 1" ]
 then
   export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 1/Software/Music Production Software'
@@ -42,7 +42,6 @@ elif [ -d "/Volumes/Backup Mac 2" ]
 then
   export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 2/Software/Music Production Software'
 fi
-
 echo "Using cask music software basedir of ${HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR}"
 
 # Perform the build
