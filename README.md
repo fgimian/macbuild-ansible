@@ -52,6 +52,7 @@ time and ensure everything works as expected:
 1. Copy a Homebrew cache backup to `~/Library/Caches/Homebrew`
 2. Copy App Store apps that you have previously downloaded to `/Applications`
 3. Copy `System Automation` containing various settings and licenses to `~/Documents`
+4. Install Apple's Command Line Tools manually to avoid them being re-downloaded
 
 Now, run the following in your Terminal to use my configuration:
 

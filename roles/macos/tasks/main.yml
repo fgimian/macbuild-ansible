@@ -50,8 +50,12 @@
   file: path=~/Pictures/Screenshots state=directory
 
 - name: grant permission to audio plugin paths
-  file: path={{ item }} state=directory owner=fots
+  file: path={{ item }} state=directory owner=root group=admin mode=0775
   with_items:
+    # Documentation
+    - /Library/Documentation
+    # Presets
+    - /Library/Audio/Presets
     # AAX
     - /Library/Application Support/Avid/Audio/Plug-Ins
     # RTAS

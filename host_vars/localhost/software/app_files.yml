@@ -26,9 +26,9 @@ software_app_files:
 
   # Focus
   - src: "{{ app_license_dir }}/General Software/Focus/.491062.padl"
-    dest: ~
+    dest: ~/.491062.padl
   - src: "{{ app_license_dir }}/General Software/Focus/paddata.padl"
-    dest: ~/Library/Application Support/Focus
+    dest: ~/Library/Application Support/Focus/paddata.padl
 
   # Sublime Text
   - src: "{{ app_license_dir }}/General Software/Sublime Text/License.sublime_license"

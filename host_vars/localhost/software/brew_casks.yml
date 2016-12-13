@@ -36,8 +36,7 @@ software_brew_casks:
   - entropy
   - focus
   - forklift-beta
-  # TODO: Use my Cask of Microsoft Office which is locked to a checksum and helps avoid additional downloads
-  # - fgimian/fgimian/microsoft-office
+  - microsoft-office
   - textual
   - vmware-fusion
 
