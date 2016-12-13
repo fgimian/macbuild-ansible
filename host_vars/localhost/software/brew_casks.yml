@@ -15,9 +15,9 @@ software_brew_casks:
   - dropbox
   - firefox
   - flux
+  - gmail-notifier
   - google-chrome
   - macdown
-  - miaforgmail
   - mplayerx
   - openemu-experimental
   - skype

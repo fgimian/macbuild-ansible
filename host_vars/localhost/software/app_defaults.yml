@@ -187,18 +187,6 @@ software_app_defaults:
       htmlDetectFrontMatter: true
       htmlDefaultDirectoryUrl: "{{ development_dir }}"
 
-  # Mia for GMail
-  - domain: com.sovapps.gmailnotifier
-    values:
-      # Preferences / Notifications
-      notifications: true
-      # Preferences / Black & white icons
-      blackWhiteIcons: true
-      # Preferences / Open at login
-      openAtLogin: true
-      # Preferences / Sound
-      sound: Submarine
-
   # Microsoft Office
   - domain: ~/Library/Group Containers/UBF8T346G9.Office/com.microsoft.officeprefs.plist
     values:
