@@ -73,12 +73,3 @@
     container: "{{ item.container | default(None) }}"
   become: "{{ item.become | default(false) }}"
   with_items: "{{ os_defaults }}"
-
-- name: create the directory to store the dot file
-  file: path={{ item.dest | dirname }} state=directory
-  when: item.dest != '/' and item.dest != '~'
-  with_items: "{{ dotfiles }}"
-
-- name: install the dot file requested
-  copy: src={{ item.src }} dest={{ item.dest }} mode={{ item.mode | default('0644') }}
-  with_items: "{{ dotfiles }}"

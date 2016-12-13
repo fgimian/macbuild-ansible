@@ -6,7 +6,6 @@
     - role: macos
       timezone: "{{ macos_timezone }}"
       os_defaults: "{{ macos_os_defaults }}"
-      dotfiles: "{{ macos_dotfiles }}"
 
     # Software Installation & Configuration
     - role: software
