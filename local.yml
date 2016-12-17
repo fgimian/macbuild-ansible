@@ -35,6 +35,14 @@
       user_settings: "{{ spotify_user_settings }}"
     - sublime_text
 
+    # Default Applications
+    - role: default_apps
+      associations: "{{ default_apps_associations }}"
+
+    # Startup
+    - role: startup
+      login_items: "{{ startup_login_items }}"
+
     # Dock
     - role: dock
       apps: "{{ dock_apps }}"

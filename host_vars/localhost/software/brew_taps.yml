@@ -5,4 +5,5 @@ software_brew_taps:
   - caskroom/fonts
   - caskroom/versions
   - rcmdnk/rcmdnkcask
+  - OJFord/formulae
   - fgimian/fgimian

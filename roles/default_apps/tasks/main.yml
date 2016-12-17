@@ -1,0 +1,13 @@
+---
+- name: check file type association
+  command: "duti -x {{ item.1.extension }}"
+  with_subelements:
+    - "{{ associations }}"
+    - utis
+  changed_when: no
+  register: duti_output
+
+- name: update file type association
+  command: "duti -s {{ item.item.0.bundle_id }} {{ item.item.1.uti }} all"
+  with_items: "{{ duti_output.results | list }}"
+  when: item.stdout_lines[-1] != item.item.0.bundle_id

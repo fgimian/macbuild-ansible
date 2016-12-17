@@ -5,12 +5,14 @@ software_brew_packages:
   - bash
   - ctags
   - curl
+  - duti
   - dockutil
   - findutils
   - fish
   - git
   - gnu-sed
   - hugo
+  - loginitems
   - mas
   - md5sha1sum
   - p7zip
