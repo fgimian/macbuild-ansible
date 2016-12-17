@@ -44,6 +44,9 @@
     "shift_tab_unindent": true,
     "spell_check": true,
 
+    // Ensure that files are opened in a tab instead of a new window
+    "open_files_in_new_window": false,
+
     // Disable update checking
     "update_check": false,
 
