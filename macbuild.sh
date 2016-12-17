@@ -42,7 +42,13 @@ elif [ -d "/Volumes/Backup Mac 2" ]
 then
   export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 2/Software/Music Production Software'
 fi
-echo "Using cask music software basedir of ${HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR}"
+
+if [ ! -z "$HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR" ]
+then
+  echo "Using cask music software basedir of ${HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR}"
+else
+  echo "Unable to find the music software basedir"
+fi
 
 # Perform the build
 ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python local.yml && \

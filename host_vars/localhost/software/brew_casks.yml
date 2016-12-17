@@ -44,7 +44,7 @@ software_brew_casks:
   # TODO: Native Instruments Komplete
 
   # DAWs & Drivers
-  - ableton-live-9-suite
+  - ableton-live-suite
   - audiomove
   - celemony-melodyne-editor
   - focusrite-control
@@ -65,6 +65,7 @@ software_brew_casks:
   - cableguys-volumeshaper
   - cytomic-the-drop
   - cytomic-the-glue
+  - dada-life-sausage-fattener
   - dmgaudio-compassion
   - dmgaudio-dualism
   - dmgaudio-equality
@@ -88,11 +89,8 @@ software_brew_casks:
   - softube-tsar-1r
   - softube-tube-delay
   - sonalksis-studio-one-bundle
-  - sound-radix-muteomatic
-  - sound-radix-surfer-eq-2-boogie-focusrite-edition
   - soundtoys-5
   - studio-devil-amp-modeler-pro
-  - tailored-noise-sausage-fattener
   - u-he-mfm2
   - u-he-satin
   - u-he-uhbik

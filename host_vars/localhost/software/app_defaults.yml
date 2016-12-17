@@ -140,11 +140,19 @@ software_app_defaults:
       location: '-37.814107,144.963280'
       wakeTime: 480
 
+  # Focus
+  - domain: BradJasper.focus
+    values:
+      SUEnableAutomaticChecks: true
+      SUHasLaunchedBefore: true
+
   # Forklift
   - domain: com.binarynights.ForkLift-3
     values:
       SetupDone: true
+      SUEnableAutomaticChecks: true
       SUHasLaunchedBefore: true
+      SUSendProfileInfo: false
       # Preferences / General / Enable dark mode
       DarkMode: true
       # Preferences / General / Untick Enable Forklift mini in the menubar
