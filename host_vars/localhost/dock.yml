@@ -1,7 +1,10 @@
+---
+# Dock applications (in the left section)
 dock_apps:
   - ForkLift
+  - Siri
   - Launchpad
-  - Google Chrome
+  - Safari
   - Utilities/Terminal
   - Sublime Text
   - Dash
@@ -21,3 +24,7 @@ dock_apps:
   - Twitter
   - App Store
   - System Preferences
+
+# Dock folders (in the right section)
+dock_folders:
+  - ~/Downloads

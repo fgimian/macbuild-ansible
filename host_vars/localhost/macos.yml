@@ -1,4 +1,7 @@
 ---
+# Set the appropriate timezone
+macos_timezone: Australia/Melbourne
+
 # Set various defaults which will update the relevant plist files
 macos_os_defaults:
   # System Preferences & Globals
@@ -87,7 +90,7 @@ macos_os_defaults:
       NewWindowTarget: PfHm
       NewWindowTargetPath: file:///Users/fots/
       # (Sierra) Advanced / Keep folders on top when sorting by name
-      # _FXSortFoldersFirst: true
+      _FXSortFoldersFirst: true
       # Desktop / Sort By / Name
       DesktopViewSettings:
         IconViewSettings:
