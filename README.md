@@ -17,9 +17,8 @@ Ansible.  I have currently implemented the following:
   the defaults command.
 * **Configuration Files**: Any files that are to be copied to the Mac,
   including app settings, licenses and dotfiles.
-* **Symlinks to Cloud Storage**: This allows you to store certain app
-  configuration in the cloud (e.g. Dropbox, Google Drive .etc) and then
-  symlink to it so that your settings are stored and updated in the cloud.
+* **Symlinks to App Configuration**: Symbolic links are created to specified
+  destinations to restore more complex app settings.
 * **Unix Package Installation**: This is being accomplish with the use of
   [homebrew](https://github.com/Homebrew/homebrew).
 * **Terminal Customisation**: Setting up the Terminal using JXA.
@@ -99,6 +98,30 @@ manually due to excessive automation complexity.
 * Novation Bass Station
 * Spectrasonics Omnisphere
 
+## TODO
+
+* **Handlers**: Implementation of handlers to avoid the reboot requirement
+* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
+* **Notification Centre**: Set the order of items and allow permission
+* **App Store Login Items**: Attempt to figure out how app store apps startup automatically (e.g. AppCleaner and OneDrive)
+* **Finder**: Sidebar containing favourites and view settings
+
+* **Entropy**: I need to re-assess various options which might need enabling (e.g. auto-extract on open, sub-directory extracting .etc)
+* **Forklift**: Sidebar containing favourites and view settings
+* **Git**: Further aliases and touch-ups to gitconfig (possibly integrating cdiff)
+* **Kitematic**: Settinsg for Kitematic are tricky as the docker role can't modify Kitematic SQL database when it hasn't been created
+* **sshfs**: OSXFuse is required for sshfs but our order prevents this
+* **VMware Fusion**: Software settings (see /Users/fots/Library/Preferences/VMware Fusion)
+* **World Clock**: Country selection settings
+
+* **Ableton Live Suite**: Preferences including skin selection
+* **Goodhertz CanOpener**: Goodhertz installer installs more than just CanOpener
+* **Apple Logic Pro X**: Preferences and key bindings
+* **Steinberg Cubase Pro**: Preferences and key bindings
+* **Synapse Audio DUNE**: Registration box appears during install
+* **Sound Libraries**: Complete work on script to automatically install sound sample libraries and other sound sets
+* **Default Plug-in Presets**: Setup default presets for your most used VST effects and instruments
+
 ## References
 
 ### Projects
@@ -128,47 +151,3 @@ Mac Build is released under the **MIT** license. Please see the
 [LICENSE](https://github.com/fgimian/macbuild/blob/master/LICENSE) file for
 more details.  Feel free take what you like and use it in your own Ansible
 scripts.
-
-## TODO
-
-### Bugs
-
-* Docker role can't modify Kitematic SQL database when it hasn't been created
-* Goodhertz installer installs more than just CanOpener
-* Synapse Audio DUNE registration box appears during install
-* OSXFuse is required for sshfs but our order prevents this
-
-### Features
-
-* **Handlers**: Implementation of handlers to avoid the reboot requirement
-
-* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
-* **Notification Centre**: Set the order of items and allow permission
-* **Default Applications**: Create application associations for certain file 
-  extensions using [duti](http://duti.org/documentation.html)
-* **Login Items**: Add apps to Login Items using something such as
-  [loginitems](https://github.com/OJFord/loginitems)
-* **Finder**: Sidebar containing favourites and view settings
-
-## App Settings
-
-* **Entropy**: I need to re-assess various options which might need enabling
-  (e.g. auto-extract on open, sub-directory extracting .etc)
-* **Forklift**: Sidebar containing favourites and view settings
-* **Git**: Further aliases and touch-ups to gitconfig (possibly
-  integrating cdiff)
-* **Mia for GMail**: Various app settings to simplify startup
-* **VMware Fusion**: Software settings (see
-  /Users/fots/Library/Preferences/VMware Fusion)
-* **World Clock**: Country selection settings
-
-* **Ableton Live Suite**: Preferences including skin selection
-* **Apple Logic Pro X**: Preferences and key bindings
-* **Steinberg Cubase Pro**: Preferences and key bindings
-
-## Other
-
-* **Sound Libraries**: Complete work on script to automatically
-  install sound sample libraries and other sound sets
-* **Default Plug-in Presets**: Setup default presets for your most
-  used VST effects and instruments
