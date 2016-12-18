@@ -11,37 +11,29 @@ Artwork courtesy of [Apple](http://www.apple.com/)
 The goal of this project is fully automate macOS workstation using Ansible.
 I have currently implemented the following:
 
-* **macOS Defaults**: Updating of plist properties for various aspects of macOS
-  such as enabling zoom, configuring Finder and so on.  This uses a custom
-  plist module which allows for complex updates of plist files far beyond
-  the defaults command.
-* **Configuration Files**: Any files that are to be copied to the Mac,
-  including app settings, licenses and dotfiles.
-* **Symlinks to App Configuration**: Symbolic links are created to specified
-  destinations to restore more complex app settings.
+* **macOS & Software Defaults**: Updating of plist properties for various
+  aspects of macOS and software configuration.  This uses a custom plist module
+  which allows for complex updates of plist files far beyond the defaults
+  command.  The plist module is a modified version of
+  [Matthias Neugebauer's plist module](https://github.com/mtneug/ansible-modules-plist).
 * **Unix Package Installation**: This is being accomplish with the use of
   [homebrew](https://github.com/Homebrew/homebrew).
-* **Terminal Customisation**: Setting up the Terminal using JXA.
+* **Development Setup**: Installation and configuration of technologies
+  such as Python, Node.js and Docker.
 * **Desktop Application Installation**: This is being performed with the use
   of [homebrew-cask](https://github.com/caskroom/homebrew-cask).
-* **Music Production Software Installation**: Installation of a huge variety of
-  music production software performed via my local backup drive (due to the
-  fact many apps are huge or can't be downloaded directly by Homebrew Cask).
-* **Appstore Application Check**: Since there is currently no way to automate
-  installation of App Store applications, I perform a check to see if the app
-  is installed, and notify the user that they must install it from the App
-  Store if it isn't.
-* **Development Setup**: Installation of development languages like Python,
-  Ruby, Node.js and Go, along with development environments like Docker and
-  Vagrant.  This also includes installation of related packages for each
-  technology.
-* **Application Settings & Licenses**: Automating configuration of Sublime 
-  Text, MacDown, Textual and other applications which are of interest to me.
-  This also includes deployment of licenses for any relevant software.
-  This is performed using plist properties, files and custom code.
-
-The plist module is a modified version of
-[Matthias Neugebauer's plist module](https://github.com/mtneug/ansible-modules-plist).
+* **Appstore Application Check**: Perform a check to see if the app is
+  installed, and notify the user that they must install it from the App Store
+  if it isn't.
+* **Configuration Files & Symlinks**: Any files and folders that are to be 
+  copied or symlinked, including app settings, licenses and dotfiles.
+* **Dock Configuration**: Automatic building of the Dock using
+  [dockutil](https://github.com/kcrawford/dockutil).
+* **Default Apps**: File associations for various applications using
+  [duti](https://github.com/moretension/duti).
+* **Startup Setup**: Ensures that the required items start on startup using
+  [loginitems](https://github.com/OJFord/loginitems).
+* **Terminal Customisation**: Setting up the Terminal using JXA.
 
 ## Quick Start
 
@@ -62,12 +54,9 @@ cd macbuild
 ```
 
 It is strongly suggested that you reboot your Mac after the first run
-of this.
+of this tool.
 
 ## Manual Configuration
-
-Some settings (outside those in the "Out of Scope") section must be set
-manually due to excessive automation complexity.
 
 ### Require Manual Configuration
 
