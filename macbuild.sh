@@ -37,10 +37,10 @@ fi
 # Setup the source of music production software from the backup drive attached
 if [ -d "/Volumes/Backup Mac 1" ]
 then
-  export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 1/Software/Music Production Software'
+  export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 1/Software/Music Production'
 elif [ -d "/Volumes/Backup Mac 2" ]
 then
-  export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 2/Software/Music Production Software'
+  export HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR='/Volumes/Backup Mac 2/Software/Music Production'
 fi
 
 if [ ! -z "$HOMEBREW_CASK_MUSIC_SOFTWARE_BASEDIR" ]
