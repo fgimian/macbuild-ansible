@@ -56,9 +56,20 @@ cd macbuild
 It is strongly suggested that you reboot your Mac after the first run
 of this tool.
 
-## Manual Configuration
+## Manual Tasks
 
-### Require Manual Configuration
+### macOS
+
+* **Automatic Updates**: Disable automatic downloading of new updates
+* **Handlers**: Implementation of handlers to avoid the reboot requirement
+* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
+* **Microsoft Office**: Must be licensed manually
+* **Notification Centre**: Set the order of items and allow permission
+* **App Store Login Items**: Attempt to figure out how app store apps startup automatically (e.g. AppCleaner and OneDrive)
+* **Finder**: Sidebar containing favourites and view settings
+* **Safari**: Installation of extensions
+
+### General Software
 
 * **1Password**: Locate your 1Password database (this setting is stored in an
   SQLite database)
@@ -67,47 +78,10 @@ of this tool.
   automate)
 * **Dropbox**: Disable camera uploads (settings are stored a binary)
 * **Firefox**: Go through wizard and sign into your Firefox account
+* **Forklift**: Sidebar containing favourites and view settings
+* **Git**: Further aliases and touch-ups to gitconfig (possibly integrating cdiff)
 * **Spotify**: Update sources to only include iTunes (settings are stored
   in binary format)
-
-### Require Manual Installation
-
-* Native Instruments Komplete
-* Spectrasonics Omnisphere
-
-### Require Manual Licensing
-
-* Microsoft Office
-* Celemony Melodyne Editor (also requires de-activation before re-install)
-  (see ~/Library/Preferences/com.celemony.MelodyneSingletrackLicenser.plist and
-  /Library/Application Support/Celemony/Licenses/Melodyne singletrack.license)
-* Cytomic The Drop & The Glue
-  (see files under ~/Library/Application Support/Cytomic/The Glue and
-  ~/Library/Application Support/Cytomic/The Drop)
-* LennarDigital Sylenth1 (also requires de-activation before re-install)
-  (see ~/Library/Application Support/LennarDigital/Sylenth1/Config/License.dat)
-* Native Instruments Komplete
-* Novation Bass Station
-  (see /Library/Application Support/Focusrite/Activation/B-Station.fnlf)
-* Spectrasonics Omnisphere
-
-## TODO
-
-### macOS
-
-* **Automatic Updates**: Disable automatic downloading of new updates
-* **Handlers**: Implementation of handlers to avoid the reboot requirement
-* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
-* **Notification Centre**: Set the order of items and allow permission
-* **App Store Login Items**: Attempt to figure out how app store apps startup automatically (e.g. AppCleaner and OneDrive)
-* **Finder**: Sidebar containing favourites and view settings
-* **Safari**: Installation of extensions
-
-### General Software
-
-* **Git**: Further aliases and touch-ups to gitconfig (possibly integrating cdiff)
-* **Audio Hijack**: Implement automatic licensing via the associated plist file
-* **Forklift**: Sidebar containing favourites and view settings
 * **VMware Fusion**: Software settings (see /Users/fots/Library/Preferences/VMware Fusion)
 * **World Clock**: Country selection settings
 
@@ -115,6 +89,12 @@ of this tool.
 
 * **Ableton Live Suite**: Preferences including skin selection
 * **Apple Logic Pro X**: Preferences and key bindings
+* **Celemony Melodyne Editor**: Requires manual licensing and also requires de-activation before re-install
+* **Cytomic The Drop & The Glue**: Requires manual licensing
+* **LennarDigital Sylenth1**: Requires manual licensing and also requires de-activation before re-install
+* **Native Instruments Komplete**: Installation and licensing haven't yet been automated
+* **Novation Bass Station**: Requires manual licensing
+* **Spectrasonics Omnisphere**: Installation and licensing haven't yet been automated
 * **Steinberg Cubase Pro**: Preferences and key bindings
 * **Default Plug-in Presets**: Setup default presets for your most used VST effects and instruments
 * **Sound Libraries**: Complete work on script to automatically install sound sample libraries and other sound sets
