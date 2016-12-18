@@ -1,0 +1,6 @@
+---
+- name: install osxfuse
+  homebrew_cask: name=osxfuse state=present
+
+- name: install sshfs
+  homebrew: name=sshfs state=latest

@@ -19,8 +19,6 @@ software_brew_packages:
   - rlwrap
   - sassc
   - shellcheck
-  # TODO: requires brew cask install osxfuse
-  #- sshfs
   - tree
   - unrar
   - watch
