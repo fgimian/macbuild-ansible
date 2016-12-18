@@ -50,7 +50,7 @@ macos_os_defaults:
   # System Preferences / App Store
   - domain: /Library/Preferences/com.apple.SoftwareUpdate.plist
     values:
-      # Disable Download newly available updates in the background
+      # Disable 'Download newly available updates in the background'
       AutomaticDownload: false
     become: yes
 
@@ -93,7 +93,7 @@ macos_os_defaults:
       _FXSortFoldersFirst: true
       # Advanced / Show all filename extensions
       AppleShowAllExtensions: true
-      # Advanced / Untick Show warning before changing an extension
+      # Advanced / Disable 'Show warning before changing an extension'
       FXEnableExtensionChangeWarning: false
       # View / Show Path Bar
       ShowPathbar: true
@@ -130,3 +130,9 @@ macos_os_defaults:
     values:
       # View / Show Status Bar
       ShowStatusBar: true
+      # General / Disable 'Open "safe" files after downloading'
+      AutoOpenSafeDownloads: false
+      # AutoFill / Disable 'User names and passwords'
+      AutoFillPasswords: false
+      # Advanced / Show Develop menu in menu bar
+      IncludeDevelopMenu: true
