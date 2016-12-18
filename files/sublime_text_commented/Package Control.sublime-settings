@@ -72,7 +72,7 @@
         // The package manager for Sublime Text
         "Package Control",
 
-        // A system for managing TODO lists in Sublime Text
+        // A system for managing task lists in Sublime Text
         "PlainTasks",
 
         // Puppet syntax support

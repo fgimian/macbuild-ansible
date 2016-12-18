@@ -41,7 +41,6 @@ software_brew_casks:
   - vmware-fusion
 
   # Music Production Software
-  # TODO: Native Instruments Komplete
 
   # DAWs & Drivers
   - ableton-live-suite
@@ -54,11 +53,6 @@ software_brew_casks:
   - steinberg-cubase-pro-update
 
   # Plug-ins (Effect)
-  # ArtsAcoustic BigRock crashes Cubase when mixed with other plugins \
-  # such as ArtsAcoustic Reverb and Eos
-  # - artsacoustic-bigrock
-  # ArtsAcoustic CL Series is unstable and crashes Cubase upon instantiating
-  # - artsacoustic-cl-series
   - artsacoustic-reverb
   - audio-damage-eos
   - cableguys-filtershaper
@@ -68,8 +62,6 @@ software_brew_casks:
   - dada-life-sausage-fattener
   - dmgaudio-compassion
   - dmgaudio-dualism
-  - dmgaudio-equality
-  - dmgaudio-equick
   - dmgaudio-equilibrium
   - dmgaudio-essence
   - dmgaudio-expurgate
@@ -77,7 +69,6 @@ software_brew_casks:
   - dmgaudio-pitchfunk
   - eventide-2016-stereo-room
   - focusrite-red-plugin-suite
-  # TODO: Find a way to make the Goodhertz installer only install CanOpener
   - goodhertz-canopener-studio
   - illformed-glitch
   - relab-lx480-complete
@@ -113,7 +104,6 @@ software_brew_casks:
   - lennardigital-sylenth1
   - novation-bass-station
   - reveal-sound-spire
-  # TODO: Spectrasonics Omnisphere
   - steinberg-padshop
   - steinberg-padshop-update
   - steinberg-retrologue

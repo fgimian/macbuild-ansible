@@ -79,10 +79,16 @@ of this tool.
 
 * Microsoft Office
 * Celemony Melodyne Editor (also requires de-activation before re-install)
+  (see ~/Library/Preferences/com.celemony.MelodyneSingletrackLicenser.plist and
+  /Library/Application Support/Celemony/Licenses/Melodyne singletrack.license)
 * Cytomic The Drop & The Glue
+  (see files under ~/Library/Application Support/Cytomic/The Glue and
+  ~/Library/Application Support/Cytomic/The Drop)
 * LennarDigital Sylenth1 (also requires de-activation before re-install)
+  (see ~/Library/Application Support/LennarDigital/Sylenth1/Config/License.dat)
 * Native Instruments Komplete
 * Novation Bass Station
+  (see /Library/Application Support/Focusrite/Activation/B-Station.fnlf)
 * Spectrasonics Omnisphere
 
 ## TODO
