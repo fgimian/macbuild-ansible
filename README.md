@@ -72,13 +72,11 @@ of this tool.
 
 ### Require Manual Installation
 
-* Microsoft Office
 * Native Instruments Komplete
 * Spectrasonics Omnisphere
 
 ### Require Manual Licensing
 
-* Audio Hijack
 * Microsoft Office
 * Celemony Melodyne Editor (also requires de-activation before re-install)
 * Cytomic The Drop & The Glue
@@ -89,27 +87,37 @@ of this tool.
 
 ## TODO
 
+### macOS
+
 * **Handlers**: Implementation of handlers to avoid the reboot requirement
 * **LaunchPad**: Setup Launchpad with the appropriate icons and structure
 * **Notification Centre**: Set the order of items and allow permission
 * **App Store Login Items**: Attempt to figure out how app store apps startup automatically (e.g. AppCleaner and OneDrive)
 * **Finder**: Sidebar containing favourites and view settings
 
+### Unix
+
+* **Git**: Further aliases and touch-ups to gitconfig (possibly integrating cdiff)
+* **sshfs**: OSXFuse is required for sshfs but our order prevents this
+
+### General
+
+* **Audio Hijack**: Implement automatic licensing via the associated plist file
 * **Entropy**: I need to re-assess various options which might need enabling (e.g. auto-extract on open, sub-directory extracting .etc)
 * **Forklift**: Sidebar containing favourites and view settings
-* **Git**: Further aliases and touch-ups to gitconfig (possibly integrating cdiff)
 * **Kitematic**: Settinsg for Kitematic are tricky as the docker role can't modify Kitematic SQL database when it hasn't been created
-* **sshfs**: OSXFuse is required for sshfs but our order prevents this
 * **VMware Fusion**: Software settings (see /Users/fots/Library/Preferences/VMware Fusion)
 * **World Clock**: Country selection settings
 
+### Music Production
+
 * **Ableton Live Suite**: Preferences including skin selection
-* **Goodhertz CanOpener**: Goodhertz installer installs more than just CanOpener
 * **Apple Logic Pro X**: Preferences and key bindings
+* **Goodhertz CanOpener**: Goodhertz installer installs more than just CanOpener
 * **Steinberg Cubase Pro**: Preferences and key bindings
 * **Synapse Audio DUNE**: Registration box appears during install
-* **Sound Libraries**: Complete work on script to automatically install sound sample libraries and other sound sets
 * **Default Plug-in Presets**: Setup default presets for your most used VST effects and instruments
+* **Sound Libraries**: Complete work on script to automatically install sound sample libraries and other sound sets
 
 ## References
 
