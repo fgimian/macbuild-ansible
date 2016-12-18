@@ -43,14 +43,15 @@ software_brew_casks:
   # Music Production Software
 
   # DAWs & Drivers
-  - ableton-live-suite
+  - ableton-live-9-suite
   - audiomove
   - celemony-melodyne-editor
   - focusrite-control
   - novation-remote-sl-template-editor
-  - ocenaudio
-  - steinberg-cubase-pro
-  - steinberg-cubase-pro-update
+  # TODO: Homebrew Cask doesn't like this form when duplicates are present
+  - fgimian/fgimian/ocenaudio
+  - steinberg-cubase-pro-9
+  - steinberg-cubase-pro-9-update
 
   # Plug-ins (Effect)
   - artsacoustic-reverb
