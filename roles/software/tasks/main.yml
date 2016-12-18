@@ -48,6 +48,10 @@
     container: "{{ item.container | default(None) }}"
   with_items: "{{ app_defaults }}"
 
+- name: refresh cfprefsd
+  command: killall cfprefsd
+  changed_when: false
+
 # Application Files
 - name: create the directory to store the app file
   file: path={{ item.dest | dirname }} state=directory
