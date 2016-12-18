@@ -2,23 +2,15 @@ default_apps_associations:
   # Sublime text
   - bundle_id: com.sublimetext.3
     utis:
-      - uti: public.txt
-        extension: txt
+      - public.plain-text
 
   # Entropy
   - bundle_id: com.eigenlogik.Entropy
     utis:
-      - uti: public.zip-archive
-        extension: zip
-      - uti: public.tar-archive
-        extension: tar
-      - uti: org.gnu.gnu-zip-tar-archive
-        extension: tgz
-      - uti: public.tar-bzip2-archive
-        extension: tbz
-      - uti: org.gnu.gnu-zip-archive
-        extension: gz
-      - uti: public.bzip2-archive
-        extension: bzip2
-      - uti: public.cpio-archive
-        extension: cpio
+      - public.zip-archive
+      - public.tar-archive
+      - org.gnu.gnu-zip-tar-archive
+      - public.tar-bzip2-archive
+      - org.gnu.gnu-zip-archive
+      - public.bzip2-archive
+      - public.cpio-archive
