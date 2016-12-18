@@ -95,33 +95,27 @@ of this tool.
 
 ### macOS
 
+* **Automatic Updates**: Disable automatic downloading of new updates
 * **Handlers**: Implementation of handlers to avoid the reboot requirement
 * **LaunchPad**: Setup Launchpad with the appropriate icons and structure
 * **Notification Centre**: Set the order of items and allow permission
 * **App Store Login Items**: Attempt to figure out how app store apps startup automatically (e.g. AppCleaner and OneDrive)
 * **Finder**: Sidebar containing favourites and view settings
+* **Safari**: Installation of extensions
 
-### Unix
+### General Software
 
 * **Git**: Further aliases and touch-ups to gitconfig (possibly integrating cdiff)
-* **sshfs**: OSXFuse is required for sshfs but our order prevents this
-
-### General
-
 * **Audio Hijack**: Implement automatic licensing via the associated plist file
-* **Entropy**: I need to re-assess various options which might need enabling (e.g. auto-extract on open, sub-directory extracting .etc)
 * **Forklift**: Sidebar containing favourites and view settings
-* **Kitematic**: Settinsg for Kitematic are tricky as the docker role can't modify Kitematic SQL database when it hasn't been created
 * **VMware Fusion**: Software settings (see /Users/fots/Library/Preferences/VMware Fusion)
 * **World Clock**: Country selection settings
 
-### Music Production
+### Music Production Software
 
 * **Ableton Live Suite**: Preferences including skin selection
 * **Apple Logic Pro X**: Preferences and key bindings
-* **Goodhertz CanOpener**: Goodhertz installer installs more than just CanOpener
 * **Steinberg Cubase Pro**: Preferences and key bindings
-* **Synapse Audio DUNE**: Registration box appears during install
 * **Default Plug-in Presets**: Setup default presets for your most used VST effects and instruments
 * **Sound Libraries**: Complete work on script to automatically install sound sample libraries and other sound sets
 
