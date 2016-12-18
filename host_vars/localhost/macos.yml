@@ -89,13 +89,11 @@ macos_os_defaults:
       # General / New Finder windows show / fots
       NewWindowTarget: PfHm
       NewWindowTargetPath: file:///Users/fots/
-      # (Sierra) Advanced / Keep folders on top when sorting by name
+      # Advanced / Keep folders on top when sorting by name (Sierra only)
       _FXSortFoldersFirst: true
-      # Desktop / Sort By / Name
-      DesktopViewSettings:
-        IconViewSettings:
-          arrangeBy: name
-      # Preferences / Advanced / Untick Show warning before changing an extension
+      # Advanced / Show all filename extensions
+      AppleShowAllExtensions: true
+      # Advanced / Untick Show warning before changing an extension
       FXEnableExtensionChangeWarning: false
       # View / Show Path Bar
       ShowPathbar: true
