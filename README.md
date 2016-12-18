@@ -8,10 +8,10 @@ Artwork courtesy of [Apple](http://www.apple.com/)
 
 ## Introduction
 
-The goal of this project is fully automate my OS X Yosemite workstation using
-Ansible.  I have currently implemented the following:
+The goal of this project is fully automate macOS workstation using Ansible.
+I have currently implemented the following:
 
-* **OS X Defaults**: Updating of plist properties for various aspects of OS X
+* **macOS Defaults**: Updating of plist properties for various aspects of macOS
   such as enabling zoom, configuring Finder and so on.  This uses a custom
   plist module which allows for complex updates of plist files far beyond
   the defaults command.
