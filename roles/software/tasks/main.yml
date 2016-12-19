@@ -12,7 +12,6 @@
     # Workaround for issue https://github.com/ansible/ansible-modules-extras/issues/3624
     name: ["{{ item }}"]
     state: latest
-  ignore_errors: yes
   with_items: "{{ brew_packages }}"
 
 # Homebrew Cask Desktop Applications
@@ -21,7 +20,6 @@
 
 - name: desktop cask applications
   homebrew_cask: name={{ item }} state=present
-  ignore_errors: yes
   with_items: "{{ brew_casks }}"
 
 # App Store Applications
@@ -62,7 +60,6 @@
 - name: install the app file requested
   copy: src={{ item.src }} dest={{ item.dest }} mode={{ item.mode | default('0644') }}
   become: "{{ item.become | default(false) }}"
-  ignore_errors: yes
   with_items: "{{ app_files }}"
 
 # Application Symlinks
@@ -87,5 +84,4 @@
     dest: "{{ item.dest }}"
     src: "{{ item.src }}"
     state: link
-  ignore_errors: yes
   with_items: "{{ app_symlinks }}"

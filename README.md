@@ -90,7 +90,7 @@ of this tool.
 * **Ableton Live Suite**: Preferences including skin selection
 * **Apple Logic Pro X**: Preferences and key bindings
 * **Celemony Melodyne Editor**: Requires manual licensing and also requires de-activation before re-install
-* **Cytomic The Drop & The Glue**: Requires manual licensing
+* **Cytomic The Drop & The Glue**: Require manual licensing
 * **LennarDigital Sylenth1**: Requires manual licensing and also requires de-activation before re-install
 * **Native Instruments Komplete**: Installation and licensing haven't yet been automated
 * **Novation Bass Station**: Requires manual licensing
