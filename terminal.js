@@ -12,9 +12,12 @@ function run(argv) {
   proSettings.fontSize = 16;
   proSettings.fontAntialiasing = true;
 
+  // Set the background colour (with no opacity)
+  proSettings.backgroundColor = [0, 0, 0];
+
   // Set the window size
   proSettings.numberOfRows = 26;
-  proSettings.numberOfColumns = 130;
+  proSettings.numberOfColumns = 135;
 
   // Set the default profile to Pro
   terminal.defaultSettings = proSettings;
