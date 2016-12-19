@@ -58,39 +58,59 @@ of this tool.
 
 ## Manual Tasks
 
+The following tasks must be performed manually as I have yet to find a way to
+automate them.
+
 ### macOS
 
-* **Handlers**: Implementation of handlers to avoid the reboot requirement
-* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
-* **Microsoft Office**: Must be licensed manually
-* **Notification Centre**: Set the order of items and allow permission
-* **App Store Login Items**: Attempt to figure out how app store apps startup automatically (e.g. AppCleaner and OneDrive)
-* **Finder**: Sidebar containing favourites and view settings
-* **Safari**: Installation of extensions
+* **Finder**: Setup sidebar containing favourites and view settings
+* **Safari**: Install extensions (1Password and Adblock Plus)
 
 ### General Software
 
 * **Chrome**: Sign in with your Google account to sync settings
-* **Clear**: Enable iCloud (this triggers various actions which I can't
-  automate)
-* **Dropbox**: Disable camera uploads (settings are stored a binary)
+* **Clear**: Enable iCloud
+* **Dropbox**: Disable camera uploads
 * **Firefox**: Go through wizard and sign into your Firefox account
+* **Microsoft Office**: Must be licensed manually
+
+### Music Production Software
+
+* **Ableton Live Suite**: Preferences including skin selection
+* **Cytomic The Drop & The Glue**: Must be licensed manually
+* **LennarDigital Sylenth1**: Must be licensed manually and also requires
+  de-activation before re-install
+* **Novation Bass Station**: Must be licensed manually
+
+## TODOs
+
+### macOS
+
+* **Handlers**: Implementation of handlers to avoid the reboot requirement
+* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
+* **Notification Centre**: Set the order of items and allow permission
+* **App Store Login Items**: Attempt to figure out how sandboxed apps startup
+  automatically (AppCleaner and OneDrive)
+
+### General Software
+
 * **Forklift**: Sidebar containing favourites and view settings
 * **World Clock**: Country selection settings
 
 ### Music Production Software
 
-* **Ableton Live Suite**: Preferences including skin selection
 * **Apple Logic Pro X**: Preferences and key bindings
-* **Celemony Melodyne Editor**: Requires manual licensing and also requires de-activation before re-install
-* **Cytomic The Drop & The Glue**: Require manual licensing
-* **LennarDigital Sylenth1**: Requires manual licensing and also requires de-activation before re-install
-* **Native Instruments Komplete**: Installation and licensing haven't yet been automated
-* **Novation Bass Station**: Requires manual licensing
-* **Spectrasonics Omnisphere**: Installation and licensing haven't yet been automated
+* **Celemony Melodyne Editor**: Must be licensed manually and also requires
+  de-activation before re-install
+* **Native Instruments Komplete**: Installation and licensing haven't yet been
+  automated
+* **Spectrasonics Omnisphere**: Installation and licensing haven't yet been
+  automated
 * **Steinberg Cubase Pro**: Preferences and key bindings
-* **Default Plug-in Presets**: Setup default presets for your most used VST effects and instruments
-* **Sound Libraries**: Complete work on script to automatically install sound sample libraries and other sound sets
+* **Default Plug-in Presets**: Setup default presets for your most used VST
+  effects and instruments
+* **Sound Libraries**: Complete work on script to automatically install sound
+  sample libraries and other sound sets
 
 ## References
 
