@@ -7,39 +7,45 @@ software_app_files:
   # ---------------------------------------------------------------------------
 
   # 1Password
-  - src: "{{ app_license_dir }}/General Software/1Password/License.onepassword-license"
+  - src: "{{ app_license_dir }}/General/1Password/License.onepassword-license"
     dest: ~/Library/Group Containers/2BUA8C4S2C.com.agilebits/License/License.onepassword-license
 
   # DaisyDisk
-  - src: "{{ app_license_dir }}/General Software/DaisyDisk/License.DaisyDisk"
+  - src: "{{ app_license_dir }}/General/DaisyDisk/License.DaisyDisk"
     dest: ~/Library/Application Support/DaisyDisk/License.DaisyDisk
 
   # Dash
-  - src: "{{ app_license_dir }}/General Software/Dash/license.dash-license"
+  - src: "{{ app_license_dir }}/General/Dash/license.dash-license"
     dest: ~/Library/Application Support/Dash/License/license.dash-license
 
   # Entropy
-  - src: "{{ app_license_dir }}/General Software/Entropy/.els-A4AD28617A455C07768787313A53E2F79D9FA258"
+  - src: "{{ app_license_dir }}/General/Entropy/.els-A4AD28617A455C07768787313A53E2F79D9FA258"
     dest: ~/Library/Application Support/.els-A4AD28617A455C07768787313A53E2F79D9FA258
 
   # Focus
-  - src: "{{ app_license_dir }}/General Software/Focus/.491062.padl"
+  - src: "{{ app_license_dir }}/General/Focus/.491062.padl"
     dest: ~/.491062.padl
-  - src: "{{ app_license_dir }}/General Software/Focus/paddata.padl"
+  - src: "{{ app_license_dir }}/General/Focus/paddata.padl"
     dest: ~/Library/Application Support/Focus/paddata.padl
 
+  # Spotify
+  - src: files/spotify/watch-sources.bnk
+    dest: ~/Library/Application Support/Spotify/Users/fgimian-user/watch-sources.bnk
+
   # Sublime Text
-  - src: "{{ app_license_dir }}/General Software/Sublime Text/License.sublime_license"
+  - src: "{{ app_license_dir }}/General/Sublime Text/License.sublime_license"
     dest: ~/Library/Application Support/Sublime Text 3/Local/License.sublime_license
-  - src: "{{ app_license_dir }}/General Software/Sublime Text/Doxy.sublime-license"
+  - src: "{{ app_license_dir }}/General/Sublime Text/Doxy.sublime-license"
     dest: ~/Library/Application Support/Sublime Text 3/Packages/User/Doxy.sublime-license
 
   # Textual
-  - src: "{{ app_license_dir }}/General Software/Textual/Textual_User_License.plist"
+  - src: "{{ app_license_dir }}/General/Textual/Textual_User_License.plist"
     dest: ~/Library/Application Support/Textual/Textual_User_License.plist
 
   # VMware Fusion
-  - src: "{{ app_license_dir }}/General Software/VMware Fusion/license-fusion-80-e1-201505"
+  - src: files/vmware_fusion/preferences
+    dest: ~/Library/Preferences/VMware Fusion/preferences
+  - src: "{{ app_license_dir }}/General/VMware Fusion/license-fusion-80-e1-201505"
     dest: /Library/Preferences/VMware Fusion/license-fusion-80-e1-201505
     become: yes
 

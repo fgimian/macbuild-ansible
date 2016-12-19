@@ -71,8 +71,6 @@ of this tool.
 
 ### General Software
 
-* **1Password**: Locate your 1Password database (this setting is stored in an
-  SQLite database)
 * **Chrome**: Sign in with your Google account to sync settings
 * **Clear**: Enable iCloud (this triggers various actions which I can't
   automate)
@@ -80,9 +78,6 @@ of this tool.
 * **Firefox**: Go through wizard and sign into your Firefox account
 * **Forklift**: Sidebar containing favourites and view settings
 * **Git**: Further aliases and touch-ups to gitconfig (possibly integrating cdiff)
-* **Spotify**: Update sources to only include iTunes (settings are stored
-  in binary format)
-* **VMware Fusion**: Software settings (see /Users/fots/Library/Preferences/VMware Fusion)
 * **World Clock**: Country selection settings
 
 ### Music Production Software
