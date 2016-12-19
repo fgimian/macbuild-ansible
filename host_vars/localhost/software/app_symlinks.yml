@@ -1,6 +1,10 @@
 ---
 # Specify files which are to be symlinked to others
 software_app_symlinks:
+  # Git cdiff
+  - src: /usr/local/bin/cdiff
+    dest: /usr/local/bin/git-cdiff
+
   # Audio Hijack
   - src: "{{ app_config_dir }}/Audio Hijack"
     dest: '~/Library/Application Support/Audio Hijack'

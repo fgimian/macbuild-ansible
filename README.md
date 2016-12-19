@@ -60,7 +60,6 @@ of this tool.
 
 ### macOS
 
-* **Automatic Updates**: Disable automatic downloading of new updates
 * **Handlers**: Implementation of handlers to avoid the reboot requirement
 * **LaunchPad**: Setup Launchpad with the appropriate icons and structure
 * **Microsoft Office**: Must be licensed manually
@@ -77,7 +76,6 @@ of this tool.
 * **Dropbox**: Disable camera uploads (settings are stored a binary)
 * **Firefox**: Go through wizard and sign into your Firefox account
 * **Forklift**: Sidebar containing favourites and view settings
-* **Git**: Further aliases and touch-ups to gitconfig (possibly integrating cdiff)
 * **World Clock**: Country selection settings
 
 ### Music Production Software
