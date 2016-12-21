@@ -23,8 +23,7 @@ I have currently implemented the following:
 * **Desktop Application Installation**: This is being performed with the use
   of [homebrew-cask](https://github.com/caskroom/homebrew-cask).
 * **Appstore Application Check**: Perform a check to see if the app is
-  installed, and notify the user that they must install it from the App Store
-  if it isn't.
+  installed, and notify the user that they must install it from the App Store if it isn't.
 * **Configuration Files & Symlinks**: Any files and folders that are to be 
   copied or symlinked, including app settings, licenses and dotfiles.
 * **Dock Configuration**: Automatic building of the Dock using
@@ -65,6 +64,8 @@ automate them.
 
 * **Finder**: Setup sidebar containing favourites and view settings
 * **Safari**: Install extensions (1Password and Adblock Plus)
+* **App Store Login Items**: Start App Store menubar apps and set them to start
+  at login (AppCleaner and OneDrive).
 
 ### General Software
 
@@ -77,6 +78,8 @@ automate them.
 ### Music Production Software
 
 * **Ableton Live Suite**: Preferences including skin selection
+* **Celemony Melodyne Editor**: Must be licensed manually and also requires
+  de-activation before re-install
 * **Cytomic The Drop & The Glue**: Must be licensed manually
 * **LennarDigital Sylenth1**: Must be licensed manually and also requires
   de-activation before re-install
@@ -86,11 +89,8 @@ automate them.
 
 ### macOS
 
-* **Handlers**: Implementation of handlers to avoid the reboot requirement
 * **LaunchPad**: Setup Launchpad with the appropriate icons and structure
 * **Notification Centre**: Set the order of items and allow permission
-* **App Store Login Items**: Attempt to figure out how sandboxed apps startup
-  automatically (AppCleaner and OneDrive)
 
 ### General Software
 
@@ -100,17 +100,15 @@ automate them.
 ### Music Production Software
 
 * **Apple Logic Pro X**: Preferences and key bindings
-* **Celemony Melodyne Editor**: Must be licensed manually and also requires
-  de-activation before re-install
 * **Native Instruments Komplete**: Installation and licensing haven't yet been
   automated
 * **Spectrasonics Omnisphere**: Installation and licensing haven't yet been
   automated
 * **Steinberg Cubase Pro**: Preferences and key bindings
-* **Default Plug-in Presets**: Setup default presets for your most used VST
-  effects and instruments
 * **Sound Libraries**: Complete work on script to automatically install sound
   sample libraries and other sound sets
+* **Default Plug-in Presets**: Setup default presets for your most used VST
+  effects and instruments
 
 ## References
 
