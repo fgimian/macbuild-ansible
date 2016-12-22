@@ -105,8 +105,7 @@ automate them.
 * **Spectrasonics Omnisphere**: Installation and licensing haven't yet been
   automated
 * **Steinberg Cubase Pro**: Preferences and key bindings
-* **Sound Libraries**: Complete work on script to automatically install sound
-  sample libraries and other sound sets
+* **Sound Libraries**: Installation of Ableton Live and Logic Pro X sounds
 * **Default Plug-in Presets**: Setup default presets for your most used VST
   effects and instruments
 
