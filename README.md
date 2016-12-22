@@ -55,6 +55,14 @@ cd macbuild
 It is strongly suggested that you reboot your Mac after the first run
 of this tool.
 
+If you wish to install the various sample libraries and sound packs, connect
+one of your backup drives and run the following:
+
+```bash
+./extras/logic_libraries.sh
+./extras/sample_libraries.sh
+```
+
 ## Manual Tasks
 
 The following tasks must be performed manually as I have yet to find a way to
@@ -97,15 +105,15 @@ automate them.
 * **Forklift**: Sidebar containing favourites and view settings
 * **World Clock**: Country selection settings
 
-### Music Production Software
+### Music Production Software 
 
+* **Ableton Sample Libraries**: Installation of Ableton Live    sounds
 * **Apple Logic Pro X**: Preferences and key bindings
 * **Native Instruments Komplete**: Installation and licensing haven't yet been
   automated
 * **Spectrasonics Omnisphere**: Installation and licensing haven't yet been
   automated
 * **Steinberg Cubase Pro**: Preferences and key bindings
-* **Sound Libraries**: Installation of Ableton Live and Logic Pro X sounds
 * **Default Plug-in Presets**: Setup default presets for your most used VST
   effects and instruments
 

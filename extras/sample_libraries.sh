@@ -1,33 +1,24 @@
 #!/usr/bin/env bash
 
-# -----------------------------------------------------------------------------
-# Setup the source of sample libraries from the backup drive attached
-if [[ -d "/Volumes/Backup Mac 1" ]]
-then
-  SAMPLE_LIBRARIES_SOURCE='/Volumes/Backup Mac 1/Software/Sample Libraries'
-elif [[ -d "/Volumes/Backup Mac 2" ]]
-then
-  SAMPLE_LIBRARIES_SOURCE='/Volumes/Backup Mac 2/Software/Sample Libraries'
-fi
+bash --version
 
-# Set the destination base directory for installing all libraries
-DESTINATION='/Volumes/Sound Libraries'
-# -----------------------------------------------------------------------------
-
-# Colours
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-BLUE='\033[0;34m'
-ENDC='\033[0m'
+# shellcheck source=/dev/null
+source $(dirname "$0")/config.sh
+# shellcheck source=/dev/null
+source $(dirname "$0")/colours.sh
 
 # Ensure that hidden files are matched with wildcards
 shopt -s dotglob
 
 # Enable Ctrl-C to work
-trap '{ echo -e "${RED}Aborting sample library extraction, this could leave a library incomplete${ENDC}"; exit 1; }' INT
+interrupt_handler()
+{
+  echo -e "${RED}Aborting sample library extraction, this could leave a library incomplete${ENDC}"
+  exit 1;
+}
+trap interrupt_handler INT
 
-# Check if both the sample libraries basedir and destination have been defined
+# Check if both the sample libraries source and destination have been defined
 if [[ -z $SAMPLE_LIBRARIES_SOURCE || -z $DESTINATION ]]
 then
   echo -e "${RED}The SAMPLE_LIBRARIES_SOURCE or DESTINATION variable was not defined${ENDC}"
@@ -47,7 +38,7 @@ fi
 
 echo -e "${BLUE}Sample Library Installer${ENDC}"
 echo
-echo -e "${GREEN}Sample Library Base Directory: ${SAMPLE_LIBRARIES_SOURCE}${ENDC}"
+echo -e "${GREEN}Sample Library Source: ${SAMPLE_LIBRARIES_SOURCE}${ENDC}"
 echo -e "${GREEN}Destination Path: ${DESTINATION}${ENDC}"
 
 # Prompt the user for their sudo password (if required)
@@ -57,7 +48,7 @@ then
   sudo -v
 fi
 
-# Enable passwordless sudo for the macbuild run
+# Enable passwordless sudo for the run
 sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) NOPASSWD: ALL/" /etc/sudoers
 
 while read -r library_path
@@ -75,6 +66,7 @@ do
   unset base_dir
   unset installer
   unset extract_subdirs
+  declare -A extract_subdirs
 
   # If present, read the library config to override library variables
   # shellcheck source=/dev/null
@@ -93,6 +85,9 @@ do
     rmdir "$tempdir"
   fi
 
+  # Track whether anything was needed to be done
+  performed_action=0
+
   # Go through all ZIP and RAR files present in the downloaded library
   while read -r archive
   do
@@ -101,6 +96,8 @@ do
     then
       continue
     fi
+
+    performed_action=1
 
     # Determine the destination (also taking into account sub-directories)
     archive_relative="${archive/$library_path\//}"
@@ -159,14 +156,23 @@ do
 
   if [[ ! -z $installer ]]
   then
+    performed_action=1
+
     echo -e "${BLUE}Running installer ${installer}${ENDC}"
 
     installer_extras=''
     [[ $VERBOSE -eq 1 ]] && installer_extras=' -verbose'
     sudo installer"$installer_extras" -pkg "${destination_basedir}/${installer}" -target /
   fi
-  echo -e "${GREEN}Installation of ${vendor} ${library} complete${ENDC}"
-done < <(find "$SAMPLE_LIBRARIES_SOURCE" -maxdepth 2 -mindepth 2 -type d | grep -i grand)
 
-# Disable passwordless sudo after the macbuild is complete
+  if [[ $performed_action -eq 1 ]]
+  then
+    echo -e "${GREEN}Installation of ${vendor} ${library} complete${ENDC}"
+  else
+    echo -e "${RED}No action required for ${vendor} ${library}${ENDC}"
+  fi
+
+done < <(find "$SAMPLE_LIBRARIES_SOURCE" -maxdepth 2 -mindepth 2 -type d)
+
+# Disable passwordless sudo after the extraction has completed
 sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) ALL/" /etc/sudoers
