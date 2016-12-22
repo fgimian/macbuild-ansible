@@ -48,8 +48,7 @@ software_brew_casks:
   - celemony-melodyne-editor
   - focusrite-control
   - novation-remote-sl-template-editor
-  # TODO: Homebrew Cask doesn't like this form when duplicates are present
-  - fgimian/fgimian/ocenaudio
+  - ocenaudio
   - steinberg-cubase-pro-9
   - steinberg-cubase-pro-9-update
 
