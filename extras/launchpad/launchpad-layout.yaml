@@ -1,14 +1,14 @@
 app_layout:
   - - I like cats:
-        - 1Password 6
-        - Ableton Live 9 Suite
-        - Affinity Designer
-    - Affinity Photo
-    - Boo
+        - - 1Password 6
+          - Ableton Live 9 Suite
+          - Affinity Designer
+        - - Affinity Photo
+          - Boo
     # - Android File Transfer
     # - App Store
     # - AppCleaner
-    - Audio Hijack
+    # - Audio Hijack
     - AudioMove
     - Automator
     - BestRes

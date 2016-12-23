@@ -1,10 +1,8 @@
 from __future__ import print_function
 
 import os
-import random
 import subprocess
 import sqlite3
-import string
 from time import sleep
 import yaml
 
@@ -54,9 +52,10 @@ def add_missing_items(layout, mapping):
     for page in layout:
         for item in page:
             if isinstance(item, dict):
-                folder_items = item.values()[0]
-                for folder_title in folder_items:
-                    items_in_layout.append(folder_title)
+                folder_layout = item.values()[0]
+                for folder_page in folder_layout:
+                    for title in folder_page:
+                        items_in_layout.append(title)
             else:
                 title = item
                 items_in_layout.append(title)
@@ -99,7 +98,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
         for item_ordering, item in enumerate(page):
             # A folder has been encountered
             if isinstance(item, dict):
-                folder_title, folder_items = item.items()[0]
+                folder_title, folder_layout = item.items()[0]
 
                 # Start a new folder (requires two groups)
                 group_id += 1
@@ -117,48 +116,57 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                     (item_id, category_id, title)
                     VALUES
                     (?, null, ?)
-                ''', (group_id, folder_title)
+                    ''', (group_id, folder_title)
                 )
                 conn.commit()
 
                 folder_parent_id = group_id
 
-                group_id += 1
+                for folder_page_ordering, folder_page in enumerate(folder_layout):
 
-                cursor.execute('''
-                    INSERT INTO items
-                    (rowid, uuid, flags, type, parent_id, ordering)
-                    VALUES
-                    (?, ?, 0, ?, ?, 0)
-                ''', (group_id, generate_uuid(), Types.GROUP, folder_parent_id)
-                )
+                    group_id += 1
 
-                cursor.execute('''
-                    INSERT INTO groups
-                    (item_id, category_id, title)
-                    VALUES
-                    (?, null, null)
-                ''', (group_id,)
-                )
-                conn.commit()
-
-                for folder_ordering, title in enumerate(folder_items):
-                    if title not in mapping:
-                        print('Unable to find item {title}, skipping'.format(title=title))
-                        continue
-
-                    item_id, uuid, flags = mapping[title]
                     cursor.execute('''
-                        UPDATE items
-                        SET uuid = ?,
-                            flags = ?,
-                            type = ?,
-                            parent_id = ?,
-                            ordering = ?
-                        WHERE rowid = ?
-                    ''', (uuid, flags, type_, group_id, folder_ordering, item_id)
+                        INSERT INTO items
+                        (rowid, uuid, flags, type, parent_id, ordering)
+                        VALUES
+                        (?, ?, 0, ?, ?, ?)
+                    ''', (group_id, generate_uuid(), Types.GROUP, folder_parent_id, folder_page_ordering)
                     )
-                conn.commit()
+
+                    cursor.execute('''
+                        INSERT INTO groups
+                        (item_id, category_id, title)
+                        VALUES
+                        (?, null, null)
+                    ''', (group_id,)
+                    )
+                    conn.commit()
+
+                    for folder_item_ordering, title in enumerate(folder_page):
+                        if title not in mapping:
+                            print('Unable to find item {title}, skipping'.format(title=title))
+                            continue
+
+                        item_id, uuid, flags = mapping[title]
+                        cursor.execute('''
+                            UPDATE items
+                            SET uuid = ?,
+                                flags = ?,
+                                type = ?,
+                                parent_id = ?,
+                                ordering = ?
+                            WHERE rowid = ?
+                        ''', (
+                                uuid,
+                                flags,
+                                type_,
+                                group_id,
+                                folder_item_ordering,
+                                item_id
+                            )
+                        )
+                        conn.commit()
 
             # Flat items
             else:
@@ -176,7 +184,14 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                         parent_id = ?,
                         ordering = ?
                     WHERE rowid = ?
-                ''', (uuid, flags, type_, page_parent_id, item_ordering, item_id)
+                ''', (
+                        uuid,
+                        flags,
+                        type_,
+                        page_parent_id,
+                        item_ordering,
+                        item_id
+                    )
                 )
                 conn.commit()
 
