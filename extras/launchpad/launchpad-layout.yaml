@@ -1,46 +1,89 @@
 app_layout:
-  # Page 1
-  - - iTunes
-    - Dave:
-      - App Store
-      - Contacts
-      - Automator
-      - Calculator
-      - Calendar
-      - Chess
-      - Clear
-    - Fots:
-      - Dashboard
-      - Dictionary
-      - DVD Player
-      - FaceTime
-      - Flux
-      - Font Book
-      - Google Chrome
-      - iBooks
-      - Image Capture
-      - Install OS X El Capitan
+  - - I like cats:
+        - 1Password 6
+        - Ableton Live 9 Suite
+        - Affinity Designer
+    - Affinity Photo
+    - Boo
+    # - Android File Transfer
+    # - App Store
+    # - AppCleaner
+    - Audio Hijack
+    - AudioMove
+    - Automator
+    - BestRes
+    - BetterSnapTool
+    - BootChamp
+    - Calculator
+    - Calendar
+    - Chess
+    - Clear
+    - Cog
+    - Contacts
+    - Cubase 9
+    - DaisyDisk
+    - Dash
+    - Dashboard
+    - Dictionary
+    - Dropbox
+    - DVD Player
+    - Entropy
+    - FaceTime
+    - Firefox
+    - Flux
+
+  - - Focus
+    - Focusrite Control
+    - Font Book
+    - ForkLift
+    - Game Center
+    - Gmail Notifier
+    - Google Chrome
+    - iBooks
+    - iLok License Manager
+    - Image Capture
+    - iStat Mini
+    - iTunes
+    - Kitematic (Beta)
+    - eLicenser Control Center
+    - Logic Pro X
     - MacDown
     - Mail
     - Maps
+    - Melodyne singletrack
     - Messages
+    - Microsoft Excel
+    - Microsoft OneNote
+    - Microsoft Outlook
+    - Microsoft PowerPoint
+    - Microsoft Word
     - Mission Control
+    - MPlayerX
     - Notes
-    - Photo Booth
-    - Photos
-    - QuickTime Player
-    - Preview
+    - OneDrive
+    - OpenEmu
 
-  # Page 2
-  - - Focusrite Control
+  - - Photo Booth
+    - Photos
+    - Preview
+    - QuickTime Player
     - Reminders
+    - ReMOTESLEditor
     - Safari
-    - Siri
+    - ScreenFlow
+    - Skype
+    - Slack
+    - Sonalksis Plugin Manager
+    - SourceTree
+    - Spotify
     - Stickies
     - Sublime Text
     - System Preferences
     - TextEdit
+    - Textual
     - Time Machine
+    - Transmission
+    - Twitter
     - Activity Monitor
     - AirPort Utility
     - Audio MIDI Setup
@@ -50,16 +93,20 @@ app_layout:
     - Console
     - Digital Color Meter
     - Disk Utility
-    - Grab
+
+  - - Grab
     - Grapher
     - Keychain Access
-
-  # Page 3
-  - - Migration Assistant
+    - Migration Assistant
     - Script Editor
     - System Information
     - Terminal
     - VoiceOver Utility
+    - X11
+    - VirtualBox
+    - VMware Fusion
+    - World Clock
+    - XLD
 
 widget_layout:
   - - Calendar

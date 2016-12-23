@@ -11,9 +11,10 @@ import yaml
 
 class Types(object):
     ROOT = 1
-    FOLDER = 2
+    FOLDER_ROOT = 2
     GROUP = 3
     APP = 4
+    DOWNLOADING_APP = 5
     WIDGET = 6
 
 
@@ -48,20 +49,39 @@ def get_mapping(conn, table):
     return mapping, max_id
 
 
+def add_missing_items(layout, mapping):
+    items_in_layout = []
+    for page in layout:
+        for item in page:
+            if isinstance(item, dict):
+                folder_items = item.values()[0]
+                for folder_title in folder_items:
+                    items_in_layout.append(folder_title)
+            else:
+                title = item
+                items_in_layout.append(title)
+
+    missing_items = set(mapping.keys()).difference(items_in_layout)
+
+    if missing_items:
+        print('Uncategorised items found and added to the last page: ' + str(missing_items))
+        layout.append(list(missing_items))
+
+
 def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
     cursor = conn.cursor()
 
-    for page in layout:
+    for page_ordering, page in enumerate(layout):
 
         # Start a new page
         group_id += 1
 
         cursor.execute('''
             INSERT INTO items
-            (rowid, uuid, flags, type, parent_id)
+            (rowid, uuid, flags, type, parent_id, ordering)
             VALUES
-            (?, ?, 0, ?, ?)
-        ''', (group_id, generate_uuid(), Types.GROUP, root_parent_id)
+            (?, ?, 0, ?, ?, ?)
+        ''', (group_id, generate_uuid(), Types.GROUP, root_parent_id, page_ordering + 1)
         )
 
         cursor.execute('''
@@ -76,7 +96,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
         page_parent_id = group_id
 
         # Go through items for the current page
-        for item in page:
+        for item_ordering, item in enumerate(page):
             # A folder has been encountered
             if isinstance(item, dict):
                 folder_title, folder_items = item.items()[0]
@@ -86,10 +106,10 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
 
                 cursor.execute('''
                     INSERT INTO items
-                    (rowid, uuid, flags, type, parent_id)
+                    (rowid, uuid, flags, type, parent_id, ordering)
                     VALUES
-                    (?, ?, 1, ?, ?)
-                ''', (group_id, generate_uuid(), Types.FOLDER, page_parent_id)
+                    (?, ?, 1, ?, ?, ?)
+                ''', (group_id, generate_uuid(), Types.FOLDER_ROOT, page_parent_id, item_ordering)
                 )
 
                 cursor.execute('''
@@ -99,17 +119,11 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                     (?, null, ?)
                 ''', (group_id, folder_title)
                 )
+                conn.commit()
 
                 folder_parent_id = group_id
 
                 group_id += 1
-
-                cursor.execute('''
-                    UPDATE dbinfo
-                    SET value = 1
-                    WHERE key = 'ignore_items_update_triggers'
-                ''')
-                conn.commit()
 
                 cursor.execute('''
                     INSERT INTO items
@@ -128,38 +142,43 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                 )
                 conn.commit()
 
-                cursor.execute('''
-                    UPDATE dbinfo
-                    SET value = 0
-                    WHERE key = 'ignore_items_update_triggers'
-                ''')
-                conn.commit()
+                for folder_ordering, title in enumerate(folder_items):
+                    if title not in mapping:
+                        print('Unable to find item {title}, skipping'.format(title=title))
+                        continue
 
-                for title in folder_items:
                     item_id, uuid, flags = mapping[title]
                     cursor.execute('''
                         UPDATE items
                         SET uuid = ?,
                             flags = ?,
                             type = ?,
-                            parent_id = ?
+                            parent_id = ?,
+                            ordering = ?
                         WHERE rowid = ?
-                    ''', (uuid, flags, type_, group_id, item_id)
+                    ''', (uuid, flags, type_, group_id, folder_ordering, item_id)
                     )
+                conn.commit()
 
             # Flat items
             else:
                 title = item
+                if title not in mapping:
+                    print('Unable to find item {title}, skipping'.format(title=title))
+                    continue
+
                 item_id, uuid, flags = mapping[title]
                 cursor.execute('''
                     UPDATE items
                     SET uuid = ?,
                         flags = ?,
                         type = ?,
-                        parent_id = ?
+                        parent_id = ?,
+                        ordering = ?
                     WHERE rowid = ?
-                ''', (uuid, flags, type_, page_parent_id, item_id)
+                ''', (uuid, flags, type_, page_parent_id, item_ordering, item_id)
                 )
+                conn.commit()
 
     return group_id
 
@@ -178,7 +197,7 @@ def main():
     ).strip()
 
     launchpad_db_dir = os.path.join(
-        'private', darwin_user_dir, 'com.apple.dock.launchpad', 'db'
+        darwin_user_dir, 'com.apple.dock.launchpad', 'db'
     )
 
     print('Using Launchpad database {launchpad_db_path}'.format(
@@ -195,7 +214,7 @@ def main():
         pass
     print('Restarting the Dock to build a fresh Launchpad databases')
     subprocess.call(['killall', 'Dock'])
-    sleep(1)
+    sleep(3)
 
     # Connect to the Launchpad SQLite database
     conn = sqlite3.connect(os.path.join(launchpad_db_dir, 'db'))
@@ -211,12 +230,15 @@ def main():
     # Grab a cursor for our operations
     cursor = conn.cursor()
 
-    # Clear the items and groups tables
+    # Add any missing items to the last page
+    add_missing_items(app_layout, app_mapping)
+    add_missing_items(widget_layout, widget_mapping)
+
+    # Clear all items related to groups so we can re-create them
     cursor.execute('''
         DELETE FROM items
         WHERE type IN (?, ?, ?)
-    ''', (Types.ROOT, Types.FOLDER, Types.GROUP))
-    cursor.execute('DELETE FROM groups')
+    ''', (Types.ROOT, Types.FOLDER_ROOT, Types.GROUP))
     conn.commit()
 
     # Disable triggers on the items table temporarily so that we may
@@ -257,26 +279,24 @@ def main():
 
     conn.commit()
 
-    # Enable triggers on the items again so ordering is auto-generated
-    cursor.execute('''
-        UPDATE dbinfo
-        SET value = 0
-        WHERE key = 'ignore_items_update_triggers'
-    ''')
-    conn.commit()
+    # Setup the apps
+    group_id = setup_items(
+        conn, Types.APP, app_layout, app_mapping, group_id,
+        root_parent_id=1
+    )
 
     # Setup the widgets
     group_id = setup_items(
         conn, Types.WIDGET, widget_layout, widget_mapping, group_id,
         root_parent_id=3
     )
-    conn.commit()
 
-    # Setup the apps
-    group_id = setup_items(
-        conn, Types.APP, app_layout, app_mapping, group_id,
-        root_parent_id=1
-    )
+    # Enable triggers on the items again so ordering is auto-generated
+    cursor.execute('''
+        UPDATE dbinfo
+        SET value = 0
+        WHERE key = 'ignore_items_update_triggers'
+    ''')
     conn.commit()
 
     print('Restarting the Dock to see the updates we made')
