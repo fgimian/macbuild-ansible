@@ -67,6 +67,11 @@ software_brew_casks:
   - dmgaudio-expurgate
   - dmgaudio-limitless
   - dmgaudio-pitchfunk
+  - dmgaudio-trackcontrol
+  - dmgaudio-trackds
+  - dmgaudio-trackgate
+  - dmgaudio-tracklimit
+  - dmgaudio-trackmeter
   - eventide-2016-stereo-room
   - focusrite-red-plugin-suite
   - goodhertz-canopener-studio

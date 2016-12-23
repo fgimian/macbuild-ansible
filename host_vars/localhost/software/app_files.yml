@@ -97,6 +97,26 @@ software_app_files:
   - src: "{{ app_license_dir }}/Music Production/DMGAudio/DMGAudio PitchFunk/license"
     dest: ~/Library/Application Support/DMGAudio/PitchFunk/license
 
+  # DMG Audio TrackControl
+  - src: "{{ app_license_dir }}/Music Production/DMGAudio/DMGAudio TrackControl/license"
+    dest: ~/Library/Application Support/DMGAudio/TrackControl/license
+
+  # DMG Audio TrackDS
+  - src: "{{ app_license_dir }}/Music Production/DMGAudio/DMGAudio TrackDS/license"
+    dest: ~/Library/Application Support/DMGAudio/TrackDS/license
+
+  # DMG Audio TrackGate
+  - src: "{{ app_license_dir }}/Music Production/DMGAudio/DMGAudio TrackGate/license"
+    dest: ~/Library/Application Support/DMGAudio/TrackGate/license
+
+  # DMG Audio TrackLimit
+  - src: "{{ app_license_dir }}/Music Production/DMGAudio/DMGAudio TrackLimit/license"
+    dest: ~/Library/Application Support/DMGAudio/TrackLimit/license
+
+  # DMG Audio TrackMeter
+  - src: "{{ app_license_dir }}/Music Production/DMGAudio/DMGAudio TrackMeter/license"
+    dest: ~/Library/Application Support/DMGAudio/TrackMeter/license
+
   # Focusrite Control
   - src: focusrite_control/Focusrite Control.settings
     dest: ~/Library/Application Support/Focusrite/Focusrite Control/Settings/Focusrite Control.settings
