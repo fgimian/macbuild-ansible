@@ -85,7 +85,7 @@ def add_missing_items(layout, mapping):
         for item in page:
             # Folders
             if isinstance(item, dict):
-                folder_layout = item.values()[0]
+                folder_layout = item['folder_layout']
 
                 for folder_page in folder_layout:
                     for title in folder_page:
@@ -115,7 +115,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
     :param type_: The type of item being manipulated (usually Types.APP or Types.WIDGET)
     :param layout: The layout requested by the user provided as a list (pages) of lists (items)
                    whereby items are strings.  If the item is a folder, then it is to be a dict
-                   with a folder_name and folder_items key and associated values.
+                   with a folder_title and folder_items key and associated values.
     :param mapping: The title to data mapping for the respective items being setup.
     :param group_id: The group id to continue from when adding groups.
     :param root_parent_id: The root parent id to add child items to.
@@ -155,7 +155,8 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
         for item_ordering, item in enumerate(page):
             # A folder has been encountered
             if isinstance(item, dict):
-                folder_title, folder_layout = item.items()[0]
+                folder_title = item['folder_title']
+                folder_layout = item['folder_layout']
 
                 # Start a new folder
                 group_id += 1

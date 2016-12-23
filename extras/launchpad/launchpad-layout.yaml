@@ -1,115 +1,142 @@
 app_layout:
-  - - I like cats:
-        - - 1Password 6
-          - Ableton Live 9 Suite
-          - Affinity Designer
-        - - Affinity Photo
-          - Boo
-    - Android File Transfer
-    - App Store
-    - AppCleaner
-    - Audio Hijack
-    - AudioMove
-    - Automator
-    - BestRes
-    - BetterSnapTool
-    - BootChamp
+  -
     - Calculator
-    - Calendar
-    - Chess
-    - Clear
-    - Cog
-    - Contacts
-    - Cubase 9
-    - DaisyDisk
-    - Dash
-    - Dashboard
-    - Dictionary
-    - Dropbox
-    - DVD Player
-    - Entropy
-    - FaceTime
-    - Firefox
-    - Flux
-
-  - - Focus
-    - Focusrite Control
-    - Font Book
-    - ForkLift
-    - Game Center
-    - Gmail Notifier
-    - Google Chrome
     - iBooks
-    - iLok License Manager
-    - Image Capture
-    - iStat Mini
     - iTunes
-    - Kitematic (Beta)
-    - eLicenser Control Center
-    - Logic Pro X
-    - MacDown
-    - Mail
-    - Maps
-    - Melodyne singletrack
-    - Messages
-    - Microsoft Excel
-    - Microsoft OneNote
-    - Microsoft Outlook
-    - Microsoft PowerPoint
-    - Microsoft Word
-    - Mission Control
-    - MPlayerX
-    - Notes
-    - OneDrive
-    - OpenEmu
+    - App Store
+    - System Preferences
+    - folder_title: Apple Apps
+      folder_layout:
+        -
+          - Safari
+          - Mail
+          - Contacts
+          - Calendar
+          - Reminders
+          - Notes
+          - Maps
+          - Messages
+          - FaceTime
+          - Photo Booth
+          - Photos
+          - Game Center
+          - Preview
+          - Dictionary
+          - Mission Control
+          - Dashboard
+    - folder_title: Apple Utilities
+      folder_layout:
+        -
+          - QuickTime Player
+          - TextEdit
+          - Grapher
+          - DVD Player
+          - Time Machine
+          - Font Book
+          - Chess
 
-  - - Photo Booth
-    - Photos
-    - Preview
-    - QuickTime Player
-    - Reminders
-    - ReMOTESLEditor
-    - Safari
+          - Stickies
+          - Image Capture
+          - VoiceOver Utility
+          - AirPort Utility
+          - Migration Assistant
+          - Terminal
+          - Activity Monitor
+
+          - Console
+          - Keychain Access
+          - System Information
+          - Automator
+          - Script Editor
+          - Boot Camp Assistant
+          - Digital Color Meter
+
+          - ColorSync Utility
+          - Grab
+          - Bluetooth File Exchange
+          - Audio MIDI Setup
+          - X11
+          - Disk Utility
+
+    - Android File Transfer
+    - AppCleaner
+    - 1Password 6
+    - Clear
+    - DaisyDisk
+    - Entropy
+    - ForkLift
+
+    - OpenEmu
+    - World Clock
+    - Cog
+    - Spotify
+    # - VOX
+    - MPlayerX
+    # - VLC
+
+    - Google Chrome
+    - Firefox
+    - Transmission
+    - folder_title: Utilities
+      folder_layout:
+        -
+          - BetterSnapTool
+          - BootChamp
+          - Focus
+          - Gmail Notifier
+          - Flux
+          - Dropbox
+          - OneDrive
+          - iStat Mini
+          - BestRes
+
+  -
+    - Affinity Designer
+    - Affinity Photo
     - ScreenFlow
+    - Microsoft Excel
+    # - Microsoft OneNote
+    # - Microsoft Outlook
+    # - Microsoft PowerPoint
+    - Microsoft Word
+    # - Keynote
+    - VMware Fusion
+
+    - Dash
+    - Kitematic (Beta)
+    - MacDown
+    - SourceTree
+    - Sublime Text
+    - VirtualBox
+    # - Xcode
+
+    - Textual
     - Skype
     - Slack
-    - Sonalksis Plugin Manager
-    - SourceTree
-    - Spotify
-    - Stickies
-    - Sublime Text
-    - System Preferences
-    - TextEdit
-    - Textual
-    - Time Machine
-    - Transmission
     - Twitter
-    - Activity Monitor
-    - AirPort Utility
-    - Audio MIDI Setup
-    - Bluetooth File Exchange
-    - Boot Camp Assistant
-    - ColorSync Utility
-    - Console
-    - Digital Color Meter
-    - Disk Utility
 
-  - - Grab
-    - Grapher
-    - Keychain Access
-    - Migration Assistant
-    - Script Editor
-    - System Information
-    - Terminal
-    - VoiceOver Utility
-    - X11
-    - VirtualBox
-    - VMware Fusion
-    - World Clock
+  -
+    - Cubase 9
+    - Logic Pro X
+    - Ableton Live 9 Suite
+    - Audio Hijack
+    - ocenaudio
+    - Melodyne singletrack
+    - AudioMove
+
     - XLD
+    - Focusrite Control
+    - ReMOTESLEditor
+    - folder_title: Audio Software Managers
+      folder_layout:
+        -
+          - iLok License Manager
+          - eLicenser Control Center
+          - Sonalksis Plugin Manager
 
 widget_layout:
-  - - Calendar
+  -
+    - Calendar
     - Calculator
     - Contacts
     - Dictionary
