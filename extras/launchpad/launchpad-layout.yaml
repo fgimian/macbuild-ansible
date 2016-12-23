@@ -5,10 +5,10 @@ app_layout:
           - Affinity Designer
         - - Affinity Photo
           - Boo
-    # - Android File Transfer
-    # - App Store
-    # - AppCleaner
-    # - Audio Hijack
+    - Android File Transfer
+    - App Store
+    - AppCleaner
+    - Audio Hijack
     - AudioMove
     - Automator
     - BestRes
