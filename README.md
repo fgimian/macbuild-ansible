@@ -59,8 +59,8 @@ If you wish to install the various sample libraries and sound packs, connect
 one of your backup drives and run the following:
 
 ```bash
-./extras/logic_libraries.sh
-./extras/sample_libraries.sh
+./extras/samples/logic_libraries.sh
+./extras/samples/sample_libraries.sh
 ```
 
 ## Manual Tasks
