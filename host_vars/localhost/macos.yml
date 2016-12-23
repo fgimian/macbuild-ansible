@@ -123,6 +123,7 @@ macos_os_defaults:
   # Screen Capture
   - domain: com.apple.screencapture
     values:
+      # Set screenshot location
       location: ~/Pictures/Screenshots
 
   # Safari
@@ -132,6 +133,8 @@ macos_os_defaults:
       ShowStatusBar: true
       # General / Disable 'Open "safe" files after downloading'
       AutoOpenSafeDownloads: false
+      # General / File download location / Ask for each download
+      AlwaysPromptForDownloadFolder: true
       # AutoFill / Disable 'User names and passwords'
       AutoFillPasswords: false
       # Advanced / Show Develop menu in menu bar
