@@ -1,4 +1,4 @@
-from __future__ import print_function
+from __future__ import print_function, unicode_literals
 
 import os
 import subprocess
@@ -278,7 +278,7 @@ def main():
     app_layout = config['app_layout']
 
     # Determine the location of the SQLite Launchpad database
-    darwin_user_dir = subprocess.check_output(['getconf', 'DARWIN_USER_DIR']).strip()
+    darwin_user_dir = subprocess.check_output(['getconf', 'DARWIN_USER_DIR']).decode('utf-8').strip()
     launchpad_db_dir = os.path.join(darwin_user_dir, 'com.apple.dock.launchpad', 'db')
     print('Using Launchpad database {launchpad_db_path}'.format(
         launchpad_db_path=os.path.join(launchpad_db_dir, 'db')
