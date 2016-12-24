@@ -152,7 +152,8 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
         page_parent_id = group_id
 
         # Iterate through items
-        for item_ordering, item in enumerate(page):
+        item_ordering = 0
+        for item in page:
             # A folder has been encountered
             if isinstance(item, dict):
                 folder_title = item['folder_title']
@@ -177,6 +178,8 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                     ''', (group_id, folder_title)
                 )
                 conn.commit()
+
+                item_ordering += 1
 
                 # Capture the group id of the folder root to be used for child items
                 folder_root_parent_id = group_id
@@ -206,7 +209,8 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                     conn.commit()
 
                     # Iterate through folder items
-                    for folder_item_ordering, title in enumerate(folder_page):
+                    folder_item_ordering = 0
+                    for title in folder_page:
                         if title not in mapping:
                             print('Unable to find item {title}, skipping'.format(title=title))
                             continue
@@ -230,6 +234,8 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                             )
                         )
                         conn.commit()
+
+                        folder_item_ordering += 1
 
             # Flat items
             else:
@@ -258,6 +264,8 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                 )
                 conn.commit()
 
+                item_ordering += 1
+
     return group_id
 
 
@@ -266,8 +274,8 @@ def main():
     with open('launchpad-layout.yaml') as f:
         config = yaml.load(f)
 
-    app_layout = config['app_layout']
     widget_layout = config['widget_layout']
+    app_layout = config['app_layout']
 
     # Determine the location of the SQLite Launchpad database
     darwin_user_dir = subprocess.check_output(['getconf', 'DARWIN_USER_DIR']).strip()
@@ -293,22 +301,22 @@ def main():
     conn = sqlite3.connect(os.path.join(launchpad_db_dir, 'db'))
 
     # Obtain app and widget mappings
-    app_mapping, app_max_id = get_mapping(conn, 'apps')
     widget_mapping, widget_max_id = get_mapping(conn, 'widgets')
+    app_mapping, app_max_id = get_mapping(conn, 'apps')
 
     # We will begin our group records using the max ids found (groups always appear after
     # apps and widgets)
     group_id = max(app_max_id, widget_max_id)
 
-    # Add any missing apps from the user's layout to one or more pages after those defined
-    missing_app_items = add_missing_items(app_layout, app_mapping)
-    if missing_app_items:
-        print('Uncategorised items found and added to the last page: ' + str(missing_app_items))
-
     # Add any missing widgets from the user's layout to one or more pages after those defined
     missing_widget_items = add_missing_items(widget_layout, widget_mapping)
     if missing_widget_items:
         print('Uncategorised items found and added to the last page: ' + str(missing_widget_items))
+
+    # Add any missing apps from the user's layout to one or more pages after those defined
+    missing_app_items = add_missing_items(app_layout, app_mapping)
+    if missing_app_items:
+        print('Uncategorised items found and added to the last page: ' + str(missing_app_items))
 
     # Grab a cursor for our operations
     cursor = conn.cursor()
@@ -358,16 +366,16 @@ def main():
 
         conn.commit()
 
-    # Setup the apps
-    group_id = setup_items(
-        conn, Types.APP, app_layout, app_mapping, group_id,
-        root_parent_id=1
-    )
-
     # Setup the widgets
     group_id = setup_items(
         conn, Types.WIDGET, widget_layout, widget_mapping, group_id,
         root_parent_id=3
+    )
+
+    # Setup the apps
+    group_id = setup_items(
+        conn, Types.APP, app_layout, app_mapping, group_id,
+        root_parent_id=1
     )
 
     # Enable triggers on the items again so ordering is auto-generated

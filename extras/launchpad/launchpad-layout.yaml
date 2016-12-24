@@ -1,4 +1,5 @@
 app_layout:
+  # Page 1
   -
     - Calculator
     - iBooks
@@ -90,6 +91,7 @@ app_layout:
           - iStat Mini
           - BestRes
 
+  # Page 2
   -
     - Affinity Designer
     - Affinity Photo
@@ -115,6 +117,7 @@ app_layout:
     - Slack
     - Twitter
 
+  # Page 3
   -
     - Cubase 9
     - Logic Pro X
