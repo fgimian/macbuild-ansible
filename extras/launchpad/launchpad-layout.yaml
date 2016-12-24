@@ -1,157 +1,149 @@
 app_layout:
-  # Page 1
-  -
-    - Calculator
-    - iBooks
-    - iTunes
-    - App Store
-    - System Preferences
-    - folder_title: Apple Apps
-      folder_layout:
-        -
-          - Safari
-          - Mail
-          - Contacts
-          - Calendar
-          - Reminders
-          - Notes
-          - Maps
-          - Messages
-          - FaceTime
-          - Photo Booth
-          - Photos
-          - Game Center
-          - Preview
-          - Dictionary
-          - Mission Control
-          - Dashboard
-    - folder_title: Apple Utilities
-      folder_layout:
-        -
-          - QuickTime Player
-          - TextEdit
-          - Grapher
-          - DVD Player
-          - Time Machine
-          - Font Book
-          - Chess
+# Page 1
+- - Calculator
+  - iBooks
+  - iTunes
+  - App Store
+  - System Preferences
+  - folder_title: Apple Apps
+    folder_layout:
+      - - Safari
+        - Mail
+        - Contacts
+        - Calendar
+        - Reminders
+        - Notes
+        - Maps
+        - Messages
+        - FaceTime
+        - Photo Booth
+        - Photos
+        - Game Center
+        - Preview
+        - Dictionary
+        - Mission Control
+        - Dashboard
+  - folder_title: Apple Utilities
+    folder_layout:
+      - - QuickTime Player
+        - TextEdit
+        - Grapher
+        - DVD Player
+        - Time Machine
+        - Font Book
+        - Chess
 
-          - Stickies
-          - Image Capture
-          - VoiceOver Utility
-          - AirPort Utility
-          - Migration Assistant
-          - Terminal
-          - Activity Monitor
+        - Stickies
+        - Image Capture
+        - VoiceOver Utility
+        - AirPort Utility
+        - Migration Assistant
+        - Terminal
+        - Activity Monitor
 
-          - Console
-          - Keychain Access
-          - System Information
-          - Automator
-          - Script Editor
-          - Boot Camp Assistant
-          - Digital Color Meter
+        - Console
+        - Keychain Access
+        - System Information
+        - Automator
+        - Script Editor
+        - Boot Camp Assistant
+        - Digital Color Meter
 
-          - ColorSync Utility
-          - Grab
-          - Bluetooth File Exchange
-          - Audio MIDI Setup
-          - X11
-          - Disk Utility
+        - ColorSync Utility
+        - Grab
+        - Bluetooth File Exchange
+        - Audio MIDI Setup
+        - X11
+        - Disk Utility
 
-    - Android File Transfer
-    - AppCleaner
-    - 1Password 6
-    - Clear
-    - DaisyDisk
-    - Entropy
-    - ForkLift
+  - Android File Transfer
+  - AppCleaner
+  - 1Password 6
+  - Clear
+  - DaisyDisk
+  - Entropy
+  - ForkLift
 
-    - OpenEmu
-    - World Clock
-    - Cog
-    - Spotify
-    # - VOX
-    - MPlayerX
-    # - VLC
+  - OpenEmu
+  - World Clock
+  - Cog
+  - Spotify
+  # - VOX
+  - MPlayerX
+  # - VLC
 
-    - Google Chrome
-    - Firefox
-    - Transmission
-    - folder_title: Utilities
-      folder_layout:
-        -
-          - BetterSnapTool
-          - BootChamp
-          - Focus
-          - Gmail Notifier
-          - Flux
-          - Dropbox
-          - OneDrive
-          - iStat Mini
-          - BestRes
+  - Google Chrome
+  - Firefox
+  - Transmission
+  - folder_title: Utilities
+    folder_layout:
+      - - BetterSnapTool
+        - BootChamp
+        - Focus
+        - Gmail Notifier
+        - Flux
+        - Dropbox
+        - OneDrive
+        - iStat Mini
+        - BestRes
 
-  # Page 2
-  -
-    - Affinity Designer
-    - Affinity Photo
-    - ScreenFlow
-    - Microsoft Excel
-    # - Microsoft OneNote
-    # - Microsoft Outlook
-    # - Microsoft PowerPoint
-    - Microsoft Word
-    # - Keynote
-    - VMware Fusion
+# Page 2
+- - Affinity Designer
+  - Affinity Photo
+  - ScreenFlow
+  - Microsoft Excel
+  # - Microsoft OneNote
+  # - Microsoft Outlook
+  # - Microsoft PowerPoint
+  - Microsoft Word
+  # - Keynote
+  - VMware Fusion
 
-    - Dash
-    - Kitematic (Beta)
-    - MacDown
-    - SourceTree
-    - Sublime Text
-    - VirtualBox
-    # - Xcode
+  - Dash
+  - Kitematic (Beta)
+  - MacDown
+  - SourceTree
+  - Sublime Text
+  - VirtualBox
+  # - Xcode
 
-    - Textual
-    - Skype
-    - Slack
-    - Twitter
+  - Textual
+  - Skype
+  - Slack
+  - Twitter
 
-  # Page 3
-  -
-    - Cubase 9
-    - Logic Pro X
-    - Ableton Live 9 Suite
-    - Audio Hijack
-    - ocenaudio
-    - Melodyne singletrack
-    - AudioMove
+# Page 3
+- - Cubase 9
+  - Logic Pro X
+  - Ableton Live 9 Suite
+  - Audio Hijack
+  - ocenaudio
+  - Melodyne singletrack
+  - AudioMove
 
-    - XLD
-    - Focusrite Control
-    - ReMOTESLEditor
-    - folder_title: Audio Software Managers
-      folder_layout:
-        -
-          - iLok License Manager
-          - eLicenser Control Center
-          - Sonalksis Plugin Manager
+  - XLD
+  - Focusrite Control
+  - ReMOTESLEditor
+  - folder_title: Audio Software Managers
+    folder_layout:
+      - - iLok License Manager
+        - eLicenser Control Center
+        - Sonalksis Plugin Manager
 
 widget_layout:
-  -
-    - Calendar
-    - Calculator
-    - Contacts
-    - Dictionary
-    - ESPN
-    - Flight Tracker
-    - Movies
-    - Ski Report
-    - Stickies
-    - Stocks
-    - Tile Game
-    - Translation
-    - Unit Converter
-    - Weather
-    - Web Clip
-    - World Clock
+- - Calendar
+  - Calculator
+  - Contacts
+  - Dictionary
+  - ESPN
+  - Flight Tracker
+  - Movies
+  - Ski Report
+  - Stickies
+  - Stocks
+  - Tile Game
+  - Translation
+  - Unit Converter
+  - Weather
+  - Web Clip
+  - World Clock
