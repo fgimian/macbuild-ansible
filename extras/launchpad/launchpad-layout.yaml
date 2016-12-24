@@ -92,9 +92,6 @@ app_layout:
   - Affinity Photo
   - ScreenFlow
   - Microsoft Excel
-  # - Microsoft OneNote
-  # - Microsoft Outlook
-  # - Microsoft PowerPoint
   - Microsoft Word
   # - Keynote
   - VMware Fusion
@@ -117,7 +114,7 @@ app_layout:
   - Logic Pro X
   - Ableton Live 9 Suite
   - Audio Hijack
-  - ocenaudio
+  # - ocenaudio
   - Melodyne singletrack
   - AudioMove
 
@@ -129,6 +126,9 @@ app_layout:
       - - iLok License Manager
         - eLicenser Control Center
         - Sonalksis Plugin Manager
+- - Microsoft PowerPoint
+  - Microsoft Outlook
+  - Microsoft OneNote
 
 widget_layout:
 - - Calendar

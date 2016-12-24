@@ -1,5 +1,8 @@
 from __future__ import print_function, unicode_literals
 
+import argparse
+from collections import defaultdict
+import json
 import os
 import subprocess
 import sqlite3
@@ -31,6 +34,14 @@ def batch(items, batch_size):
 def generate_uuid():
     """Generate a UUID using uuidgen."""
     return subprocess.check_output('uuidgen').strip()
+
+
+def get_launchpad_db_dir():
+    """Determines the user's Launchpad database directory containing the SQLite database."""
+    darwin_user_dir = subprocess.check_output(
+        ['getconf', 'DARWIN_USER_DIR']
+    ).decode('utf-8').strip()
+    return os.path.join(darwin_user_dir, 'com.apple.dock.launchpad', 'db')
 
 
 def get_mapping(conn, table):
@@ -269,33 +280,38 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
     return group_id
 
 
-def main():
-    # Load the user's layout
-    with open('launchpad-layout.yaml') as f:
-        config = yaml.load(f)
+def build_launchpad(config, rebuild_db=True, restart_upon_completion=True):
+    """
+    Builds the requested layout for both the Launchpad apps and Dashboard widgets by updating
+    the user's Launchpad SQlite database.
 
+    :param config: The path containing a YAML or JSON Launchpad configuration.
+    :param rebuild_db: Whether or not to re-build the Launchpad database before starting.
+    :param restart_upon_completion: Whether or not to restart Launchpad services upon completion.
+    """
     widget_layout = config['widget_layout']
     app_layout = config['app_layout']
 
     # Determine the location of the SQLite Launchpad database
-    darwin_user_dir = subprocess.check_output(['getconf', 'DARWIN_USER_DIR']).decode('utf-8').strip()
-    launchpad_db_dir = os.path.join(darwin_user_dir, 'com.apple.dock.launchpad', 'db')
+    launchpad_db_dir = get_launchpad_db_dir()
     print('Using Launchpad database {launchpad_db_path}'.format(
         launchpad_db_path=os.path.join(launchpad_db_dir, 'db')
     ))
 
-    # Delete original Launchpad database and rebuild it for a fresh start
-    print('Deleting Launchpad database files')
-    for launchpad_db_file in ['db', 'db-shm', 'db-wal']:
-        try:
-            os.remove(os.path.join(launchpad_db_dir, launchpad_db_file))
-        except OSError:
-            pass
+    # Re-build the user's database if requested
+    if rebuild_db:
+        # Delete original Launchpad database and rebuild it for a fresh start
+        print('Deleting Launchpad database files')
+        for launchpad_db_file in ['db', 'db-shm', 'db-wal']:
+            try:
+                os.remove(os.path.join(launchpad_db_dir, launchpad_db_file))
+            except OSError:
+                pass
 
-    # Restart the Dock to get a freshly built database to work from
-    print('Restarting the Dock to build a fresh Launchpad databases')
-    subprocess.call(['killall', 'Dock'])
-    sleep(3)
+        # Restart the Dock to get a freshly built database to work from
+        print('Restarting the Dock to build a fresh Launchpad databases')
+        subprocess.call(['killall', 'Dock'])
+        sleep(3)
 
     # Connect to the Launchpad SQLite database
     conn = sqlite3.connect(os.path.join(launchpad_db_dir, 'db'))
@@ -368,15 +384,11 @@ def main():
 
     # Setup the widgets
     group_id = setup_items(
-        conn, Types.WIDGET, widget_layout, widget_mapping, group_id,
-        root_parent_id=3
+        conn, Types.WIDGET, widget_layout, widget_mapping, group_id, root_parent_id=3
     )
 
     # Setup the apps
-    group_id = setup_items(
-        conn, Types.APP, app_layout, app_mapping, group_id,
-        root_parent_id=1
-    )
+    group_id = setup_items(conn, Types.APP, app_layout, app_mapping, group_id, root_parent_id=1)
 
     # Enable triggers on the items again so ordering is auto-generated
     cursor.execute('''
@@ -386,10 +398,190 @@ def main():
     ''')
     conn.commit()
 
-    # Restart the Dock to that Launchpad can read our new and updated database
-    print('Restarting the Dock to see the updates we made')
-    subprocess.call(['killall', 'Dock'])
+    if restart_upon_completion:
+        # Restart the Dock to that Launchpad can read our new and updated database
+        print('Restarting the Dock to see the updates we made')
+        subprocess.call(['killall', 'Dock'])
 
+
+def build_layout(root, parent_mapping):
+    """
+    Builds a data structure containing the layout for a particular type of data.
+
+    :param root: The root id of the tree being built.
+    :param parent_mapping: The mapping between parent_ids and items.
+
+    :returns: The layout data structure that was built.
+    """
+    layout = []
+
+    # Iterate through pages
+    for page_id, _, _, _, _ in parent_mapping[root]:
+        page_items = []
+
+        # Iterate through items
+        for id, type_, app_title, widget_title, group_title in parent_mapping[page_id]:
+            # An app has been encountered which is added to the page
+            if type_ == Types.APP:
+                page_items.append(app_title)
+
+            # A widget has been encountered which is added to the page
+            elif type_ == Types.WIDGET:
+                page_items.append(widget_title)
+
+            # A folder has been encountered
+            elif type_ == Types.FOLDER_ROOT:
+                # Start a dict for the folder with its title and layout
+                folder = {
+                    'folder_title': group_title,
+                    'folder_layout': []
+                }
+
+                # Iterate through folder pages
+                for folder_page_id, _, _, _, _ in parent_mapping[id]:
+                    folder_page_items = []
+
+                    # Iterate through folder items
+                    for (
+                        folder_item_id, folder_item_type, folder_item_app_title,
+                        folder_widget_title, folder_group_title
+                    ) in parent_mapping[folder_page_id]:
+
+                        # An app has been encountered which is being added to the folder page
+                        if folder_item_type == Types.APP:
+                            folder_page_items.append(folder_item_app_title)
+
+                        # A widget has been encountered which is being added to the folder page
+                        elif folder_item_type == Types.WIDGET:
+                            folder_page_items.append(folder_widget_title)
+
+                    # Add the page to the folder
+                    folder['folder_layout'].append(folder_page_items)
+
+                # Add the folder item to the page
+                page_items.append(folder)
+
+        # Add the page to the layout
+        layout.append(page_items)
+
+    return layout
+
+
+def extract_launchpad():
+    # Determine the location of the SQLite Launchpad database
+    launchpad_db_dir = get_launchpad_db_dir()
+
+    # Connect to the Launchpad SQLite database
+    conn = sqlite3.connect(os.path.join(launchpad_db_dir, 'db'))
+
+    # Obtain the root elements for Launchpad apps and Dashboard widgets
+    cursor = conn.execute('''
+        SELECT key, value
+        FROM dbinfo
+        WHERE key IN ('launchpad_root', 'dashboard_root');
+    ''')
+
+    while True:
+        row = cursor.fetchone()
+        if row is None:
+            break
+
+        key, value = row
+        if key == 'launchpad_root':
+            launchpad_root = int(value)
+        elif key == 'dashboard_root':
+            dashboard_root = int(value)
+
+    # Obtain all items and their associated titles
+    cursor = conn.execute('''
+        SELECT items.rowid, items.parent_id, items.type,
+               apps.title AS app_title,
+               widgets.title AS widget_title,
+               groups.title AS group_title
+        FROM items
+        LEFT JOIN apps ON apps.item_id = items.rowid
+        LEFT JOIN widgets ON widgets.item_id = items.rowid
+        LEFT JOIN groups ON groups.item_id = items.rowid
+        WHERE items.uuid NOT IN ('ROOTPAGE', 'HOLDINGPAGE',
+                                 'ROOTPAGE_DB', 'HOLDINGPAGE_DB',
+                                 'ROOTPAGE_VERS', 'HOLDINGPAGE_VERS')
+        ORDER BY items.parent_id, items.ordering
+    ''')
+
+    # Build a mapping between the parent_id and the associated items
+    parent_mapping = defaultdict(list)
+    while True:
+        row = cursor.fetchone()
+        if row is None:
+            break
+
+        id, parent_id, type_, app_title, widget_title, group_title = row
+        parent_mapping[parent_id].append((id, type_, app_title, widget_title, group_title))
+
+    # Build the current layout and return it to the caller
+    layout = {
+        'app_layout': build_layout(launchpad_root, parent_mapping),
+        'widget_layout': build_layout(dashboard_root, parent_mapping),
+    }
+
+    return layout
+
+
+def main():
+    # Create the argument parser
+    parser = argparse.ArgumentParser()
+    subparsers = parser.add_subparsers(dest='command')
+
+    # Create the parser for the build sub-command
+    build_parser = subparsers.add_parser(
+        'build', help='build the launchpad db using the config provided'
+    )
+    build_parser.add_argument('config_path', help='the file path of the config to use')
+
+    # Create the parser for the extract sub-command
+    extract_parser = subparsers.add_parser(
+        'extract', help='extract the launchpad db into a config file'
+    )
+    extract_parser.add_argument('config_path', help='the file path to extract the config to')
+    extract_parser.add_argument(
+        '-f', '--format', choices=['json', 'yaml'], default='yaml',
+        help='the format to extract your config to'
+    )
+
+    # Create the parser for the compare sub-command
+    compare_parser = subparsers.add_parser(
+        'compare', help='compare the launchpad db with the config'
+    )
+    compare_parser.add_argument('config_path', help='the file path of the config to compare')
+
+    # Parse arguments
+    args = parser.parse_args()
+
+    # Build
+    if args.command == 'build':
+        with open(args.config_path) as f:
+            config = yaml.load(f)
+
+        build_launchpad(config)
+
+    # Extract
+    elif args.command == 'extract':
+        layout = extract_launchpad()
+        with open(args.config_path, 'w') as f:
+            if args.format == 'yaml':
+                f.write(yaml.safe_dump(layout, default_flow_style=False, explicit_start=True))
+            else:
+                json.dump(layout, f, indent=2)
+
+    # Compare
+    elif args.command == 'compare':
+        with open(args.config_path) as f:
+            config = yaml.load(f)
+
+        layout = extract_launchpad()
+
+        if config != layout:
+            exit(1)
 
 if __name__ == '__main__':
     main()
