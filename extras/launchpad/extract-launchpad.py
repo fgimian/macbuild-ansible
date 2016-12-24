@@ -33,14 +33,18 @@ def build_layout(root, layout_key, parent_mapping, layout):
                 }
 
                 for folder_page_id, _, _, _, _ in parent_mapping[id]:
+                    folder_page_items = []
+
                     for (
                         folder_item_id, folder_item_type, folder_item_app_title,
                         folder_widget_title, folder_group_title
                     ) in parent_mapping[folder_page_id]:
                         if folder_item_type == Types.APP:
-                            folder_items['folder_layout'].append(folder_item_app_title)
+                            folder_page_items.append(folder_item_app_title)
                         elif folder_item_type == Types.WIDGET:
-                            folder_items['folder_layout'].append(folder_widget_title)
+                            folder_page_items.append(folder_widget_title)
+
+                    folder_items['folder_layout'].append(folder_page_items)
 
                 page_items.append(folder_items)
 
