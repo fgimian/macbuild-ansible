@@ -4,7 +4,6 @@ from collections import defaultdict
 import os
 import subprocess
 import sqlite3
-from time import sleep
 import yaml
 
 
@@ -55,9 +54,6 @@ def main():
     # Determine the location of the SQLite Launchpad database
     darwin_user_dir = subprocess.check_output(['getconf', 'DARWIN_USER_DIR']).strip()
     launchpad_db_dir = os.path.join(darwin_user_dir, 'com.apple.dock.launchpad', 'db')
-    # print('Using Launchpad database {launchpad_db_path}'.format(
-    #     launchpad_db_path=os.path.join(launchpad_db_dir, 'db')
-    # ))
 
     # Connect to the Launchpad SQLite database
     conn = sqlite3.connect(os.path.join(launchpad_db_dir, 'db'))
