@@ -53,6 +53,9 @@ fi
 # Perform the build
 ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python local.yml && \
 
+# Launchpad
+./extras/launchpad.py build host_vars/localhost/launchpad.yml && \
+
 # Set Terminal settings
 ./extras/terminal.js
 
