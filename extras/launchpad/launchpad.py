@@ -583,5 +583,6 @@ def main():
         if config != layout:
             exit(1)
 
+
 if __name__ == '__main__':
     main()
