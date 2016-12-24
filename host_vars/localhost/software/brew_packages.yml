@@ -18,6 +18,7 @@ software_brew_packages:
   - md5sha1sum
   - p7zip
   - rlwrap
+  - rsync
   - sassc
   - shellcheck
   - tree

@@ -86,18 +86,19 @@ automate them.
 ### Music Production Software
 
 * **Ableton Live Suite**: Preferences including skin selection
+* **Ableton Sample Packs**: Installation of Ableton Live sounds
 * **Celemony Melodyne Editor**: Must be licensed manually and also requires
   de-activation before re-install
 * **Cytomic The Drop & The Glue**: Must be licensed manually
 * **LennarDigital Sylenth1**: Must be licensed manually and also requires
   de-activation before re-install
 * **Novation Bass Station**: Must be licensed manually
+* **Spectrasonics Omnisphere**: Must be licensed manually
 
 ## TODOs
 
 ### macOS
 
-* **LaunchPad**: Setup Launchpad with the appropriate icons and structure
 * **Notification Centre**: Set the order of items and allow permission
 
 ### General Software
@@ -107,12 +108,9 @@ automate them.
 
 ### Music Production Software 
 
-* **Ableton Sample Libraries**: Installation of Ableton Live    sounds
-* **Apple Logic Pro X**: Preferences and key bindings
 * **Native Instruments Komplete**: Installation and licensing haven't yet been
   automated
-* **Spectrasonics Omnisphere**: Installation and licensing haven't yet been
-  automated
+* **Apple Logic Pro X**: Preferences and key bindings
 * **Steinberg Cubase Pro**: Preferences and key bindings
 * **Default Plug-in Presets**: Setup default presets for your most used VST
   effects and instruments

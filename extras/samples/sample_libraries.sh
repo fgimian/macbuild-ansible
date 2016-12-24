@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-bash --version
-
 # shellcheck source=/dev/null
 source $(dirname "$0")/config.sh
 # shellcheck source=/dev/null
