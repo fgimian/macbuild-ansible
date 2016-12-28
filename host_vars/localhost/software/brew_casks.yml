@@ -42,11 +42,12 @@ software_brew_casks:
 
   # Music Production Software
 
-  # DAWs & Drivers
+  # DAWs, Tools & Drivers
   - ableton-live-9-suite
   - audiomove
   - celemony-melodyne-editor
   - focusrite-control
+  - native-instruments-native-access
   - novation-remote-sl-template-editor
   - ocenaudio
   - steinberg-cubase-pro-9
