@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-from __future__ import print_function, unicode_literals
-
+#!/usr/bin/env python3
 import argparse
 from collections import defaultdict
 import json
@@ -56,11 +54,11 @@ def get_mapping(conn, table):
              the title and (id, uuid, flags) for each item.  The second item contains the maximum
              id of the items found.
     """
-    cursor = conn.execute('''
+    cursor = conn.execute(f'''
         SELECT {table}.item_id, {table}.title, items.uuid, items.flags
         FROM {table}
         JOIN items ON items.rowid = {table}.item_id
-    '''.format(table=table))
+    ''')
 
     mapping = {}
     max_id = 0
@@ -224,7 +222,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                     folder_item_ordering = 0
                     for title in folder_page:
                         if title not in mapping:
-                            print('Unable to find item {title}, skipping'.format(title=title))
+                            print(f'Unable to find item {title}, skipping')
                             continue
 
                         item_id, uuid, flags = mapping[title]
@@ -253,7 +251,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
             else:
                 title = item
                 if title not in mapping:
-                    print('Unable to find item {title}, skipping'.format(title=title))
+                    print(f'Unable to find item {title}, skipping')
                     continue
 
                 item_id, uuid, flags = mapping[title]
@@ -295,9 +293,9 @@ def build_launchpad(config, rebuild_db=True, restart_upon_completion=True):
 
     # Determine the location of the SQLite Launchpad database
     launchpad_db_dir = get_launchpad_db_dir()
-    print('Using Launchpad database {launchpad_db_path}'.format(
-        launchpad_db_path=os.path.join(launchpad_db_dir, 'db')
-    ))
+    launchpad_db_path = os.path.join(launchpad_db_dir, 'db')
+
+    print(f'Using Launchpad database {launchpad_db_path}')
 
     # Re-build the user's database if requested
     if rebuild_db:
@@ -315,7 +313,7 @@ def build_launchpad(config, rebuild_db=True, restart_upon_completion=True):
         sleep(3)
 
     # Connect to the Launchpad SQLite database
-    conn = sqlite3.connect(os.path.join(launchpad_db_dir, 'db'))
+    conn = sqlite3.connect(launchpad_db_path)
 
     # Obtain app and widget mappings
     widget_mapping, widget_max_id = get_mapping(conn, 'widgets')
@@ -471,9 +469,10 @@ def build_layout(root, parent_mapping):
 def extract_launchpad():
     # Determine the location of the SQLite Launchpad database
     launchpad_db_dir = get_launchpad_db_dir()
+    launchpad_db_path = os.path.join(launchpad_db_dir, 'db')
 
     # Connect to the Launchpad SQLite database
-    conn = sqlite3.connect(os.path.join(launchpad_db_dir, 'db'))
+    conn = sqlite3.connect(launchpad_db_path)
 
     # Obtain the root elements for Launchpad apps and Dashboard widgets
     cursor = conn.execute('''
@@ -583,6 +582,9 @@ def main():
 
         if config != layout:
             exit(1)
+
+    else:
+        parser.error('please specify an action to perform')
 
 
 if __name__ == '__main__':

@@ -14,24 +14,17 @@ then
 fi
 
 # Install Python
-if ! brew list python > /dev/null 2>&1
+if ! brew list python3 > /dev/null 2>&1
 then
-    echo "Installing Python 2.x"
-    brew install python
+    echo "Installing Python 3.x"
+    brew install python3
 fi
 
 # Install Ansible (using pip is the officially supported way)
-if ! pip2 show ansible > /dev/null 2>&1
+if ! pip3 show ansible > /dev/null 2>&1
 then
     echo "Installing Ansible"
-    pip2 install ansible
-fi
-
-# Install biplist to allow manipulation of plist files
-if ! pip2 show biplist > /dev/null 2>&1
-then
-    echo "Installing biplist"
-    pip2 install biplist
+    pip3 install ansible
 fi
 
 # Setup the source of music production software from the backup drive attached
@@ -51,7 +44,7 @@ else
 fi
 
 # Perform the build
-ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python local.yml && \
+ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python3 local.yml && \
 
 # Launchpad
 ./extras/launchpad.py build host_vars/localhost/launchpad.yml && \

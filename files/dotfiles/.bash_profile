@@ -16,7 +16,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # Enable the powerline shell
-powerline_path=$(python -c "import os, powerline; print(os.path.dirname(powerline.__file__))")
+powerline_path=$(python3 -c "import os, powerline; print(os.path.dirname(powerline.__file__))")
 source "${powerline_path}/bindings/bash/powerline.sh"
 
 # Initialise rbenv

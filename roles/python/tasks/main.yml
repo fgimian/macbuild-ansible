@@ -1,10 +1,7 @@
 ---
 # Python
-- name: install python
-  homebrew: name={{ item }} state=latest
-  with_items:
-    - python3
-    - python
+- name: install python 3.x
+  homebrew: name=python3 state=latest
 
 - name: install python completion
   homebrew: name=pip-completion state=latest
@@ -12,9 +9,5 @@
 # Note that we must install Python 2.7 and its packages last to ensure they
 # become the defaults
 - name: install python 3.x global packages
-  pip: name={{ item }} state=latest executable=pip3 extra_args='--no-use-wheel'
-  with_items: "{{ packages }}"
-
-- name: install python 2.x global packages
-  pip: name={{ item }} state=latest executable=pip2 extra_args='--no-use-wheel'
+  pip: name={{ item }} state=latest executable=pip3
   with_items: "{{ packages }}"
