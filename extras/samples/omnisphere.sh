@@ -44,6 +44,7 @@ find "${destination_basedir}" -type f -exec chmod 644 "{}" \;
 
 echo -e "${BLUE}Creating a STEAM symbolic link to the library path${ENDC}"
 
+mkdir -p "${HOME}/Library/Application Support/Spectrasonics"
 rm -f "${HOME}/Library/Application Support/Spectrasonics/STEAM"
 ln -s "${destination_basedir}" "${HOME}/Library/Application Support/Spectrasonics/STEAM"
 

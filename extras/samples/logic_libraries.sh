@@ -68,7 +68,7 @@ while read -r package
 do
   echo
   echo -e "${BLUE}Running installer $(basename "$package")${ENDC}"
-  sudo installer -pkg "$package" -target "/"
+  sudo installer -package "$package" -target "/"
 done < <(find "${SAMPLE_LIBRARIES_SOURCE}/Apple/Apple Logic Pro X Sound Library" -type f -name "*.pkg")
 
 # Disable passwordless sudo after the installation has completed

@@ -160,7 +160,7 @@ do
 
     installer_extras=''
     [[ $VERBOSE -eq 1 ]] && installer_extras=' -verbose'
-    sudo installer"$installer_extras" -pkg "${destination_basedir}/${installer}" -target /
+    sudo installer"$installer_extras" -package "${destination_basedir}/${installer}" -target /
   fi
 
   if [[ $performed_action -eq 1 ]]
