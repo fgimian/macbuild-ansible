@@ -76,6 +76,22 @@ software_brew_casks:
   - focusrite-red-plugin-suite
   - goodhertz-canopener-studio
   - illformed-glitch
+  - native-instruments-driver
+  - native-instruments-guitar-rig-5
+  - native-instruments-rc-24
+  - native-instruments-rc-48
+  - native-instruments-replika-xt
+  - native-instruments-solid-bus-comp-fx
+  - native-instruments-solid-dynamics-fx
+  - native-instruments-solid-eq-fx
+  - native-instruments-supercharger-gt
+  - native-instruments-transient-master-fx
+  - native-instruments-enhanced-eq
+  - native-instruments-passive-eq
+  - native-instruments-vari-comp
+  - native-instruments-vc-160-fx
+  - native-instruments-vc-2a-fx
+  - native-instruments-vc-76-fx
   - relab-lx480-complete
   - softube-amp-room-essentials
   - softube-drawmer-s73
@@ -107,6 +123,13 @@ software_brew_casks:
 
   # Plug-ins (Instrument)
   - lennardigital-sylenth1
+  - native-instruments-absynth-5
+  - native-instruments-battery-4
+  - native-instruments-fm8
+  - native-instruments-komplete-kontrol
+  - native-instruments-kontakt-5
+  - native-instruments-massive
+  - native-instruments-reaktor-6
   - novation-bass-station
   - reveal-sound-spire
   - spectrasonics-omnisphere
@@ -119,3 +142,27 @@ software_brew_casks:
   - xfer-records-serum
   - xfer-records-serum-update
   - xfer-records-serumfx-update
+
+  # Guitar Rig Effects
+  - native-instruments-rammfire
+  - native-instruments-reflektor
+  - native-instruments-traktors-12
+
+  # Reaktor Effects
+  - native-instruments-molekular
+  - native-instruments-the-finger-r2
+  - native-instruments-the-mouth
+
+  # Reaktor Instruments
+  - native-instruments-flesh
+  - native-instruments-form
+  - native-instruments-kontour
+  - native-instruments-monark
+  - native-instruments-polyplex
+  - native-instruments-razor
+  - native-instruments-reaktor-blocks
+  - native-instruments-reaktor-factory-library
+  - native-instruments-reaktor-prism
+  - native-instruments-reaktor-spark-r2
+  - native-instruments-rounds
+  - native-instruments-skanner-xt
