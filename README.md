@@ -80,6 +80,8 @@ automate them.
 * **Audio Hijack**: Start the app multiple times to dismiss welcome and mailing
   list alerts.  You must also install Instant On to ensure the app works.
 * **Clear**: Enable iCloud
+* **Focus**: Start Focus manually as it won't initialise successfully with
+  launchd starting it for the first time.
 * **Dropbox**: Disable camera uploads
 * **Forklift**: Sidebar containing favourites and view settings
 * **World Clock**: Country selection settings

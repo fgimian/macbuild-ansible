@@ -199,12 +199,6 @@ software_app_files:
     dest: ~/Library/Application Support/com.xferrecords.serum/user.dat
 
   # ---------------------------------------------------------------------------
-  # Launch Agents
-  # ---------------------------------------------------------------------------
-  - src: files/launch_agents/Focus.plist
-    dest: ~/Library/LaunchAgents/Focus.plist
-
-  # ---------------------------------------------------------------------------
   # Dotfiles
   # ---------------------------------------------------------------------------
 

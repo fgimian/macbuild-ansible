@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   connection: local
+
   pre_tasks:
     # Update Homebrew
     - name: update homebrew to the latest version
@@ -9,6 +10,7 @@
     # Install Homebrew Cask
     - name: brew cask tap
       homebrew_tap: tap=caskroom/cask state=present
+
   roles:
     # macOS Configuration
     - role: macos
