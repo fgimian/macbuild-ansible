@@ -89,24 +89,20 @@ macos_os_defaults:
   # Finder
   - domain: com.apple.finder
     values:
+      # View / Show Path Bar
+      ShowPathbar: true
       # View / Show Status Bar
       ShowStatusBar: true
       # Set the default Finder display mode to list
-      FXPreferredViewStyle: Nlsv
-      MyDocsLibrarySavedViewStyle: Nlsv
-      # Set icons view to be sorted by name
-      FXPreferredGroupBy: Name
-      # General / New Finder windows show / fots
+      FXPreferredViewStyle: Flwv
+      MyDocsLibrarySavedViewStyle: Flwv
+      # Preferences / General / New Finder windows show / fots
       NewWindowTarget: PfHm
       NewWindowTargetPath: file:///Users/fots/
-      # Advanced / Keep folders on top when sorting by name (Sierra only)
+      # Preferences / Advanced / Keep folders on top when sorting by name (Sierra only)
       _FXSortFoldersFirst: true
-      # Advanced / Show all filename extensions
-      AppleShowAllExtensions: true
-      # Advanced / Disable 'Show warning before changing an extension'
+      # Preferences / Advanced / Disable 'Show warning before changing an extension'
       FXEnableExtensionChangeWarning: false
-      # View / Show Path Bar
-      ShowPathbar: true
 
   # Menu (Clock)
   - domain: com.apple.menuextra.clock
