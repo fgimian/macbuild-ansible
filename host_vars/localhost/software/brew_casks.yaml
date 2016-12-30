@@ -44,7 +44,6 @@ software_brew_casks:
 
   # DAWs, Tools & Drivers
   - ableton-live-9-suite
-  - audiomove
   - celemony-melodyne-editor
   - focusrite-control
   - native-instruments-native-access

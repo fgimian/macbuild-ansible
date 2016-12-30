@@ -1,150 +1,203 @@
 ---
 app_layout:
-# Page 1
-- - Calculator
-  - iBooks
-  - iTunes
-  - App Store
-  - System Preferences
-  - folder_title: Apple Apps
-    folder_layout:
-      - - Safari
-        - Mail
-        - Contacts
-        - Calendar
-        - Reminders
-        - Notes
-        - Maps
-        - Messages
-        - FaceTime
-        - Photo Booth
-        - Photos
-        - Game Center
-        - Preview
-        - Dictionary
-        - Mission Control
-        - Dashboard
-  - folder_title: Apple Utilities
-    folder_layout:
-      - - QuickTime Player
-        - TextEdit
-        - Grapher
-        - DVD Player
-        - Time Machine
-        - Font Book
-        - Chess
+  # Page 1: Apple
+  -
+    # Most Useful Apps
+    - Calculator
+    - Safari
+    - iMovie
+    - iTunes
+    - iBooks
+    - App Store
+    - System Preferences
 
-        - Stickies
-        - Image Capture
-        - VoiceOver Utility
-        - AirPort Utility
-        - Migration Assistant
-        - Terminal
-        - Activity Monitor
+    # iWork
+    - folder_title: iWork
+      folder_layout:
+        -
+          - Pages
+          - Numbers
+          - Keynote
 
-        - Console
-        - Keychain Access
-        - System Information
-        - Automator
-        - Script Editor
-        - Boot Camp Assistant
-        - Digital Color Meter
+    # Apps
+    - folder_title: Apps
+      folder_layout:
+        -
+          - Mail
+          - Contacts
+          - Calendar
+          - Reminders
+          - Notes
+          - Maps
+          - Messages
+          - FaceTime
+          - Photo Booth
+          - Photos
+          - Preview
+          - Dictionary
+          - Siri
+          - Mission Control
+          - Dashboard
 
-        - ColorSync Utility
-        - Grab
-        - Bluetooth File Exchange
-        - Audio MIDI Setup
-        - X11
-        - Disk Utility
+    # Other Utilities
+    - folder_title: Other
+      folder_layout:
+        -
+          - QuickTime Player
+          - TextEdit
+          - Grapher
+          - DVD Player
+          - Time Machine
+          - Font Book
+          - Chess
+          - Stickies
+          - Image Capture
+          - VoiceOver Utility
+          - AirPort Utility
+          - Migration Assistant
+          - Terminal
+          - Activity Monitor
+          - Console
+          - Keychain Access
+          - System Information
+          - Automator
+          - Script Editor
+          - Disk Utility
+          - Boot Camp Assistant
+          - Digital Color Meter
+          - ColorSync Utility
+          - Grab
+          - Bluetooth File Exchange
+          - Audio MIDI Setup
 
-  - Android File Transfer
-  - AppCleaner
-  - 1Password 6
-  - Clear
-  - DaisyDisk
-  - Entropy
-  - ForkLift
+  # Page 2: General
+  -
+    - 1Password 6
+    - Android File Transfer
+    - World Clock
 
-  - OpenEmu
-  - World Clock
-  - Cog
-  - Spotify
-  # - VOX
-  - MPlayerX
-  # - VLC
+    # File Management
+    - AppCleaner
+    - DaisyDisk
+    - Entropy
+    - ForkLift
 
-  - Google Chrome
-  - Firefox
-  - Transmission
-  - folder_title: Utilities
-    folder_layout:
-      - - BetterSnapTool
-        - BootChamp
-        - Focus
-        - Gmail Notifier
-        - Flux
-        - Dropbox
-        - OneDrive
-        - iStat Mini
-        - BestRes
+    # Social
+    - Skype
+    - Slack
+    - Textual
+    - Twitter
 
-# Page 2
-- - Affinity Designer
-  - Affinity Photo
-  - ScreenFlow
-  - Microsoft Excel
-  - Microsoft Word
-  # - Keynote
-  - VMware Fusion
+    # Internet
+    - Google Chrome
+    - Firefox
+    - Transmission
 
-  - Dash
-  - Kitematic (Beta)
-  - MacDown
-  - SourceTree
-  - Sublime Text
-  - VirtualBox
-  # - Xcode
+    # Media Playback & Entertainment
+    - Cog
+    - Spotify
+    - MPlayerX
+    - OpenEmu
 
-  - Textual
-  - Skype
-  - Slack
-  - Twitter
+    - folder_title: Utilities
+      folder_layout:
+        -
+          - BestRes
+          - BetterSnapTool
+          - BootChamp
+          - Dropbox
+          - Flux
+          - Focus
+          - Gmail Notifier
+          - iStat Mini
+          - OneDrive
 
-# Page 3
-- - Cubase 9
-  - Logic Pro X
-  - Ableton Live 9 Suite
-  - Audio Hijack
-  # - ocenaudio
-  - Melodyne singletrack
-  - AudioMove
+  # Page 3: Productivity
+  -
+    # Media Creation
+    - Affinity Designer
+    - Affinity Photo
+    - ScreenFlow
 
-  - XLD
-  - Focusrite Control
-  - ReMOTESLEditor
-  - folder_title: Audio Software Managers
-    folder_layout:
-      - - iLok License Manager
-        - eLicenser Control Center
-        - Sonalksis Plugin Manager
-- - Microsoft PowerPoint
-  - Microsoft Outlook
-  - Microsoft OneNote
+    # GTD
+    - Clear
+
+    # Microsoft Office
+    - Microsoft Excel
+    - Microsoft Word
+    - folder_title: Microsoft Office (Other)
+      folder_layout:
+        -
+          - Microsoft OneNote
+          - Microsoft Outlook
+          - Microsoft PowerPoint
+
+    # Development
+    - Dash
+    - Kitematic (Beta)
+    - MacDown
+    - SourceTree
+    - Sublime Text
+    - VirtualBox
+    - VMware Fusion
+
+
+  # Page 4: Audio Software
+  -
+    # DAWs
+    - Ableton Live 9 Suite
+    - Cubase 9
+    - Logic Pro X
+
+    # Tools
+    - Audio Hijack
+    - Melodyne singletrack
+    - ocenaudio
+    - XLD
+
+    # Hardware
+    - Focusrite Control
+    - ReMOTESLEditor
+
+    # Software Managers
+    - folder_title: Software Managers
+      folder_layout:
+        -
+          - iLok License Manager
+          - eLicenser Control Center
+          - Native Access
+          - Sonalksis Plugin Manager
+
+    # Native Instruments
+    - folder_title: Native Instruments (Other)
+      folder_layout:
+        -
+          - Absynth 5
+          - Battery 4
+          - Controller Editor
+          - FM8
+          - Guitar Rig 5
+          - Komplete Kontrol
+          - Kontakt 5
+          - Massive
+          - Reaktor 6
+          - ServiceCenter
 
 widget_layout:
-- - Calendar
-  - Calculator
-  - Contacts
-  - Dictionary
-  - ESPN
-  - Flight Tracker
-  - Movies
-  - Ski Report
-  - Stickies
-  - Stocks
-  - Tile Game
-  - Translation
-  - Unit Converter
-  - Weather
-  - Web Clip
-  - World Clock
+  -
+    - Ski Report
+    - Calculator
+    - Calendar
+    - Contacts
+    - Dictionary
+    - ESPN
+    - Flight Tracker
+    - Movies
+    - Stickies
+    - Stocks
+    - Tile Game
+    - Translation
+    - Unit Converter
+    - Weather
+    - Web Clip
+    - World Clock

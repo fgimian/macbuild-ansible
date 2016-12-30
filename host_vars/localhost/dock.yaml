@@ -2,26 +2,23 @@
 # Dock applications (in the left section)
 dock_apps:
   - ForkLift
-  - Siri
   - Launchpad
   - Safari
-  - Utilities/Terminal
   - Sublime Text
-  - Dash
-  - iBooks
+  - Utilities/Terminal
   - Cubase 9
   - Logic Pro X
-  - Focusrite Control
-  - XLD
-  - Spotify
   - Audio Hijack
+  - XLD
+  - Focusrite Control
+  - Spotify
   - OpenEmu
-  - Clear
-  - Textual
   - Skype
   - Slack
-  - VMware Fusion
+  - Textual
   - Twitter
+  - Clear
+  - VMware Fusion
   - App Store
   - System Preferences
 
