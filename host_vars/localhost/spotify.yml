@@ -1,10 +1,19 @@
 ---
 spotify_username: fgimian
 spotify_start_on_boot: false
+
 spotify_global_settings:
-  autologin.username: "{{ spotify_username }}"
+  # Preferences / Startup and Window Behaviour /
+  # Set 'Open Spotify automatically after your login into the computer' to 'No'
   app.autostart-mode: 'off'
+
 spotify_user_settings:
+  # View / Disable 'Right Sidebar'
   ui.show_friend_feed: false
+
+  # Preferences / Music Quality / High quality streaming (Premium only)
   audio.sync_bitrate_enumeration: 4
   audio.play_bitrate_enumeration: 4
+
+  # Preferences / Playback / Disable 'Set the same volume level for all songs'
+  audio.normalize_v2: false

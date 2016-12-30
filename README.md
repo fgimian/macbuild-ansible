@@ -67,52 +67,41 @@ one of your backup drives and run the following:
 The following tasks must be performed manually as I have yet to find a way to
 automate them.
 
-### macOS
+### Installation & Configuration (macOS)
 
 * **Finder**: Setup sidebar containing favourites and view settings
+* **Notification Centre**: Set the order of items and allow permission
 * **Safari**: Install extensions (1Password and Adblock Plus)
 * **App Store Login Items**: Start App Store menubar apps and set them to start
   at login (AppCleaner and OneDrive).
 
-### General Software
+### Installation & Configuration (General)
 
-* **Chrome**: Sign in with your Google account to sync settings
+* **Audio Hijack**: Start the app multiple times to dismiss welcome and mailing
+  list alerts.  You must also install Instant On to ensure the app works.
 * **Clear**: Enable iCloud
 * **Dropbox**: Disable camera uploads
-* **Firefox**: Go through wizard and sign into your Firefox account
-* **Microsoft Office**: Must be licensed manually
-
-### Music Production Software
-
-* **Ableton Live Suite**: Preferences including skin selection
-* **Ableton Sample Packs**: Installation of Ableton Live sounds
-* **Celemony Melodyne Editor**: Must be licensed manually and also requires
-  de-activation before re-install
-* **Cytomic The Drop & The Glue**: Must be licensed manually
-* **LennarDigital Sylenth1**: Must be licensed manually and also requires
-  de-activation before re-install
-* **Novation Bass Station**: Must be licensed manually
-* **Spectrasonics Omnisphere**: Must be licensed manually
-
-## TODOs
-
-### macOS
-
-* **Notification Centre**: Set the order of items and allow permission
-
-### General Software
-
 * **Forklift**: Sidebar containing favourites and view settings
 * **World Clock**: Country selection settings
 
-### Music Production Software 
+### Installation & Configuration (Music Production)
 
-* **Native Instruments Komplete**: Installation and licensing haven't yet been
-  automated
+* **Ableton Live Suite**: Preferences including skin selection
+* **Ableton Sample Packs**: Installation of Ableton Live sounds
 * **Apple Logic Pro X**: Preferences and key bindings
 * **Steinberg Cubase Pro**: Preferences and key bindings
 * **Default Plug-in Presets**: Setup default presets for your most used VST
   effects and instruments
+
+### Manual Licensing
+
+* **Microsoft Office**
+* **Celemony Melodyne Editor**: Also requires de-activation before re-install
+* **Cytomic The Drop & The Glue**
+* **LennarDigital Sylenth1**: Also requires de-activation before re-install
+* **Native Instruments Komplete**
+* **Novation Bass Station**
+* **Spectrasonics Omnisphere**
 
 ## References
 

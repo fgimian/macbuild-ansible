@@ -24,13 +24,13 @@ software_app_defaults:
   - domain: com.seriflabs.affinitydesigner
     container: com.seriflabs.affinitydesigner
     values:
-      ShowWelcomeScreen: false
+      com.seriflabs.ShowWelcomeScreen: false
 
   # Affinity Photo
   - domain: com.seriflabs.affinityphoto
     container: com.seriflabs.affinityphoto
     values:
-      ShowWelcomeScreen: false
+      com.seriflabs.ShowWelcomeScreen: false
 
   # Android File Transfer
   - domain: com.google.android.mtpviewer

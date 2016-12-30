@@ -24,7 +24,9 @@ fi
 if ! pip3 show ansible > /dev/null 2>&1
 then
     echo "Installing Ansible"
-    pip3 install ansible
+    # TODO: switch back to pip when Ansible 2.2.1.0 is released
+    # pip3 install ansible
+    pip3 install git+git://github.com/ansible/ansible.git@stable-2.2
 fi
 
 # Setup the source of music production software from the backup drive attached
