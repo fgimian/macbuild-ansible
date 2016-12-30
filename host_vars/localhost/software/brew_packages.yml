@@ -8,6 +8,7 @@ software_brew_packages:
   - curl
   - duti
   - dockutil
+  - ffmpeg
   - findutils
   - fish
   - git
