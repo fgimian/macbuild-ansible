@@ -1,8 +1,5 @@
 ---
 # Homebrew Unix Software
-- name: update homebrew to the latest version
-  homebrew: update_homebrew=yes
-
 - name: brew taps
   homebrew_tap: tap={{ item }} state=present
   with_items: "{{ brew_taps }}"
@@ -15,9 +12,6 @@
   with_items: "{{ brew_packages }}"
 
 # Homebrew Cask Desktop Applications
-- name: brew cask tap
-  homebrew_tap: tap=caskroom/cask state=present
-
 - name: desktop cask applications
   homebrew_cask: name={{ item }} state=present
   with_items: "{{ brew_casks }}"

@@ -58,14 +58,14 @@ else
   echo -e "${RED}Unable to find the music software basedir${ENDC}"
 fi
 
+# Set Terminal settings
+./extras/terminal.js && \
+
 # Perform the build
 ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python3 local.yaml && \
 
 # Launchpad
-./extras/launchpad.py build host_vars/localhost/launchpad.yaml && \
-
-# Set Terminal settings
-./extras/terminal.js
+./extras/launchpad.py build host_vars/localhost/launchpad.yaml
 
 # Disable passwordless sudo after the macbuild is complete
 sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) ALL/" /etc/sudoers

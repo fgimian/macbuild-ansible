@@ -1,6 +1,14 @@
 ---
 - hosts: localhost
   connection: local
+  pre_tasks:
+    # Update Homebrew
+    - name: update homebrew to the latest version
+      homebrew: update_homebrew=yes
+
+    # Install Homebrew Cask
+    - name: brew cask tap
+      homebrew_tap: tap=caskroom/cask state=present
   roles:
     # macOS Configuration
     - role: macos
@@ -8,6 +16,14 @@
       computer_sleep_time: "{{ macos_computer_sleep_time }}"
       display_sleep_time: "{{ macos_display_sleep_time }}"
       os_defaults: "{{ macos_os_defaults }}"
+
+    # Important Desktop Applications
+    - sublime_text
+    - role: spotify
+      username: "{{ spotify_username }}"
+      start_on_boot: "{{ spotify_start_on_boot }}"
+      global_settings: "{{ spotify_global_settings }}"
+      user_settings: "{{ spotify_user_settings }}"
 
     # Software Installation & Configuration
     - role: software
@@ -29,14 +45,6 @@
       packages: "{{ node_js_packages }}"
     - role: python
       packages: "{{ python_packages }}"
-
-    # Desktop Applications
-    - role: spotify
-      username: "{{ spotify_username }}"
-      start_on_boot: "{{ spotify_start_on_boot }}"
-      global_settings: "{{ spotify_global_settings }}"
-      user_settings: "{{ spotify_user_settings }}"
-    - sublime_text
 
     # Default Applications
     - role: default_apps
