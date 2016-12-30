@@ -8,16 +8,16 @@ YELLOW='\033[93m'
 BLUE='\033[94m'
 ENDC='\033[0m'
 
+# Display a pretty header
+echo
+echo -e "${BOLD}Mac Build (using Ansible)${ENDC}"
+echo
+
 # Prompt the user for their sudo password
 sudo -v
 
 # Enable passwordless sudo for the macbuild run
 sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) NOPASSWD: ALL/" /etc/sudoers
-
-# Display a pretty header
-echo
-echo -e "${BOLD}Mac Build (using Ansible)${ENDC}"
-echo
 
 # Install Homebrew
 if ! which brew > /dev/null 2>&1
