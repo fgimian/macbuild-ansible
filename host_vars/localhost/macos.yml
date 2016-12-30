@@ -41,6 +41,12 @@ macos_os_defaults:
       # Display / Cursor size
       mouseDriverCursorSize: 1.25
 
+  # System Preferences / Keyboard / Dictation
+  - domain: com.apple.HIToolbox
+    values:
+      # Disable Dictation (including prompt when pressing the Fn key)
+      AppleDictationAutoEnable: 0
+
   # System Preferences / Mouse
   - domain: com.apple.driver.AppleBluetoothMultitouch.mouse
     values:
