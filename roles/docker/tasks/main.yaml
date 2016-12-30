@@ -2,8 +2,8 @@
 - name: install docker
   homebrew: name={{ item }} state=latest
   with_items:
-  - docker
-  - docker-machine
+    - docker
+    - docker-machine
 
 - name: create a default virtual machine to run docker images
   command: docker-machine create --driver virtualbox default
