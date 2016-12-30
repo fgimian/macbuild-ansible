@@ -46,10 +46,10 @@ else
 fi
 
 # Perform the build
-ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python3 local.yml && \
+ansible-playbook -i localhost, -e ansible_python_interpreter=/usr/local/bin/python3 local.yaml && \
 
 # Launchpad
-./extras/launchpad.py build host_vars/localhost/launchpad.yml && \
+./extras/launchpad.py build host_vars/localhost/launchpad.yaml && \
 
 # Set Terminal settings
 ./extras/terminal.js
