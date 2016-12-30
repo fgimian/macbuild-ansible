@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
+import glob
 import os
+import plistlib
 import re
 import shlex
 import subprocess
 import tempfile
+import time
 
 import yaml
 
@@ -77,6 +80,107 @@ def logic_pro_x_content(sample_libraries_source, destination_basedir):
 
     print()
     print(f'{GREEN}Installation of the Logic Pro X content complete{ENDC}')
+
+
+def komplete_libraries(sample_libraries_source, destination_basedir):
+    print()
+    print(f'{BOLD}Komplete Libraries{ENDC}')
+
+    # Create a temporary plist for use in determining the installer option for library location
+    empty_plist_fd, empty_plist_name = tempfile.mkstemp()
+    with open(empty_plist_name, 'wb') as f:
+        plistlib.dump([], f)
+
+    # Allocate another temp file for the plist that will specify our install location
+    location_plist_fd, location_plist_name = tempfile.mkstemp()
+
+    source = f'{sample_libraries_source}/Native Instruments'
+    destination = f'{destination_basedir}/Native Instruments'
+
+    run(f'mkdir -p "{destination}"')
+
+    isos_proc = run(f'find "{source}" -type f -name "*.iso"', stdout=subprocess.PIPE)
+
+    for iso in isos_proc.stdout.strip().split('\n'):
+        print()
+        print(f'{BLUE}Mounting ISO image {os.path.basename(iso)}{ENDC}')
+        mount_proc = run(f'hdiutil mount "{iso}"', stdout=subprocess.PIPE)
+        mountpoint = mount_proc.stdout.strip().split('\t')[-1]
+        print(f'{BLUE}ISO mounted under {mountpoint}{ENDC}')
+
+        try:
+            packages = glob.glob(f'{mountpoint}/* Installer Mac.pkg')
+            if len(packages) != 1:
+                print(
+                    f'{RED}Unable to determine the installer package for this library, skipping{ENDC}'
+                )
+                continue
+
+            package = packages[0]
+            print(f'{GREEN}Found installer package {package}{ENDC}')
+
+            # Obtain all installer choices as a plist
+            choices_proc = run(
+                f'sudo installer -showChoicesAfterApplyingChangesXML "{empty_plist_name}" '
+                f'-package "{package}" -target /', stdout=subprocess.PIPE
+            )
+
+            # Split the lines and crop output to only include the plist
+            # (sometimes the installer command includes extra lines before the plist)
+            choices_stdout_lines = choices_proc.stdout.strip().split('\n')
+            choices_plist_start_index = choices_stdout_lines.index(
+                '<?xml version="1.0" encoding="UTF-8"?>'
+            )
+            choices_plist_end_index = choices_stdout_lines.index('</plist>') + 1
+            choices_plist = '\n'.join(
+                choices_stdout_lines[choices_plist_start_index:choices_plist_end_index]
+            )
+
+            # Determine the installer option that we can override to set a custom install location
+            choice_library_identifier = None
+            for choice in plistlib.loads(choices_plist.encode('utf-8')):
+                if (
+                    choice['choiceAttribute'] == 'customLocation' and
+                    choice['attributeSetting'] == '/Users/Shared'
+                ):
+                    choice_library_identifier = choice['choiceIdentifier']
+
+            if not choice_library_identifier:
+                print(
+                    f'{RED}Unable to identify install location choice identifier '
+                    f'for this library, skipping{ENDC}'
+                )
+                continue
+
+            print(
+                f'{GREEN}Found install location choice identifier '
+                f'{choice_library_identifier}{ENDC}'
+            )
+
+            # Build the plist file containing our custom install location
+            with open(location_plist_name, 'wb') as f:
+                plistlib.dump([
+                    {
+                        'choiceIdentifier': choice_library_identifier,
+                        'choiceAttribute': 'customLocation',
+                        'attributeSetting': destination
+                    }
+                ], f)
+
+            print()
+            print(f'{BLUE}Running installer {os.path.basename(package)}{ENDC}')
+            sudo(
+                f'installer -applyChoiceChangesXML "{location_plist_name}" '
+                f'-package "{package}" -target /'
+            )
+
+        finally:
+            print()
+            print(f'{BLUE}Unmounting ISO image under {mountpoint}{ENDC}')
+            mount_proc = run(f'hdiutil unmount "{mountpoint}"')
+
+    print()
+    print(f'{GREEN}Installation of the Komplete libraries complete{ENDC}')
 
 
 def omnisphere_steam_library(music_software_source, destination_basedir):
@@ -285,6 +389,10 @@ def main():
 
         # Install the various sample libraries
         logic_pro_x_content(
+            sample_libraries_source=SAMPLE_LIBRARIES_SOURCE,
+            destination_basedir=DESTINATION_BASEDIR
+        )
+        komplete_libraries(
             sample_libraries_source=SAMPLE_LIBRARIES_SOURCE,
             destination_basedir=DESTINATION_BASEDIR
         )
