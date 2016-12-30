@@ -49,7 +49,6 @@
   failed_when: no
   register: spotify_login_check
 
-# TODO: make this switchable by variable start_on_boot
 - name: remove Spotify from login items
   command: osascript -l JavaScript
            -e "Application('System Events').loginItems.byName('Spotify').delete()"

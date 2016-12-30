@@ -3,5 +3,3 @@
   command: "loginitems -a '{{ item }}'"
   changed_when: false
   with_items: "{{ login_items }}"
-
-# TODO: add launchctl tasks here specifically and run launchctl load against them
