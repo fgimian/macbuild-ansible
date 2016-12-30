@@ -1,5 +1,4 @@
 ---
-# TODO: allow user to set computer sleep time in a variable
 - name: check the current computer sleep time
   command: systemsetup -getcomputersleep
   changed_when: false
@@ -7,11 +6,10 @@
   register: current_computer_sleep_time
 
 - name: set the computer sleep time
-  command: systemsetup -setcomputersleep Never
+  command: systemsetup -setcomputersleep {{ computer_sleep_time }}
   become: yes
-  when: "'Never' not in '{{ current_computer_sleep_time.stdout }}'"
+  when: "'Computer Sleep: {{ computer_sleep_time }}' != '{{ current_computer_sleep_time.stdout.replace('after ', '').replace('minutes', '') }}'"
 
-# TODO: allow user to set display sleep time in a variable
 - name: check the current display sleep time
   command: systemsetup -getdisplaysleep
   changed_when: false
@@ -19,9 +17,9 @@
   register: current_display_sleep_time
 
 - name: set the display sleep time
-  command: systemsetup -setdisplaysleep Never
+  command: systemsetup -setdisplaysleep {{ display_sleep_time }}
   become: yes
-  when: "'Never' not in '{{ current_display_sleep_time.stdout }}'"
+  when: "'Display Sleep: {{ display_sleep_time }}' != '{{ current_display_sleep_time.stdout.replace('after ', '').replace('minutes', '') }}'"
 
 - name: check the current timezone
   command: systemsetup -gettimezone
@@ -32,7 +30,7 @@
 - name: set the timezone
   command: systemsetup -settimezone {{ timezone }}
   become: yes
-  when: "'{{ timezone }}' not in '{{ current_timezone.stdout }}'"
+  when: "'Time Zone: {{ timezone }}' != '{{ current_timezone.stdout }}'"
 
 - name: check flags for the user library folder
   changed_when: false

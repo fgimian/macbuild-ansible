@@ -5,6 +5,8 @@
     # macOS Configuration
     - role: macos
       timezone: "{{ macos_timezone }}"
+      computer_sleep_time: "{{ macos_computer_sleep_time }}"
+      display_sleep_time: "{{ macos_display_sleep_time }}"
       os_defaults: "{{ macos_os_defaults }}"
 
     # Software Installation & Configuration

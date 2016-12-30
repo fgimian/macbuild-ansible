@@ -2,6 +2,10 @@
 # Set the appropriate timezone
 macos_timezone: Australia/Melbourne
 
+# Set the computer and display sleep times
+macos_computer_sleep_time: Never
+macos_display_sleep_time: Never
+
 # Set various defaults which will update the relevant plist files
 macos_os_defaults:
   # System Preferences & Globals
