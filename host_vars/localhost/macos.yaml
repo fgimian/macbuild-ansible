@@ -94,8 +94,8 @@ macos_os_defaults:
       # View / Show Status Bar
       ShowStatusBar: true
       # Set the default Finder display mode to list
-      FXPreferredViewStyle: Flwv
-      MyDocsLibrarySavedViewStyle: Flwv
+      FXPreferredViewStyle: Nlsv
+      MyDocsLibrarySavedViewStyle: Nlsv
       # Preferences / General / New Finder windows show / fots
       NewWindowTarget: PfHm
       NewWindowTargetPath: file:///Users/fots/
@@ -103,6 +103,95 @@ macos_os_defaults:
       _FXSortFoldersFirst: true
       # Preferences / Advanced / Disable 'Show warning before changing an extension'
       FXEnableExtensionChangeWarning: false
+      # Default view settings for list view
+      StandardViewSettings: &view_settings
+        ListViewSettings:
+          columns:
+            name:
+              ascending: true
+              index: 0
+              visible: true
+              width: 450
+            size:
+              ascending: false
+              index: 1
+              visible: true
+              width: 100
+            kind:
+              ascending: true
+              index: 2
+              visible: true
+              width: 150
+            label:
+              ascending: true
+              index: 3
+              visible: false
+              width: 100
+            version:
+              ascending: true
+              index: 4
+              visible: false
+              width: 75
+            comments:
+              ascending: true
+              index: 5
+              visible: false
+              width: 300
+            dateModified:
+              ascending: false
+              index: 6
+              visible: true
+              width: 200
+            dateCreated:
+              ascending: false
+              index: 7
+              visible: false
+              width: 200
+            dateLastOpened:
+              ascending: false
+              index: 8
+              visible: false
+              width: 200
+        ExtendedListViewSettingsV2:
+          calculateAllSizes: false
+          columns:
+          - ascending: true
+            identifier: name
+            visible: true
+            width: 450
+          - ascending: false
+            identifier: size
+            visible: true
+            width: 100
+          - ascending: true
+            identifier: kind
+            visible: true
+            width: 150
+          - ascending: true
+            identifier: label
+            visible: false
+            width: 100
+          - ascending: true
+            identifier: version
+            visible: false
+            width: 75
+          - ascending: true
+            identifier: comments
+            visible: false
+            width: 300
+          - ascending: false
+            identifier: dateModified
+            visible: true
+            width: 200
+          - ascending: false
+            identifier: dateCreated
+            visible: false
+            width: 200
+          - ascending: false
+            identifier: dateLastOpened
+            visible: false
+            width: 200
+      MyDocsLibrarySearchViewSettings: *view_settings
 
   # Menu (Clock)
   - domain: com.apple.menuextra.clock
