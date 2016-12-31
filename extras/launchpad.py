@@ -42,7 +42,7 @@ def batch(items, batch_size):
 
 def generate_uuid():
     """Generate a UUID using uuidgen."""
-    return subprocess.check_output('uuidgen').strip()
+    return subprocess.check_output('uuidgen').decode('utf-8').strip()
 
 
 def get_launchpad_db_dir():
