@@ -6,7 +6,6 @@ import re
 import shlex
 import subprocess
 import tempfile
-import time
 
 import yaml
 
@@ -112,7 +111,8 @@ def komplete_libraries(sample_libraries_source, destination_basedir):
             packages = glob.glob(f'{mountpoint}/* Installer Mac.pkg')
             if len(packages) != 1:
                 print(
-                    f'{RED}Unable to determine the installer package for this library, skipping{ENDC}'
+                    f'{RED}Unable to determine the installer package for this library, '
+                    f'skipping{ENDC}'
                 )
                 continue
 
