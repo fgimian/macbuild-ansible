@@ -69,7 +69,8 @@ automate them.
 
 ### Installation & Configuration (macOS)
 
-* **Finder**: Setup sidebar containing favourites and view settings
+* **Finder**: Setup sidebar containing favourites
+* **Services**: In System Preferences / Keyboard / Services, enable 'New Terminal at Folder' and 'New Terminal Tab at Folder'.
 * **Notification Centre**: Set the order of items and allow permission
 * **Safari**: Install extensions (1Password and Adblock Plus)
 * **App Store Login Items**: Start App Store menubar apps and set them to start
