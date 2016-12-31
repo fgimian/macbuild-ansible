@@ -10,4 +10,4 @@ SAMPLE_LIBRARIES_SOURCE = f'{SOFTWARE_SOURCE}/Sample Libraries'
 MUSIC_SOFTWARE_SOURCE = f'{SOFTWARE_SOURCE}/Music Production'
 
 # Set the destination base directory for installing all libraries
-DESTINATION_BASEDIR = '/Volumes/Sound Libraries'
+DESTINATION_BASEDIR = '/Volumes/Sample Libraries'

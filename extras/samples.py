@@ -23,7 +23,9 @@ DEVNULL = open(os.devnull, 'w')
 
 
 def run(command, **kwargs):
-    return subprocess.run(shlex.split(command), encoding='utf-8', **kwargs)
+    if not kwargs.get('shell', False):
+        command = shlex.split(command)
+    return subprocess.run(command, encoding='utf-8', **kwargs)
 
 
 def sudo(command, **kwargs):
@@ -35,7 +37,7 @@ def logic_pro_x_content(sample_libraries_source, destination_basedir):
     print(f'{BOLD}Logic Pro X Content{ENDC}')
 
     source = f'{sample_libraries_source}/Apple/Apple Logic Pro X Sound Library'
-    destination = f'{destination_basedir}/Apple/Apple Logic Pro X Sound Library'
+    destination = f'{destination_basedir}/Apple/Logic Pro X Sound Library'
 
     print()
     print(f'{BLUE}Cleaning up any content on operating system drive{ENDC}')
@@ -276,11 +278,11 @@ def kontakt_libraries_and_drum_samples(sample_libraries_source, destination_base
         if base_dir and os.path.isdir(destination) and os.listdir(destination):
             print(f'Moving contents from base directory of {base_dir}')
 
-            tempdir = tempfile.mkdtemp(prefix='samplelibs.', dir=destination)
-            run(f'mv "{destination}/"* "{tempdir}"')
+            tempdir = tempfile.mkdtemp(prefix='samplelibs.', dir=destination_basedir)
+            run(f'mv "{destination}/"* "{tempdir}"', shell=True)
 
             run(f'mkdir -p "{destination}/{base_dir}/"')
-            run(f'mv "{tempdir}/"* "{destination}/{base_dir}/"')
+            run(f'mv "{tempdir}/"* "{destination}/{base_dir}/"', shell=True)
 
             run(f'rmdir "{tempdir}"')
 
@@ -318,27 +320,32 @@ def kontakt_libraries_and_drum_samples(sample_libraries_source, destination_base
             else:
                 destination_subdir = destination
 
+            run(f'mkdir -p "{destination_subdir}"')
+
             # Extract the archive
             if subdir:
                 print(f'{YELLOW}- {archive_relative} -> {subdir}{ENDC}')
             else:
                 print(f'{YELLOW}- {archive_relative}{ENDC}')
 
-            run(
-                f'7z x -aoa -o"{destination_subdir}" -xr!__MACOSX -xr!.DS_Store "{archive}"',
-                stdout=DEVNULL
-            )
+            if os.path.splitext(archive)[1] == '.rar':
+                run(
+                    f'unrar x -o+ -x"__MACOSX" -x"*.DS_Store" "{archive}" "{destination_subdir}"',
+                    stdout=DEVNULL
+                )
+            else:
+                run(f'unzip -q -o "{archive}" -x "__MACOSX/*" "*.DS_Store" -d "{destination_subdir}"')
 
         if base_dir:
             if os.path.isdir(f'{destination}/{base_dir}'):
                 print(f'{BLUE}Stripping base directory of {base_dir}{ENDC}')
-                run(f'mv "{destination}/{base_dir}/"* "{destination}/"')
+                run(f'mv "{destination}/{base_dir}/"* "{destination}/"', shell=True)
                 run(f'rmdir "{destination}/{base_dir}/"')
             else:
                 print(f'{RED}The base directory {base_dir} does not exist{ENDC}')
 
         if installer:
-            if os.path.isfile('{destination}/{installer}'):
+            if os.path.isfile(f'{destination}/{installer}'):
                 performed_action = True
                 print(f'{BLUE}Running installer {installer}{ENDC}')
                 sudo(f'installer -package "{destination}/{installer}" -target /')
