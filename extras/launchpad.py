@@ -6,7 +6,17 @@ import os
 import subprocess
 import sqlite3
 from time import sleep
+
 import yaml
+
+
+# Colours
+BOLD = '\033[1m'
+RED = '\033[91m'
+GREEN = '\033[92m'
+YELLOW = '\033[93m'
+BLUE = '\033[94m'
+ENDC = '\033[0m'
 
 
 class Types(object):
@@ -222,7 +232,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                     folder_item_ordering = 0
                     for title in folder_page:
                         if title not in mapping:
-                            print(f'Unable to find item {title}, skipping')
+                            print(f'{RED}Unable to find item {title}, skipping{ENDC}')
                             continue
 
                         item_id, uuid, flags = mapping[title]
@@ -251,7 +261,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
             else:
                 title = item
                 if title not in mapping:
-                    print(f'Unable to find item {title}, skipping')
+                    print(f'{RED}Unable to find item {title}, skipping{ENDC}')
                     continue
 
                 item_id, uuid, flags = mapping[title]
@@ -295,12 +305,12 @@ def build_launchpad(config, rebuild_db=True, restart_upon_completion=True):
     launchpad_db_dir = get_launchpad_db_dir()
     launchpad_db_path = os.path.join(launchpad_db_dir, 'db')
 
-    print(f'Using Launchpad database {launchpad_db_path}')
+    print(f'{BLUE}Using Launchpad database {launchpad_db_path}{ENDC}')
 
     # Re-build the user's database if requested
     if rebuild_db:
         # Delete original Launchpad database and rebuild it for a fresh start
-        print('Deleting Launchpad database files')
+        print(f'{BLUE}Deleting Launchpad database files to perform database rebuild{ENDC}')
         for launchpad_db_file in ['db', 'db-shm', 'db-wal']:
             try:
                 os.remove(os.path.join(launchpad_db_dir, launchpad_db_file))
@@ -308,7 +318,7 @@ def build_launchpad(config, rebuild_db=True, restart_upon_completion=True):
                 pass
 
         # Restart the Dock to get a freshly built database to work from
-        print('Restarting the Dock to build a fresh Launchpad databases')
+        print(f'{BLUE}Restarting the Dock to build a fresh Launchpad databases{BLUE}')
         subprocess.call(['killall', 'Dock'])
         sleep(3)
 
@@ -326,15 +336,21 @@ def build_launchpad(config, rebuild_db=True, restart_upon_completion=True):
     # Add any missing widgets from the user's layout to one or more pages after those defined
     missing_widget_items = add_missing_items(widget_layout, widget_mapping)
     if missing_widget_items:
-        print('Uncategorised items found and added to the last page: ' + str(missing_widget_items))
+        print(f'{RED}Uncategorised widgets found and added to the last page:{ENDC}')
+        for missing_widget_item in missing_widget_items:
+            print(f'{RED}- {missing_widget_item}{ENDC}')
 
     # Add any missing apps from the user's layout to one or more pages after those defined
     missing_app_items = add_missing_items(app_layout, app_mapping)
     if missing_app_items:
-        print('Uncategorised items found and added to the last page: ' + str(missing_app_items))
+        print(f'{RED}Uncategorised apps found and added to the last page:{ENDC}')
+        for missing_app_item in missing_app_items:
+            print(f'{RED}- {missing_app_item}{ENDC}')
 
     # Grab a cursor for our operations
     cursor = conn.cursor()
+
+    print(f'{BLUE}Rebuilding the Launchpad database{BLUE}')
 
     # Clear all items related to groups so we can re-create them
     cursor.execute('''
@@ -399,7 +415,7 @@ def build_launchpad(config, rebuild_db=True, restart_upon_completion=True):
 
     if restart_upon_completion:
         # Restart the Dock to that Launchpad can read our new and updated database
-        print('Restarting the Dock to see the updates we made')
+        print(f'{BLUE}Restarting the Dock to apply the new database{ENDC}')
         subprocess.call(['killall', 'Dock'])
 
 
@@ -470,6 +486,8 @@ def extract_launchpad():
     # Determine the location of the SQLite Launchpad database
     launchpad_db_dir = get_launchpad_db_dir()
     launchpad_db_path = os.path.join(launchpad_db_dir, 'db')
+
+    print(f'{BLUE}Using Launchpad database {launchpad_db_path}{ENDC}')
 
     # Connect to the Launchpad SQLite database
     conn = sqlite3.connect(launchpad_db_path)
@@ -557,16 +575,27 @@ def main():
     # Parse arguments
     args = parser.parse_args()
 
+    if not args.command:
+        parser.error('please specify an action to perform')
+
+    print()
+    print(f'{BOLD}Launchpad Builder{ENDC}')
+    print()
+
     # Build
     if args.command == 'build':
         with open(args.config_path) as f:
             config = yaml.load(f)
 
         build_launchpad(config)
+        print(
+            f'{GREEN}Successfully build the Launchpad layout defined in {args.config_path}{ENDC}'
+        )
 
     # Extract
     elif args.command == 'extract':
         layout = extract_launchpad()
+        print(f'{GREEN}Successfully wrote Launchpad config to {args.config_path}{ENDC}')
         with open(args.config_path, 'w') as f:
             if args.format == 'yaml':
                 f.write(yaml.safe_dump(layout, default_flow_style=False, explicit_start=True))
@@ -583,8 +612,7 @@ def main():
         if config != layout:
             exit(1)
 
-    else:
-        parser.error('please specify an action to perform')
+    print()
 
 
 if __name__ == '__main__':
