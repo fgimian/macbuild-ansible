@@ -155,7 +155,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
             INSERT INTO items
             (rowid, uuid, flags, type, parent_id, ordering)
             VALUES
-            (?, ?, 0, ?, ?, ?)
+            (?, ?, 2, ?, ?, ?)
         ''', (group_id, generate_uuid(), Types.PAGE, root_parent_id, page_ordering + 1)
         )
 
@@ -186,7 +186,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                     INSERT INTO items
                     (rowid, uuid, flags, type, parent_id, ordering)
                     VALUES
-                    (?, ?, 1, ?, ?, ?)
+                    (?, ?, 0, ?, ?, ?)
                 ''', (group_id, generate_uuid(), Types.FOLDER_ROOT, page_parent_id, item_ordering)
                 )
 
@@ -213,7 +213,7 @@ def setup_items(conn, type_, layout, mapping, group_id, root_parent_id):
                         INSERT INTO items
                         (rowid, uuid, flags, type, parent_id, ordering)
                         VALUES
-                        (?, ?, 0, ?, ?, ?)
+                        (?, ?, 2, ?, ?, ?)
                     ''', (
                         group_id, generate_uuid(), Types.PAGE, folder_root_parent_id,
                         folder_page_ordering)
