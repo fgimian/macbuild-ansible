@@ -318,7 +318,7 @@ def build_launchpad(config, rebuild_db=True, restart_upon_completion=True):
                 pass
 
         # Restart the Dock to get a freshly built database to work from
-        print(f'{BLUE}Restarting the Dock to build a fresh Launchpad databases{BLUE}')
+        print(f'{BLUE}Restarting the Dock to build a fresh Launchpad databases{ENDC}')
         subprocess.call(['killall', 'Dock'])
         sleep(3)
 
@@ -350,7 +350,7 @@ def build_launchpad(config, rebuild_db=True, restart_upon_completion=True):
     # Grab a cursor for our operations
     cursor = conn.cursor()
 
-    print(f'{BLUE}Rebuilding the Launchpad database{BLUE}')
+    print(f'{BLUE}Rebuilding the Launchpad database{ENDC}')
 
     # Clear all items related to groups so we can re-create them
     cursor.execute('''
