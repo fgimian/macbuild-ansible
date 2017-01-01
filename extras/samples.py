@@ -181,6 +181,9 @@ def komplete_libraries(sample_libraries_source, destination_basedir):
             print(f'{BLUE}Unmounting ISO image under {mountpoint}{ENDC}')
             mount_proc = run(f'hdiutil unmount "{mountpoint}"')
 
+    print(f'{BLUE}Hiding the Library directory on the sample drive{ENDC}')
+    run(f'chflags hidden "{destination_basedir}/Library"')
+
     print()
     print(f'{GREEN}Installation of the Komplete libraries complete{ENDC}')
 
