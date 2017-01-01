@@ -76,6 +76,11 @@ automate them.
 * **Safari**: Install extensions (1Password and Adblock Plus)
 * **App Store Login Items**: Start App Store menubar apps and set them to start
   at login (AppCleaner and OneDrive)
+* **Keyboard Shortcuts**: Under System Preferences / Keyboard:
+    - Set 'Show Launchpad' to F14 under 'Launchpad & Dock'
+    - Set 'Show Notification Center' to F15 under 'Mission Control'
+    - Set 'Show Desktop' to F13 under 'Mission Control'
+    - Disable 'Show Dashboard' under 'Mission Control'
 
 ### Installation & Configuration (General)
 
