@@ -274,7 +274,7 @@ def kontakt_libraries_and_drum_samples(sample_libraries_source, destination_base
                         f'{RED}Unable to load the library config file due to a syntax error{ENDC}'
                     )
 
-        base_dir = library_config.get('base_dir', None)
+        base_dir = library_config.get('base_dir', '')
         installer = library_config.get('installer', None)
         extract_subdirs = library_config.get('extract_subdirs', [])
 
@@ -311,15 +311,10 @@ def kontakt_libraries_and_drum_samples(sample_libraries_source, destination_base
                 subdir = ''
 
             if archive_relative in extract_subdirs:
-                if subdir and base_dir:
-                    subdir = f'{subdir}/{base_dir}/{extract_subdirs[archive_relative]}'
-                elif subdir:
-                    subdir = f'{subdir}/{extract_subdirs[archive_relative]}'
-                else:
-                    subdir = f'{extract_subdirs[archive_relative]}'
+                subdir = os.path.join(subdir, base_dir, extract_subdirs[archive_relative])
 
             if subdir:
-                destination_subdir = f'{destination}/{subdir}'
+                destination_subdir = os.path.join(destination, subdir)
             else:
                 destination_subdir = destination
 
