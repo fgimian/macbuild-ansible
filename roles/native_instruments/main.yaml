@@ -1,0 +1,7 @@
+# Note that I could not set the plist value directly as Ansible seems to cast
+# the index of with_indexed_items to a string.
+- name: place Kontakt libraries in the requested order
+  plist:
+    dest: "com.native-instruments.{{ item.1 }}"
+    values: "{{ item.0 | kontakt_index }}"
+  with_indexed_items: "{{ kontakt_library_order }}"

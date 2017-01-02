@@ -37,6 +37,10 @@
       app_files: "{{ software_app_files }}"
       app_symlinks: "{{ software_app_symlinks }}"
 
+    # Native Instruments
+    - role: native_instruments
+      kontakt_library_order: "{{ native_instruments_kontakt_library_order }}"
+
     # Unix Software
     - vim
     - docker
