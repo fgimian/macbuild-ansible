@@ -28,6 +28,9 @@ I have currently implemented the following:
   copied or symlinked, including app settings, licenses and dotfiles.
 * **Dock Configuration**: Automatic building of the Dock using
   [dockutil](https://github.com/kcrawford/dockutil).
+* **Launchpad Configuration**: Automatic building of Launchpad layout
+  using my own developed utility (see
+  [launchpad.py](https://github.com/fgimian/macbuild/blob/master/extras/launchpad.py)).
 * **Default Apps**: File associations for various applications using
   [duti](https://github.com/moretension/duti).
 * **Startup Setup**: Ensures that the required items start on startup using
