@@ -20,3 +20,7 @@ software_app_symlinks:
     dest: '~/Library/Application Support/OpenEmu/Game Library'
   - src: "{{ app_config_dir }}/OpenEmu/Save States"
     dest: '~/Library/Application Support/OpenEmu/Save States'
+
+  # Cubase
+  - src: ~/Music/Presets
+    dest: ~/Library/Audio/Presets
