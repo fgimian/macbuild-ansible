@@ -33,9 +33,12 @@ app_layout:
           - FaceTime
           - Photo Booth
           - Photos
+          # El Capitain specific
+          - Game Center
           - Preview
           - Dictionary
-          - Siri
+          # Sierra specific
+          # - Siri
           - Mission Control
           - Dashboard
 
@@ -62,13 +65,17 @@ app_layout:
           - System Information
           - Automator
           - Script Editor
-          - Disk Utility
+          # Sierra specific
+          # - Disk Utility
           - Boot Camp Assistant
           - Digital Color Meter
           - ColorSync Utility
           - Grab
           - Bluetooth File Exchange
           - Audio MIDI Setup
+          # El Capitain specific
+          - X11
+          - Disk Utility
 
   # Page 2: General
   -

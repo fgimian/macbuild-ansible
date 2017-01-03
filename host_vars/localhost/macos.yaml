@@ -99,8 +99,8 @@ macos_os_defaults:
       # Preferences / General / New Finder windows show / fots
       NewWindowTarget: PfHm
       NewWindowTargetPath: file:///Users/fots/
-      # Preferences / Advanced / Keep folders on top when sorting by name (Sierra only)
-      _FXSortFoldersFirst: true
+      # Preferences / Advanced / Keep folders on top when sorting by name (Sierra specific)
+      # _FXSortFoldersFirst: true
       # Preferences / Advanced / Disable 'Show warning before changing an extension'
       FXEnableExtensionChangeWarning: false
       # Default view settings for list view
