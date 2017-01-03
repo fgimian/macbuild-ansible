@@ -219,9 +219,9 @@ software_app_files:
   - src: files/dotfiles/.gitconfig
     dest: ~/.gitconfig
 
-  # SSH Configuration
-  - src: files/dotfiles/.ssh/config
-    dest: ~/.ssh/config
+  # SSH Configuration (Sierra specific)
+  # - src: files/dotfiles/.ssh/config
+  #   dest: ~/.ssh/config
 
   # Fish Profile
   - src: files/dotfiles/.config/fish/config.fish
