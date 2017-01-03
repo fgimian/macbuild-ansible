@@ -319,6 +319,13 @@ software_app_defaults:
   # Music Production Software
   # ---------------------------------------------------------------------------
 
+  # Celemony Melodyne
+  - domain: com.celemony.Melodyne singletrack
+    values:
+      disableWelcomePanelOnStartup: true
+      # Preferences / Settings / Check for Updates / Never
+      updateCheckPeriode: 3
+
   # eLicenser Control Center
   - domain: com.Syncrosoft.LCC
     values:

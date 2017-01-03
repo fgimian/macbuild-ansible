@@ -69,6 +69,11 @@ software_app_files:
   - src: "{{ app_license_dir }}/Music Production/Cableguys/Cableguys VolumeShaper/de.cableguys.volumeshaper4.plist"
     dest: ~/Library/Preferences/de.cableguys.volumeshaper4.plist
 
+  # Celemony Melodyne Editor
+  - src: "{{ app_license_dir }}/Music Production/Celemony/Celemony Melodyne Editor/Melodyne singletrack.license"
+    dest: /Library/Application Support/Celemony/Licenses/Melodyne singletrack.license
+    become: yes
+
   # DMG Audio Compassion
   - src: "{{ app_license_dir }}/Music Production/DMGAudio/DMGAudio Compassion/license"
     dest: ~/Library/Application Support/DMGAudio/Compassion/license
@@ -136,6 +141,10 @@ software_app_files:
   # Reveal Sound Spire
   - src: "{{ app_license_dir }}/Music Production/Reveal Sound/Reveal Sound Spire/spire.lic"
     dest: ~/Library/Application Support/RevealSound/spire.lic
+
+  # Spectrasonics Omnisphere
+  - src: "{{ app_license_dir }}/Music Production/Spectrasonics/Spectrasonics Omnisphere/net.spectrasonics.V6.plist"
+    dest: ~/Library/Preferences/net.spectrasonics.V6.plist
 
   # Studio Devil Amp Modeler Pro
   - src: "{{ app_license_dir }}/Music Production/Studio Devil/Studio Devil Amp Modeler Pro/com.studiodevil.amp.plist"

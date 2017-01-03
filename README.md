@@ -108,12 +108,17 @@ automate them.
 ### Manual Licensing
 
 * **Microsoft Office**
-* **Celemony Melodyne Editor**: Also requires de-activation before re-install
 * **Cytomic The Drop & The Glue**
-* **LennarDigital Sylenth1**: Also requires de-activation before re-install
+* **LennarDigital Sylenth1**
 * **Native Instruments Komplete**
 * **Novation Bass Station**
-* **Spectrasonics Omnisphere**
+
+## Software Deactivation
+
+The following software should be deactivated before re-installing macOS:
+
+* **Celemony Melodyne Editor**
+* **LennarDigital Sylenth1**
 
 ## References
 
